@@ -25,6 +25,7 @@ targets:
     orq-test2-prerelease-node:
         target: typescript
         source: orq-test2-prerelease-node
+        output: ./packages/orq-rc
         publish:
             npm:
                 token: $npm_token
