@@ -7,10 +7,10 @@ import { Data1 } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Data1 = {
   id: "<id>",
-  displayName: "Doyle25",
-  description: "of yum amid although sanity vice",
+  displayName: "Shannon.Hoeger74",
+  description: "print known instead improbable",
   prompt: "<value>",
-  outputType: "enum",
+  outputType: "string",
   type: "llm_eval",
 };
 ```

@@ -5,7 +5,7 @@
 ```typescript
 import { DataOutputType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: DataOutputType = "boolean";
+let value: DataOutputType = "number";
 ```
 
 ## Values

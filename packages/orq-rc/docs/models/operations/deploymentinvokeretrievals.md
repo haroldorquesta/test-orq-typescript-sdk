@@ -9,9 +9,9 @@ let value: DeploymentInvokeRetrievals = {
   document: "<value>",
   metadata: {
     fileName: "example.file",
-    pageNumber: 5252.35,
-    fileType: "application",
-    searchScore: 6732.41,
+    pageNumber: 8221.18,
+    fileType: "video",
+    searchScore: 5113.19,
   },
 };
 ```

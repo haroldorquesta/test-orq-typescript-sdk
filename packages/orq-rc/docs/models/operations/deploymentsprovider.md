@@ -5,7 +5,7 @@
 ```typescript
 import { DeploymentsProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: DeploymentsProvider = "azure";
+let value: DeploymentsProvider = "leonardoai";
 ```
 
 ## Values

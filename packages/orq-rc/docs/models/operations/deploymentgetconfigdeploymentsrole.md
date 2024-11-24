@@ -7,7 +7,7 @@ The role of the prompt message
 ```typescript
 import { DeploymentGetConfigDeploymentsRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: DeploymentGetConfigDeploymentsRole = "assistant";
+let value: DeploymentGetConfigDeploymentsRole = "tool";
 ```
 
 ## Values

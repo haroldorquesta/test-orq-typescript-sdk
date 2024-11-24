@@ -6,8 +6,8 @@
 import { Three } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Three = {
-  role: "prompt",
-  url: "https://far-flung-replacement.com",
+  role: "user",
+  url: "https://imaginative-vanadyl.biz/",
 };
 ```
 

@@ -18,7 +18,7 @@ const value: operations.DeploymentCreateMetric21 = {
 const value: operations.DeploymentCreateMetric22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://soupy-seafood.biz",
+    url: "https://steep-best-seller.name/",
   },
 };
 ```

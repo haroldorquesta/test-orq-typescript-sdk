@@ -12,10 +12,10 @@ let value: GetV2ResourcesEvaluatorsTemplatesResponseBody = {
   data: [
     {
       id: "<id>",
-      displayName: "Angela83",
+      displayName: "Grady81",
       description:
-        "around with officially incidentally international within so where",
-      function: "bert_score",
+        "industrialize when till even woot foot whereas besides vice fuel",
+      function: "meteor_score",
       outputType: "boolean",
       type: "function_eval",
     },
