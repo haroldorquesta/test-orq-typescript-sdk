@@ -1,0 +1,52 @@
+speakeasyVersion: 1.444.1
+sources:
+    orq-test2-prerelease-node:
+        sourceNamespace: orq-test2-prerelease-node
+        sourceRevisionDigest: sha256:823208c264ac7331bd26b8c4da61e5a6a532c8214d09b7e424ecd2ee1b4f415a
+        sourceBlobDigest: sha256:4f7dcf3a5efef9ff9eabe84d8b9c0fdb36b02496235dbe7c824f657d8a752a3b
+        tags:
+            - latest
+            - speakeasy-sdk-regen-1732455533
+targets:
+    orq-test2-prerelease-node:
+        source: orq-test2-prerelease-node
+        sourceNamespace: orq-test2-prerelease-node
+        sourceRevisionDigest: sha256:823208c264ac7331bd26b8c4da61e5a6a532c8214d09b7e424ecd2ee1b4f415a
+        sourceBlobDigest: sha256:4f7dcf3a5efef9ff9eabe84d8b9c0fdb36b02496235dbe7c824f657d8a752a3b
+        codeSamplesNamespace: orq-test2-prerelease-node-code-samples
+        codeSamplesRevisionDigest: sha256:e3c237c2c81fed1dbe8c6df0f071d845e47873683255695d64ce030481c631b8
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        orq-test2-node:
+            inputs:
+                - location: ./openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/orq/orq/orq-test2-node
+        orq-test2-prerelease-node:
+            inputs:
+                - location: ./openapi-prerelease.yaml
+            registry:
+                location: registry.speakeasyapi.dev/orq/orq/orq-test2-prerelease-node
+    targets:
+        orq-test2-node:
+            target: typescript
+            source: orq-test2-node
+            publish:
+                npm:
+                    token: $npm_token
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/orq/orq/orq-test2-node-code-samples
+                blocking: false
+        orq-test2-prerelease-node:
+            target: typescript
+            source: orq-test2-prerelease-node
+            publish:
+                npm:
+                    token: $npm_token
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/orq/orq/orq-test2-prerelease-node-code-samples
+                blocking: false

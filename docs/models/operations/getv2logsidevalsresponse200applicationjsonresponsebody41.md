@@ -1,0 +1,32 @@
+# GetV2LogsIdEvalsResponse200ApplicationJSONResponseBody41
+
+## Example Usage
+
+```typescript
+import { GetV2LogsIdEvalsResponse200ApplicationJSONResponseBody41 } from "orq-poc-typescript-multi-env-version/models/operations";
+
+let value: GetV2LogsIdEvalsResponse200ApplicationJSONResponseBody41 = {
+  type: "string",
+  value: "<value>",
+  id: "<id>",
+  status: "pending",
+  timestamp: new Date("2023-02-17T01:58:37.561Z"),
+  relatedEntities: [
+    {
+      type: "account",
+      accountId: "d383aac8-dc8d-412f-a2aa-6687a1399313",
+    },
+  ],
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                          | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `type`                                                                                                                                                                         | [operations.GetV2LogsIdEvalsResponse200ApplicationJSONResponseBody4EvalsType](../../models/operations/getv2logsidevalsresponse200applicationjsonresponsebody4evalstype.md)     | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `value`                                                                                                                                                                        | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_check_mark:                                                                                                                                                             | The id of the resource                                                                                                                                                         |
+| `status`                                                                                                                                                                       | [operations.GetV2LogsIdEvalsResponse200ApplicationJSONResponseBody4EvalsStatus](../../models/operations/getv2logsidevalsresponse200applicationjsonresponsebody4evalsstatus.md) | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `timestamp`                                                                                                                                                                    | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                                                                                  | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |
+| `relatedEntities`                                                                                                                                                              | *operations.GetV2LogsIdEvalsResponse200ApplicationJSONResponseBody4EvalsRelatedEntities*[]                                                                                     | :heavy_check_mark:                                                                                                                                                             | N/A                                                                                                                                                                            |

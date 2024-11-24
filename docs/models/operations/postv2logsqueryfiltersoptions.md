@@ -1,0 +1,24 @@
+# PostV2LogsQueryFiltersOptions
+
+## Example Usage
+
+```typescript
+import { PostV2LogsQueryFiltersOptions } from "orq-poc-typescript-multi-env-version/models/operations";
+
+let value: PostV2LogsQueryFiltersOptions = {
+  name: "<value>",
+  path: "/var/mail",
+  type: "date",
+  id: "<id>",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                        | Type                                                                                                                                                         | Required                                                                                                                                                     | Description                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `name`                                                                                                                                                       | *string*                                                                                                                                                     | :heavy_check_mark:                                                                                                                                           | N/A                                                                                                                                                          |
+| `path`                                                                                                                                                       | *string*                                                                                                                                                     | :heavy_check_mark:                                                                                                                                           | N/A                                                                                                                                                          |
+| `type`                                                                                                                                                       | [operations.PostV2LogsQueryFiltersRequestRequestBodyQuery6OptionsType](../../models/operations/postv2logsqueryfiltersrequestrequestbodyquery6optionstype.md) | :heavy_check_mark:                                                                                                                                           | N/A                                                                                                                                                          |
+| `hideOperators`                                                                                                                                              | *operations.PostV2LogsQueryFiltersRequestRequestBodyQueryHideOperators*[]                                                                                    | :heavy_minus_sign:                                                                                                                                           | N/A                                                                                                                                                          |
+| `id`                                                                                                                                                         | *string*                                                                                                                                                     | :heavy_check_mark:                                                                                                                                           | N/A                                                                                                                                                          |

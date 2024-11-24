@@ -1,0 +1,32 @@
+# PostV2LogsQueryEvals2
+
+## Example Usage
+
+```typescript
+import { PostV2LogsQueryEvals2 } from "orq-poc-typescript-multi-env-version/models/operations";
+
+let value: PostV2LogsQueryEvals2 = {
+  type: "number",
+  value: 1187.94,
+  id: "<id>",
+  status: "completed",
+  timestamp: new Date("2023-11-11T04:17:24.386Z"),
+  relatedEntities: [
+    {
+      type: "contact",
+      contactId: "<id>",
+    },
+  ],
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                                  | Type                                                                                                                                                                                   | Required                                                                                                                                                                               | Description                                                                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`                                                                                                                                                                                 | [operations.PostV2LogsQueryEvalsResponse200ApplicationJSONResponseBodyItems22Type](../../models/operations/postv2logsqueryevalsresponse200applicationjsonresponsebodyitems22type.md)   | :heavy_check_mark:                                                                                                                                                                     | N/A                                                                                                                                                                                    |
+| `value`                                                                                                                                                                                | *number*                                                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                     | N/A                                                                                                                                                                                    |
+| `id`                                                                                                                                                                                   | *string*                                                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                     | The id of the resource                                                                                                                                                                 |
+| `status`                                                                                                                                                                               | [operations.PostV2LogsQueryEvalsResponse200ApplicationJSONResponseBodyItems2Status](../../models/operations/postv2logsqueryevalsresponse200applicationjsonresponsebodyitems2status.md) | :heavy_check_mark:                                                                                                                                                                     | N/A                                                                                                                                                                                    |
+| `timestamp`                                                                                                                                                                            | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)                                                                                          | :heavy_check_mark:                                                                                                                                                                     | N/A                                                                                                                                                                                    |
+| `relatedEntities`                                                                                                                                                                      | *operations.PostV2LogsQueryEvalsResponse200ApplicationJSONResponseBodyItems22RelatedEntities*[]                                                                                        | :heavy_check_mark:                                                                                                                                                                     | N/A                                                                                                                                                                                    |
