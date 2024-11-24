@@ -1,0 +1,19 @@
+# PostV2LogsQueryRelatedEntitiesResponse2
+
+## Example Usage
+
+```typescript
+import { PostV2LogsQueryRelatedEntitiesResponse2 } from "orq-poc-typescript-multi-env-version/models/operations";
+
+let value: PostV2LogsQueryRelatedEntitiesResponse2 = {
+  type: "playground_block",
+  playgroundBlockId: "e7b25a2f-2c5b-46be-b92f-836bee2d967c",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                                                    | Type                                                                                                                                                                                                     | Required                                                                                                                                                                                                 | Description                                                                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`                                                                                                                                                                                                   | [operations.PostV2LogsQueryRelatedEntitiesResponse200ApplicationJSONResponseBodyItems32Type](../../models/operations/postv2logsqueryrelatedentitiesresponse200applicationjsonresponsebodyitems32type.md) | :heavy_check_mark:                                                                                                                                                                                       | N/A                                                                                                                                                                                                      |
+| `playgroundBlockId`                                                                                                                                                                                      | *string*                                                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                                                       | The id of the resource                                                                                                                                                                                   |

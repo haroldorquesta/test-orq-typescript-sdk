@@ -1,0 +1,19 @@
+# PostV2LogsQueryRelatedEntitiesResponse2002
+
+## Example Usage
+
+```typescript
+import { PostV2LogsQueryRelatedEntitiesResponse2002 } from "orq-poc-typescript-multi-env-version/models/operations";
+
+let value: PostV2LogsQueryRelatedEntitiesResponse2002 = {
+  type: "experiment_run",
+  experimentRunId: "47236b8e-d099-4f08-b309-cc06033354f5",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                                                    | Type                                                                                                                                                                                                     | Required                                                                                                                                                                                                 | Description                                                                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`                                                                                                                                                                                                   | [operations.PostV2LogsQueryRelatedEntitiesResponse200ApplicationJSONResponseBodyItems42Type](../../models/operations/postv2logsqueryrelatedentitiesresponse200applicationjsonresponsebodyitems42type.md) | :heavy_check_mark:                                                                                                                                                                                       | N/A                                                                                                                                                                                                      |
+| `experimentRunId`                                                                                                                                                                                        | *string*                                                                                                                                                                                                 | :heavy_check_mark:                                                                                                                                                                                       | The id of the resource                                                                                                                                                                                   |
