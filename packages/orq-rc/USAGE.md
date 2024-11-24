@@ -7,8 +7,12 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.contacts.create({
-    externalId: "<id>",
+  const result = await orq.feedback.create({
+    property2: "rating",
+    value: [
+      "good",
+    ],
+    traceId: "67HTZ65Z9W91HSF51CW68KK1QH",
   });
 
   // Handle the result

@@ -92,8 +92,12 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.contacts.create({
-    externalId: "<id>",
+  const result = await orq.feedback.create({
+    property2: "rating",
+    value: [
+      "good",
+    ],
+    traceId: "67HTZ65Z9W91HSF51CW68KK1QH",
   });
 
   // Handle the result
@@ -110,10 +114,6 @@ run();
 
 <details open>
 <summary>Available methods</summary>
-
-### [contacts](docs/sdks/contacts/README.md)
-
-* [create](docs/sdks/contacts/README.md#create) - Update user information
 
 ### [deployments](docs/sdks/deployments/README.md)
 
@@ -165,7 +165,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [`contactsCreate`](docs/sdks/contacts/README.md#create) - Update user information
 - [`deploymentsAll`](docs/sdks/deployments/README.md#all) - List all deployments
 - [`deploymentsGetConfig`](docs/sdks/deployments/README.md#getconfig) - Get config
 - [`deploymentsInvoke`](docs/sdks/deployments/README.md#invoke) - Invoke
@@ -262,8 +261,12 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.contacts.create({
-    externalId: "<id>",
+  const result = await orq.feedback.create({
+    property2: "rating",
+    value: [
+      "good",
+    ],
+    traceId: "67HTZ65Z9W91HSF51CW68KK1QH",
   }, {
     retries: {
       strategy: "backoff",
@@ -304,8 +307,12 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.contacts.create({
-    externalId: "<id>",
+  const result = await orq.feedback.create({
+    property2: "rating",
+    value: [
+      "good",
+    ],
+    traceId: "67HTZ65Z9W91HSF51CW68KK1QH",
   });
 
   // Handle the result
@@ -400,8 +407,12 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.contacts.create({
-    externalId: "<id>",
+  const result = await orq.feedback.create({
+    property2: "rating",
+    value: [
+      "good",
+    ],
+    traceId: "67HTZ65Z9W91HSF51CW68KK1QH",
   });
 
   // Handle the result
@@ -482,8 +493,12 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.contacts.create({
-    externalId: "<id>",
+  const result = await orq.feedback.create({
+    property2: "rating",
+    value: [
+      "good",
+    ],
+    traceId: "67HTZ65Z9W91HSF51CW68KK1QH",
   });
 
   // Handle the result

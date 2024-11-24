@@ -3,7 +3,6 @@
  */
 
 export * from "./bulkfileupload.js";
-export * from "./createcontact.js";
 export * from "./createfeedback.js";
 export * from "./deletev2resourcesevaluatorsid.js";
 export * from "./deploymentcreatemetric.js";

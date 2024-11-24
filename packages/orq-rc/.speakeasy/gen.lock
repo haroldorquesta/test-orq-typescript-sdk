@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 2e8e2787-9dc5-456e-b8ec-6b1fc6b2c02c
 management:
-  docChecksum: 91744d7684c5ee4196c4af7fbc737c9d
+  docChecksum: ec6475d6d464f36ee02644b320ce511f
   docVersion: "2.0"
   speakeasyVersion: 1.444.3
   generationVersion: 2.461.4
-  releaseVersion: 1.41.0-rc.8
-  configChecksum: e1020a545b3f820b4ca967defee1bc5f
+  releaseVersion: 1.41.0-rc.15
+  configChecksum: a254ff91cab5717f6608355db701bf11
   repoURL: https://github.com/haroldorquesta/test-orq-typescript-sdk.git
   repoSubDirectory: packages/orq-rc
   installationURL: https://gitpkg.now.sh/haroldorquesta/test-orq-typescript-sdk/packages/orq-rc
@@ -85,8 +85,6 @@ generatedFiles:
   - docs/models/operations/choices.md
   - docs/models/operations/content.md
   - docs/models/operations/content2.md
-  - docs/models/operations/createcontactrequestbody.md
-  - docs/models/operations/createcontactresponsebody.md
   - docs/models/operations/createfeedbackrequestbody.md
   - docs/models/operations/createfeedbackresponsebody.md
   - docs/models/operations/createfeedbackvalue.md
@@ -264,7 +262,6 @@ generatedFiles:
   - docs/models/operations/usage.md
   - docs/models/operations/userid.md
   - docs/models/operations/value.md
-  - docs/sdks/contacts/README.md
   - docs/sdks/deployments/README.md
   - docs/sdks/evals/README.md
   - docs/sdks/evaluators/README.md
@@ -276,7 +273,6 @@ generatedFiles:
   - jsr.json
   - package.json
   - src/core.ts
-  - src/funcs/contactsCreate.ts
   - src/funcs/deploymentsAll.ts
   - src/funcs/deploymentsGetConfig.ts
   - src/funcs/deploymentsInvoke.ts
@@ -318,7 +314,6 @@ generatedFiles:
   - src/models/errors/index.ts
   - src/models/errors/sdkvalidationerror.ts
   - src/models/operations/bulkfileupload.ts
-  - src/models/operations/createcontact.ts
   - src/models/operations/createfeedback.ts
   - src/models/operations/deletev2resourcesevaluatorsid.ts
   - src/models/operations/deploymentcreatemetric.ts
@@ -329,7 +324,6 @@ generatedFiles:
   - src/models/operations/getv2resourcesevaluatorstemplates.ts
   - src/models/operations/index.ts
   - src/models/operations/remoteconfigsgetconfig.ts
-  - src/sdk/contacts.ts
   - src/sdk/deployments.ts
   - src/sdk/evals.ts
   - src/sdk/evaluators.ts

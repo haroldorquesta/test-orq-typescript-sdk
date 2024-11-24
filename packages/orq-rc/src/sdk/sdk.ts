@@ -3,7 +3,6 @@
  */
 
 import { ClientSDK } from "../lib/sdks.js";
-import { Contacts } from "./contacts.js";
 import { Deployments } from "./deployments.js";
 import { Evals } from "./evals.js";
 import { Evaluators } from "./evaluators.js";
@@ -12,11 +11,6 @@ import { Files } from "./files.js";
 import { Remoteconfig } from "./remoteconfig.js";
 
 export class Orq extends ClientSDK {
-  private _contacts?: Contacts;
-  get contacts(): Contacts {
-    return (this._contacts ??= new Contacts(this._options));
-  }
-
   private _feedback?: Feedback;
   get feedback(): Feedback {
     return (this._feedback ??= new Feedback(this._options));
