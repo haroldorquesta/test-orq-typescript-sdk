@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 2e8e2787-9dc5-456e-b8ec-6b1fc6b2c02c
 management:
-  docChecksum: 49fb6421fd1c884d7bd817cc48ff1589
+  docChecksum: 8d4bfb7cf08f433df717ce2a55bf0cb2
   docVersion: "2.0"
   speakeasyVersion: 1.444.3
   generationVersion: 2.461.4
-  releaseVersion: 1.31.4-rc.0
-  configChecksum: df07d65dc472184bf17425ea071e9697
+  releaseVersion: 1.31.4-rc.2
+  configChecksum: 3cad5047987a9294f99846ceea5dbf8d
   repoURL: https://github.com/haroldorquesta/test-orq-typescript-sdk.git
   repoSubDirectory: packages/orq-rc
   installationURL: https://gitpkg.now.sh/haroldorquesta/test-orq-typescript-sdk/packages/orq-rc
