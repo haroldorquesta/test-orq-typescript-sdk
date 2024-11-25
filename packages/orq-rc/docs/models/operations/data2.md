@@ -7,11 +7,10 @@ import { Data2 } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Data2 = {
   id: "<id>",
-  displayName: "Landen57",
-  description:
-    "disk finally helplessly hence why baseboard psst till with furthermore",
-  function: "length_between",
-  outputType: "boolean",
+  displayName: "Branson.Runolfsdottir10",
+  description: "essay microchip circular entry",
+  function: "length_less_than",
+  outputType: "string",
   type: "function_eval",
 };
 ```

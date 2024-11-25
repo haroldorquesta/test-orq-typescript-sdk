@@ -20,18 +20,18 @@ let value: PromptConfig = {
       },
     },
   ],
-  model: "Grand Cherokee",
+  model: "Countach",
   modelType: "chat",
   modelParameters: {},
-  provider: "anyscale",
+  provider: "fal",
   messages: [
     {
-      role: "tool",
+      role: "prompt",
       content: [
         {
           type: "image_url",
           imageUrl: {
-            url: "https://hateful-humor.net",
+            url: "https://flashy-reservation.info",
           },
         },
       ],

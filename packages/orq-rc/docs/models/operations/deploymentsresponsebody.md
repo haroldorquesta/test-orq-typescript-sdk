@@ -11,11 +11,11 @@ let value: DeploymentsResponseBody = {
   object: "list",
   data: [
     {
-      id: "56ecb1eb-f2d2-491d-8c96-1b7bdfd05b28",
+      id: "eb14795d-596f-43bc-9b11-e9be37f6778d",
       created: "<value>",
       updated: "<value>",
       key: "<key>",
-      description: "apologise lest ick yum",
+      description: "yippee even self-reliant even once",
       promptConfig: {
         tools: [
           {
@@ -31,13 +31,13 @@ let value: DeploymentsResponseBody = {
             },
           },
         ],
-        model: "Model 3",
-        modelType: "vision",
+        model: "Fiesta",
+        modelType: "completion",
         modelParameters: {},
-        provider: "anthropic",
+        provider: "azure",
         messages: [
           {
-            role: "system",
+            role: "correction",
             content: "<value>",
           },
         ],

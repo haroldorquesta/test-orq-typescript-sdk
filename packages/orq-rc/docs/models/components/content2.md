@@ -18,7 +18,7 @@ const value: components.Two1 = {
 const value: components.Deployments22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://wretched-ribbon.info",
+    url: "https://distorted-violin.com/",
   },
 };
 ```

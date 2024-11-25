@@ -6,7 +6,7 @@
 import { Messages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Messages = {
-  role: "tool",
+  role: "expected_output",
   content: "<value>",
 };
 ```

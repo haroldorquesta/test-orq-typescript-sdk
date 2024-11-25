@@ -7,7 +7,7 @@ The provider used to generate the response
 ```typescript
 import { Provider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: Provider = "openai";
+let value: Provider = "cohere";
 ```
 
 ## Values

@@ -1,0 +1,19 @@
+# PostV2LogsQueryItemsResponseUsage
+
+## Example Usage
+
+```typescript
+import { PostV2LogsQueryItemsResponseUsage } from "orq-poc-typescript-multi-env-version/models/operations";
+
+let value: PostV2LogsQueryItemsResponseUsage = {};
+```
+
+## Fields
+
+| Field                                                                                                                            | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `totalTokens`                                                                                                                    | *number*                                                                                                                         | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
+| `promptTokens`                                                                                                                   | *number*                                                                                                                         | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
+| `completionTokens`                                                                                                               | *number*                                                                                                                         | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
+| `promptTokensDetails`                                                                                                            | [operations.PostV2LogsQueryItemsPromptTokensDetails](../../models/operations/postv2logsqueryitemsprompttokensdetails.md)         | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
+| `completionTokensDetails`                                                                                                        | [operations.PostV2LogsQueryItemsCompletionTokensDetails](../../models/operations/postv2logsqueryitemscompletiontokensdetails.md) | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |

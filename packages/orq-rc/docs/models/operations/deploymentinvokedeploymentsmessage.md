@@ -7,7 +7,7 @@
 
 ```typescript
 const value: operations.DeploymentInvokeMessageDeployments1 = {
-  role: "correction",
+  role: "user",
   toolCalls: [
     {
       type: "function",
@@ -24,7 +24,7 @@ const value: operations.DeploymentInvokeMessageDeployments1 = {
 
 ```typescript
 const value: operations.DeploymentInvokeMessageDeployments2 = {
-  role: "tool",
+  role: "prompt",
   content: "<value>",
 };
 ```
@@ -34,7 +34,7 @@ const value: operations.DeploymentInvokeMessageDeployments2 = {
 ```typescript
 const value: operations.DeploymentInvokeMessage3 = {
   role: "system",
-  url: "https://creamy-wedding.info/",
+  url: "https://tricky-toothpick.info/",
 };
 ```
 

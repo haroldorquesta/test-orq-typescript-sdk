@@ -10,7 +10,7 @@ import { Deployments22 } from "orq-poc-typescript-multi-env-version/models/opera
 let value: Deployments22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://blaring-bog.com",
+    url: "https://tiny-omelet.net",
   },
 };
 ```

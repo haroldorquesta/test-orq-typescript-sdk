@@ -11,7 +11,7 @@ let value: DeploymentCreateMetricMessages = {
     {
       type: "image_url",
       imageUrl: {
-        url: "https://international-larva.name/",
+        url: "https://miserable-bakeware.net",
       },
     },
   ],

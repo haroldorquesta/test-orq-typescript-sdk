@@ -3,6 +3,7 @@
  */
 
 export * from "./bulkfileupload.js";
+export * from "./createcontact.js";
 export * from "./createfeedback.js";
 export * from "./deletev2resourcesevaluatorsid.js";
 export * from "./deploymentcreatemetric.js";
@@ -10,5 +11,7 @@ export * from "./deploymentgetconfig.js";
 export * from "./deploymentinvoke.js";
 export * from "./deployments.js";
 export * from "./fileupload.js";
+export * from "./getv2logsid.js";
 export * from "./getv2resourcesevaluatorstemplates.js";
+export * from "./postv2logsquery.js";
 export * from "./remoteconfigsgetconfig.js";

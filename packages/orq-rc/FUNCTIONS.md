@@ -20,7 +20,7 @@ specific category of applications.
 
 ```typescript
 import { OrqCore } from "orq-poc-typescript-multi-env-version/core.js";
-import { feedbackCreate } from "orq-poc-typescript-multi-env-version/funcs/feedbackCreate.js";
+import { postV2LogsQuery } from "orq-poc-typescript-multi-env-version/funcs/postV2LogsQuery.js";
 import { SDKValidationError } from "orq-poc-typescript-multi-env-version/models/errors/sdkvalidationerror.js";
 
 // Use `OrqCore` for best tree-shaking performance.
@@ -30,13 +30,7 @@ const orq = new OrqCore({
 });
 
 async function run() {
-  const res = await feedbackCreate(orq, {
-    property2: "rating",
-    value: [
-      "good",
-    ],
-    traceId: "67HTZ65Z9W91HSF51CW68KK1QH",
-  });
+  const res = await postV2LogsQuery(orq);
 
   switch (true) {
     case res.ok:
