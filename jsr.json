@@ -2,7 +2,7 @@
 
 {
   "name": "orq-poc-typescript-multi-env-version",
-  "version": "1.31.5",
+  "version": "1.43.1",
   "exports": {
     ".": "./src/index.ts",    
     "./models/errors": "./src/models/errors/index.ts",    

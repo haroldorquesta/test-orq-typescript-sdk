@@ -125,14 +125,6 @@ run();
 
 * [create](docs/sdks/metrics/README.md#create) - Add metrics
 
-### [evals](docs/sdks/evals/README.md)
-
-* [deleteV2ResourcesEvaluatorsId](docs/sdks/evals/README.md#deletev2resourcesevaluatorsid) - Delete an eval
-
-### [evaluators](docs/sdks/evaluators/README.md)
-
-* [getV2ResourcesEvaluatorsTemplates](docs/sdks/evaluators/README.md#getv2resourcesevaluatorstemplates) - Templates
-
 ### [feedback](docs/sdks/feedback/README.md)
 
 * [create](docs/sdks/feedback/README.md#create) - Submit feedback
@@ -142,10 +134,6 @@ run();
 * [upload](docs/sdks/files/README.md#upload) - Upload file
 * [bulkUpload](docs/sdks/files/README.md#bulkupload) - Bulk upload file
 
-
-### [remoteconfig](docs/sdks/remoteconfig/README.md)
-
-* [getConfig](docs/sdks/remoteconfig/README.md#getconfig) - Get Configurations
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -170,12 +158,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`deploymentsGetConfig`](docs/sdks/deployments/README.md#getconfig) - Get config
 - [`deploymentsInvoke`](docs/sdks/deployments/README.md#invoke) - Invoke
 - [`deploymentsMetricsCreate`](docs/sdks/metrics/README.md#create) - Add metrics
-- [`evalsDeleteV2ResourcesEvaluatorsId`](docs/sdks/evals/README.md#deletev2resourcesevaluatorsid) - Delete an eval
-- [`evaluatorsGetV2ResourcesEvaluatorsTemplates`](docs/sdks/evaluators/README.md#getv2resourcesevaluatorstemplates) - Templates
 - [`feedbackCreate`](docs/sdks/feedback/README.md#create) - Submit feedback
 - [`filesBulkUpload`](docs/sdks/files/README.md#bulkupload) - Bulk upload file
 - [`filesUpload`](docs/sdks/files/README.md#upload) - Upload file
-- [`remoteconfigGetConfig`](docs/sdks/remoteconfig/README.md#getconfig) - Get Configurations
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->
