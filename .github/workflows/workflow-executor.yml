@@ -78,6 +78,9 @@ on:
         description: "Version of pnpm to install. Not recommended for use without consulting Speakeasy support."
         required: false
         type: string
+      npm_publish_tag_name:
+        type: string
+        required: true
     secrets:
       github_access_token:
         description: A GitHub access token with write access to the repo
