@@ -9,14 +9,14 @@ import { DeploymentInvokeResponseBody } from "orq-poc-typescript-multi-env-versi
 
 let value: DeploymentInvokeResponseBody = {
   id: "<id>",
-  created: new Date("2022-05-05T03:30:29.367Z"),
-  object: "image",
-  model: "Element",
-  provider: "cohere",
+  created: new Date("2022-05-25T02:31:24.789Z"),
+  object: "chat",
+  model: "Colorado",
+  provider: "huggingface",
   isFinal: false,
   choices: [
     {
-      index: 524.08,
+      index: 4561.41,
     },
   ],
 };

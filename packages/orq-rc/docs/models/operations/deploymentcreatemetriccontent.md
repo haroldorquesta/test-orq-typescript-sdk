@@ -16,10 +16,8 @@ const value: string = "<value>";
 ```typescript
 const value: operations.DeploymentCreateMetricContent2[] = [
   {
-    type: "image_url",
-    imageUrl: {
-      url: "https://happy-go-lucky-bookend.biz",
-    },
+    type: "text",
+    text: "<value>",
   },
 ];
 ```

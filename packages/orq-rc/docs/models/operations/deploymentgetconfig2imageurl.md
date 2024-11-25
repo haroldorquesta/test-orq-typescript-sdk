@@ -6,7 +6,7 @@
 import { DeploymentGetConfig2ImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: DeploymentGetConfig2ImageUrl = {
-  url: "https://obvious-negotiation.org/",
+  url: "https://courageous-juggernaut.info/",
 };
 ```
 

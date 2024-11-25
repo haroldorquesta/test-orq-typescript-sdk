@@ -10,17 +10,12 @@ import { DeploymentGetConfigResponseBody } from "orq-poc-typescript-multi-env-ve
 let value: DeploymentGetConfigResponseBody = {
   id: "<id>",
   provider: "<value>",
-  model: "Accord",
+  model: "Charger",
   version: "<value>",
   messages: [
     {
-      role: "prompt",
-      content: [
-        {
-          type: "text",
-          text: "<value>",
-        },
-      ],
+      role: "tool",
+      content: "<value>",
     },
   ],
   parameters: {},

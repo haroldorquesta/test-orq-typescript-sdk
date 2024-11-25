@@ -7,7 +7,7 @@
 
 ```typescript
 const value: operations.Message1 = {
-  role: "prompt",
+  role: "exception",
   toolCalls: [
     {
       type: "function",
@@ -24,7 +24,7 @@ const value: operations.Message1 = {
 
 ```typescript
 const value: operations.Message2 = {
-  role: "correction",
+  role: "prompt",
   content: "<value>",
 };
 ```
@@ -34,7 +34,7 @@ const value: operations.Message2 = {
 ```typescript
 const value: operations.Three = {
   role: "exception",
-  url: "https://shoddy-armchair.name",
+  url: "https://rotating-premeditation.biz",
 };
 ```
 

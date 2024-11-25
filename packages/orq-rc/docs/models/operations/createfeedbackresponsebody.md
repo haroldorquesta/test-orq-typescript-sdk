@@ -8,7 +8,9 @@ Successful operation
 import { CreateFeedbackResponseBody } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: CreateFeedbackResponseBody = {
-  value: "<value>",
+  value: [
+    "<value>",
+  ],
   traceId: "<id>",
   id: "<id>",
 };

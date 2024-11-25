@@ -7,7 +7,7 @@
 
 ```typescript
 const value: operations.DeploymentInvokeMessage1 = {
-  role: "tool",
+  role: "system",
   toolCalls: [
     {
       type: "function",
@@ -24,7 +24,7 @@ const value: operations.DeploymentInvokeMessage1 = {
 
 ```typescript
 const value: operations.DeploymentInvokeMessage2 = {
-  role: "correction",
+  role: "prompt",
   content: "<value>",
 };
 ```
@@ -33,8 +33,8 @@ const value: operations.DeploymentInvokeMessage2 = {
 
 ```typescript
 const value: operations.Message3 = {
-  role: "exception",
-  url: "https://trustworthy-colon.net/",
+  role: "system",
+  url: "https://crafty-bin.com",
 };
 ```
 

@@ -16,10 +16,8 @@ const value: string = "<value>";
 ```typescript
 const value: operations.Content2[] = [
   {
-    type: "image_url",
-    imageUrl: {
-      url: "https://grave-relative.net",
-    },
+    type: "text",
+    text: "<value>",
   },
 ];
 ```

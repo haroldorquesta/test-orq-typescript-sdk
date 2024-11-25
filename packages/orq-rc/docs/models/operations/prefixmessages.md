@@ -6,8 +6,13 @@
 import { PrefixMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: PrefixMessages = {
-  role: "tool",
-  content: "<value>",
+  role: "expected_output",
+  content: [
+    {
+      type: "text",
+      text: "<value>",
+    },
+  ],
 };
 ```
 

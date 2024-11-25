@@ -6,8 +6,8 @@
 import { DeploymentInvokeMessage3 } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: DeploymentInvokeMessage3 = {
-  role: "correction",
-  url: "https://adolescent-solvency.name",
+  role: "user",
+  url: "https://enraged-unique.org",
 };
 ```
 

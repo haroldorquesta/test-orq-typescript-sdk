@@ -8,10 +8,10 @@
 ```typescript
 const value: operations.Data1 = {
   id: "<id>",
-  displayName: "Francis.Leannon-Lebsack53",
-  description: "unless offset fooey um whenever",
+  displayName: "Donna.Jacobson50",
+  description: "atop per about holster minority",
   prompt: "<value>",
-  outputType: "enum",
+  outputType: "string",
   type: "llm_eval",
 };
 ```
@@ -21,10 +21,10 @@ const value: operations.Data1 = {
 ```typescript
 const value: operations.Data2 = {
   id: "<id>",
-  displayName: "Dulce.Hudson92",
+  displayName: "Margarett_Abernathy",
   description:
-    "than yellowish that bolster helpfully unwelcome funny knavishly bug",
-  function: "bleu_score",
+    "bus questioningly topsail diligently thigh arraign into defenseless geez burgeon",
+  function: "contains",
   outputType: "string",
   type: "function_eval",
 };

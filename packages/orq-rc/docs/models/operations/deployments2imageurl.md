@@ -6,7 +6,7 @@
 import { Deployments2ImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Deployments2ImageUrl = {
-  url: "https://urban-mom.com/",
+  url: "https://squiggly-litter.name/",
 };
 ```
 
