@@ -1,5 +1,13 @@
 speakeasyVersion: 1.444.3
 sources:
+    orq-test2-node:
+        sourceNamespace: orq-test2-node
+        sourceRevisionDigest: sha256:08ae9bc4e5ff71ab7935214e4dc27f27fd8c36b81697a9c642d6bb5640b6aa00
+        sourceBlobDigest: sha256:720202b01366e07245d61fad2dbf173ef3840d39f153d94774f4757592145849
+        tags:
+            - latest
+            - speakeasy-sdk-regen-1732493166
+            - "2.0"
     orq-test2-prerelease-node:
         sourceNamespace: orq-test2-prerelease-node
         sourceRevisionDigest: sha256:2b531e6b9ce20863ee1cf720762944af6f9a335b8992e4cef41f7e3a25e6b6f4
@@ -9,6 +17,13 @@ sources:
             - speakeasy-sdk-regen-1732463378
             - "2.0"
 targets:
+    orq-test2-node:
+        source: orq-test2-node
+        sourceNamespace: orq-test2-node
+        sourceRevisionDigest: sha256:08ae9bc4e5ff71ab7935214e4dc27f27fd8c36b81697a9c642d6bb5640b6aa00
+        sourceBlobDigest: sha256:720202b01366e07245d61fad2dbf173ef3840d39f153d94774f4757592145849
+        codeSamplesNamespace: orq-test2-node-code-samples
+        codeSamplesRevisionDigest: sha256:2902b03628a17f3552eb13a59ab17c6453380007500f8413f216932e48ec2139
     orq-test2-prerelease-node:
         source: orq-test2-prerelease-node
         sourceNamespace: orq-test2-prerelease-node
