@@ -20,7 +20,7 @@ export type CreateFeedbackRequestBody = {
   /**
    * A string describing the specific property or aspect rated.
    */
-  property: string;
+  property2?: string | undefined;
   /**
    * The feedback value. For single selection of multiple choice, the value should be an array of strings. For `correction`, the value should be a string.
    */
@@ -43,7 +43,7 @@ export type CreateFeedbackResponseBody = {
   /**
    * A string describing the specific property or aspect rated.
    */
-  property: string;
+  property2?: string | undefined;
   /**
    * The feedback value. For single selection of multiple choice, the value should be an array of strings. For `correction`, the value should be a string.
    */
@@ -102,7 +102,7 @@ export const CreateFeedbackRequestBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  property: z.string(),
+  property2: z.string().optional(),
   value: z.union([z.string(), z.array(z.string())]),
   trace_id: z.string(),
 }).transform((v) => {
@@ -113,7 +113,7 @@ export const CreateFeedbackRequestBody$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateFeedbackRequestBody$Outbound = {
-  property: string;
+  property2?: string | undefined;
   value: string | Array<string>;
   trace_id: string;
 };
@@ -124,7 +124,7 @@ export const CreateFeedbackRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateFeedbackRequestBody
 > = z.object({
-  property: z.string(),
+  property2: z.string().optional(),
   value: z.union([z.string(), z.array(z.string())]),
   traceId: z.string(),
 }).transform((v) => {
@@ -218,7 +218,7 @@ export const CreateFeedbackResponseBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  property: z.string(),
+  property2: z.string().optional(),
   value: z.union([z.string(), z.array(z.string())]),
   trace_id: z.string(),
   id: z.string(),
@@ -230,7 +230,7 @@ export const CreateFeedbackResponseBody$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateFeedbackResponseBody$Outbound = {
-  property: string;
+  property2?: string | undefined;
   value: string | Array<string>;
   trace_id: string;
   id: string;
@@ -242,7 +242,7 @@ export const CreateFeedbackResponseBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateFeedbackResponseBody
 > = z.object({
-  property: z.string(),
+  property2: z.string().optional(),
   value: z.union([z.string(), z.array(z.string())]),
   traceId: z.string(),
   id: z.string(),
