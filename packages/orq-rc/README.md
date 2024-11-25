@@ -92,9 +92,7 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.contacts.create({
-    externalId: "<id>",
-  });
+  const result = await orq.postV2LogsQuery();
 
   // Handle the result
   console.log(result);
@@ -142,6 +140,10 @@ run();
 * [upload](docs/sdks/files/README.md#upload) - Upload file
 * [bulkUpload](docs/sdks/files/README.md#bulkupload) - Bulk upload file
 
+### [Orq SDK](docs/sdks/orq/README.md)
+
+* [postV2LogsQuery](docs/sdks/orq/README.md#postv2logsquery)
+* [getV2LogsId](docs/sdks/orq/README.md#getv2logsid)
 
 ### [remoteconfig](docs/sdks/remoteconfig/README.md)
 
@@ -175,6 +177,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`feedbackCreate`](docs/sdks/feedback/README.md#create) - Submit feedback
 - [`filesBulkUpload`](docs/sdks/files/README.md#bulkupload) - Bulk upload file
 - [`filesUpload`](docs/sdks/files/README.md#upload) - Upload file
+- [`getV2LogsId`](docs/sdks/orq/README.md#getv2logsid)
+- [`postV2LogsQuery`](docs/sdks/orq/README.md#postv2logsquery)
 - [`remoteconfigGetConfig`](docs/sdks/remoteconfig/README.md#getconfig) - Get Configurations
 
 </details>
@@ -262,9 +266,7 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.contacts.create({
-    externalId: "<id>",
-  }, {
+  const result = await orq.postV2LogsQuery({
     retries: {
       strategy: "backoff",
       backoff: {
@@ -304,9 +306,7 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.contacts.create({
-    externalId: "<id>",
-  });
+  const result = await orq.postV2LogsQuery();
 
   // Handle the result
   console.log(result);
@@ -332,17 +332,21 @@ If a HTTP request fails, an operation my also throw an error from the `models/er
 | InvalidRequestError                                  | Any input used to create a request is invalid        |
 | UnexpectedClientError                                | Unrecognised or unexpected error                     |
 
-In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `all` method may throw the following errors:
+In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `postV2LogsQuery` method may throw the following errors:
 
-| Error Type          | Status Code | Content Type     |
-| ------------------- | ----------- | ---------------- |
-| errors.HonoApiError | 500         | application/json |
-| errors.APIError     | 4XX, 5XX    | \*/\*            |
+| Error Type                                    | Status Code | Content Type     |
+| --------------------------------------------- | ----------- | ---------------- |
+| errors.PostV2LogsQueryResponseBody            | 400         | application/json |
+| errors.PostV2LogsQueryResponseResponseBody    | 403         | application/json |
+| errors.PostV2LogsQueryResponse500ResponseBody | 500         | application/json |
+| errors.APIError                               | 4XX, 5XX    | \*/\*            |
 
 ```typescript
 import { Orq } from "orq-poc-typescript-multi-env-version";
 import {
-  HonoApiError,
+  PostV2LogsQueryResponse500ResponseBody,
+  PostV2LogsQueryResponseBody,
+  PostV2LogsQueryResponseResponseBody,
   SDKValidationError,
 } from "orq-poc-typescript-multi-env-version/models/errors";
 
@@ -353,7 +357,7 @@ const orq = new Orq({
 async function run() {
   let result;
   try {
-    result = await orq.deployments.all();
+    result = await orq.postV2LogsQuery();
 
     // Handle the result
     console.log(result);
@@ -366,8 +370,18 @@ async function run() {
         console.error(err.rawValue);
         return;
       }
-      case (err instanceof HonoApiError): {
-        // Handle err.data$: HonoApiErrorData
+      case (err instanceof PostV2LogsQueryResponseBody): {
+        // Handle err.data$: PostV2LogsQueryResponseBodyData
+        console.error(err);
+        return;
+      }
+      case (err instanceof PostV2LogsQueryResponseResponseBody): {
+        // Handle err.data$: PostV2LogsQueryResponseResponseBodyData
+        console.error(err);
+        return;
+      }
+      case (err instanceof PostV2LogsQueryResponse500ResponseBody): {
+        // Handle err.data$: PostV2LogsQueryResponse500ResponseBodyData
         console.error(err);
         return;
       }
@@ -400,9 +414,7 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.contacts.create({
-    externalId: "<id>",
-  });
+  const result = await orq.postV2LogsQuery();
 
   // Handle the result
   console.log(result);
@@ -482,9 +494,7 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.contacts.create({
-    externalId: "<id>",
-  });
+  const result = await orq.postV2LogsQuery();
 
   // Handle the result
   console.log(result);

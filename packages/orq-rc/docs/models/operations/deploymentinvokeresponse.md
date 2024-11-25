@@ -8,14 +8,14 @@
 ```typescript
 const value: operations.DeploymentInvokeResponseBody = {
   id: "<id>",
-  created: new Date("2024-01-19T21:01:56.101Z"),
+  created: new Date("2023-04-17T18:24:05.868Z"),
   object: "image",
-  model: "Civic",
-  provider: "google",
+  model: "Mustang",
+  provider: "aws",
   isFinal: false,
   choices: [
     {
-      index: 1811.51,
+      index: 9.08,
     },
   ],
 };

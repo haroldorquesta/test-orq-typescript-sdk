@@ -6,7 +6,7 @@
 import { Message1 } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Message1 = {
-  role: "expected_output",
+  role: "user",
   toolCalls: [
     {
       type: "function",

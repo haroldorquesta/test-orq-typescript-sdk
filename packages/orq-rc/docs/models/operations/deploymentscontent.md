@@ -18,7 +18,7 @@ const value: operations.DeploymentsContent2[] = [
   {
     type: "image_url",
     imageUrl: {
-      url: "https://sparse-cardboard.name/",
+      url: "https://musty-insolence.com/",
     },
   },
 ];

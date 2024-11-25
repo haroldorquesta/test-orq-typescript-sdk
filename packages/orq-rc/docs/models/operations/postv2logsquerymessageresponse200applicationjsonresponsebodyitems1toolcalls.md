@@ -1,0 +1,26 @@
+# PostV2LogsQueryMessageResponse200ApplicationJSONResponseBodyItems1ToolCalls
+
+## Example Usage
+
+```typescript
+import { PostV2LogsQueryMessageResponse200ApplicationJSONResponseBodyItems1ToolCalls } from "orq-poc-typescript-multi-env-version/models/operations";
+
+let value:
+  PostV2LogsQueryMessageResponse200ApplicationJSONResponseBodyItems1ToolCalls =
+    {
+      type: "function",
+      function: {
+        name: "<value>",
+        arguments: "<value>",
+      },
+    };
+```
+
+## Fields
+
+| Field                                                                                                                                                                                          | Type                                                                                                                                                                                           | Required                                                                                                                                                                                       | Description                                                                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                                                           | *string*                                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                             | N/A                                                                                                                                                                                            |
+| `index`                                                                                                                                                                                        | *number*                                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                             | N/A                                                                                                                                                                                            |
+| `type`                                                                                                                                                                                         | [operations.PostV2LogsQueryMessageResponse200ApplicationJSONResponseBodyItems1Type](../../models/operations/postv2logsquerymessageresponse200applicationjsonresponsebodyitems1type.md)         | :heavy_check_mark:                                                                                                                                                                             | N/A                                                                                                                                                                                            |
+| `function`                                                                                                                                                                                     | [operations.PostV2LogsQueryMessageResponse200ApplicationJSONResponseBodyItems1Function](../../models/operations/postv2logsquerymessageresponse200applicationjsonresponsebodyitems1function.md) | :heavy_check_mark:                                                                                                                                                                             | N/A                                                                                                                                                                                            |

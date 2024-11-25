@@ -4,6 +4,8 @@
 
 export * from "./apierror.js";
 export * from "./deletev2resourcesevaluatorsid.js";
+export * from "./getv2logsid.js";
 export * from "./honoapierror.js";
 export * from "./httpclienterrors.js";
+export * from "./postv2logsquery.js";
 export * from "./sdkvalidationerror.js";

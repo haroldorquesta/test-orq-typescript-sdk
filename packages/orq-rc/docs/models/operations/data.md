@@ -6,11 +6,12 @@
 import { Data } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Data = {
-  id: "0aa32559-7f13-42a4-a732-1a235d1d1f7f",
+  id: "e5455700-6499-413a-ae06-c5b32b30abc0",
   created: "<value>",
   updated: "<value>",
   key: "<key>",
-  description: "woot minus apropos shrilly ick swine proud plait",
+  description:
+    "victoriously ouch although fortunate short oh volleyball intent",
   promptConfig: {
     tools: [
       {
@@ -26,21 +27,14 @@ let value: Data = {
         },
       },
     ],
-    model: "Escalade",
-    modelType: "completion",
+    model: "Charger",
+    modelType: "vision",
     modelParameters: {},
-    provider: "replicate",
+    provider: "groq",
     messages: [
       {
-        role: "tool",
-        content: [
-          {
-            type: "image_url",
-            imageUrl: {
-              url: "https://qualified-hose.org",
-            },
-          },
-        ],
+        role: "exception",
+        content: "<value>",
       },
     ],
   },

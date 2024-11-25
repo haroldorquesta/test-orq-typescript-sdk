@@ -11,5 +11,7 @@ export * from "./deploymentgetconfig.js";
 export * from "./deploymentinvoke.js";
 export * from "./deployments.js";
 export * from "./fileupload.js";
+export * from "./getv2logsid.js";
 export * from "./getv2resourcesevaluatorstemplates.js";
+export * from "./postv2logsquery.js";
 export * from "./remoteconfigsgetconfig.js";
