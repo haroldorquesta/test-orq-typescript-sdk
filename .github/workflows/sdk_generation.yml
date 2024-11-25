@@ -5,7 +5,10 @@ on:
     inputs:
       target:
         type: string
-        default: false
+        required: true
+      npm_publish_tag_name:
+        type: string
+        required: true
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -23,10 +26,11 @@ permissions:
 
 jobs:
   generate:
-    uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15
+    uses: ./.github/workflows/workflow-executor.yml
     with:
       mode: direct
       target: ${{ inputs.target }}
+      npm_publish_tag_name: ${{ inputs.npm_publish_tag_name }}
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       npm_token: ${{ secrets.NPM_TOKEN }}
