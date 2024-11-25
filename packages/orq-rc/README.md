@@ -92,12 +92,8 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.feedback.create({
-    property2: "rating",
-    value: [
-      "good",
-    ],
-    traceId: "67HTZ65Z9W91HSF51CW68KK1QH",
+  const result = await orq.contacts.create({
+    externalId: "<id>",
   });
 
   // Handle the result
@@ -115,6 +111,10 @@ run();
 <details open>
 <summary>Available methods</summary>
 
+### [contacts](docs/sdks/contacts/README.md)
+
+* [create](docs/sdks/contacts/README.md#create) - Update user information
+
 ### [deployments](docs/sdks/deployments/README.md)
 
 * [all](docs/sdks/deployments/README.md#all) - List all deployments
@@ -125,14 +125,6 @@ run();
 
 * [create](docs/sdks/metrics/README.md#create) - Add metrics
 
-### [evals](docs/sdks/evals/README.md)
-
-* [deleteV2ResourcesEvaluatorsId](docs/sdks/evals/README.md#deletev2resourcesevaluatorsid) - Delete an eval
-
-### [evaluators](docs/sdks/evaluators/README.md)
-
-* [getV2ResourcesEvaluatorsTemplates](docs/sdks/evaluators/README.md#getv2resourcesevaluatorstemplates) - Templates
-
 ### [feedback](docs/sdks/feedback/README.md)
 
 * [create](docs/sdks/feedback/README.md#create) - Submit feedback
@@ -142,10 +134,6 @@ run();
 * [upload](docs/sdks/files/README.md#upload) - Upload file
 * [bulkUpload](docs/sdks/files/README.md#bulkupload) - Bulk upload file
 
-
-### [remoteconfig](docs/sdks/remoteconfig/README.md)
-
-* [getConfig](docs/sdks/remoteconfig/README.md#getconfig) - Get Configurations
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -165,16 +153,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
+- [`contactsCreate`](docs/sdks/contacts/README.md#create) - Update user information
 - [`deploymentsAll`](docs/sdks/deployments/README.md#all) - List all deployments
 - [`deploymentsGetConfig`](docs/sdks/deployments/README.md#getconfig) - Get config
 - [`deploymentsInvoke`](docs/sdks/deployments/README.md#invoke) - Invoke
 - [`deploymentsMetricsCreate`](docs/sdks/metrics/README.md#create) - Add metrics
-- [`evalsDeleteV2ResourcesEvaluatorsId`](docs/sdks/evals/README.md#deletev2resourcesevaluatorsid) - Delete an eval
-- [`evaluatorsGetV2ResourcesEvaluatorsTemplates`](docs/sdks/evaluators/README.md#getv2resourcesevaluatorstemplates) - Templates
 - [`feedbackCreate`](docs/sdks/feedback/README.md#create) - Submit feedback
 - [`filesBulkUpload`](docs/sdks/files/README.md#bulkupload) - Bulk upload file
 - [`filesUpload`](docs/sdks/files/README.md#upload) - Upload file
-- [`remoteconfigGetConfig`](docs/sdks/remoteconfig/README.md#getconfig) - Get Configurations
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->
@@ -261,12 +247,8 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.feedback.create({
-    property2: "rating",
-    value: [
-      "good",
-    ],
-    traceId: "67HTZ65Z9W91HSF51CW68KK1QH",
+  const result = await orq.contacts.create({
+    externalId: "<id>",
   }, {
     retries: {
       strategy: "backoff",
@@ -307,12 +289,8 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.feedback.create({
-    property2: "rating",
-    value: [
-      "good",
-    ],
-    traceId: "67HTZ65Z9W91HSF51CW68KK1QH",
+  const result = await orq.contacts.create({
+    externalId: "<id>",
   });
 
   // Handle the result
@@ -407,12 +385,8 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.feedback.create({
-    property2: "rating",
-    value: [
-      "good",
-    ],
-    traceId: "67HTZ65Z9W91HSF51CW68KK1QH",
+  const result = await orq.contacts.create({
+    externalId: "<id>",
   });
 
   // Handle the result
@@ -493,12 +467,8 @@ const orq = new Orq({
 });
 
 async function run() {
-  const result = await orq.feedback.create({
-    property2: "rating",
-    value: [
-      "good",
-    ],
-    traceId: "67HTZ65Z9W91HSF51CW68KK1QH",
+  const result = await orq.contacts.create({
+    externalId: "<id>",
   });
 
   // Handle the result

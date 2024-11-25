@@ -1,15 +1,15 @@
-# Evals
-(*evals*)
+# Contacts
+(*contacts*)
 
 ## Overview
 
 ### Available Operations
 
-* [deleteV2ResourcesEvaluatorsId](#deletev2resourcesevaluatorsid) - Delete an eval
+* [create](#create) - Update user information
 
-## deleteV2ResourcesEvaluatorsId
+## create
 
-Delete an eval
+Update or add user information to workspace
 
 ### Example Usage
 
@@ -21,11 +21,12 @@ const orq = new Orq({
 });
 
 async function run() {
-  await orq.evals.deleteV2ResourcesEvaluatorsId({
-    id: "<id>",
+  const result = await orq.contacts.create({
+    externalId: "<id>",
   });
 
-
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -37,7 +38,7 @@ The standalone function version of this method:
 
 ```typescript
 import { OrqCore } from "orq-poc-typescript-multi-env-version/core.js";
-import { evalsDeleteV2ResourcesEvaluatorsId } from "orq-poc-typescript-multi-env-version/funcs/evalsDeleteV2ResourcesEvaluatorsId.js";
+import { contactsCreate } from "orq-poc-typescript-multi-env-version/funcs/contactsCreate.js";
 
 // Use `OrqCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -46,8 +47,8 @@ const orq = new OrqCore({
 });
 
 async function run() {
-  const res = await evalsDeleteV2ResourcesEvaluatorsId(orq, {
-    id: "<id>",
+  const res = await contactsCreate(orq, {
+    externalId: "<id>",
   });
 
   if (!res.ok) {
@@ -56,7 +57,8 @@ async function run() {
 
   const { value: result } = res;
 
-  
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -66,18 +68,17 @@ run();
 
 | Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.DeleteV2ResourcesEvaluatorsIdRequest](../../models/operations/deletev2resourcesevaluatorsidrequest.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `request`                                                                                                                                                                      | [operations.CreateContactRequestBody](../../models/operations/createcontactrequestbody.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
 | `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
 | `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
 | `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
 
 ### Response
 
-**Promise\<void\>**
+**Promise\<[operations.CreateContactResponseBody](../../models/operations/createcontactresponsebody.md)\>**
 
 ### Errors
 
-| Error Type                                       | Status Code                                      | Content Type                                     |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| errors.DeleteV2ResourcesEvaluatorsIdResponseBody | 404                                              | application/json                                 |
-| errors.APIError                                  | 4XX, 5XX                                         | \*/\*                                            |
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.APIError | 4XX, 5XX        | \*/\*           |

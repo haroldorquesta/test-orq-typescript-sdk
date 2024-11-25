@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 2e8e2787-9dc5-456e-b8ec-6b1fc6b2c02c
 management:
-  docChecksum: ec6475d6d464f36ee02644b320ce511f
+  docChecksum: dd83205a613ab9dbe716b7f3a44c51db
   docVersion: "2.0"
-  speakeasyVersion: 1.444.3
+  speakeasyVersion: 1.444.4
   generationVersion: 2.461.4
-  releaseVersion: 1.41.0-rc.15
-  configChecksum: a254ff91cab5717f6608355db701bf11
+  releaseVersion: 1.42.0-rc.6
+  configChecksum: a8741318d1d6264e2030938737ddf786
   repoURL: https://github.com/haroldorquesta/test-orq-typescript-sdk.git
   repoSubDirectory: packages/orq-rc
   installationURL: https://gitpkg.now.sh/haroldorquesta/test-orq-typescript-sdk/packages/orq-rc
@@ -25,7 +25,6 @@ features:
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.4
     groups: 2.81.2
-    ignores: 2.81.1
     inputOutputModels: 2.82.0
     methodArguments: 0.1.2
     nameOverrides: 2.81.2
@@ -77,7 +76,6 @@ generatedFiles:
   - docs/models/components/twotype.md
   - docs/models/components/type.md
   - docs/models/components/userid.md
-  - docs/models/errors/deletev2resourcesevaluatorsidresponsebody.md
   - docs/models/errors/honoapierror.md
   - docs/models/operations/bulkfileuploadfilespurpose.md
   - docs/models/operations/bulkfileuploadpurpose.md
@@ -85,17 +83,12 @@ generatedFiles:
   - docs/models/operations/choices.md
   - docs/models/operations/content.md
   - docs/models/operations/content2.md
+  - docs/models/operations/createcontactrequestbody.md
+  - docs/models/operations/createcontactresponsebody.md
   - docs/models/operations/createfeedbackrequestbody.md
   - docs/models/operations/createfeedbackresponsebody.md
   - docs/models/operations/createfeedbackvalue.md
   - docs/models/operations/data.md
-  - docs/models/operations/data1.md
-  - docs/models/operations/data2.md
-  - docs/models/operations/datafunction.md
-  - docs/models/operations/datametadata.md
-  - docs/models/operations/dataoutputtype.md
-  - docs/models/operations/datatype.md
-  - docs/models/operations/deletev2resourcesevaluatorsidrequest.md
   - docs/models/operations/deploymentcreatemetric21.md
   - docs/models/operations/deploymentcreatemetric22.md
   - docs/models/operations/deploymentcreatemetric2deploymentsmetricstype.md
@@ -208,10 +201,6 @@ generatedFiles:
   - docs/models/operations/fileuploadresponsebody.md
   - docs/models/operations/format.md
   - docs/models/operations/functiont.md
-  - docs/models/operations/getv2resourcesevaluatorstemplatesdata.md
-  - docs/models/operations/getv2resourcesevaluatorstemplatesdatatype.md
-  - docs/models/operations/getv2resourcesevaluatorstemplatesobject.md
-  - docs/models/operations/getv2resourcesevaluatorstemplatesresponsebody.md
   - docs/models/operations/imageurl.md
   - docs/models/operations/inputs.md
   - docs/models/operations/invokeoptions.md
@@ -230,7 +219,6 @@ generatedFiles:
   - docs/models/operations/modeltype.md
   - docs/models/operations/objectt.md
   - docs/models/operations/one.md
-  - docs/models/operations/outputtype.md
   - docs/models/operations/parameterst.md
   - docs/models/operations/performance.md
   - docs/models/operations/photorealversion.md
@@ -239,9 +227,6 @@ generatedFiles:
   - docs/models/operations/provider.md
   - docs/models/operations/purpose.md
   - docs/models/operations/quality.md
-  - docs/models/operations/remoteconfigsgetconfigrequestbody.md
-  - docs/models/operations/remoteconfigsgetconfigresponsebody.md
-  - docs/models/operations/remoteconfigsgetconfigtype.md
   - docs/models/operations/responsebody.md
   - docs/models/operations/responseformat.md
   - docs/models/operations/responseformat1.md
@@ -262,27 +247,23 @@ generatedFiles:
   - docs/models/operations/usage.md
   - docs/models/operations/userid.md
   - docs/models/operations/value.md
+  - docs/sdks/contacts/README.md
   - docs/sdks/deployments/README.md
-  - docs/sdks/evals/README.md
-  - docs/sdks/evaluators/README.md
   - docs/sdks/feedback/README.md
   - docs/sdks/files/README.md
   - docs/sdks/metrics/README.md
   - docs/sdks/orq/README.md
-  - docs/sdks/remoteconfig/README.md
   - jsr.json
   - package.json
   - src/core.ts
+  - src/funcs/contactsCreate.ts
   - src/funcs/deploymentsAll.ts
   - src/funcs/deploymentsGetConfig.ts
   - src/funcs/deploymentsInvoke.ts
   - src/funcs/deploymentsMetricsCreate.ts
-  - src/funcs/evalsDeleteV2ResourcesEvaluatorsId.ts
-  - src/funcs/evaluatorsGetV2ResourcesEvaluatorsTemplates.ts
   - src/funcs/feedbackCreate.ts
   - src/funcs/filesBulkUpload.ts
   - src/funcs/filesUpload.ts
-  - src/funcs/remoteconfigGetConfig.ts
   - src/hooks/hooks.ts
   - src/hooks/index.ts
   - src/hooks/types.ts
@@ -308,30 +289,25 @@ generatedFiles:
   - src/models/components/index.ts
   - src/models/components/security.ts
   - src/models/errors/apierror.ts
-  - src/models/errors/deletev2resourcesevaluatorsid.ts
   - src/models/errors/honoapierror.ts
   - src/models/errors/httpclienterrors.ts
   - src/models/errors/index.ts
   - src/models/errors/sdkvalidationerror.ts
   - src/models/operations/bulkfileupload.ts
+  - src/models/operations/createcontact.ts
   - src/models/operations/createfeedback.ts
-  - src/models/operations/deletev2resourcesevaluatorsid.ts
   - src/models/operations/deploymentcreatemetric.ts
   - src/models/operations/deploymentgetconfig.ts
   - src/models/operations/deploymentinvoke.ts
   - src/models/operations/deployments.ts
   - src/models/operations/fileupload.ts
-  - src/models/operations/getv2resourcesevaluatorstemplates.ts
   - src/models/operations/index.ts
-  - src/models/operations/remoteconfigsgetconfig.ts
+  - src/sdk/contacts.ts
   - src/sdk/deployments.ts
-  - src/sdk/evals.ts
-  - src/sdk/evaluators.ts
   - src/sdk/feedback.ts
   - src/sdk/files.ts
   - src/sdk/index.ts
   - src/sdk/metrics.ts
-  - src/sdk/remoteconfig.ts
   - src/sdk/sdk.ts
   - src/types/blobs.ts
   - src/types/constdatetime.ts

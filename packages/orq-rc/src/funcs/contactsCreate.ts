@@ -3,7 +3,9 @@
  */
 
 import { OrqCore } from "../core.js";
+import { encodeJSON } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -20,17 +22,18 @@ import * as operations from "../models/operations/index.js";
 import { Result } from "../types/fp.js";
 
 /**
- * Templates
+ * Update user information
  *
  * @remarks
- * List evaluators templates
+ * Update or add user information to workspace
  */
-export async function evaluatorsGetV2ResourcesEvaluatorsTemplates(
+export async function contactsCreate(
   client: OrqCore,
+  request: operations.CreateContactRequestBody,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.GetV2ResourcesEvaluatorsTemplatesResponseBody,
+    operations.CreateContactResponseBody,
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -40,9 +43,21 @@ export async function evaluatorsGetV2ResourcesEvaluatorsTemplates(
     | ConnectionError
   >
 > {
-  const path = pathToFunc("/v2/resources/evaluators/templates")();
+  const parsed = safeParse(
+    request,
+    (value) => operations.CreateContactRequestBody$outboundSchema.parse(value),
+    "Input validation failed",
+  );
+  if (!parsed.ok) {
+    return parsed;
+  }
+  const payload = parsed.value;
+  const body = encodeJSON("body", payload, { explode: true });
+
+  const path = pathToFunc("/v2/contacts")();
 
   const headers = new Headers({
+    "Content-Type": "application/json",
     Accept: "application/json",
   });
 
@@ -51,7 +66,7 @@ export async function evaluatorsGetV2ResourcesEvaluatorsTemplates(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "get_/v2/resources/evaluators/templates",
+    operationID: "CreateContact",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -65,9 +80,10 @@ export async function evaluatorsGetV2ResourcesEvaluatorsTemplates(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "GET",
+    method: "POST",
     path: path,
     headers: headers,
+    body: body,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || 600000,
   }, options);
   if (!requestRes.ok) {
@@ -87,7 +103,7 @@ export async function evaluatorsGetV2ResourcesEvaluatorsTemplates(
   const response = doResult.value;
 
   const [result] = await M.match<
-    operations.GetV2ResourcesEvaluatorsTemplatesResponseBody,
+    operations.CreateContactResponseBody,
     | APIError
     | SDKValidationError
     | UnexpectedClientError
@@ -96,10 +112,7 @@ export async function evaluatorsGetV2ResourcesEvaluatorsTemplates(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(
-      200,
-      operations.GetV2ResourcesEvaluatorsTemplatesResponseBody$inboundSchema,
-    ),
+    M.json(200, operations.CreateContactResponseBody$inboundSchema),
     M.fail(["4XX", "5XX"]),
   )(response);
   if (!result.ok) {
