@@ -6,7 +6,7 @@
 import { DeploymentCreateMetric2ImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: DeploymentCreateMetric2ImageUrl = {
-  url: "https://next-cassava.com",
+  url: "https://far-off-gazebo.name",
 };
 ```
 

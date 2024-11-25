@@ -6,7 +6,7 @@
 import { DeploymentInvokeDeploymentsChoices } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: DeploymentInvokeDeploymentsChoices = {
-  index: 5566.65,
+  index: 4973.91,
 };
 ```
 

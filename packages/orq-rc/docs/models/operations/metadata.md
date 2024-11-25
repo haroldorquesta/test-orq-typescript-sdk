@@ -9,9 +9,9 @@ import { Metadata } from "orq-poc-typescript-multi-env-version/models/operations
 
 let value: Metadata = {
   fileName: "example.file",
-  pageNumber: 7710.97,
+  pageNumber: 2453.67,
   fileType: "image",
-  searchScore: 9196.05,
+  searchScore: 5573.69,
 };
 ```
 

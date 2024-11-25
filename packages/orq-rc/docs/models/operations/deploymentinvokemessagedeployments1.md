@@ -6,7 +6,7 @@
 import { DeploymentInvokeMessageDeployments1 } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: DeploymentInvokeMessageDeployments1 = {
-  role: "tool",
+  role: "user",
   toolCalls: [
     {
       type: "function",

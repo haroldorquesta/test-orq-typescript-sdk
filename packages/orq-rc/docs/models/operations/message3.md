@@ -6,8 +6,8 @@
 import { Message3 } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Message3 = {
-  role: "exception",
-  url: "https://intrepid-comparison.com/",
+  role: "expected_output",
+  url: "https://untimely-sand.biz",
 };
 ```
 
