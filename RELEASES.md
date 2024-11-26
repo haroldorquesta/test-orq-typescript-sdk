@@ -19,3 +19,13 @@ Based on:
 - [typescript v1.43.1] .
 ### Releases
 - [NPM v1.43.1] https://www.npmjs.com/package/orq-poc-typescript-multi-env-version/v/1.43.1 - .
+
+## 2024-11-26 10:17:54
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.446.1 (2.462.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v1.43.2] .
+### Releases
+- [NPM v1.43.2] https://www.npmjs.com/package/orq-poc-typescript-multi-env-version/v/1.43.2 - .

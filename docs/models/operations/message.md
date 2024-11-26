@@ -24,7 +24,7 @@ const value: operations.Message1 = {
 
 ```typescript
 const value: operations.Message2 = {
-  role: "prompt",
+  role: "user",
   content: "<value>",
 };
 ```
@@ -33,8 +33,8 @@ const value: operations.Message2 = {
 
 ```typescript
 const value: operations.Three = {
-  role: "exception",
-  url: "https://rotating-premeditation.biz",
+  role: "assistant",
+  url: "https://animated-advertisement.info",
 };
 ```
 

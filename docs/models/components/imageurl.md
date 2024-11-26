@@ -6,7 +6,7 @@
 import { ImageUrl } from "orq-poc-typescript-multi-env-version/models/components";
 
 let value: ImageUrl = {
-  url: "https://tinted-importance.org",
+  url: "https://authorized-transom.info",
 };
 ```
 

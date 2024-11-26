@@ -6,13 +6,11 @@
 import { DeploymentCreateMetricMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: DeploymentCreateMetricMessages = {
-  role: "tool",
+  role: "user",
   content: [
     {
-      type: "image_url",
-      imageUrl: {
-        url: "https://international-larva.name/",
-      },
+      type: "text",
+      text: "<value>",
     },
   ],
 };

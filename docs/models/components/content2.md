@@ -18,7 +18,7 @@ const value: components.Two1 = {
 const value: components.Deployments22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://lanky-ferret.biz",
+    url: "https://worldly-apricot.com/",
   },
 };
 ```

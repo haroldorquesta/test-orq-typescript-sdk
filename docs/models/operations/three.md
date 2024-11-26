@@ -7,7 +7,7 @@ import { Three } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Three = {
   role: "user",
-  url: "https://imaginative-vanadyl.biz/",
+  url: "https://aggressive-convection.info/",
 };
 ```
 
