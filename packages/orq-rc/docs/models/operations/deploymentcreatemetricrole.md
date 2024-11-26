@@ -7,7 +7,7 @@ The role of the prompt message
 ```typescript
 import { DeploymentCreateMetricRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: DeploymentCreateMetricRole = "correction";
+let value: DeploymentCreateMetricRole = "exception";
 ```
 
 ## Values

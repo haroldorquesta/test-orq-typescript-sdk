@@ -9,9 +9,9 @@ import { DeploymentInvokeMetadata } from "orq-poc-typescript-multi-env-version/m
 
 let value: DeploymentInvokeMetadata = {
   fileName: "example.file",
-  pageNumber: 6394.73,
-  fileType: "audio",
-  searchScore: 1369.00,
+  pageNumber: 2453.67,
+  fileType: "image",
+  searchScore: 5573.69,
 };
 ```
 

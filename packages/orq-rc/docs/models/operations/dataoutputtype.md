@@ -5,7 +5,7 @@
 ```typescript
 import { DataOutputType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: DataOutputType = "number";
+let value: DataOutputType = "enum";
 ```
 
 ## Values

@@ -6,7 +6,7 @@
 import { Messages } from "orq-poc-typescript-multi-env-version/models/components";
 
 let value: Messages = {
-  role: "prompt",
+  role: "correction",
   content: "<value>",
 };
 ```

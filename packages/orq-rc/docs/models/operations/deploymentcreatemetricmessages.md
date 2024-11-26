@@ -9,10 +9,8 @@ let value: DeploymentCreateMetricMessages = {
   role: "tool",
   content: [
     {
-      type: "image_url",
-      imageUrl: {
-        url: "https://international-larva.name/",
-      },
+      type: "text",
+      text: "<value>",
     },
   ],
 };

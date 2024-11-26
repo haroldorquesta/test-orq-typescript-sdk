@@ -7,8 +7,8 @@ import { Data1 } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Data1 = {
   id: "<id>",
-  displayName: "Shannon.Hoeger74",
-  description: "print known instead improbable",
+  displayName: "Andre.Tillman",
+  description: "psst wide-eyed yowza near digestive traffic ouch substantiate",
   prompt: "<value>",
   outputType: "string",
   type: "llm_eval",

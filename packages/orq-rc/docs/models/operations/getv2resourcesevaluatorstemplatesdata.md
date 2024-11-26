@@ -8,10 +8,11 @@
 ```typescript
 const value: operations.Data1 = {
   id: "<id>",
-  displayName: "Donna.Jacobson50",
-  description: "atop per about holster minority",
+  displayName: "Easter.Quitzon",
+  description:
+    "as readily including against within wiggly huzzah after what gah",
   prompt: "<value>",
-  outputType: "string",
+  outputType: "number",
   type: "llm_eval",
 };
 ```
@@ -21,11 +22,10 @@ const value: operations.Data1 = {
 ```typescript
 const value: operations.Data2 = {
   id: "<id>",
-  displayName: "Margarett_Abernathy",
-  description:
-    "bus questioningly topsail diligently thigh arraign into defenseless geez burgeon",
-  function: "contains",
-  outputType: "string",
+  displayName: "Wilfrid_Harber",
+  description: "vision um sneaky never hmph though",
+  function: "moderations_google",
+  outputType: "boolean",
   type: "function_eval",
 };
 ```

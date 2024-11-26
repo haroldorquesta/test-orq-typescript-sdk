@@ -7,10 +7,9 @@ import { Data2 } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Data2 = {
   id: "<id>",
-  displayName: "Landen57",
-  description:
-    "disk finally helplessly hence why baseboard psst till with furthermore",
-  function: "length_between",
+  displayName: "Jacinto_Feest3",
+  description: "whoa once hence except thoroughly boo",
+  function: "regex",
   outputType: "boolean",
   type: "function_eval",
 };
