@@ -53,7 +53,7 @@ export async function promptsCreateVersion(
   const body = encodeJSON("body", payload.RequestBody, { explode: true });
 
   const pathParams = {
-    id: encodeSimple("id", payload.prompt_id, {
+    id: encodeSimple("id", payload.id, {
       explode: false,
       charEncoding: "percent",
     }),

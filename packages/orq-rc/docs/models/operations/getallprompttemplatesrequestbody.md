@@ -8,11 +8,12 @@ import { GetAllPromptTemplatesRequestBody } from "orq-poc-typescript-multi-env-v
 let value: GetAllPromptTemplatesRequestBody = {
   filters: [
     {
-      type: "search",
-      value: "<value>",
-      searchPaths: [
+      type: "string_array",
+      operator: "in",
+      values: [
         "<value>",
       ],
+      path: "/boot/defaults",
     },
   ],
 };

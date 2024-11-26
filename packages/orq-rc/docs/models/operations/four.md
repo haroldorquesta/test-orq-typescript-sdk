@@ -11,7 +11,7 @@ let value: Four = {
   values: [
     "<value>",
   ],
-  path: "/etc/mail",
+  path: "/Applications",
 };
 ```
 

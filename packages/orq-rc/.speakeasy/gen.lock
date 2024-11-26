@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 2e8e2787-9dc5-456e-b8ec-6b1fc6b2c02c
 management:
-  docChecksum: 7d3768ea80519bbb7f1106e2da990778
+  docChecksum: 0ecd56c30ddb07a00266ae405cd39be1
   docVersion: "2.0"
   speakeasyVersion: 1.446.1
   generationVersion: 2.462.1
-  releaseVersion: 1.43.1-rc.13
-  configChecksum: fc14e2a460a61ee8767c3447f3f40828
+  releaseVersion: 1.43.1-rc.14
+  configChecksum: 05b009860799e96c0ae5bc2baabd9fbf
   repoURL: https://github.com/haroldorquesta/test-orq-typescript-sdk.git
   repoSubDirectory: packages/orq-rc
   installationURL: https://gitpkg.now.sh/haroldorquesta/test-orq-typescript-sdk/packages/orq-rc
@@ -78,6 +78,9 @@ generatedFiles:
   - docs/models/components/userid.md
   - docs/models/errors/honoapierror.md
   - docs/models/errors/updatepromptresponsebody.md
+  - docs/models/operations/bulkfileuploadfilespurpose.md
+  - docs/models/operations/bulkfileuploadpurpose.md
+  - docs/models/operations/bulkfileuploadrequestbody.md
   - docs/models/operations/choices.md
   - docs/models/operations/content.md
   - docs/models/operations/content2.md
@@ -309,6 +312,7 @@ generatedFiles:
   - docs/models/operations/duplicatepromptrequest.md
   - docs/models/operations/encodingformat.md
   - docs/models/operations/feedback.md
+  - docs/models/operations/files.md
   - docs/models/operations/filet.md
   - docs/models/operations/fileuploadpurpose.md
   - docs/models/operations/fileuploadrequestbody.md
@@ -911,6 +915,7 @@ generatedFiles:
   - docs/models/operations/remoteconfigsgetconfigrequestbody.md
   - docs/models/operations/remoteconfigsgetconfigresponsebody.md
   - docs/models/operations/remoteconfigsgetconfigtype.md
+  - docs/models/operations/responsebody.md
   - docs/models/operations/responsebody1.md
   - docs/models/operations/responsebody2.md
   - docs/models/operations/responsebody3.md
@@ -1156,6 +1161,7 @@ generatedFiles:
   - src/funcs/deploymentsInvoke.ts
   - src/funcs/deploymentsMetricsCreate.ts
   - src/funcs/feedbackCreate.ts
+  - src/funcs/filesBulkUpload.ts
   - src/funcs/filesUpload.ts
   - src/funcs/promptSnippetsFindOne.ts
   - src/funcs/promptTemplatesGetAll.ts
@@ -1197,6 +1203,7 @@ generatedFiles:
   - src/models/errors/index.ts
   - src/models/errors/sdkvalidationerror.ts
   - src/models/errors/updateprompt.ts
+  - src/models/operations/bulkfileupload.ts
   - src/models/operations/createcontact.ts
   - src/models/operations/createfeedback.ts
   - src/models/operations/createprompt.ts

@@ -18,7 +18,7 @@ const value: operations.GetAllPromptTemplates2PromptTemplatesResponse1 = {
 const value: operations.GetAllPromptTemplates2PromptTemplatesResponse2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://vain-archaeology.biz",
+    url: "https://entire-follower.net/",
   },
 };
 ```

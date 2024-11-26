@@ -133,6 +133,7 @@ run();
 ### [files](docs/sdks/files/README.md)
 
 * [upload](docs/sdks/files/README.md#upload) - Upload file
+* [bulkUpload](docs/sdks/files/README.md#bulkupload) - Bulk upload file
 
 
 ### [prompt](docs/sdks/prompt/README.md)
@@ -185,6 +186,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`deploymentsInvoke`](docs/sdks/deployments/README.md#invoke) - Invoke
 - [`deploymentsMetricsCreate`](docs/sdks/metrics/README.md#create) - Add metrics
 - [`feedbackCreate`](docs/sdks/feedback/README.md#create) - Submit feedback
+- [`filesBulkUpload`](docs/sdks/files/README.md#bulkupload) - Bulk upload file
 - [`filesUpload`](docs/sdks/files/README.md#upload) - Upload file
 - [`promptsCreate`](docs/sdks/prompts/README.md#create) - Create a new prompt
 - [`promptsCreateVersion`](docs/sdks/prompts/README.md#createversion) - Create a new prompt version
@@ -415,7 +417,7 @@ The default server can also be overridden globally by passing a URL to the `serv
 import { Orq } from "orq-poc-typescript-multi-env-version";
 
 const orq = new Orq({
-  serverURL: "https://my.dev.orq.ai",
+  serverURL: "https://my.staging.orq.ai",
   apiKey: process.env["ORQ_API_KEY"] ?? "",
 });
 

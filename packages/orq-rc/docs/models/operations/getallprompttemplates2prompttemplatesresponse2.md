@@ -10,7 +10,7 @@ import { GetAllPromptTemplates2PromptTemplatesResponse2 } from "orq-poc-typescri
 let value: GetAllPromptTemplates2PromptTemplatesResponse2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://sarcastic-hawk.info/",
+    url: "https://haunting-solvency.org/",
   },
 };
 ```

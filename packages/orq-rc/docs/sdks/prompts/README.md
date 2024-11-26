@@ -100,7 +100,7 @@ const orq = new Orq({
 
 async function run() {
   const result = await orq.prompts.createVersion({
-    promptId: "<id>",
+    id: "<id>",
   });
 
   // Handle the result
@@ -126,7 +126,7 @@ const orq = new OrqCore({
 
 async function run() {
   const res = await promptsCreateVersion(orq, {
-    promptId: "<id>",
+    id: "<id>",
   });
 
   if (!res.ok) {
@@ -324,7 +324,7 @@ const orq = new Orq({
 
 async function run() {
   const result = await orq.prompts.update({
-    promptId: "<id>",
+    id: "<id>",
   });
 
   // Handle the result
@@ -350,7 +350,7 @@ const orq = new OrqCore({
 
 async function run() {
   const res = await promptsUpdate(orq, {
-    promptId: "<id>",
+    id: "<id>",
   });
 
   if (!res.ok) {

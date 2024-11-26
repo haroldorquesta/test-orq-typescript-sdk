@@ -7,9 +7,9 @@ import { Filters3 } from "orq-poc-typescript-multi-env-version/models/operations
 
 let value: Filters3 = {
   type: "string",
-  operator: "contains",
+  operator: "equals",
   value: "<value>",
-  path: "/System",
+  path: "/var/tmp",
 };
 ```
 

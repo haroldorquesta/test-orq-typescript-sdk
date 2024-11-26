@@ -7,7 +7,7 @@ The type of the model
 ```typescript
 import { GetAllPromptTemplatesItemsPromptTemplatesModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptTemplatesItemsPromptTemplatesModelType = "rerank";
+let value: GetAllPromptTemplatesItemsPromptTemplatesModelType = "stt";
 ```
 
 ## Values

@@ -6,7 +6,6 @@
 import { CreatePromptVersionRequestBody } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: CreatePromptVersionRequestBody = {
-  id: "<id>",
   displayName: "Emanuel14",
   promptConfig: {
     messages: [
@@ -26,7 +25,6 @@ let value: CreatePromptVersionRequestBody = {
 
 | Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `id`                                                                                                     | *string*                                                                                                 | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
 | `displayName`                                                                                            | *string*                                                                                                 | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
 | `description`                                                                                            | *string*                                                                                                 | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
 | `promptConfig`                                                                                           | [operations.CreatePromptVersionPromptConfig](../../models/operations/createpromptversionpromptconfig.md) | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
