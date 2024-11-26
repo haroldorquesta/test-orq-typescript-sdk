@@ -10,7 +10,7 @@ let value:
     {
       messages: [
         {
-          role: "assistant",
+          role: "exception",
           content: "<value>",
         },
       ],

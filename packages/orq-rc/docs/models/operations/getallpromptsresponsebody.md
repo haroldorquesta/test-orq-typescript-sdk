@@ -8,28 +8,23 @@ Prompts retrieved.
 import { GetAllPromptsResponseBody } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsResponseBody = {
-  count: 6980.47,
-  page: 4863.54,
-  limit: 9408.65,
-  totalPages: 683.75,
+  count: 5480.83,
+  page: 5592.32,
+  limit: 6233.73,
+  totalPages: 2303.52,
   items: [
     {
       id: "<id>",
       owner: "<value>",
-      domainId: "332b3336-f541-453c-a124-4dc9459b68ea",
-      createdById: "1239105b-bcb9-4739-9a19-18211e94182c",
-      displayName: "Mollie56",
-      updatedById: "994e8682-448b-4428-ad67-4c12fa8cf3c5",
+      domainId: "047bc6cb-a248-4d6f-8a58-6e031c3b8df2",
+      createdById: "a0d66954-3bc9-43b2-ae77-39f9a4538297",
+      displayName: "Antone50",
+      updatedById: "b54a157c-5cc0-43a7-905a-f3258a530213",
       promptConfig: {
         messages: [
           {
-            role: "prompt",
-            content: [
-              {
-                type: "text",
-                text: "<value>",
-              },
-            ],
+            role: "system",
+            content: "<value>",
           },
         ],
       },
@@ -37,19 +32,14 @@ let value: GetAllPromptsResponseBody = {
       versions: [
         {
           id: "<id>",
-          createdById: "0b9bc75c-69e2-404c-a9f8-4cada7404063",
-          displayName: "Daisy75",
-          updatedById: "187c9407-ee2d-401f-9617-0083952f3044",
+          createdById: "296ac16f-077d-44c0-875c-61b057b51d0d",
+          displayName: "Brain_Cormier81",
+          updatedById: "19b80cbb-31f7-4b18-b815-ebbe4c198636",
           promptConfig: {
             messages: [
               {
-                role: "user",
-                content: [
-                  {
-                    type: "text",
-                    text: "<value>",
-                  },
-                ],
+                role: "prompt",
+                content: "<value>",
               },
             ],
           },
@@ -58,7 +48,8 @@ let value: GetAllPromptsResponseBody = {
           timestamp: "<value>",
         },
       ],
-      type: "prompt",
+      key: "<key>",
+      type: "snippet",
     },
   ],
 };

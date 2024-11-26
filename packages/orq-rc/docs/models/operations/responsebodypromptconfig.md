@@ -9,14 +9,7 @@ let value: ResponseBodyPromptConfig = {
   messages: [
     {
       role: "expected_output",
-      content: [
-        {
-          type: "image_url",
-          imageUrl: {
-            url: "https://glaring-obesity.info",
-          },
-        },
-      ],
+      content: "<value>",
     },
   ],
 };

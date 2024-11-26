@@ -8,8 +8,15 @@ import { FindOnePromptSnippetResponseBodyPromptConfig } from "orq-poc-typescript
 let value: FindOnePromptSnippetResponseBodyPromptConfig = {
   messages: [
     {
-      role: "exception",
-      content: "<value>",
+      role: "expected_output",
+      content: [
+        {
+          type: "image_url",
+          imageUrl: {
+            url: "https://glaring-obesity.info",
+          },
+        },
+      ],
     },
   ],
 };

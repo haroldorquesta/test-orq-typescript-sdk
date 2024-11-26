@@ -460,7 +460,7 @@ export type DeploymentGetConfigResponseFormatDeploymentsType = ClosedEnum<
   typeof DeploymentGetConfigResponseFormatDeploymentsType
 >;
 
-export type ResponseFormatJsonSchema = {
+export type DeploymentGetConfigResponseFormatJsonSchema = {
   name: string;
   strict: boolean;
   schema: { [k: string]: any };
@@ -468,7 +468,7 @@ export type ResponseFormatJsonSchema = {
 
 export type DeploymentGetConfigResponseFormat1 = {
   type: DeploymentGetConfigResponseFormatDeploymentsType;
-  jsonSchema: ResponseFormatJsonSchema;
+  jsonSchema: DeploymentGetConfigResponseFormatJsonSchema;
 };
 
 /**
@@ -2832,62 +2832,75 @@ export namespace DeploymentGetConfigResponseFormatDeploymentsType$ {
 }
 
 /** @internal */
-export const ResponseFormatJsonSchema$inboundSchema: z.ZodType<
-  ResponseFormatJsonSchema,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  strict: z.boolean(),
-  schema: z.record(z.any()),
-});
+export const DeploymentGetConfigResponseFormatJsonSchema$inboundSchema:
+  z.ZodType<
+    DeploymentGetConfigResponseFormatJsonSchema,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    name: z.string(),
+    strict: z.boolean(),
+    schema: z.record(z.any()),
+  });
 
 /** @internal */
-export type ResponseFormatJsonSchema$Outbound = {
+export type DeploymentGetConfigResponseFormatJsonSchema$Outbound = {
   name: string;
   strict: boolean;
   schema: { [k: string]: any };
 };
 
 /** @internal */
-export const ResponseFormatJsonSchema$outboundSchema: z.ZodType<
-  ResponseFormatJsonSchema$Outbound,
-  z.ZodTypeDef,
-  ResponseFormatJsonSchema
-> = z.object({
-  name: z.string(),
-  strict: z.boolean(),
-  schema: z.record(z.any()),
-});
+export const DeploymentGetConfigResponseFormatJsonSchema$outboundSchema:
+  z.ZodType<
+    DeploymentGetConfigResponseFormatJsonSchema$Outbound,
+    z.ZodTypeDef,
+    DeploymentGetConfigResponseFormatJsonSchema
+  > = z.object({
+    name: z.string(),
+    strict: z.boolean(),
+    schema: z.record(z.any()),
+  });
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ResponseFormatJsonSchema$ {
-  /** @deprecated use `ResponseFormatJsonSchema$inboundSchema` instead. */
-  export const inboundSchema = ResponseFormatJsonSchema$inboundSchema;
-  /** @deprecated use `ResponseFormatJsonSchema$outboundSchema` instead. */
-  export const outboundSchema = ResponseFormatJsonSchema$outboundSchema;
-  /** @deprecated use `ResponseFormatJsonSchema$Outbound` instead. */
-  export type Outbound = ResponseFormatJsonSchema$Outbound;
+export namespace DeploymentGetConfigResponseFormatJsonSchema$ {
+  /** @deprecated use `DeploymentGetConfigResponseFormatJsonSchema$inboundSchema` instead. */
+  export const inboundSchema =
+    DeploymentGetConfigResponseFormatJsonSchema$inboundSchema;
+  /** @deprecated use `DeploymentGetConfigResponseFormatJsonSchema$outboundSchema` instead. */
+  export const outboundSchema =
+    DeploymentGetConfigResponseFormatJsonSchema$outboundSchema;
+  /** @deprecated use `DeploymentGetConfigResponseFormatJsonSchema$Outbound` instead. */
+  export type Outbound = DeploymentGetConfigResponseFormatJsonSchema$Outbound;
 }
 
-export function responseFormatJsonSchemaToJSON(
-  responseFormatJsonSchema: ResponseFormatJsonSchema,
+export function deploymentGetConfigResponseFormatJsonSchemaToJSON(
+  deploymentGetConfigResponseFormatJsonSchema:
+    DeploymentGetConfigResponseFormatJsonSchema,
 ): string {
   return JSON.stringify(
-    ResponseFormatJsonSchema$outboundSchema.parse(responseFormatJsonSchema),
+    DeploymentGetConfigResponseFormatJsonSchema$outboundSchema.parse(
+      deploymentGetConfigResponseFormatJsonSchema,
+    ),
   );
 }
 
-export function responseFormatJsonSchemaFromJSON(
+export function deploymentGetConfigResponseFormatJsonSchemaFromJSON(
   jsonString: string,
-): SafeParseResult<ResponseFormatJsonSchema, SDKValidationError> {
+): SafeParseResult<
+  DeploymentGetConfigResponseFormatJsonSchema,
+  SDKValidationError
+> {
   return safeParse(
     jsonString,
-    (x) => ResponseFormatJsonSchema$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseFormatJsonSchema' from JSON`,
+    (x) =>
+      DeploymentGetConfigResponseFormatJsonSchema$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'DeploymentGetConfigResponseFormatJsonSchema' from JSON`,
   );
 }
 
@@ -2898,7 +2911,9 @@ export const DeploymentGetConfigResponseFormat1$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   type: DeploymentGetConfigResponseFormatDeploymentsType$inboundSchema,
-  json_schema: z.lazy(() => ResponseFormatJsonSchema$inboundSchema),
+  json_schema: z.lazy(() =>
+    DeploymentGetConfigResponseFormatJsonSchema$inboundSchema
+  ),
 }).transform((v) => {
   return remap$(v, {
     "json_schema": "jsonSchema",
@@ -2908,7 +2923,7 @@ export const DeploymentGetConfigResponseFormat1$inboundSchema: z.ZodType<
 /** @internal */
 export type DeploymentGetConfigResponseFormat1$Outbound = {
   type: string;
-  json_schema: ResponseFormatJsonSchema$Outbound;
+  json_schema: DeploymentGetConfigResponseFormatJsonSchema$Outbound;
 };
 
 /** @internal */
@@ -2918,7 +2933,9 @@ export const DeploymentGetConfigResponseFormat1$outboundSchema: z.ZodType<
   DeploymentGetConfigResponseFormat1
 > = z.object({
   type: DeploymentGetConfigResponseFormatDeploymentsType$outboundSchema,
-  jsonSchema: z.lazy(() => ResponseFormatJsonSchema$outboundSchema),
+  jsonSchema: z.lazy(() =>
+    DeploymentGetConfigResponseFormatJsonSchema$outboundSchema
+  ),
 }).transform((v) => {
   return remap$(v, {
     jsonSchema: "json_schema",

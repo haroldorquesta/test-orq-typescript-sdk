@@ -18,10 +18,8 @@ const value:
   operations.GetAllPromptsContentPromptsResponse200ApplicationJSONResponseBody2[] =
     [
       {
-        type: "image_url",
-        imageUrl: {
-          url: "https://serene-independence.info",
-        },
+        type: "text",
+        text: "<value>",
       },
     ];
 ```

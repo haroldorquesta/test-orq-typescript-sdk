@@ -18,7 +18,7 @@ const value: operations.GetAllPromptsContentPrompts2[] = [
   {
     type: "image_url",
     imageUrl: {
-      url: "https://possible-kinase.net/",
+      url: "https://common-advertisement.info/",
     },
   },
 ];

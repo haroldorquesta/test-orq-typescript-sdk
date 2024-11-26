@@ -10,15 +10,22 @@ import { GetAllPromptsItems2 } from "orq-poc-typescript-multi-env-version/models
 let value: GetAllPromptsItems2 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "336156de-4492-4506-b18a-f33fd9d3dd38",
-  createdById: "aa84f74b-9543-41a8-9300-b3402d3f24d6",
-  displayName: "Matilda8",
-  updatedById: "f79a4a76-eced-409b-8a46-0189377029fa",
+  domainId: "0841e394-9ab4-40df-ae1c-7a98a992dcfc",
+  createdById: "ea429bd4-e9bc-4e46-9ed6-7b0538c2f7c5",
+  displayName: "Violette25",
+  updatedById: "ca1c22d0-1e4c-4a1c-a3b6-8f44459ce0a9",
   promptConfig: {
     messages: [
       {
         role: "correction",
-        content: "<value>",
+        content: [
+          {
+            type: "image_url",
+            imageUrl: {
+              url: "https://well-made-subsidy.biz/",
+            },
+          },
+        ],
       },
     ],
   },
@@ -26,14 +33,19 @@ let value: GetAllPromptsItems2 = {
   versions: [
     {
       id: "<id>",
-      createdById: "19365a61-38c0-4919-8d37-c22ebbd878b6",
-      displayName: "Brice12",
-      updatedById: "43de5a2c-e5ae-40d9-968d-b87e31ab9449",
+      createdById: "1cf2a00c-d57c-4d4c-937b-a8a04313de87",
+      displayName: "Veronica.Emmerich",
+      updatedById: "63edb7ef-e4d5-41bc-8f74-169725e78760",
       promptConfig: {
         messages: [
           {
             role: "exception",
-            content: "<value>",
+            content: [
+              {
+                type: "text",
+                text: "<value>",
+              },
+            ],
           },
         ],
       },

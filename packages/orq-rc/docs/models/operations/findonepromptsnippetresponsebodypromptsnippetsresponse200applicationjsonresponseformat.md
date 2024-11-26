@@ -11,11 +11,11 @@ Important: when using JSON mode, you must also instruct the model to produce JSO
 
 ## Supported Types
 
-### `operations.FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1`
+### `operations.FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1`
 
 ```typescript
 const value:
-  operations.FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1 =
+  operations.FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1 =
     {
       type: "json_schema",
       jsonSchema: {
@@ -28,11 +28,11 @@ const value:
     };
 ```
 
-### `operations.FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2`
+### `operations.FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2`
 
 ```typescript
 const value:
-  operations.FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2 =
+  operations.FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2 =
     {
       type: "json_object",
     };

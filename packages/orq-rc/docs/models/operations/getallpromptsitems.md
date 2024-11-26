@@ -9,15 +9,22 @@
 const value: operations.GetAllPromptsItems1 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "a3bc8d38-ebc3-495a-98a9-bc0f62ec6936",
-  createdById: "c6cc6780-3dc1-4a08-92d9-1aeb1a9ac453",
-  displayName: "Halie.Flatley55",
-  updatedById: "5d98f6e9-65e9-4483-a32b-c56c0548e0d8",
+  domainId: "3e05b961-2b75-456a-b912-10cd6fdd5fb5",
+  createdById: "0981d467-d995-4474-857d-ed8b57f527a2",
+  displayName: "Ellie.Padberg",
+  updatedById: "8c03f714-09f9-4953-b8e0-969d736216a4",
   promptConfig: {
     messages: [
       {
-        role: "expected_output",
-        content: "<value>",
+        role: "prompt",
+        content: [
+          {
+            type: "image_url",
+            imageUrl: {
+              url: "https://stylish-tomography.com/",
+            },
+          },
+        ],
       },
     ],
   },
@@ -25,13 +32,13 @@ const value: operations.GetAllPromptsItems1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "4379b06e-7d14-4b97-aace-7a6e76f05d75",
-      displayName: "Gunner92",
-      updatedById: "1baa04b7-08de-4e87-93dc-d31bee8a148e",
+      createdById: "9a3da3f3-a7b1-4f33-b857-03ce3c00622a",
+      displayName: "Orpha_Swift",
+      updatedById: "0218a9da-d22e-453e-afa6-b025d4063065",
       promptConfig: {
         messages: [
           {
-            role: "tool",
+            role: "system",
             content: "<value>",
           },
         ],
@@ -50,15 +57,15 @@ const value: operations.GetAllPromptsItems1 = {
 ```typescript
 const value: operations.GetAllPromptsItems2 = {
   id: "<id>",
-  owner: "vendor",
-  domainId: "725823ed-14a4-40b3-8542-22fbf95277c8",
-  createdById: "d2805a28-8e71-424c-8491-391b74da1a3e",
-  displayName: "Lexie.Weissnat58",
-  updatedById: "79c8bd45-08fb-4f7b-826a-705a67d49dc3",
+  owner: "<value>",
+  domainId: "ae2d90c8-c6a3-4358-abad-6e12a42e1fdd",
+  createdById: "3c097c06-726e-4748-804c-a093fc2672bd",
+  displayName: "Brent.Wyman17",
+  updatedById: "ec98c5ab-92fc-479c-a7bc-739880c86d34",
   promptConfig: {
     messages: [
       {
-        role: "user",
+        role: "exception",
         content: "<value>",
       },
     ],
@@ -67,9 +74,9 @@ const value: operations.GetAllPromptsItems2 = {
   versions: [
     {
       id: "<id>",
-      createdById: "048a639c-bd48-475a-b2c0-696a0d14401d",
-      displayName: "Myrna.Blanda0",
-      updatedById: "03003c0f-adac-444a-9982-386f86f145dc",
+      createdById: "47ccce0f-63fd-4e8b-888f-b96214b321d3",
+      displayName: "Giovanni_McGlynn",
+      updatedById: "bac9ceb5-4aa0-4b30-a2a8-d1da3bb14a6c",
       promptConfig: {
         messages: [
           {
@@ -93,16 +100,23 @@ const value: operations.GetAllPromptsItems2 = {
 ```typescript
 const value: operations.GetAllPromptsItems3 = {
   id: "<id>",
-  owner: "<value>",
-  domainId: "a4147561-0e14-4ad5-8a70-60fc53655e6b",
-  createdById: "879ad360-9e6f-4938-baaa-333b7ac97682",
-  displayName: "Tara17",
-  updatedById: "a6e9fc5b-b5e2-45a7-9af1-cd4476837dea",
+  owner: "vendor",
+  domainId: "78443533-f7a5-4979-9bac-21573cbeb1a6",
+  createdById: "9489805c-5853-43ba-8e6a-77d7e911f696",
+  displayName: "Brain_Moen32",
+  updatedById: "56cb33aa-8140-4cce-a1ee-fc44baa5849c",
   promptConfig: {
     messages: [
       {
-        role: "correction",
-        content: "<value>",
+        role: "exception",
+        content: [
+          {
+            type: "image_url",
+            imageUrl: {
+              url: "https://elegant-jellyfish.info/",
+            },
+          },
+        ],
       },
     ],
   },
@@ -110,13 +124,13 @@ const value: operations.GetAllPromptsItems3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "32f183d3-b2fa-46f8-a62b-9333704b9db0",
-      displayName: "Ibrahim_Zemlak",
-      updatedById: "1b5220cb-746e-4103-8801-b7fe46e95cea",
+      createdById: "0969e513-4d8f-4414-bfbe-94f364a6ff1e",
+      displayName: "Mertie83",
+      updatedById: "5284c06c-1a32-440a-85f1-e71d1a379e46",
       promptConfig: {
         messages: [
           {
-            role: "correction",
+            role: "user",
             content: "<value>",
           },
         ],

@@ -6,13 +6,11 @@
 import { GetAllPromptsItemsPromptsMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsItemsPromptsMessages = {
-  role: "correction",
+  role: "prompt",
   content: [
     {
-      type: "image_url",
-      imageUrl: {
-        url: "https://knotty-alb.biz",
-      },
+      type: "text",
+      text: "<value>",
     },
   ],
 };

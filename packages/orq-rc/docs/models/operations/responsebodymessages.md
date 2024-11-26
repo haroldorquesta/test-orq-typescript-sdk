@@ -6,8 +6,15 @@
 import { ResponseBodyMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: ResponseBodyMessages = {
-  role: "user",
-  content: "<value>",
+  role: "prompt",
+  content: [
+    {
+      type: "image_url",
+      imageUrl: {
+        url: "https://prime-self-confidence.org",
+      },
+    },
+  ],
 };
 ```
 

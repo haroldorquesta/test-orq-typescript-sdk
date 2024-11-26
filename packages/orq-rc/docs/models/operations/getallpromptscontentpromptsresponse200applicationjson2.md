@@ -18,7 +18,7 @@ const value: operations.GetAllPrompts2PromptsResponse200ApplicationJson1 = {
 const value: operations.GetAllPrompts2PromptsResponse200ApplicationJson2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://deadly-secret.org",
+    url: "https://electric-schnitzel.net/",
   },
 };
 ```

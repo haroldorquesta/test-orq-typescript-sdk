@@ -6,7 +6,7 @@
 import { GetAllPromptsItemsMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsItemsMessages = {
-  role: "user",
+  role: "system",
   content: [
     {
       type: "text",

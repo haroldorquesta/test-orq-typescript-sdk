@@ -5,10 +5,10 @@ Prompt snippet retrieved.
 
 ## Supported Types
 
-### `operations.ResponseBody1`
+### `operations.FindOnePromptSnippetResponseBody1`
 
 ```typescript
-const value: operations.ResponseBody1 = {
+const value: operations.FindOnePromptSnippetResponseBody1 = {
   id: "<id>",
   owner: "vendor",
   domainId: "2cf541af-2710-4ad5-9e13-e89020e2d5c5",
@@ -52,10 +52,10 @@ const value: operations.ResponseBody1 = {
 };
 ```
 
-### `operations.ResponseBody2`
+### `operations.FindOnePromptSnippetResponseBody2`
 
 ```typescript
-const value: operations.ResponseBody2 = {
+const value: operations.FindOnePromptSnippetResponseBody2 = {
   id: "<id>",
   owner: "<value>",
   domainId: "09d4ec09-9357-4022-96bd-2caef11c23ef",
@@ -107,10 +107,10 @@ const value: operations.ResponseBody2 = {
 };
 ```
 
-### `operations.ResponseBody3`
+### `operations.FindOnePromptSnippetResponseBody3`
 
 ```typescript
-const value: operations.ResponseBody3 = {
+const value: operations.FindOnePromptSnippetResponseBody3 = {
   id: "<id>",
   owner: "vendor",
   domainId: "e54e5a41-8e93-4ac5-98a2-f7f3720366ea",

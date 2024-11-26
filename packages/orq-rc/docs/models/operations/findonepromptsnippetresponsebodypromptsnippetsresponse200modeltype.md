@@ -8,7 +8,7 @@ The type of the model
 import { FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType =
-  "completion";
+  "rerank";
 ```
 
 ## Values

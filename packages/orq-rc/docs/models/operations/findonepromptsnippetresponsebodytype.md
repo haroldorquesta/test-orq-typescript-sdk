@@ -5,11 +5,11 @@
 ```typescript
 import { FindOnePromptSnippetResponseBodyType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: FindOnePromptSnippetResponseBodyType = "snippet";
+let value: FindOnePromptSnippetResponseBodyType = "prompt";
 ```
 
 ## Values
 
 ```typescript
-"snippet"
+"prompt"
 ```

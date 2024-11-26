@@ -10,7 +10,7 @@ import { GetAllPrompts2PromptsResponse2 } from "orq-poc-typescript-multi-env-ver
 let value: GetAllPrompts2PromptsResponse2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://unwilling-nun.com",
+    url: "https://forsaken-shoulder.com/",
   },
 };
 ```

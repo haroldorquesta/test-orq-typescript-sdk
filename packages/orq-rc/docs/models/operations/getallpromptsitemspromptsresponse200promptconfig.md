@@ -8,8 +8,15 @@ import { GetAllPromptsItemsPromptsResponse200PromptConfig } from "orq-poc-typesc
 let value: GetAllPromptsItemsPromptsResponse200PromptConfig = {
   messages: [
     {
-      role: "prompt",
-      content: "<value>",
+      role: "assistant",
+      content: [
+        {
+          type: "image_url",
+          imageUrl: {
+            url: "https://accomplished-tomography.info",
+          },
+        },
+      ],
     },
   ],
 };

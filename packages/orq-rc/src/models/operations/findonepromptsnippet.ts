@@ -16,1274 +16,16 @@ export type FindOnePromptSnippetRequest = {
   key: string;
 };
 
-export const FindOnePromptSnippetOwnerPromptSnippets2 = {
+export const FindOnePromptSnippetOwnerPromptSnippetsResponse2 = {
   Vendor: "vendor",
 } as const;
-export type FindOnePromptSnippetOwnerPromptSnippets2 = ClosedEnum<
-  typeof FindOnePromptSnippetOwnerPromptSnippets2
+export type FindOnePromptSnippetOwnerPromptSnippetsResponse2 = ClosedEnum<
+  typeof FindOnePromptSnippetOwnerPromptSnippetsResponse2
 >;
 
-export type FindOnePromptSnippetResponseBodyOwner =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner =
   | string
-  | FindOnePromptSnippetOwnerPromptSnippets2;
-
-/**
- * The type of the model
- */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsModelType = {
-  Chat: "chat",
-  Completion: "completion",
-  Embedding: "embedding",
-  Vision: "vision",
-  Image: "image",
-  Tts: "tts",
-  Stt: "stt",
-  Rerank: "rerank",
-} as const;
-/**
- * The type of the model
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsModelType =
-  ClosedEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsModelType>;
-
-/**
- * Only supported on `image` models.
- */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsFormat = {
-  Url: "url",
-  B64Json: "b64_json",
-  Text: "text",
-  JsonObject: "json_object",
-} as const;
-/**
- * Only supported on `image` models.
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsFormat = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyPromptSnippetsFormat
->;
-
-/**
- * Only supported on `image` models.
- */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsQuality = {
-  Standard: "standard",
-  Hd: "hd",
-} as const;
-/**
- * Only supported on `image` models.
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsQuality = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyPromptSnippetsQuality
->;
-
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBodyType =
-  {
-    JsonObject: "json_object",
-  } as const;
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBodyType =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBodyType
-  >;
-
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse2 = {
-  type:
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBodyType;
-};
-
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONType =
-  {
-    JsonSchema: "json_schema",
-  } as const;
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONType =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONType
-  >;
-
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponseJsonSchema =
-  {
-    name: string;
-    strict: boolean;
-    schema: { [k: string]: any };
-  };
-
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse1 = {
-  type:
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONType;
-  jsonSchema:
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponseJsonSchema;
-};
-
-/**
- * An object specifying the format that the model must output.
- *
- * @remarks
- *
- *  Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema
- *
- *  Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
- *
- * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat =
-  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2
-  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse1;
-
-/**
- * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
- */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion = {
-  V1: "v1",
-  V2: "v2",
-} as const;
-/**
- * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion
-  >;
-
-/**
- * The format to return the embeddings
- */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat = {
-  Float: "float",
-  Base64: "base64",
-} as const;
-/**
- * The format to return the embeddings
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat
-  >;
-
-/**
- * Model Parameters: Not all parameters apply to every model
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters = {
-  /**
-   * Only supported on `chat` and `completion` models.
-   */
-  temperature?: number | undefined;
-  /**
-   * Only supported on `chat` and `completion` models.
-   */
-  maxTokens?: number | undefined;
-  /**
-   * Only supported on `chat` and `completion` models.
-   */
-  topK?: number | undefined;
-  /**
-   * Only supported on `chat` and `completion` models.
-   */
-  topP?: number | undefined;
-  /**
-   * Only supported on `chat` and `completion` models.
-   */
-  frequencyPenalty?: number | undefined;
-  /**
-   * Only supported on `chat` and `completion` models.
-   */
-  presencePenalty?: number | undefined;
-  /**
-   * Only supported on `image` models.
-   */
-  numImages?: number | undefined;
-  /**
-   * Best effort deterministic seed for the model. Currently only OpenAI models support these
-   */
-  seed?: number | undefined;
-  /**
-   * Only supported on `image` models.
-   */
-  format?: FindOnePromptSnippetResponseBodyPromptSnippetsFormat | undefined;
-  /**
-   * Only supported on `image` models.
-   */
-  dimensions?: string | undefined;
-  /**
-   * Only supported on `image` models.
-   */
-  quality?: FindOnePromptSnippetResponseBodyPromptSnippetsQuality | undefined;
-  /**
-   * Only supported on `image` models.
-   */
-  style?: string | undefined;
-  /**
-   * An object specifying the format that the model must output.
-   *
-   * @remarks
-   *
-   *  Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema
-   *
-   *  Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
-   *
-   * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
-   */
-  responseFormat?:
-    | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2
-    | FindOnePromptSnippetResponseFormatPromptSnippetsResponse1
-    | null
-    | undefined;
-  /**
-   * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
-   */
-  photoRealVersion?:
-    | FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion
-    | undefined;
-  /**
-   * The format to return the embeddings
-   */
-  encodingFormat?:
-    | FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat
-    | undefined;
-};
-
-export const FindOnePromptSnippetResponseBodyPromptSnippetsProvider = {
-  Cohere: "cohere",
-  Openai: "openai",
-  Anthropic: "anthropic",
-  Huggingface: "huggingface",
-  Replicate: "replicate",
-  Google: "google",
-  GoogleAi: "google-ai",
-  Azure: "azure",
-  Aws: "aws",
-  Anyscale: "anyscale",
-  Perplexity: "perplexity",
-  Groq: "groq",
-  Fal: "fal",
-  Leonardoai: "leonardoai",
-  Nvidia: "nvidia",
-} as const;
-export type FindOnePromptSnippetResponseBodyPromptSnippetsProvider = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyPromptSnippetsProvider
->;
-
-/**
- * The role of the prompt message
- */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsRole = {
-  System: "system",
-  Assistant: "assistant",
-  User: "user",
-  Exception: "exception",
-  Tool: "tool",
-  Prompt: "prompt",
-  Correction: "correction",
-  ExpectedOutput: "expected_output",
-} as const;
-/**
- * The role of the prompt message
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsRole = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyPromptSnippetsRole
->;
-
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBodyType =
-  {
-    ImageUrl: "image_url",
-  } as const;
-export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBodyType =
-  ClosedEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBodyType
-  >;
-
-export type FindOnePromptSnippet2PromptSnippetsResponseImageUrl = {
-  /**
-   * The orq.ai id of the image
-   */
-  id?: string | undefined;
-  /**
-   * Either a URL of the image or the base64 encoded data URI.
-   */
-  url: string;
-  /**
-   * Specifies the detail level of the image. Currently only supported with OpenAI models
-   */
-  detail?: string | undefined;
-};
-
-/**
- * The image part of the prompt message. Only supported with vision models.
- */
-export type FindOnePromptSnippet2PromptSnippetsResponse2 = {
-  type:
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBodyType;
-  imageUrl: FindOnePromptSnippet2PromptSnippetsResponseImageUrl;
-};
-
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONType =
-  {
-    Text: "text",
-  } as const;
-export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONType =
-  ClosedEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONType
-  >;
-
-/**
- * Text content part of a prompt message
- */
-export type FindOnePromptSnippet2PromptSnippetsResponse1 = {
-  type: FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONType;
-  text: string;
-};
-
-export type FindOnePromptSnippetContentPromptSnippetsResponse2 =
-  | FindOnePromptSnippet2PromptSnippetsResponse1
-  | FindOnePromptSnippet2PromptSnippetsResponse2;
-
-/**
- * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsContent =
-  | string
-  | Array<
-    | FindOnePromptSnippet2PromptSnippetsResponse1
-    | FindOnePromptSnippet2PromptSnippetsResponse2
-  >;
-
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type = {
-  Function: "function",
-} as const;
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type
-  >;
-
-export type FindOnePromptSnippetResponseBodyPromptSnippetsFunction = {
-  name: string;
-  /**
-   * JSON string arguments for the functions
-   */
-  arguments: string;
-};
-
-export type FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls = {
-  id?: string | undefined;
-  index?: number | undefined;
-  type: FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type;
-  function: FindOnePromptSnippetResponseBodyPromptSnippetsFunction;
-};
-
-export type FindOnePromptSnippetResponseBodyPromptSnippetsMessages = {
-  /**
-   * The role of the prompt message
-   */
-  role: FindOnePromptSnippetResponseBodyPromptSnippetsRole;
-  /**
-   * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
-   */
-  content:
-    | string
-    | Array<
-      | FindOnePromptSnippet2PromptSnippetsResponse1
-      | FindOnePromptSnippet2PromptSnippetsResponse2
-    >;
-  toolCalls?:
-    | Array<FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls>
-    | undefined;
-};
-
-export type FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig = {
-  stream?: boolean | undefined;
-  model?: string | undefined;
-  /**
-   * The id of the resource
-   */
-  modelDbId?: string | undefined;
-  /**
-   * The type of the model
-   */
-  modelType?:
-    | FindOnePromptSnippetResponseBodyPromptSnippetsModelType
-    | undefined;
-  /**
-   * Model Parameters: Not all parameters apply to every model
-   */
-  modelParameters?:
-    | FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters
-    | undefined;
-  provider?: FindOnePromptSnippetResponseBodyPromptSnippetsProvider | undefined;
-  /**
-   * The id of the resource
-   */
-  integrationId?: string | null | undefined;
-  version?: string | undefined;
-  messages: Array<FindOnePromptSnippetResponseBodyPromptSnippetsMessages>;
-};
-
-export type FindOnePromptSnippetResponseBodyPromptSnippetsMetadata = {
-  useCases?: Array<string> | undefined;
-  language?: string | undefined;
-};
-
-/**
- * The type of the model
- */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType =
-  {
-    Chat: "chat",
-    Completion: "completion",
-    Embedding: "embedding",
-    Vision: "vision",
-    Image: "image",
-    Tts: "tts",
-    Stt: "stt",
-    Rerank: "rerank",
-  } as const;
-/**
- * The type of the model
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType
-  >;
-
-/**
- * Only supported on `image` models.
- */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Format =
-  {
-    Url: "url",
-    B64Json: "b64_json",
-    Text: "text",
-    JsonObject: "json_object",
-  } as const;
-/**
- * Only supported on `image` models.
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Format =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Format
-  >;
-
-/**
- * Only supported on `image` models.
- */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality =
-  {
-    Standard: "standard",
-    Hd: "hd",
-  } as const;
-/**
- * Only supported on `image` models.
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality
-  >;
-
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType =
-  {
-    JsonObject: "json_object",
-  } as const;
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType
-  >;
-
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2 =
-  {
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType;
-  };
-
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3Type =
-  {
-    JsonSchema: "json_schema",
-  } as const;
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3Type =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3Type
-  >;
-
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBodyJSONSchema =
-  {
-    name: string;
-    strict: boolean;
-    schema: { [k: string]: any };
-  };
-
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1 =
-  {
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3Type;
-    jsonSchema:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBodyJSONSchema;
-  };
-
-/**
- * An object specifying the format that the model must output.
- *
- * @remarks
- *
- *  Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema
- *
- *  Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
- *
- * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat =
-  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2
-  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1;
-
-/**
- * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
- */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion =
-  {
-    V1: "v1",
-    V2: "v2",
-  } as const;
-/**
- * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion
-  >;
-
-/**
- * The format to return the embeddings
- */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat =
-  {
-    Float: "float",
-    Base64: "base64",
-  } as const;
-/**
- * The format to return the embeddings
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat
-  >;
-
-/**
- * Model Parameters: Not all parameters apply to every model
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters =
-  {
-    /**
-     * Only supported on `chat` and `completion` models.
-     */
-    temperature?: number | undefined;
-    /**
-     * Only supported on `chat` and `completion` models.
-     */
-    maxTokens?: number | undefined;
-    /**
-     * Only supported on `chat` and `completion` models.
-     */
-    topK?: number | undefined;
-    /**
-     * Only supported on `chat` and `completion` models.
-     */
-    topP?: number | undefined;
-    /**
-     * Only supported on `chat` and `completion` models.
-     */
-    frequencyPenalty?: number | undefined;
-    /**
-     * Only supported on `chat` and `completion` models.
-     */
-    presencePenalty?: number | undefined;
-    /**
-     * Only supported on `image` models.
-     */
-    numImages?: number | undefined;
-    /**
-     * Best effort deterministic seed for the model. Currently only OpenAI models support these
-     */
-    seed?: number | undefined;
-    /**
-     * Only supported on `image` models.
-     */
-    format?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Format
-      | undefined;
-    /**
-     * Only supported on `image` models.
-     */
-    dimensions?: string | undefined;
-    /**
-     * Only supported on `image` models.
-     */
-    quality?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality
-      | undefined;
-    /**
-     * Only supported on `image` models.
-     */
-    style?: string | undefined;
-    /**
-     * An object specifying the format that the model must output.
-     *
-     * @remarks
-     *
-     *  Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema
-     *
-     *  Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
-     *
-     * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
-     */
-    responseFormat?:
-      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2
-      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1
-      | null
-      | undefined;
-    /**
-     * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
-     */
-    photoRealVersion?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion
-      | undefined;
-    /**
-     * The format to return the embeddings
-     */
-    encodingFormat?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat
-      | undefined;
-  };
-
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider =
-  {
-    Cohere: "cohere",
-    Openai: "openai",
-    Anthropic: "anthropic",
-    Huggingface: "huggingface",
-    Replicate: "replicate",
-    Google: "google",
-    GoogleAi: "google-ai",
-    Azure: "azure",
-    Aws: "aws",
-    Anyscale: "anyscale",
-    Perplexity: "perplexity",
-    Groq: "groq",
-    Fal: "fal",
-    Leonardoai: "leonardoai",
-    Nvidia: "nvidia",
-  } as const;
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider
-  >;
-
-/**
- * The role of the prompt message
- */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole =
-  {
-    System: "system",
-    Assistant: "assistant",
-    User: "user",
-    Exception: "exception",
-    Tool: "tool",
-    Prompt: "prompt",
-    Correction: "correction",
-    ExpectedOutput: "expected_output",
-  } as const;
-/**
- * The role of the prompt message
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole
-  >;
-
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType =
-  {
-    ImageUrl: "image_url",
-  } as const;
-export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType =
-  ClosedEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType
-  >;
-
-export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBodyImageUrl =
-  {
-    /**
-     * The orq.ai id of the image
-     */
-    id?: string | undefined;
-    /**
-     * Either a URL of the image or the base64 encoded data URI.
-     */
-    url: string;
-    /**
-     * Specifies the detail level of the image. Currently only supported with OpenAI models
-     */
-    detail?: string | undefined;
-  };
-
-/**
- * The image part of the prompt message. Only supported with vision models.
- */
-export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2 =
-  {
-    type:
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType;
-    imageUrl:
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBodyImageUrl;
-  };
-
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3Type =
-  {
-    Text: "text",
-  } as const;
-export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3Type =
-  ClosedEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3Type
-  >;
-
-/**
- * Text content part of a prompt message
- */
-export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1 =
-  {
-    type:
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3Type;
-    text: string;
-  };
-
-export type FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJSONResponseBody2 =
-  | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1
-  | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2;
-
-/**
- * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
- */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONContent =
-  | string
-  | Array<
-    | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1
-    | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2
-  >;
-
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type =
-  {
-    Function: "function",
-  } as const;
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type
-  >;
-
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFunction =
-  {
-    name: string;
-    /**
-     * JSON string arguments for the functions
-     */
-    arguments: string;
-  };
-
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONToolCalls =
-  {
-    id?: string | undefined;
-    index?: number | undefined;
-    type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type;
-    function:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFunction;
-  };
-
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONMessages =
-  {
-    /**
-     * The role of the prompt message
-     */
-    role:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole;
-    /**
-     * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
-     */
-    content:
-      | string
-      | Array<
-        | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1
-        | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2
-      >;
-    toolCalls?:
-      | Array<
-        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONToolCalls
-      >
-      | undefined;
-  };
-
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPromptConfig =
-  {
-    stream?: boolean | undefined;
-    model?: string | undefined;
-    /**
-     * The id of the resource
-     */
-    modelDbId?: string | undefined;
-    /**
-     * The type of the model
-     */
-    modelType?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType
-      | undefined;
-    /**
-     * Model Parameters: Not all parameters apply to every model
-     */
-    modelParameters?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters
-      | undefined;
-    provider?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider
-      | undefined;
-    /**
-     * The id of the resource
-     */
-    integrationId?: string | null | undefined;
-    version?: string | undefined;
-    messages: Array<
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONMessages
-    >;
-  };
-
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONMetadata =
-  {
-    useCases?: Array<string> | undefined;
-    language?: string | undefined;
-  };
-
-/**
- * Prompt version model returned from the API
- */
-export type FindOnePromptSnippetResponseBodyVersions = {
-  id: string;
-  createdById: string;
-  displayName: string;
-  updatedById: string;
-  description?: string | null | undefined;
-  promptConfig:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPromptConfig;
-  metadata:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONMetadata;
-  commit: string;
-  timestamp: string;
-};
-
-export const FindOnePromptSnippetResponseBodyPromptSnippetsType = {
-  Template: "template",
-} as const;
-export type FindOnePromptSnippetResponseBodyPromptSnippetsType = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyPromptSnippetsType
->;
-
-/**
- * Prompt template model returned from the API
- */
-export type ResponseBody3 = {
-  id: string;
-  owner: string | FindOnePromptSnippetOwnerPromptSnippets2;
-  domainId: string;
-  createdById: string;
-  displayName: string;
-  updatedById: string;
-  description?: string | null | undefined;
-  promptConfig: FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig;
-  metadata: FindOnePromptSnippetResponseBodyPromptSnippetsMetadata;
-  /**
-   * The date and time the resource was created
-   */
-  created?: Date | undefined;
-  /**
-   * The date and time the resource was last updated
-   */
-  updated?: Date | undefined;
-  versions: Array<FindOnePromptSnippetResponseBodyVersions>;
-  type: FindOnePromptSnippetResponseBodyPromptSnippetsType;
-};
-
-export const FindOnePromptSnippetOwner2 = {
-  Vendor: "vendor",
-} as const;
-export type FindOnePromptSnippetOwner2 = ClosedEnum<
-  typeof FindOnePromptSnippetOwner2
->;
-
-export type ResponseBodyOwner = string | FindOnePromptSnippetOwner2;
-
-/**
- * The type of the model
- */
-export const FindOnePromptSnippetResponseBodyModelType = {
-  Chat: "chat",
-  Completion: "completion",
-  Embedding: "embedding",
-  Vision: "vision",
-  Image: "image",
-  Tts: "tts",
-  Stt: "stt",
-  Rerank: "rerank",
-} as const;
-/**
- * The type of the model
- */
-export type FindOnePromptSnippetResponseBodyModelType = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyModelType
->;
-
-/**
- * Only supported on `image` models.
- */
-export const FindOnePromptSnippetResponseBodyFormat = {
-  Url: "url",
-  B64Json: "b64_json",
-  Text: "text",
-  JsonObject: "json_object",
-} as const;
-/**
- * Only supported on `image` models.
- */
-export type FindOnePromptSnippetResponseBodyFormat = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyFormat
->;
-
-/**
- * Only supported on `image` models.
- */
-export const FindOnePromptSnippetResponseBodyQuality = {
-  Standard: "standard",
-  Hd: "hd",
-} as const;
-/**
- * Only supported on `image` models.
- */
-export type FindOnePromptSnippetResponseBodyQuality = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyQuality
->;
-
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type = {
-  JsonObject: "json_object",
-} as const;
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type
-  >;
-
-export type FindOnePromptSnippetResponseFormatPromptSnippets2 = {
-  type: FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type;
-};
-
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponseType = {
-  JsonSchema: "json_schema",
-} as const;
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponseType =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponseType
-  >;
-
-export type FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema = {
-  name: string;
-  strict: boolean;
-  schema: { [k: string]: any };
-};
-
-export type FindOnePromptSnippetResponseFormatPromptSnippets1 = {
-  type: FindOnePromptSnippetResponseFormatPromptSnippetsResponseType;
-  jsonSchema: FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema;
-};
-
-/**
- * An object specifying the format that the model must output.
- *
- * @remarks
- *
- *  Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema
- *
- *  Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
- *
- * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
- */
-export type FindOnePromptSnippetResponseBodyResponseFormat =
-  | FindOnePromptSnippetResponseFormatPromptSnippets2
-  | FindOnePromptSnippetResponseFormatPromptSnippets1;
-
-/**
- * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
- */
-export const FindOnePromptSnippetResponseBodyPhotoRealVersion = {
-  V1: "v1",
-  V2: "v2",
-} as const;
-/**
- * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
- */
-export type FindOnePromptSnippetResponseBodyPhotoRealVersion = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyPhotoRealVersion
->;
-
-/**
- * The format to return the embeddings
- */
-export const FindOnePromptSnippetResponseBodyEncodingFormat = {
-  Float: "float",
-  Base64: "base64",
-} as const;
-/**
- * The format to return the embeddings
- */
-export type FindOnePromptSnippetResponseBodyEncodingFormat = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyEncodingFormat
->;
-
-/**
- * Model Parameters: Not all parameters apply to every model
- */
-export type FindOnePromptSnippetResponseBodyModelParameters = {
-  /**
-   * Only supported on `chat` and `completion` models.
-   */
-  temperature?: number | undefined;
-  /**
-   * Only supported on `chat` and `completion` models.
-   */
-  maxTokens?: number | undefined;
-  /**
-   * Only supported on `chat` and `completion` models.
-   */
-  topK?: number | undefined;
-  /**
-   * Only supported on `chat` and `completion` models.
-   */
-  topP?: number | undefined;
-  /**
-   * Only supported on `chat` and `completion` models.
-   */
-  frequencyPenalty?: number | undefined;
-  /**
-   * Only supported on `chat` and `completion` models.
-   */
-  presencePenalty?: number | undefined;
-  /**
-   * Only supported on `image` models.
-   */
-  numImages?: number | undefined;
-  /**
-   * Best effort deterministic seed for the model. Currently only OpenAI models support these
-   */
-  seed?: number | undefined;
-  /**
-   * Only supported on `image` models.
-   */
-  format?: FindOnePromptSnippetResponseBodyFormat | undefined;
-  /**
-   * Only supported on `image` models.
-   */
-  dimensions?: string | undefined;
-  /**
-   * Only supported on `image` models.
-   */
-  quality?: FindOnePromptSnippetResponseBodyQuality | undefined;
-  /**
-   * Only supported on `image` models.
-   */
-  style?: string | undefined;
-  /**
-   * An object specifying the format that the model must output.
-   *
-   * @remarks
-   *
-   *  Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema
-   *
-   *  Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
-   *
-   * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
-   */
-  responseFormat?:
-    | FindOnePromptSnippetResponseFormatPromptSnippets2
-    | FindOnePromptSnippetResponseFormatPromptSnippets1
-    | null
-    | undefined;
-  /**
-   * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
-   */
-  photoRealVersion?:
-    | FindOnePromptSnippetResponseBodyPhotoRealVersion
-    | undefined;
-  /**
-   * The format to return the embeddings
-   */
-  encodingFormat?: FindOnePromptSnippetResponseBodyEncodingFormat | undefined;
-};
-
-export const FindOnePromptSnippetResponseBodyProvider = {
-  Cohere: "cohere",
-  Openai: "openai",
-  Anthropic: "anthropic",
-  Huggingface: "huggingface",
-  Replicate: "replicate",
-  Google: "google",
-  GoogleAi: "google-ai",
-  Azure: "azure",
-  Aws: "aws",
-  Anyscale: "anyscale",
-  Perplexity: "perplexity",
-  Groq: "groq",
-  Fal: "fal",
-  Leonardoai: "leonardoai",
-  Nvidia: "nvidia",
-} as const;
-export type FindOnePromptSnippetResponseBodyProvider = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyProvider
->;
-
-/**
- * The role of the prompt message
- */
-export const FindOnePromptSnippetResponseBodyRole = {
-  System: "system",
-  Assistant: "assistant",
-  User: "user",
-  Exception: "exception",
-  Tool: "tool",
-  Prompt: "prompt",
-  Correction: "correction",
-  ExpectedOutput: "expected_output",
-} as const;
-/**
- * The role of the prompt message
- */
-export type FindOnePromptSnippetResponseBodyRole = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyRole
->;
-
-export const FindOnePromptSnippet2PromptSnippetsResponse200Type = {
-  ImageUrl: "image_url",
-} as const;
-export type FindOnePromptSnippet2PromptSnippetsResponse200Type = ClosedEnum<
-  typeof FindOnePromptSnippet2PromptSnippetsResponse200Type
->;
-
-export type FindOnePromptSnippet2PromptSnippetsImageUrl = {
-  /**
-   * The orq.ai id of the image
-   */
-  id?: string | undefined;
-  /**
-   * Either a URL of the image or the base64 encoded data URI.
-   */
-  url: string;
-  /**
-   * Specifies the detail level of the image. Currently only supported with OpenAI models
-   */
-  detail?: string | undefined;
-};
-
-/**
- * The image part of the prompt message. Only supported with vision models.
- */
-export type FindOnePromptSnippet2PromptSnippets2 = {
-  type: FindOnePromptSnippet2PromptSnippetsResponse200Type;
-  imageUrl: FindOnePromptSnippet2PromptSnippetsImageUrl;
-};
-
-export const FindOnePromptSnippet2PromptSnippetsResponseType = {
-  Text: "text",
-} as const;
-export type FindOnePromptSnippet2PromptSnippetsResponseType = ClosedEnum<
-  typeof FindOnePromptSnippet2PromptSnippetsResponseType
->;
-
-/**
- * Text content part of a prompt message
- */
-export type FindOnePromptSnippet2PromptSnippets1 = {
-  type: FindOnePromptSnippet2PromptSnippetsResponseType;
-  text: string;
-};
-
-export type FindOnePromptSnippetContentPromptSnippets2 =
-  | FindOnePromptSnippet2PromptSnippets1
-  | FindOnePromptSnippet2PromptSnippets2;
-
-/**
- * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
- */
-export type FindOnePromptSnippetResponseBodyContent =
-  | string
-  | Array<
-    FindOnePromptSnippet2PromptSnippets1 | FindOnePromptSnippet2PromptSnippets2
-  >;
-
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType =
-  {
-    Function: "function",
-  } as const;
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType =
-  ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType
-  >;
-
-export type FindOnePromptSnippetResponseBodyFunction = {
-  name: string;
-  /**
-   * JSON string arguments for the functions
-   */
-  arguments: string;
-};
-
-export type FindOnePromptSnippetResponseBodyToolCalls = {
-  id?: string | undefined;
-  index?: number | undefined;
-  type:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType;
-  function: FindOnePromptSnippetResponseBodyFunction;
-};
-
-export type FindOnePromptSnippetResponseBodyMessages = {
-  /**
-   * The role of the prompt message
-   */
-  role: FindOnePromptSnippetResponseBodyRole;
-  /**
-   * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
-   */
-  content:
-    | string
-    | Array<
-      | FindOnePromptSnippet2PromptSnippets1
-      | FindOnePromptSnippet2PromptSnippets2
-    >;
-  toolCalls?: Array<FindOnePromptSnippetResponseBodyToolCalls> | undefined;
-};
-
-export type FindOnePromptSnippetResponseBodyPromptConfig = {
-  stream?: boolean | undefined;
-  model?: string | undefined;
-  /**
-   * The id of the resource
-   */
-  modelDbId?: string | undefined;
-  /**
-   * The type of the model
-   */
-  modelType?: FindOnePromptSnippetResponseBodyModelType | undefined;
-  /**
-   * Model Parameters: Not all parameters apply to every model
-   */
-  modelParameters?: FindOnePromptSnippetResponseBodyModelParameters | undefined;
-  provider?: FindOnePromptSnippetResponseBodyProvider | undefined;
-  /**
-   * The id of the resource
-   */
-  integrationId?: string | null | undefined;
-  version?: string | undefined;
-  messages: Array<FindOnePromptSnippetResponseBodyMessages>;
-};
-
-export type FindOnePromptSnippetResponseBodyMetadata = {
-  useCases?: Array<string> | undefined;
-  language?: string | undefined;
-};
+  | FindOnePromptSnippetOwnerPromptSnippetsResponse2;
 
 /**
  * The type of the model
@@ -1338,41 +80,41 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality =
     typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality
   >;
 
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType =
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBodyType =
   {
     JsonObject: "json_object",
   } as const;
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType =
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBodyType =
   ClosedEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBodyType
   >;
 
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002 = {
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse2 = {
   type:
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType;
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBodyType;
 };
 
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type =
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONType =
   {
     JsonSchema: "json_schema",
   } as const;
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type =
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONType =
   ClosedEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONType
   >;
 
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema =
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponseJsonSchema =
   {
     name: string;
     strict: boolean;
     schema: { [k: string]: any };
   };
 
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001 = {
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse1 = {
   type:
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type;
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONType;
   jsonSchema:
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema;
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponseJsonSchema;
 };
 
 /**
@@ -1387,8 +129,8 @@ export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001 = {
  * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
  */
 export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat =
-  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002
-  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001;
+  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2
+  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse1;
 
 /**
  * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
@@ -1491,8 +233,8 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameter
      * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
      */
     responseFormat?:
-      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002
-      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001
+      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2
+      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse1
       | null
       | undefined;
     /**
@@ -1550,16 +292,16 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole = {
 export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole =
   ClosedEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole>;
 
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType =
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBodyType =
   {
     ImageUrl: "image_url",
   } as const;
-export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType =
+export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBodyType =
   ClosedEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBodyType
   >;
 
-export type FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl = {
+export type FindOnePromptSnippet2PromptSnippetsResponseImageUrl = {
   /**
    * The orq.ai id of the image
    */
@@ -1577,33 +319,32 @@ export type FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl = {
 /**
  * The image part of the prompt message. Only supported with vision models.
  */
-export type FindOnePromptSnippet2PromptSnippetsResponse2002 = {
+export type FindOnePromptSnippet2PromptSnippetsResponse2 = {
   type:
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType;
-  imageUrl: FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl;
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBodyType;
+  imageUrl: FindOnePromptSnippet2PromptSnippetsResponseImageUrl;
 };
 
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type =
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONType =
   {
     Text: "text",
   } as const;
-export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type =
+export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONType =
   ClosedEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONType
   >;
 
 /**
  * Text content part of a prompt message
  */
-export type FindOnePromptSnippet2PromptSnippetsResponse2001 = {
-  type:
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type;
+export type FindOnePromptSnippet2PromptSnippetsResponse1 = {
+  type: FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONType;
   text: string;
 };
 
-export type FindOnePromptSnippetContentPromptSnippetsResponse2002 =
-  | FindOnePromptSnippet2PromptSnippetsResponse2001
-  | FindOnePromptSnippet2PromptSnippetsResponse2002;
+export type FindOnePromptSnippetContentPromptSnippetsResponse2 =
+  | FindOnePromptSnippet2PromptSnippetsResponse1
+  | FindOnePromptSnippet2PromptSnippetsResponse2;
 
 /**
  * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
@@ -1611,17 +352,17 @@ export type FindOnePromptSnippetContentPromptSnippetsResponse2002 =
 export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent =
   | string
   | Array<
-    | FindOnePromptSnippet2PromptSnippetsResponse2001
-    | FindOnePromptSnippet2PromptSnippetsResponse2002
+    | FindOnePromptSnippet2PromptSnippetsResponse1
+    | FindOnePromptSnippet2PromptSnippetsResponse2
   >;
 
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type =
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType =
   {
     Function: "function",
   } as const;
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType =
   ClosedEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType
   >;
 
 export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction = {
@@ -1636,7 +377,7 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls = {
   id?: string | undefined;
   index?: number | undefined;
   type:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType;
   function: FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction;
 };
 
@@ -1651,8 +392,8 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages = {
   content:
     | string
     | Array<
-      | FindOnePromptSnippet2PromptSnippetsResponse2001
-      | FindOnePromptSnippet2PromptSnippetsResponse2002
+      | FindOnePromptSnippet2PromptSnippetsResponse1
+      | FindOnePromptSnippet2PromptSnippetsResponse2
     >;
   toolCalls?:
     | Array<FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls>
@@ -1698,10 +439,468 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata = {
 };
 
 /**
+ * The type of the model
+ */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType =
+  {
+    Chat: "chat",
+    Completion: "completion",
+    Embedding: "embedding",
+    Vision: "vision",
+    Image: "image",
+    Tts: "tts",
+    Stt: "stt",
+    Rerank: "rerank",
+  } as const;
+/**
+ * The type of the model
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType
+  >;
+
+/**
+ * Only supported on `image` models.
+ */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Format =
+  {
+    Url: "url",
+    B64Json: "b64_json",
+    Text: "text",
+    JsonObject: "json_object",
+  } as const;
+/**
+ * Only supported on `image` models.
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Format =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Format
+  >;
+
+/**
+ * Only supported on `image` models.
+ */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality =
+  {
+    Standard: "standard",
+    Hd: "hd",
+  } as const;
+/**
+ * Only supported on `image` models.
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality
+  >;
+
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType =
+  {
+    JsonObject: "json_object",
+  } as const;
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType
+  >;
+
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2 =
+  {
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType;
+  };
+
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3Type =
+  {
+    JsonSchema: "json_schema",
+  } as const;
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3Type =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3Type
+  >;
+
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBodyJSONSchema =
+  {
+    name: string;
+    strict: boolean;
+    schema: { [k: string]: any };
+  };
+
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1 =
+  {
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody3Type;
+    jsonSchema:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBodyJSONSchema;
+  };
+
+/**
+ * An object specifying the format that the model must output.
+ *
+ * @remarks
+ *
+ *  Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema
+ *
+ *  Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
+ *
+ * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat =
+  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2
+  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1;
+
+/**
+ * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
+ */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion =
+  {
+    V1: "v1",
+    V2: "v2",
+  } as const;
+/**
+ * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion
+  >;
+
+/**
+ * The format to return the embeddings
+ */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat =
+  {
+    Float: "float",
+    Base64: "base64",
+  } as const;
+/**
+ * The format to return the embeddings
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat
+  >;
+
+/**
+ * Model Parameters: Not all parameters apply to every model
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters =
+  {
+    /**
+     * Only supported on `chat` and `completion` models.
+     */
+    temperature?: number | undefined;
+    /**
+     * Only supported on `chat` and `completion` models.
+     */
+    maxTokens?: number | undefined;
+    /**
+     * Only supported on `chat` and `completion` models.
+     */
+    topK?: number | undefined;
+    /**
+     * Only supported on `chat` and `completion` models.
+     */
+    topP?: number | undefined;
+    /**
+     * Only supported on `chat` and `completion` models.
+     */
+    frequencyPenalty?: number | undefined;
+    /**
+     * Only supported on `chat` and `completion` models.
+     */
+    presencePenalty?: number | undefined;
+    /**
+     * Only supported on `image` models.
+     */
+    numImages?: number | undefined;
+    /**
+     * Best effort deterministic seed for the model. Currently only OpenAI models support these
+     */
+    seed?: number | undefined;
+    /**
+     * Only supported on `image` models.
+     */
+    format?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Format
+      | undefined;
+    /**
+     * Only supported on `image` models.
+     */
+    dimensions?: string | undefined;
+    /**
+     * Only supported on `image` models.
+     */
+    quality?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality
+      | undefined;
+    /**
+     * Only supported on `image` models.
+     */
+    style?: string | undefined;
+    /**
+     * An object specifying the format that the model must output.
+     *
+     * @remarks
+     *
+     *  Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema
+     *
+     *  Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
+     *
+     * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
+     */
+    responseFormat?:
+      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2
+      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1
+      | null
+      | undefined;
+    /**
+     * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
+     */
+    photoRealVersion?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion
+      | undefined;
+    /**
+     * The format to return the embeddings
+     */
+    encodingFormat?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat
+      | undefined;
+  };
+
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider =
+  {
+    Cohere: "cohere",
+    Openai: "openai",
+    Anthropic: "anthropic",
+    Huggingface: "huggingface",
+    Replicate: "replicate",
+    Google: "google",
+    GoogleAi: "google-ai",
+    Azure: "azure",
+    Aws: "aws",
+    Anyscale: "anyscale",
+    Perplexity: "perplexity",
+    Groq: "groq",
+    Fal: "fal",
+    Leonardoai: "leonardoai",
+    Nvidia: "nvidia",
+  } as const;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider
+  >;
+
+/**
+ * The role of the prompt message
+ */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role =
+  {
+    System: "system",
+    Assistant: "assistant",
+    User: "user",
+    Exception: "exception",
+    Tool: "tool",
+    Prompt: "prompt",
+    Correction: "correction",
+    ExpectedOutput: "expected_output",
+  } as const;
+/**
+ * The role of the prompt message
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role
+  >;
+
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType =
+  {
+    ImageUrl: "image_url",
+  } as const;
+export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType =
+  ClosedEnum<
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType
+  >;
+
+export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBodyImageUrl =
+  {
+    /**
+     * The orq.ai id of the image
+     */
+    id?: string | undefined;
+    /**
+     * Either a URL of the image or the base64 encoded data URI.
+     */
+    url: string;
+    /**
+     * Specifies the detail level of the image. Currently only supported with OpenAI models
+     */
+    detail?: string | undefined;
+  };
+
+/**
+ * The image part of the prompt message. Only supported with vision models.
+ */
+export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2 =
+  {
+    type:
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3VersionsType;
+    imageUrl:
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBodyImageUrl;
+  };
+
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3Type =
+  {
+    Text: "text",
+  } as const;
+export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3Type =
+  ClosedEnum<
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3Type
+  >;
+
+/**
+ * Text content part of a prompt message
+ */
+export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1 =
+  {
+    type:
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody3Type;
+    text: string;
+  };
+
+export type FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJSONResponseBody2 =
+  | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1
+  | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2;
+
+/**
+ * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content =
+  | string
+  | Array<
+    | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1
+    | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2
+  >;
+
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type =
+  {
+    Function: "function",
+  } as const;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type
+  >;
+
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function =
+  {
+    name: string;
+    /**
+     * JSON string arguments for the functions
+     */
+    arguments: string;
+  };
+
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls =
+  {
+    id?: string | undefined;
+    index?: number | undefined;
+    type:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type;
+    function:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function;
+  };
+
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages =
+  {
+    /**
+     * The role of the prompt message
+     */
+    role:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role;
+    /**
+     * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
+     */
+    content:
+      | string
+      | Array<
+        | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1
+        | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2
+      >;
+    toolCalls?:
+      | Array<
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls
+      >
+      | undefined;
+  };
+
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig =
+  {
+    stream?: boolean | undefined;
+    model?: string | undefined;
+    /**
+     * The id of the resource
+     */
+    modelDbId?: string | undefined;
+    /**
+     * The type of the model
+     */
+    modelType?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType
+      | undefined;
+    /**
+     * Model Parameters: Not all parameters apply to every model
+     */
+    modelParameters?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters
+      | undefined;
+    provider?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider
+      | undefined;
+    /**
+     * The id of the resource
+     */
+    integrationId?: string | null | undefined;
+    version?: string | undefined;
+    messages: Array<
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages
+    >;
+  };
+
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata =
+  {
+    useCases?: Array<string> | undefined;
+    language?: string | undefined;
+  };
+
+/**
  * Prompt version model returned from the API
  */
-export type ResponseBodyVersions = {
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions = {
   id: string;
+  createdById: string;
+  displayName: string;
+  updatedById: string;
+  description?: string | null | undefined;
+  promptConfig:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig;
+  metadata:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata;
+  commit: string;
+  timestamp: string;
+};
+
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseType = {
+  Template: "template",
+} as const;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseType =
+  ClosedEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseType>;
+
+/**
+ * Prompt template model returned from the API
+ */
+export type FindOnePromptSnippetResponseBody3 = {
+  id: string;
+  owner: string | FindOnePromptSnippetOwnerPromptSnippetsResponse2;
+  domainId: string;
   createdById: string;
   displayName: string;
   updatedById: string;
@@ -1709,30 +908,6 @@ export type ResponseBodyVersions = {
   promptConfig:
     FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig;
   metadata: FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata;
-  commit: string;
-  timestamp: string;
-};
-
-export const FindOnePromptSnippetResponseBodyType = {
-  Snippet: "snippet",
-} as const;
-export type FindOnePromptSnippetResponseBodyType = ClosedEnum<
-  typeof FindOnePromptSnippetResponseBodyType
->;
-
-/**
- * Prompt snippet model returned from the API
- */
-export type ResponseBody2 = {
-  id: string;
-  owner: string | FindOnePromptSnippetOwner2;
-  domainId: string;
-  createdById: string;
-  displayName: string;
-  updatedById: string;
-  description?: string | null | undefined;
-  promptConfig: FindOnePromptSnippetResponseBodyPromptConfig;
-  metadata: FindOnePromptSnippetResponseBodyMetadata;
   /**
    * The date and time the resource was created
    */
@@ -1741,22 +916,27 @@ export type ResponseBody2 = {
    * The date and time the resource was last updated
    */
   updated?: Date | undefined;
-  versions: Array<ResponseBodyVersions>;
-  key: string;
-  type: FindOnePromptSnippetResponseBodyType;
+  versions: Array<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions
+  >;
+  type: FindOnePromptSnippetResponseBodyPromptSnippetsResponseType;
 };
 
-export const Owner2 = {
+export const FindOnePromptSnippetOwnerPromptSnippets2 = {
   Vendor: "vendor",
 } as const;
-export type Owner2 = ClosedEnum<typeof Owner2>;
+export type FindOnePromptSnippetOwnerPromptSnippets2 = ClosedEnum<
+  typeof FindOnePromptSnippetOwnerPromptSnippets2
+>;
 
-export type Owner = string | Owner2;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsOwner =
+  | string
+  | FindOnePromptSnippetOwnerPromptSnippets2;
 
 /**
  * The type of the model
  */
-export const ResponseBodyModelType = {
+export const FindOnePromptSnippetResponseBodyPromptSnippetsModelType = {
   Chat: "chat",
   Completion: "completion",
   Embedding: "embedding",
@@ -1769,12 +949,13 @@ export const ResponseBodyModelType = {
 /**
  * The type of the model
  */
-export type ResponseBodyModelType = ClosedEnum<typeof ResponseBodyModelType>;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsModelType =
+  ClosedEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsModelType>;
 
 /**
  * Only supported on `image` models.
  */
-export const ResponseBodyFormat = {
+export const FindOnePromptSnippetResponseBodyPromptSnippetsFormat = {
   Url: "url",
   B64Json: "b64_json",
   Text: "text",
@@ -1783,47 +964,53 @@ export const ResponseBodyFormat = {
 /**
  * Only supported on `image` models.
  */
-export type ResponseBodyFormat = ClosedEnum<typeof ResponseBodyFormat>;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsFormat = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyPromptSnippetsFormat
+>;
 
 /**
  * Only supported on `image` models.
  */
-export const ResponseBodyQuality = {
+export const FindOnePromptSnippetResponseBodyPromptSnippetsQuality = {
   Standard: "standard",
   Hd: "hd",
 } as const;
 /**
  * Only supported on `image` models.
  */
-export type ResponseBodyQuality = ClosedEnum<typeof ResponseBodyQuality>;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsQuality = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyPromptSnippetsQuality
+>;
 
-export const FindOnePromptSnippetResponseFormatPromptSnippetsType = {
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type = {
   JsonObject: "json_object",
 } as const;
-export type FindOnePromptSnippetResponseFormatPromptSnippetsType = ClosedEnum<
-  typeof FindOnePromptSnippetResponseFormatPromptSnippetsType
->;
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type
+  >;
 
-export type FindOnePromptSnippetResponseFormat2 = {
-  type: FindOnePromptSnippetResponseFormatPromptSnippetsType;
+export type FindOnePromptSnippetResponseFormatPromptSnippets2 = {
+  type: FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type;
 };
 
-export const FindOnePromptSnippetResponseFormatType = {
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponseType = {
   JsonSchema: "json_schema",
 } as const;
-export type FindOnePromptSnippetResponseFormatType = ClosedEnum<
-  typeof FindOnePromptSnippetResponseFormatType
->;
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponseType =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponseType
+  >;
 
-export type FindOnePromptSnippetResponseFormatJsonSchema = {
+export type FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema = {
   name: string;
   strict: boolean;
   schema: { [k: string]: any };
 };
 
-export type FindOnePromptSnippetResponseFormat1 = {
-  type: FindOnePromptSnippetResponseFormatType;
-  jsonSchema: FindOnePromptSnippetResponseFormatJsonSchema;
+export type FindOnePromptSnippetResponseFormatPromptSnippets1 = {
+  type: FindOnePromptSnippetResponseFormatPromptSnippetsResponseType;
+  jsonSchema: FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema;
 };
 
 /**
@@ -1837,42 +1024,44 @@ export type FindOnePromptSnippetResponseFormat1 = {
  *
  * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
  */
-export type ResponseBodyResponseFormat =
-  | FindOnePromptSnippetResponseFormat2
-  | FindOnePromptSnippetResponseFormat1;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat =
+  | FindOnePromptSnippetResponseFormatPromptSnippets2
+  | FindOnePromptSnippetResponseFormatPromptSnippets1;
 
 /**
  * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
  */
-export const ResponseBodyPhotoRealVersion = {
+export const FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion = {
   V1: "v1",
   V2: "v2",
 } as const;
 /**
  * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
  */
-export type ResponseBodyPhotoRealVersion = ClosedEnum<
-  typeof ResponseBodyPhotoRealVersion
->;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion
+  >;
 
 /**
  * The format to return the embeddings
  */
-export const ResponseBodyEncodingFormat = {
+export const FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat = {
   Float: "float",
   Base64: "base64",
 } as const;
 /**
  * The format to return the embeddings
  */
-export type ResponseBodyEncodingFormat = ClosedEnum<
-  typeof ResponseBodyEncodingFormat
->;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat
+  >;
 
 /**
  * Model Parameters: Not all parameters apply to every model
  */
-export type ResponseBodyModelParameters = {
+export type FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters = {
   /**
    * Only supported on `chat` and `completion` models.
    */
@@ -1908,7 +1097,7 @@ export type ResponseBodyModelParameters = {
   /**
    * Only supported on `image` models.
    */
-  format?: ResponseBodyFormat | undefined;
+  format?: FindOnePromptSnippetResponseBodyPromptSnippetsFormat | undefined;
   /**
    * Only supported on `image` models.
    */
@@ -1916,7 +1105,7 @@ export type ResponseBodyModelParameters = {
   /**
    * Only supported on `image` models.
    */
-  quality?: ResponseBodyQuality | undefined;
+  quality?: FindOnePromptSnippetResponseBodyPromptSnippetsQuality | undefined;
   /**
    * Only supported on `image` models.
    */
@@ -1933,21 +1122,25 @@ export type ResponseBodyModelParameters = {
    * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
    */
   responseFormat?:
-    | FindOnePromptSnippetResponseFormat2
-    | FindOnePromptSnippetResponseFormat1
+    | FindOnePromptSnippetResponseFormatPromptSnippets2
+    | FindOnePromptSnippetResponseFormatPromptSnippets1
     | null
     | undefined;
   /**
    * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
    */
-  photoRealVersion?: ResponseBodyPhotoRealVersion | undefined;
+  photoRealVersion?:
+    | FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion
+    | undefined;
   /**
    * The format to return the embeddings
    */
-  encodingFormat?: ResponseBodyEncodingFormat | undefined;
+  encodingFormat?:
+    | FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat
+    | undefined;
 };
 
-export const ResponseBodyProvider = {
+export const FindOnePromptSnippetResponseBodyPromptSnippetsProvider = {
   Cohere: "cohere",
   Openai: "openai",
   Anthropic: "anthropic",
@@ -1964,12 +1157,14 @@ export const ResponseBodyProvider = {
   Leonardoai: "leonardoai",
   Nvidia: "nvidia",
 } as const;
-export type ResponseBodyProvider = ClosedEnum<typeof ResponseBodyProvider>;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsProvider = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyPromptSnippetsProvider
+>;
 
 /**
  * The role of the prompt message
  */
-export const ResponseBodyRole = {
+export const FindOnePromptSnippetResponseBodyPromptSnippetsRole = {
   System: "system",
   Assistant: "assistant",
   User: "user",
@@ -1982,16 +1177,18 @@ export const ResponseBodyRole = {
 /**
  * The role of the prompt message
  */
-export type ResponseBodyRole = ClosedEnum<typeof ResponseBodyRole>;
-
-export const FindOnePromptSnippet2PromptSnippetsType = {
-  ImageUrl: "image_url",
-} as const;
-export type FindOnePromptSnippet2PromptSnippetsType = ClosedEnum<
-  typeof FindOnePromptSnippet2PromptSnippetsType
+export type FindOnePromptSnippetResponseBodyPromptSnippetsRole = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyPromptSnippetsRole
 >;
 
-export type FindOnePromptSnippet2ImageUrl = {
+export const FindOnePromptSnippet2PromptSnippetsResponse200Type = {
+  ImageUrl: "image_url",
+} as const;
+export type FindOnePromptSnippet2PromptSnippetsResponse200Type = ClosedEnum<
+  typeof FindOnePromptSnippet2PromptSnippetsResponse200Type
+>;
+
+export type FindOnePromptSnippet2PromptSnippetsImageUrl = {
   /**
    * The orq.ai id of the image
    */
@@ -2009,44 +1206,49 @@ export type FindOnePromptSnippet2ImageUrl = {
 /**
  * The image part of the prompt message. Only supported with vision models.
  */
-export type FindOnePromptSnippet22 = {
-  type: FindOnePromptSnippet2PromptSnippetsType;
-  imageUrl: FindOnePromptSnippet2ImageUrl;
+export type FindOnePromptSnippet2PromptSnippets2 = {
+  type: FindOnePromptSnippet2PromptSnippetsResponse200Type;
+  imageUrl: FindOnePromptSnippet2PromptSnippetsImageUrl;
 };
 
-export const FindOnePromptSnippet2Type = {
+export const FindOnePromptSnippet2PromptSnippetsResponseType = {
   Text: "text",
 } as const;
-export type FindOnePromptSnippet2Type = ClosedEnum<
-  typeof FindOnePromptSnippet2Type
+export type FindOnePromptSnippet2PromptSnippetsResponseType = ClosedEnum<
+  typeof FindOnePromptSnippet2PromptSnippetsResponseType
 >;
 
 /**
  * Text content part of a prompt message
  */
-export type FindOnePromptSnippet21 = {
-  type: FindOnePromptSnippet2Type;
+export type FindOnePromptSnippet2PromptSnippets1 = {
+  type: FindOnePromptSnippet2PromptSnippetsResponseType;
   text: string;
 };
 
-export type FindOnePromptSnippetContent2 =
-  | FindOnePromptSnippet21
-  | FindOnePromptSnippet22;
+export type FindOnePromptSnippetContentPromptSnippets2 =
+  | FindOnePromptSnippet2PromptSnippets1
+  | FindOnePromptSnippet2PromptSnippets2;
 
 /**
  * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
  */
-export type ResponseBodyContent =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsContent =
   | string
-  | Array<FindOnePromptSnippet21 | FindOnePromptSnippet22>;
+  | Array<
+    FindOnePromptSnippet2PromptSnippets1 | FindOnePromptSnippet2PromptSnippets2
+  >;
 
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseType = {
-  Function: "function",
-} as const;
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseType =
-  ClosedEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseType>;
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type =
+  {
+    Function: "function",
+  } as const;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type
+  >;
 
-export type ResponseBodyFunction = {
+export type FindOnePromptSnippetResponseBodyPromptSnippetsFunction = {
   name: string;
   /**
    * JSON string arguments for the functions
@@ -2054,26 +1256,34 @@ export type ResponseBodyFunction = {
   arguments: string;
 };
 
-export type ResponseBodyToolCalls = {
+export type FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls = {
   id?: string | undefined;
   index?: number | undefined;
-  type: FindOnePromptSnippetResponseBodyPromptSnippetsResponseType;
-  function: ResponseBodyFunction;
+  type:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type;
+  function: FindOnePromptSnippetResponseBodyPromptSnippetsFunction;
 };
 
-export type ResponseBodyMessages = {
+export type FindOnePromptSnippetResponseBodyPromptSnippetsMessages = {
   /**
    * The role of the prompt message
    */
-  role: ResponseBodyRole;
+  role: FindOnePromptSnippetResponseBodyPromptSnippetsRole;
   /**
    * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
    */
-  content: string | Array<FindOnePromptSnippet21 | FindOnePromptSnippet22>;
-  toolCalls?: Array<ResponseBodyToolCalls> | undefined;
+  content:
+    | string
+    | Array<
+      | FindOnePromptSnippet2PromptSnippets1
+      | FindOnePromptSnippet2PromptSnippets2
+    >;
+  toolCalls?:
+    | Array<FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls>
+    | undefined;
 };
 
-export type ResponseBodyPromptConfig = {
+export type FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig = {
   stream?: boolean | undefined;
   model?: string | undefined;
   /**
@@ -2083,21 +1293,25 @@ export type ResponseBodyPromptConfig = {
   /**
    * The type of the model
    */
-  modelType?: ResponseBodyModelType | undefined;
+  modelType?:
+    | FindOnePromptSnippetResponseBodyPromptSnippetsModelType
+    | undefined;
   /**
    * Model Parameters: Not all parameters apply to every model
    */
-  modelParameters?: ResponseBodyModelParameters | undefined;
-  provider?: ResponseBodyProvider | undefined;
+  modelParameters?:
+    | FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters
+    | undefined;
+  provider?: FindOnePromptSnippetResponseBodyPromptSnippetsProvider | undefined;
   /**
    * The id of the resource
    */
   integrationId?: string | null | undefined;
   version?: string | undefined;
-  messages: Array<ResponseBodyMessages>;
+  messages: Array<FindOnePromptSnippetResponseBodyPromptSnippetsMessages>;
 };
 
-export type ResponseBodyMetadata = {
+export type FindOnePromptSnippetResponseBodyPromptSnippetsMetadata = {
   useCases?: Array<string> | undefined;
   language?: string | undefined;
 };
@@ -2158,44 +1372,42 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality =
     typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality
   >;
 
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType =
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType =
   {
     JsonObject: "json_object",
   } as const;
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType =
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType =
   ClosedEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType
   >;
 
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2 =
-  {
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType;
-  };
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002 = {
+  type:
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType;
+};
 
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type =
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type =
   {
     JsonSchema: "json_schema",
   } as const;
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type =
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type =
   ClosedEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type
   >;
 
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema =
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema =
   {
     name: string;
     strict: boolean;
     schema: { [k: string]: any };
   };
 
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1 =
-  {
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type;
-    jsonSchema:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema;
-  };
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001 = {
+  type:
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type;
+  jsonSchema:
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema;
+};
 
 /**
  * An object specifying the format that the model must output.
@@ -2209,8 +1421,8 @@ export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Applicati
  * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
  */
 export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat =
-  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2
-  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1;
+  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002
+  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001;
 
 /**
  * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
@@ -2313,8 +1525,8 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParame
      * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
      */
     responseFormat?:
-      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2
-      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1
+      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002
+      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001
       | null
       | undefined;
     /**
@@ -2373,6 +1585,856 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role = {
 export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role =
   ClosedEnum<
     typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role
+  >;
+
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType =
+  {
+    ImageUrl: "image_url",
+  } as const;
+export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType =
+  ClosedEnum<
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType
+  >;
+
+export type FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl = {
+  /**
+   * The orq.ai id of the image
+   */
+  id?: string | undefined;
+  /**
+   * Either a URL of the image or the base64 encoded data URI.
+   */
+  url: string;
+  /**
+   * Specifies the detail level of the image. Currently only supported with OpenAI models
+   */
+  detail?: string | undefined;
+};
+
+/**
+ * The image part of the prompt message. Only supported with vision models.
+ */
+export type FindOnePromptSnippet2PromptSnippetsResponse2002 = {
+  type:
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType;
+  imageUrl: FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl;
+};
+
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type =
+  {
+    Text: "text",
+  } as const;
+export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type =
+  ClosedEnum<
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type
+  >;
+
+/**
+ * Text content part of a prompt message
+ */
+export type FindOnePromptSnippet2PromptSnippetsResponse2001 = {
+  type:
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type;
+  text: string;
+};
+
+export type FindOnePromptSnippetContentPromptSnippetsResponse2002 =
+  | FindOnePromptSnippet2PromptSnippetsResponse2001
+  | FindOnePromptSnippet2PromptSnippetsResponse2002;
+
+/**
+ * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content =
+  | string
+  | Array<
+    | FindOnePromptSnippet2PromptSnippetsResponse2001
+    | FindOnePromptSnippet2PromptSnippetsResponse2002
+  >;
+
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType =
+  {
+    Function: "function",
+  } as const;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType
+  >;
+
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function =
+  {
+    name: string;
+    /**
+     * JSON string arguments for the functions
+     */
+    arguments: string;
+  };
+
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls =
+  {
+    id?: string | undefined;
+    index?: number | undefined;
+    type:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType;
+    function: FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function;
+  };
+
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages =
+  {
+    /**
+     * The role of the prompt message
+     */
+    role: FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role;
+    /**
+     * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
+     */
+    content:
+      | string
+      | Array<
+        | FindOnePromptSnippet2PromptSnippetsResponse2001
+        | FindOnePromptSnippet2PromptSnippetsResponse2002
+      >;
+    toolCalls?:
+      | Array<
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls
+      >
+      | undefined;
+  };
+
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig =
+  {
+    stream?: boolean | undefined;
+    model?: string | undefined;
+    /**
+     * The id of the resource
+     */
+    modelDbId?: string | undefined;
+    /**
+     * The type of the model
+     */
+    modelType?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType
+      | undefined;
+    /**
+     * Model Parameters: Not all parameters apply to every model
+     */
+    modelParameters?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters
+      | undefined;
+    provider?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider
+      | undefined;
+    /**
+     * The id of the resource
+     */
+    integrationId?: string | null | undefined;
+    version?: string | undefined;
+    messages: Array<
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages
+    >;
+  };
+
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata =
+  {
+    useCases?: Array<string> | undefined;
+    language?: string | undefined;
+  };
+
+/**
+ * Prompt version model returned from the API
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsVersions = {
+  id: string;
+  createdById: string;
+  displayName: string;
+  updatedById: string;
+  description?: string | null | undefined;
+  promptConfig:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig;
+  metadata: FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata;
+  commit: string;
+  timestamp: string;
+};
+
+export const FindOnePromptSnippetResponseBodyPromptSnippetsType = {
+  Snippet: "snippet",
+} as const;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsType = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyPromptSnippetsType
+>;
+
+/**
+ * Prompt snippet model returned from the API
+ */
+export type FindOnePromptSnippetResponseBody2 = {
+  id: string;
+  owner: string | FindOnePromptSnippetOwnerPromptSnippets2;
+  domainId: string;
+  createdById: string;
+  displayName: string;
+  updatedById: string;
+  description?: string | null | undefined;
+  promptConfig: FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig;
+  metadata: FindOnePromptSnippetResponseBodyPromptSnippetsMetadata;
+  /**
+   * The date and time the resource was created
+   */
+  created?: Date | undefined;
+  /**
+   * The date and time the resource was last updated
+   */
+  updated?: Date | undefined;
+  versions: Array<FindOnePromptSnippetResponseBodyPromptSnippetsVersions>;
+  key: string;
+  type: FindOnePromptSnippetResponseBodyPromptSnippetsType;
+};
+
+export const FindOnePromptSnippetOwner2 = {
+  Vendor: "vendor",
+} as const;
+export type FindOnePromptSnippetOwner2 = ClosedEnum<
+  typeof FindOnePromptSnippetOwner2
+>;
+
+export type FindOnePromptSnippetResponseBodyOwner =
+  | string
+  | FindOnePromptSnippetOwner2;
+
+/**
+ * The type of the model
+ */
+export const FindOnePromptSnippetResponseBodyModelType = {
+  Chat: "chat",
+  Completion: "completion",
+  Embedding: "embedding",
+  Vision: "vision",
+  Image: "image",
+  Tts: "tts",
+  Stt: "stt",
+  Rerank: "rerank",
+} as const;
+/**
+ * The type of the model
+ */
+export type FindOnePromptSnippetResponseBodyModelType = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyModelType
+>;
+
+/**
+ * Only supported on `image` models.
+ */
+export const FindOnePromptSnippetResponseBodyFormat = {
+  Url: "url",
+  B64Json: "b64_json",
+  Text: "text",
+  JsonObject: "json_object",
+} as const;
+/**
+ * Only supported on `image` models.
+ */
+export type FindOnePromptSnippetResponseBodyFormat = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyFormat
+>;
+
+/**
+ * Only supported on `image` models.
+ */
+export const FindOnePromptSnippetResponseBodyQuality = {
+  Standard: "standard",
+  Hd: "hd",
+} as const;
+/**
+ * Only supported on `image` models.
+ */
+export type FindOnePromptSnippetResponseBodyQuality = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyQuality
+>;
+
+export const FindOnePromptSnippetResponseFormatPromptSnippetsType = {
+  JsonObject: "json_object",
+} as const;
+export type FindOnePromptSnippetResponseFormatPromptSnippetsType = ClosedEnum<
+  typeof FindOnePromptSnippetResponseFormatPromptSnippetsType
+>;
+
+export type FindOnePromptSnippetResponseFormat2 = {
+  type: FindOnePromptSnippetResponseFormatPromptSnippetsType;
+};
+
+export const FindOnePromptSnippetResponseFormatType = {
+  JsonSchema: "json_schema",
+} as const;
+export type FindOnePromptSnippetResponseFormatType = ClosedEnum<
+  typeof FindOnePromptSnippetResponseFormatType
+>;
+
+export type FindOnePromptSnippetResponseFormatJsonSchema = {
+  name: string;
+  strict: boolean;
+  schema: { [k: string]: any };
+};
+
+export type FindOnePromptSnippetResponseFormat1 = {
+  type: FindOnePromptSnippetResponseFormatType;
+  jsonSchema: FindOnePromptSnippetResponseFormatJsonSchema;
+};
+
+/**
+ * An object specifying the format that the model must output.
+ *
+ * @remarks
+ *
+ *  Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema
+ *
+ *  Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
+ *
+ * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
+ */
+export type FindOnePromptSnippetResponseBodyResponseFormat =
+  | FindOnePromptSnippetResponseFormat2
+  | FindOnePromptSnippetResponseFormat1;
+
+/**
+ * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
+ */
+export const FindOnePromptSnippetResponseBodyPhotoRealVersion = {
+  V1: "v1",
+  V2: "v2",
+} as const;
+/**
+ * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
+ */
+export type FindOnePromptSnippetResponseBodyPhotoRealVersion = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyPhotoRealVersion
+>;
+
+/**
+ * The format to return the embeddings
+ */
+export const FindOnePromptSnippetResponseBodyEncodingFormat = {
+  Float: "float",
+  Base64: "base64",
+} as const;
+/**
+ * The format to return the embeddings
+ */
+export type FindOnePromptSnippetResponseBodyEncodingFormat = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyEncodingFormat
+>;
+
+/**
+ * Model Parameters: Not all parameters apply to every model
+ */
+export type FindOnePromptSnippetResponseBodyModelParameters = {
+  /**
+   * Only supported on `chat` and `completion` models.
+   */
+  temperature?: number | undefined;
+  /**
+   * Only supported on `chat` and `completion` models.
+   */
+  maxTokens?: number | undefined;
+  /**
+   * Only supported on `chat` and `completion` models.
+   */
+  topK?: number | undefined;
+  /**
+   * Only supported on `chat` and `completion` models.
+   */
+  topP?: number | undefined;
+  /**
+   * Only supported on `chat` and `completion` models.
+   */
+  frequencyPenalty?: number | undefined;
+  /**
+   * Only supported on `chat` and `completion` models.
+   */
+  presencePenalty?: number | undefined;
+  /**
+   * Only supported on `image` models.
+   */
+  numImages?: number | undefined;
+  /**
+   * Best effort deterministic seed for the model. Currently only OpenAI models support these
+   */
+  seed?: number | undefined;
+  /**
+   * Only supported on `image` models.
+   */
+  format?: FindOnePromptSnippetResponseBodyFormat | undefined;
+  /**
+   * Only supported on `image` models.
+   */
+  dimensions?: string | undefined;
+  /**
+   * Only supported on `image` models.
+   */
+  quality?: FindOnePromptSnippetResponseBodyQuality | undefined;
+  /**
+   * Only supported on `image` models.
+   */
+  style?: string | undefined;
+  /**
+   * An object specifying the format that the model must output.
+   *
+   * @remarks
+   *
+   *  Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema
+   *
+   *  Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
+   *
+   * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
+   */
+  responseFormat?:
+    | FindOnePromptSnippetResponseFormat2
+    | FindOnePromptSnippetResponseFormat1
+    | null
+    | undefined;
+  /**
+   * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
+   */
+  photoRealVersion?:
+    | FindOnePromptSnippetResponseBodyPhotoRealVersion
+    | undefined;
+  /**
+   * The format to return the embeddings
+   */
+  encodingFormat?: FindOnePromptSnippetResponseBodyEncodingFormat | undefined;
+};
+
+export const FindOnePromptSnippetResponseBodyProvider = {
+  Cohere: "cohere",
+  Openai: "openai",
+  Anthropic: "anthropic",
+  Huggingface: "huggingface",
+  Replicate: "replicate",
+  Google: "google",
+  GoogleAi: "google-ai",
+  Azure: "azure",
+  Aws: "aws",
+  Anyscale: "anyscale",
+  Perplexity: "perplexity",
+  Groq: "groq",
+  Fal: "fal",
+  Leonardoai: "leonardoai",
+  Nvidia: "nvidia",
+} as const;
+export type FindOnePromptSnippetResponseBodyProvider = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyProvider
+>;
+
+/**
+ * The role of the prompt message
+ */
+export const FindOnePromptSnippetResponseBodyRole = {
+  System: "system",
+  Assistant: "assistant",
+  User: "user",
+  Exception: "exception",
+  Tool: "tool",
+  Prompt: "prompt",
+  Correction: "correction",
+  ExpectedOutput: "expected_output",
+} as const;
+/**
+ * The role of the prompt message
+ */
+export type FindOnePromptSnippetResponseBodyRole = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyRole
+>;
+
+export const FindOnePromptSnippet2PromptSnippetsType = {
+  ImageUrl: "image_url",
+} as const;
+export type FindOnePromptSnippet2PromptSnippetsType = ClosedEnum<
+  typeof FindOnePromptSnippet2PromptSnippetsType
+>;
+
+export type FindOnePromptSnippet2ImageUrl = {
+  /**
+   * The orq.ai id of the image
+   */
+  id?: string | undefined;
+  /**
+   * Either a URL of the image or the base64 encoded data URI.
+   */
+  url: string;
+  /**
+   * Specifies the detail level of the image. Currently only supported with OpenAI models
+   */
+  detail?: string | undefined;
+};
+
+/**
+ * The image part of the prompt message. Only supported with vision models.
+ */
+export type FindOnePromptSnippet22 = {
+  type: FindOnePromptSnippet2PromptSnippetsType;
+  imageUrl: FindOnePromptSnippet2ImageUrl;
+};
+
+export const FindOnePromptSnippet2Type = {
+  Text: "text",
+} as const;
+export type FindOnePromptSnippet2Type = ClosedEnum<
+  typeof FindOnePromptSnippet2Type
+>;
+
+/**
+ * Text content part of a prompt message
+ */
+export type FindOnePromptSnippet21 = {
+  type: FindOnePromptSnippet2Type;
+  text: string;
+};
+
+export type FindOnePromptSnippetContent2 =
+  | FindOnePromptSnippet21
+  | FindOnePromptSnippet22;
+
+/**
+ * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
+ */
+export type FindOnePromptSnippetResponseBodyContent =
+  | string
+  | Array<FindOnePromptSnippet21 | FindOnePromptSnippet22>;
+
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type = {
+  Function: "function",
+} as const;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type
+  >;
+
+export type FindOnePromptSnippetResponseBodyFunction = {
+  name: string;
+  /**
+   * JSON string arguments for the functions
+   */
+  arguments: string;
+};
+
+export type FindOnePromptSnippetResponseBodyToolCalls = {
+  id?: string | undefined;
+  index?: number | undefined;
+  type: FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type;
+  function: FindOnePromptSnippetResponseBodyFunction;
+};
+
+export type FindOnePromptSnippetResponseBodyMessages = {
+  /**
+   * The role of the prompt message
+   */
+  role: FindOnePromptSnippetResponseBodyRole;
+  /**
+   * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
+   */
+  content: string | Array<FindOnePromptSnippet21 | FindOnePromptSnippet22>;
+  toolCalls?: Array<FindOnePromptSnippetResponseBodyToolCalls> | undefined;
+};
+
+export type FindOnePromptSnippetResponseBodyPromptConfig = {
+  stream?: boolean | undefined;
+  model?: string | undefined;
+  /**
+   * The id of the resource
+   */
+  modelDbId?: string | undefined;
+  /**
+   * The type of the model
+   */
+  modelType?: FindOnePromptSnippetResponseBodyModelType | undefined;
+  /**
+   * Model Parameters: Not all parameters apply to every model
+   */
+  modelParameters?: FindOnePromptSnippetResponseBodyModelParameters | undefined;
+  provider?: FindOnePromptSnippetResponseBodyProvider | undefined;
+  /**
+   * The id of the resource
+   */
+  integrationId?: string | null | undefined;
+  version?: string | undefined;
+  messages: Array<FindOnePromptSnippetResponseBodyMessages>;
+};
+
+export type FindOnePromptSnippetResponseBodyMetadata = {
+  useCases?: Array<string> | undefined;
+  language?: string | undefined;
+};
+
+/**
+ * The type of the model
+ */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType =
+  {
+    Chat: "chat",
+    Completion: "completion",
+    Embedding: "embedding",
+    Vision: "vision",
+    Image: "image",
+    Tts: "tts",
+    Stt: "stt",
+    Rerank: "rerank",
+  } as const;
+/**
+ * The type of the model
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType
+  >;
+
+/**
+ * Only supported on `image` models.
+ */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format =
+  {
+    Url: "url",
+    B64Json: "b64_json",
+    Text: "text",
+    JsonObject: "json_object",
+  } as const;
+/**
+ * Only supported on `image` models.
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format
+  >;
+
+/**
+ * Only supported on `image` models.
+ */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality =
+  {
+    Standard: "standard",
+    Hd: "hd",
+  } as const;
+/**
+ * Only supported on `image` models.
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality
+  >;
+
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType =
+  {
+    JsonObject: "json_object",
+  } as const;
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType
+  >;
+
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2 =
+  {
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType;
+  };
+
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type =
+  {
+    JsonSchema: "json_schema",
+  } as const;
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type
+  >;
+
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema =
+  {
+    name: string;
+    strict: boolean;
+    schema: { [k: string]: any };
+  };
+
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1 =
+  {
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type;
+    jsonSchema:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema;
+  };
+
+/**
+ * An object specifying the format that the model must output.
+ *
+ * @remarks
+ *
+ *  Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema
+ *
+ *  Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
+ *
+ * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat =
+  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2
+  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1;
+
+/**
+ * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
+ */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion =
+  {
+    V1: "v1",
+    V2: "v2",
+  } as const;
+/**
+ * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion
+  >;
+
+/**
+ * The format to return the embeddings
+ */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat =
+  {
+    Float: "float",
+    Base64: "base64",
+  } as const;
+/**
+ * The format to return the embeddings
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat
+  >;
+
+/**
+ * Model Parameters: Not all parameters apply to every model
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters =
+  {
+    /**
+     * Only supported on `chat` and `completion` models.
+     */
+    temperature?: number | undefined;
+    /**
+     * Only supported on `chat` and `completion` models.
+     */
+    maxTokens?: number | undefined;
+    /**
+     * Only supported on `chat` and `completion` models.
+     */
+    topK?: number | undefined;
+    /**
+     * Only supported on `chat` and `completion` models.
+     */
+    topP?: number | undefined;
+    /**
+     * Only supported on `chat` and `completion` models.
+     */
+    frequencyPenalty?: number | undefined;
+    /**
+     * Only supported on `chat` and `completion` models.
+     */
+    presencePenalty?: number | undefined;
+    /**
+     * Only supported on `image` models.
+     */
+    numImages?: number | undefined;
+    /**
+     * Best effort deterministic seed for the model. Currently only OpenAI models support these
+     */
+    seed?: number | undefined;
+    /**
+     * Only supported on `image` models.
+     */
+    format?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format
+      | undefined;
+    /**
+     * Only supported on `image` models.
+     */
+    dimensions?: string | undefined;
+    /**
+     * Only supported on `image` models.
+     */
+    quality?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality
+      | undefined;
+    /**
+     * Only supported on `image` models.
+     */
+    style?: string | undefined;
+    /**
+     * An object specifying the format that the model must output.
+     *
+     * @remarks
+     *
+     *  Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema
+     *
+     *  Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.
+     *
+     * Important: when using JSON mode, you must also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if finish_reason="length", which indicates the generation exceeded max_tokens or the conversation exceeded the max context length.
+     */
+    responseFormat?:
+      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2
+      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1
+      | null
+      | undefined;
+    /**
+     * The version of photoReal to use. Must be v1 or v2. Only available for `leonardoai` provider
+     */
+    photoRealVersion?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion
+      | undefined;
+    /**
+     * The format to return the embeddings
+     */
+    encodingFormat?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat
+      | undefined;
+  };
+
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider =
+  {
+    Cohere: "cohere",
+    Openai: "openai",
+    Anthropic: "anthropic",
+    Huggingface: "huggingface",
+    Replicate: "replicate",
+    Google: "google",
+    GoogleAi: "google-ai",
+    Azure: "azure",
+    Aws: "aws",
+    Anyscale: "anyscale",
+    Perplexity: "perplexity",
+    Groq: "groq",
+    Fal: "fal",
+    Leonardoai: "leonardoai",
+    Nvidia: "nvidia",
+  } as const;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider
+  >;
+
+/**
+ * The role of the prompt message
+ */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole =
+  {
+    System: "system",
+    Assistant: "assistant",
+    User: "user",
+    Exception: "exception",
+    Tool: "tool",
+    Prompt: "prompt",
+    Correction: "correction",
+    ExpectedOutput: "expected_output",
+  } as const;
+/**
+ * The role of the prompt message
+ */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole =
+  ClosedEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole
   >;
 
 export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType =
@@ -2435,7 +2497,7 @@ export type FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2
 /**
  * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
  */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONContent =
   | string
   | Array<
     | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1
@@ -2451,7 +2513,7 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Application
     typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type
   >;
 
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFunction =
   {
     name: string;
     /**
@@ -2460,21 +2522,23 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function =
     arguments: string;
   };
 
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONToolCalls =
   {
     id?: string | undefined;
     index?: number | undefined;
     type:
       FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type;
-    function: FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function;
+    function:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFunction;
   };
 
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONMessages =
   {
     /**
      * The role of the prompt message
      */
-    role: FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role;
+    role:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole;
     /**
      * The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts.
      */
@@ -2486,12 +2550,12 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages =
       >;
     toolCalls?:
       | Array<
-        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONToolCalls
       >
       | undefined;
   };
 
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPromptConfig =
   {
     stream?: boolean | undefined;
     model?: string | undefined;
@@ -2503,16 +2567,16 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfi
      * The type of the model
      */
     modelType?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType
       | undefined;
     /**
      * Model Parameters: Not all parameters apply to every model
      */
     modelParameters?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters
       | undefined;
     provider?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider
       | undefined;
     /**
      * The id of the resource
@@ -2520,11 +2584,11 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfi
     integrationId?: string | null | undefined;
     version?: string | undefined;
     messages: Array<
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONMessages
     >;
   };
 
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONMetadata =
   {
     useCases?: Array<string> | undefined;
     language?: string | undefined;
@@ -2533,37 +2597,40 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata =
 /**
  * Prompt version model returned from the API
  */
-export type Versions = {
+export type FindOnePromptSnippetResponseBodyVersions = {
   id: string;
   createdById: string;
   displayName: string;
   updatedById: string;
   description?: string | null | undefined;
   promptConfig:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig;
-  metadata: FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPromptConfig;
+  metadata:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONMetadata;
   commit: string;
   timestamp: string;
 };
 
-export const ResponseBodyType = {
+export const FindOnePromptSnippetResponseBodyType = {
   Prompt: "prompt",
 } as const;
-export type ResponseBodyType = ClosedEnum<typeof ResponseBodyType>;
+export type FindOnePromptSnippetResponseBodyType = ClosedEnum<
+  typeof FindOnePromptSnippetResponseBodyType
+>;
 
 /**
  * Prompt model returned from the API
  */
-export type ResponseBody1 = {
+export type FindOnePromptSnippetResponseBody1 = {
   id: string;
-  owner: string | Owner2;
+  owner: string | FindOnePromptSnippetOwner2;
   domainId: string;
   createdById: string;
   displayName: string;
   updatedById: string;
   description?: string | null | undefined;
-  promptConfig: ResponseBodyPromptConfig;
-  metadata: ResponseBodyMetadata;
+  promptConfig: FindOnePromptSnippetResponseBodyPromptConfig;
+  metadata: FindOnePromptSnippetResponseBodyMetadata;
   /**
    * The date and time the resource was created
    */
@@ -2572,17 +2639,17 @@ export type ResponseBody1 = {
    * The date and time the resource was last updated
    */
   updated?: Date | undefined;
-  versions: Array<Versions>;
-  type: ResponseBodyType;
+  versions: Array<FindOnePromptSnippetResponseBodyVersions>;
+  type: FindOnePromptSnippetResponseBodyType;
 };
 
 /**
  * Prompt snippet retrieved.
  */
 export type FindOnePromptSnippetResponseBody =
-  | ResponseBody1
-  | ResponseBody3
-  | ResponseBody2;
+  | FindOnePromptSnippetResponseBody1
+  | FindOnePromptSnippetResponseBody3
+  | FindOnePromptSnippetResponseBody2;
 
 /** @internal */
 export const FindOnePromptSnippetRequest$inboundSchema: z.ZodType<
@@ -2641,158 +2708,178 @@ export function findOnePromptSnippetRequestFromJSON(
 }
 
 /** @internal */
-export const FindOnePromptSnippetOwnerPromptSnippets2$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetOwnerPromptSnippets2> = z
-    .nativeEnum(FindOnePromptSnippetOwnerPromptSnippets2);
+export const FindOnePromptSnippetOwnerPromptSnippetsResponse2$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetOwnerPromptSnippetsResponse2> = z
+    .nativeEnum(FindOnePromptSnippetOwnerPromptSnippetsResponse2);
 
 /** @internal */
-export const FindOnePromptSnippetOwnerPromptSnippets2$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetOwnerPromptSnippets2> =
-    FindOnePromptSnippetOwnerPromptSnippets2$inboundSchema;
+export const FindOnePromptSnippetOwnerPromptSnippetsResponse2$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetOwnerPromptSnippetsResponse2> =
+    FindOnePromptSnippetOwnerPromptSnippetsResponse2$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetOwnerPromptSnippets2$ {
-  /** @deprecated use `FindOnePromptSnippetOwnerPromptSnippets2$inboundSchema` instead. */
+export namespace FindOnePromptSnippetOwnerPromptSnippetsResponse2$ {
+  /** @deprecated use `FindOnePromptSnippetOwnerPromptSnippetsResponse2$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetOwnerPromptSnippets2$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetOwnerPromptSnippets2$outboundSchema` instead. */
+    FindOnePromptSnippetOwnerPromptSnippetsResponse2$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetOwnerPromptSnippetsResponse2$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetOwnerPromptSnippets2$outboundSchema;
+    FindOnePromptSnippetOwnerPromptSnippetsResponse2$outboundSchema;
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyOwner$inboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseBodyOwner,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.string(),
-  FindOnePromptSnippetOwnerPromptSnippets2$inboundSchema,
-]);
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
+    z.string(),
+    FindOnePromptSnippetOwnerPromptSnippetsResponse2$inboundSchema,
+  ]);
 
 /** @internal */
-export type FindOnePromptSnippetResponseBodyOwner$Outbound = string | string;
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$Outbound =
+  | string
+  | string;
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyOwner$outboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseBodyOwner$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippetResponseBodyOwner
-> = z.union([
-  z.string(),
-  FindOnePromptSnippetOwnerPromptSnippets2$outboundSchema,
-]);
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner
+  > = z.union([
+    z.string(),
+    FindOnePromptSnippetOwnerPromptSnippetsResponse2$outboundSchema,
+  ]);
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyOwner$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyOwner$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyOwner$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyOwner$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyOwner$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyOwner$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippetResponseBodyOwner$Outbound;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$Outbound;
 }
 
-export function findOnePromptSnippetResponseBodyOwnerToJSON(
-  findOnePromptSnippetResponseBodyOwner: FindOnePromptSnippetResponseBodyOwner,
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseOwnerToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponseOwner:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner,
 ): string {
   return JSON.stringify(
-    FindOnePromptSnippetResponseBodyOwner$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyOwner,
-    ),
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseOwner),
   );
 }
 
-export function findOnePromptSnippetResponseBodyOwnerFromJSON(
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseOwnerFromJSON(
   jsonString: string,
-): SafeParseResult<FindOnePromptSnippetResponseBodyOwner, SDKValidationError> {
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner,
+  SDKValidationError
+> {
   return safeParse(
     jsonString,
     (x) =>
-      FindOnePromptSnippetResponseBodyOwner$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyOwner' from JSON`,
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseOwner' from JSON`,
   );
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsModelType$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsModelType
-  > = z.nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsModelType);
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType,
+  );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsModelType$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsModelType
-  > = FindOnePromptSnippetResponseBodyPromptSnippetsModelType$inboundSchema;
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsModelType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsModelType$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsModelType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsModelType$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsModelType$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$outboundSchema;
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsFormat$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsFormat> =
-    z.nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsFormat);
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format,
+  );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsFormat$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsFormat> =
-    FindOnePromptSnippetResponseBodyPromptSnippetsFormat$inboundSchema;
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsFormat$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsFormat$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsFormat$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$outboundSchema;
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsQuality$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsQuality
-  > = z.nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsQuality);
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality,
+  );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsQuality$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsQuality
-  > = FindOnePromptSnippetResponseBodyPromptSnippetsQuality$inboundSchema;
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsQuality$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsQuality$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsQuality$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsQuality$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsQuality$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$outboundSchema;
 }
 
 /** @internal */
@@ -3081,9 +3168,9 @@ export function findOnePromptSnippetResponseFormatPromptSnippetsResponse1FromJSO
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$inboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat,
     z.ZodTypeDef,
     unknown
   > = z.union([
@@ -3096,16 +3183,16 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$inboun
   ]);
 
 /** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$Outbound =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$Outbound =
   | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2$Outbound
   | FindOnePromptSnippetResponseFormatPromptSnippetsResponse1$Outbound;
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$outboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$Outbound,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$Outbound,
     z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat
   > = z.union([
     z.lazy(() =>
       FindOnePromptSnippetResponseFormatPromptSnippetsResponse2$outboundSchema
@@ -3119,103 +3206,105 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$outbou
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$Outbound` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$Outbound` instead. */
   export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$Outbound;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$Outbound;
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseFormatToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponseFormat:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat,
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormatToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat,
 ): string {
   return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseFormat),
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat,
+      ),
   );
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseFormatFromJSON(
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormatFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat,
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$inboundSchema
         .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat' from JSON`,
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat' from JSON`,
   );
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion
   > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion,
   );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion
   > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$inboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$outboundSchema;
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat
   > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat,
   );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat
   > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$inboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$outboundSchema;
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$inboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -3227,11 +3316,13 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inbou
     presencePenalty: z.number().optional(),
     numImages: z.number().optional(),
     seed: z.number().optional(),
-    format: FindOnePromptSnippetResponseBodyPromptSnippetsFormat$inboundSchema
-      .optional(),
+    format:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$inboundSchema
+        .optional(),
     dimensions: z.string().optional(),
-    quality: FindOnePromptSnippetResponseBodyPromptSnippetsQuality$inboundSchema
-      .optional(),
+    quality:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$inboundSchema
+        .optional(),
     style: z.string().optional(),
     responseFormat: z.nullable(
       z.union([
@@ -3244,10 +3335,10 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inbou
       ]),
     ).optional(),
     photoRealVersion:
-      FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$inboundSchema
         .optional(),
     encoding_format:
-      FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$inboundSchema
         .optional(),
   }).transform((v) => {
     return remap$(v, {
@@ -3256,7 +3347,7 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inbou
   });
 
 /** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$Outbound =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$Outbound =
   {
     temperature?: number | undefined;
     maxTokens?: number | undefined;
@@ -3280,11 +3371,11 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$Outbou
   };
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$outboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$Outbound,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$Outbound,
     z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters
   > = z.object({
     temperature: z.number().optional(),
     maxTokens: z.number().optional(),
@@ -3294,11 +3385,12 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outbo
     presencePenalty: z.number().optional(),
     numImages: z.number().optional(),
     seed: z.number().optional(),
-    format: FindOnePromptSnippetResponseBodyPromptSnippetsFormat$outboundSchema
-      .optional(),
+    format:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$outboundSchema
+        .optional(),
     dimensions: z.string().optional(),
     quality:
-      FindOnePromptSnippetResponseBodyPromptSnippetsQuality$outboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$outboundSchema
         .optional(),
     style: z.string().optional(),
     responseFormat: z.nullable(
@@ -3312,10 +3404,10 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outbo
       ]),
     ).optional(),
     photoRealVersion:
-      FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$outboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$outboundSchema
         .optional(),
     encodingFormat:
-      FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$outboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$outboundSchema
         .optional(),
   }).transform((v) => {
     return remap$(v, {
@@ -3327,89 +3419,96 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outbo
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$Outbound` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$Outbound` instead. */
   export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$Outbound;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$Outbound;
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsModelParametersToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsModelParameters:
-    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters,
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseModelParametersToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters,
 ): string {
   return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsModelParameters),
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters,
+      ),
   );
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsModelParametersFromJSON(
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseModelParametersFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters,
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$inboundSchema
         .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters' from JSON`,
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters' from JSON`,
   );
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsProvider$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsProvider
-  > = z.nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsProvider);
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider,
+  );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsProvider$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsProvider
-  > = FindOnePromptSnippetResponseBodyPromptSnippetsProvider$inboundSchema;
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsProvider$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsProvider$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsProvider$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsProvider$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsProvider$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$outboundSchema;
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsRole$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsRole> = z
-    .nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsRole);
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole
+  > = z.nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole);
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsRole$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsRole> =
-    FindOnePromptSnippetResponseBodyPromptSnippetsRole$inboundSchema;
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole
+  > = FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsRole$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsRole$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsRole$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsRole$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsRole$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$outboundSchema;
 }
 
 /** @internal */
@@ -3769,9 +3868,9 @@ export function findOnePromptSnippetContentPromptSnippetsResponse2FromJSON(
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsContent$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$inboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsContent,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent,
     z.ZodTypeDef,
     unknown
   > = z.union([
@@ -3785,7 +3884,7 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsContent$inboundSchema
   ]);
 
 /** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsContent$Outbound =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$Outbound =
   | string
   | Array<
     | FindOnePromptSnippet2PromptSnippetsResponse1$Outbound
@@ -3793,11 +3892,11 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsContent$Outbound =
   >;
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsContent$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$outboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsContent$Outbound,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$Outbound,
     z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsContent
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent
   > = z.union([
     z.string(),
     z.array(z.union([
@@ -3812,77 +3911,75 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsContent$outboundSchem
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsContent$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsContent$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsContent$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsContent$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsContent$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsContent$Outbound` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$Outbound` instead. */
   export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsContent$Outbound;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$Outbound;
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsContentToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsContent:
-    FindOnePromptSnippetResponseBodyPromptSnippetsContent,
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseContentToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponseContent:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent,
 ): string {
   return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsContent$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyPromptSnippetsContent,
-    ),
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseContent),
   );
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsContentFromJSON(
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseContentFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsContent,
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsContent$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsContent' from JSON`,
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent' from JSON`,
   );
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType
   > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType,
   );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType
   > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$inboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$outboundSchema;
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsFunction$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$inboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsFunction,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -3891,17 +3988,18 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsFunction$inboundSchem
   });
 
 /** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsFunction$Outbound = {
-  name: string;
-  arguments: string;
-};
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$Outbound =
+  {
+    name: string;
+    arguments: string;
+  };
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsFunction$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$outboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsFunction$Outbound,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$Outbound,
     z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsFunction
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction
   > = z.object({
     name: z.string(),
     arguments: z.string(),
@@ -3911,81 +4009,82 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsFunction$outboundSche
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsFunction$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsFunction$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsFunction$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsFunction$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsFunction$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsFunction$Outbound` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$Outbound` instead. */
   export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsFunction$Outbound;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$Outbound;
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsFunctionToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsFunction:
-    FindOnePromptSnippetResponseBodyPromptSnippetsFunction,
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseFunctionToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponseFunction:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction,
 ): string {
   return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsFunction$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyPromptSnippetsFunction,
-    ),
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseFunction),
   );
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsFunctionFromJSON(
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseFunctionFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsFunction,
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsFunction$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$inboundSchema
         .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsFunction' from JSON`,
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction' from JSON`,
   );
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$inboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls,
     z.ZodTypeDef,
     unknown
   > = z.object({
     id: z.string().optional(),
     index: z.number().optional(),
     type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$inboundSchema,
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$inboundSchema,
     function: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsFunction$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$inboundSchema
     ),
   });
 
 /** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$Outbound = {
-  id?: string | undefined;
-  index?: number | undefined;
-  type: string;
-  function: FindOnePromptSnippetResponseBodyPromptSnippetsFunction$Outbound;
-};
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$Outbound =
+  {
+    id?: string | undefined;
+    index?: number | undefined;
+    type: string;
+    function:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$Outbound;
+  };
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$outboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$Outbound,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$Outbound,
     z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls
   > = z.object({
     id: z.string().optional(),
     index: z.number().optional(),
     type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$outboundSchema,
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$outboundSchema,
     function: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsFunction$outboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$outboundSchema
     ),
   });
 
@@ -3993,51 +4092,52 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$outboundSch
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$Outbound` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$Outbound` instead. */
   export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$Outbound;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$Outbound;
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsToolCallsToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsToolCalls:
-    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls,
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseToolCallsToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls,
 ): string {
   return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsToolCalls),
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls),
   );
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsToolCallsFromJSON(
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseToolCallsFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls,
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$inboundSchema
         .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls' from JSON`,
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls' from JSON`,
   );
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsMessages$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$inboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsMessages,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages,
     z.ZodTypeDef,
     unknown
   > = z.object({
-    role: FindOnePromptSnippetResponseBodyPromptSnippetsRole$inboundSchema,
+    role:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$inboundSchema,
     content: z.union([
       z.string(),
       z.array(z.union([
@@ -4051,7 +4151,7 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsMessages$inboundSchem
     ]),
     tool_calls: z.array(
       z.lazy(() =>
-        FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$inboundSchema
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$inboundSchema
       ),
     ).optional(),
   }).transform((v) => {
@@ -4061,27 +4161,31 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsMessages$inboundSchem
   });
 
 /** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsMessages$Outbound = {
-  role: string;
-  content:
-    | string
-    | Array<
-      | FindOnePromptSnippet2PromptSnippetsResponse1$Outbound
-      | FindOnePromptSnippet2PromptSnippetsResponse2$Outbound
-    >;
-  tool_calls?:
-    | Array<FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$Outbound>
-    | undefined;
-};
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$Outbound =
+  {
+    role: string;
+    content:
+      | string
+      | Array<
+        | FindOnePromptSnippet2PromptSnippetsResponse1$Outbound
+        | FindOnePromptSnippet2PromptSnippetsResponse2$Outbound
+      >;
+    tool_calls?:
+      | Array<
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$Outbound
+      >
+      | undefined;
+  };
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsMessages$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$outboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsMessages$Outbound,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$Outbound,
     z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsMessages
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages
   > = z.object({
-    role: FindOnePromptSnippetResponseBodyPromptSnippetsRole$outboundSchema,
+    role:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$outboundSchema,
     content: z.union([
       z.string(),
       z.array(z.union([
@@ -4095,7 +4199,7 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsMessages$outboundSche
     ]),
     toolCalls: z.array(
       z.lazy(() =>
-        FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$outboundSchema
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$outboundSchema
       ),
     ).optional(),
   }).transform((v) => {
@@ -4108,48 +4212,47 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsMessages$outboundSche
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsMessages$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsMessages$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsMessages$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsMessages$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsMessages$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsMessages$Outbound` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$Outbound` instead. */
   export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsMessages$Outbound;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$Outbound;
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsMessagesToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsMessages:
-    FindOnePromptSnippetResponseBodyPromptSnippetsMessages,
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseMessagesToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponseMessages:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages,
 ): string {
   return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsMessages$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyPromptSnippetsMessages,
-    ),
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseMessages),
   );
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsMessagesFromJSON(
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseMessagesFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsMessages,
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsMessages$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$inboundSchema
         .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsMessages' from JSON`,
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages' from JSON`,
   );
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$inboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -4157,19 +4260,19 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$inboundS
     model: z.string().optional(),
     model_db_id: z.string().optional(),
     model_type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsModelType$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$inboundSchema
         .optional(),
     model_parameters: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$inboundSchema
     ).optional(),
     provider:
-      FindOnePromptSnippetResponseBodyPromptSnippetsProvider$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$inboundSchema
         .optional(),
     integration_id: z.nullable(z.string()).optional(),
     version: z.string().optional(),
     messages: z.array(
       z.lazy(() =>
-        FindOnePromptSnippetResponseBodyPromptSnippetsMessages$inboundSchema
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$inboundSchema
       ),
     ),
   }).transform((v) => {
@@ -4182,47 +4285,47 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$inboundS
   });
 
 /** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$Outbound =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$Outbound =
   {
     stream?: boolean | undefined;
     model?: string | undefined;
     model_db_id?: string | undefined;
     model_type?: string | undefined;
     model_parameters?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$Outbound
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$Outbound
       | undefined;
     provider?: string | undefined;
     integration_id?: string | null | undefined;
     version?: string | undefined;
     messages: Array<
-      FindOnePromptSnippetResponseBodyPromptSnippetsMessages$Outbound
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$Outbound
     >;
   };
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$outboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$Outbound,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$Outbound,
     z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig
   > = z.object({
     stream: z.boolean().optional(),
     model: z.string().optional(),
     modelDbId: z.string().optional(),
     modelType:
-      FindOnePromptSnippetResponseBodyPromptSnippetsModelType$outboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$outboundSchema
         .optional(),
     modelParameters: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$outboundSchema
     ).optional(),
     provider:
-      FindOnePromptSnippetResponseBodyPromptSnippetsProvider$outboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$outboundSchema
         .optional(),
     integrationId: z.nullable(z.string()).optional(),
     version: z.string().optional(),
     messages: z.array(
       z.lazy(() =>
-        FindOnePromptSnippetResponseBodyPromptSnippetsMessages$outboundSchema
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$outboundSchema
       ),
     ),
   }).transform((v) => {
@@ -4238,47 +4341,49 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$outbound
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$Outbound` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$Outbound` instead. */
   export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$Outbound;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$Outbound;
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsPromptConfigToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsPromptConfig:
-    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig,
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfigToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig,
 ): string {
   return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsPromptConfig),
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig,
+      ),
   );
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsPromptConfigFromJSON(
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfigFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig,
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$inboundSchema
         .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig' from JSON`,
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig' from JSON`,
   );
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$inboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -4291,17 +4396,18 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$inboundSchem
   });
 
 /** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$Outbound = {
-  use_cases?: Array<string> | undefined;
-  language?: string | undefined;
-};
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$Outbound =
+  {
+    use_cases?: Array<string> | undefined;
+    language?: string | undefined;
+  };
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$outboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$Outbound,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$Outbound,
     z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata
   > = z.object({
     useCases: z.array(z.string()).optional(),
     language: z.string().optional(),
@@ -4315,70 +4421,69 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$outboundSche
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$Outbound` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$Outbound` instead. */
   export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$Outbound;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$Outbound;
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsMetadataToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsMetadata:
-    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata,
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseMetadataToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata,
 ): string {
   return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyPromptSnippetsMetadata,
-    ),
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata),
   );
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsMetadataFromJSON(
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseMetadataFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsMetadata,
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$inboundSchema
         .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsMetadata' from JSON`,
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata' from JSON`,
   );
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType
   > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType,
   );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType
   > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$inboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType$outboundSchema;
 }
 
 /** @internal */
@@ -4410,31 +4515,31 @@ export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applic
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality
   > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality,
   );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality
   > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$inboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality$outboundSchema;
 }
 
 /** @internal */
@@ -4727,9 +4832,9 @@ export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200Appli
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$inboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat,
     z.ZodTypeDef,
     unknown
   > = z.union([
@@ -4742,16 +4847,16 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
   ]);
 
 /** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$Outbound =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$Outbound =
   | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2$Outbound
   | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1$Outbound;
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$outboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$Outbound,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$Outbound,
     z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat
   > = z.union([
     z.lazy(() =>
       FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2$outboundSchema
@@ -4765,105 +4870,105 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$Outbound` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$Outbound` instead. */
   export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$Outbound;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$Outbound;
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormatToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat,
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormatToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat,
 ): string {
   return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$outboundSchema
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$outboundSchema
       .parse(
-        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat,
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat,
       ),
   );
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormatFromJSON(
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormatFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat,
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat$inboundSchema
         .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat' from JSON`,
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ResponseFormat' from JSON`,
   );
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion
   > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion,
   );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion
   > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$inboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion$outboundSchema;
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat
   > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat,
   );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat
   > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$inboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat$outboundSchema;
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$inboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters,
     z.ZodTypeDef,
     unknown
   > = z.object({
@@ -4880,7 +4985,7 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
         .optional(),
     dimensions: z.string().optional(),
     quality:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality$inboundSchema
         .optional(),
     style: z.string().optional(),
     responseFormat: z.nullable(
@@ -4894,10 +4999,10 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
       ]),
     ).optional(),
     photoRealVersion:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion$inboundSchema
         .optional(),
     encoding_format:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat$inboundSchema
         .optional(),
   }).transform((v) => {
     return remap$(v, {
@@ -4906,7 +5011,7 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
   });
 
 /** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$Outbound =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$Outbound =
   {
     temperature?: number | undefined;
     maxTokens?: number | undefined;
@@ -4930,11 +5035,11 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Application
   };
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$outboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$Outbound,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$Outbound,
     z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters
   > = z.object({
     temperature: z.number().optional(),
     maxTokens: z.number().optional(),
@@ -4949,7 +5054,7 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
         .optional(),
     dimensions: z.string().optional(),
     quality:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$outboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Quality$outboundSchema
         .optional(),
     style: z.string().optional(),
     responseFormat: z.nullable(
@@ -4963,10 +5068,10 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
       ]),
     ).optional(),
     photoRealVersion:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$outboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PhotoRealVersion$outboundSchema
         .optional(),
     encodingFormat:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$outboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3EncodingFormat$outboundSchema
         .optional(),
   }).transform((v) => {
     return remap$(v, {
@@ -4978,99 +5083,99 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$Outbound` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$Outbound` instead. */
   export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$Outbound;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$Outbound;
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParametersToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters,
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParametersToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters,
 ): string {
   return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$outboundSchema
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$outboundSchema
       .parse(
-        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters,
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters,
       ),
   );
 }
 
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParametersFromJSON(
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParametersFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters,
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$inboundSchema
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$inboundSchema
         .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters' from JSON`,
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters' from JSON`,
   );
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider
   > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider,
   );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider
   > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$inboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider$outboundSchema;
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role
   > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role,
   );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role
   > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$inboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role$outboundSchema;
 }
 
 /** @internal */
@@ -5444,9 +5549,9 @@ export function findOnePromptSnippetContentPromptSnippetsResponse200ApplicationJ
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONContent$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$inboundSchema:
   z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONContent,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content,
     z.ZodTypeDef,
     unknown
   > = z.union([
@@ -5462,11 +5567,7147 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
   ]);
 
 /** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONContent$Outbound =
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$Outbound =
   | string
   | Array<
     | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1$Outbound
     | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2$Outbound
+  >;
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content
+  > = z.union([
+    z.string(),
+    z.array(z.union([
+      z.lazy(() =>
+        FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1$outboundSchema
+      ),
+      z.lazy(() =>
+        FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2$outboundSchema
+      ),
+    ])),
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ContentToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ContentFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Content' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    name: z.string(),
+    arguments: z.string(),
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$Outbound =
+  {
+    name: string;
+    arguments: string;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function
+  > = z.object({
+    name: z.string(),
+    arguments: z.string(),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3FunctionToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3FunctionFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    id: z.string().optional(),
+    index: z.number().optional(),
+    type:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$inboundSchema,
+    function: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$inboundSchema
+    ),
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$Outbound =
+  {
+    id?: string | undefined;
+    index?: number | undefined;
+    type: string;
+    function:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$Outbound;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls
+  > = z.object({
+    id: z.string().optional(),
+    index: z.number().optional(),
+    type:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$outboundSchema,
+    function: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Function$outboundSchema
+    ),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCallsToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCallsFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    role:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role$inboundSchema,
+    content: z.union([
+      z.string(),
+      z.array(z.union([
+        z.lazy(() =>
+          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1$inboundSchema
+        ),
+        z.lazy(() =>
+          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2$inboundSchema
+        ),
+      ])),
+    ]),
+    tool_calls: z.array(
+      z.lazy(() =>
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$inboundSchema
+      ),
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "tool_calls": "toolCalls",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$Outbound =
+  {
+    role: string;
+    content:
+      | string
+      | Array<
+        | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1$Outbound
+        | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2$Outbound
+      >;
+    tool_calls?:
+      | Array<
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$Outbound
+      >
+      | undefined;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages
+  > = z.object({
+    role:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Role$outboundSchema,
+    content: z.union([
+      z.string(),
+      z.array(z.union([
+        z.lazy(() =>
+          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1$outboundSchema
+        ),
+        z.lazy(() =>
+          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2$outboundSchema
+        ),
+      ])),
+    ]),
+    toolCalls: z.array(
+      z.lazy(() =>
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ToolCalls$outboundSchema
+      ),
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      toolCalls: "tool_calls",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3MessagesToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3MessagesFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    stream: z.boolean().optional(),
+    model: z.string().optional(),
+    model_db_id: z.string().optional(),
+    model_type:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType$inboundSchema
+        .optional(),
+    model_parameters: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$inboundSchema
+    ).optional(),
+    provider:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider$inboundSchema
+        .optional(),
+    integration_id: z.nullable(z.string()).optional(),
+    version: z.string().optional(),
+    messages: z.array(
+      z.lazy(() =>
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$inboundSchema
+      ),
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      "model_db_id": "modelDbId",
+      "model_type": "modelType",
+      "model_parameters": "modelParameters",
+      "integration_id": "integrationId",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$Outbound =
+  {
+    stream?: boolean | undefined;
+    model?: string | undefined;
+    model_db_id?: string | undefined;
+    model_type?: string | undefined;
+    model_parameters?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$Outbound
+      | undefined;
+    provider?: string | undefined;
+    integration_id?: string | null | undefined;
+    version?: string | undefined;
+    messages: Array<
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$Outbound
+    >;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig
+  > = z.object({
+    stream: z.boolean().optional(),
+    model: z.string().optional(),
+    modelDbId: z.string().optional(),
+    modelType:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelType$outboundSchema
+        .optional(),
+    modelParameters: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3ModelParameters$outboundSchema
+    ).optional(),
+    provider:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Provider$outboundSchema
+        .optional(),
+    integrationId: z.nullable(z.string()).optional(),
+    version: z.string().optional(),
+    messages: z.array(
+      z.lazy(() =>
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Messages$outboundSchema
+      ),
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      modelDbId: "model_db_id",
+      modelType: "model_type",
+      modelParameters: "model_parameters",
+      integrationId: "integration_id",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfigToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfigFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    use_cases: z.array(z.string()).optional(),
+    language: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "use_cases": "useCases",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$Outbound =
+  {
+    use_cases?: Array<string> | undefined;
+    language?: string | undefined;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata
+  > = z.object({
+    useCases: z.array(z.string()).optional(),
+    language: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      useCases: "use_cases",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3MetadataToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3MetadataFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    _id: z.string(),
+    created_by_id: z.string(),
+    display_name: z.string(),
+    updated_by_id: z.string(),
+    description: z.nullable(z.string()).optional(),
+    prompt_config: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$inboundSchema
+    ),
+    metadata: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$inboundSchema
+    ),
+    commit: z.string(),
+    timestamp: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "_id": "id",
+      "created_by_id": "createdById",
+      "display_name": "displayName",
+      "updated_by_id": "updatedById",
+      "prompt_config": "promptConfig",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$Outbound =
+  {
+    _id: string;
+    created_by_id: string;
+    display_name: string;
+    updated_by_id: string;
+    description?: string | null | undefined;
+    prompt_config:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$Outbound;
+    metadata:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$Outbound;
+    commit: string;
+    timestamp: string;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions
+  > = z.object({
+    id: z.string(),
+    createdById: z.string(),
+    displayName: z.string(),
+    updatedById: z.string(),
+    description: z.nullable(z.string()).optional(),
+    promptConfig: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3PromptConfig$outboundSchema
+    ),
+    metadata: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Metadata$outboundSchema
+    ),
+    commit: z.string(),
+    timestamp: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      id: "_id",
+      createdById: "created_by_id",
+      displayName: "display_name",
+      updatedById: "updated_by_id",
+      promptConfig: "prompt_config",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseVersionsToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponseVersions:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseVersions),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseVersionsFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseType
+  > = z.nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsResponseType);
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseType
+  > = FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBody3$inboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBody3,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  _id: z.string(),
+  owner: z.union([
+    z.string(),
+    FindOnePromptSnippetOwnerPromptSnippetsResponse2$inboundSchema,
+  ]),
+  domain_id: z.string(),
+  created_by_id: z.string(),
+  display_name: z.string(),
+  updated_by_id: z.string(),
+  description: z.nullable(z.string()).optional(),
+  prompt_config: z.lazy(() =>
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$inboundSchema
+  ),
+  metadata: z.lazy(() =>
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$inboundSchema
+  ),
+  created: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  updated: z.string().datetime({ offset: true }).default(
+    "2024-11-26T03:17:57.484Z",
+  ).transform(v => new Date(v)),
+  versions: z.array(
+    z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$inboundSchema
+    ),
+  ),
+  type:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$inboundSchema,
+}).transform((v) => {
+  return remap$(v, {
+    "_id": "id",
+    "domain_id": "domainId",
+    "created_by_id": "createdById",
+    "display_name": "displayName",
+    "updated_by_id": "updatedById",
+    "prompt_config": "promptConfig",
+  });
+});
+
+/** @internal */
+export type FindOnePromptSnippetResponseBody3$Outbound = {
+  _id: string;
+  owner: string | string;
+  domain_id: string;
+  created_by_id: string;
+  display_name: string;
+  updated_by_id: string;
+  description?: string | null | undefined;
+  prompt_config:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$Outbound;
+  metadata:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$Outbound;
+  created?: string | undefined;
+  updated: string;
+  versions: Array<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$Outbound
+  >;
+  type: string;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBody3$outboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBody3$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippetResponseBody3
+> = z.object({
+  id: z.string(),
+  owner: z.union([
+    z.string(),
+    FindOnePromptSnippetOwnerPromptSnippetsResponse2$outboundSchema,
+  ]),
+  domainId: z.string(),
+  createdById: z.string(),
+  displayName: z.string(),
+  updatedById: z.string(),
+  description: z.nullable(z.string()).optional(),
+  promptConfig: z.lazy(() =>
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$outboundSchema
+  ),
+  metadata: z.lazy(() =>
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$outboundSchema
+  ),
+  created: z.date().transform(v => v.toISOString()).optional(),
+  updated: z.date().default(() => new Date("2024-11-26T03:17:57.484Z"))
+    .transform(v => v.toISOString()),
+  versions: z.array(
+    z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions$outboundSchema
+    ),
+  ),
+  type:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$outboundSchema,
+}).transform((v) => {
+  return remap$(v, {
+    id: "_id",
+    domainId: "domain_id",
+    createdById: "created_by_id",
+    displayName: "display_name",
+    updatedById: "updated_by_id",
+    promptConfig: "prompt_config",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBody3$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBody3$inboundSchema` instead. */
+  export const inboundSchema = FindOnePromptSnippetResponseBody3$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBody3$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBody3$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBody3$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseBody3$Outbound;
+}
+
+export function findOnePromptSnippetResponseBody3ToJSON(
+  findOnePromptSnippetResponseBody3: FindOnePromptSnippetResponseBody3,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBody3$outboundSchema.parse(
+      findOnePromptSnippetResponseBody3,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBody3FromJSON(
+  jsonString: string,
+): SafeParseResult<FindOnePromptSnippetResponseBody3, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => FindOnePromptSnippetResponseBody3$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBody3' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetOwnerPromptSnippets2$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetOwnerPromptSnippets2> = z
+    .nativeEnum(FindOnePromptSnippetOwnerPromptSnippets2);
+
+/** @internal */
+export const FindOnePromptSnippetOwnerPromptSnippets2$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetOwnerPromptSnippets2> =
+    FindOnePromptSnippetOwnerPromptSnippets2$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetOwnerPromptSnippets2$ {
+  /** @deprecated use `FindOnePromptSnippetOwnerPromptSnippets2$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetOwnerPromptSnippets2$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetOwnerPromptSnippets2$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetOwnerPromptSnippets2$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsOwner$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsOwner,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
+    z.string(),
+    FindOnePromptSnippetOwnerPromptSnippets2$inboundSchema,
+  ]);
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsOwner$Outbound =
+  | string
+  | string;
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsOwner$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsOwner$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsOwner
+  > = z.union([
+    z.string(),
+    FindOnePromptSnippetOwnerPromptSnippets2$outboundSchema,
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsOwner$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsOwner$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsOwner$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsOwner$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsOwner$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsOwner$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsOwner$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsOwnerToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsOwner:
+    FindOnePromptSnippetResponseBodyPromptSnippetsOwner,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsOwner$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyPromptSnippetsOwner,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsOwnerFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsOwner,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsOwner$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsOwner' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsModelType$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsModelType
+  > = z.nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsModelType);
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsModelType$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsModelType
+  > = FindOnePromptSnippetResponseBodyPromptSnippetsModelType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsModelType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsModelType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsModelType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsModelType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsModelType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsFormat$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsFormat> =
+    z.nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsFormat);
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsFormat$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsFormat> =
+    FindOnePromptSnippetResponseBodyPromptSnippetsFormat$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsFormat$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsFormat$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsFormat$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsQuality$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsQuality
+  > = z.nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsQuality);
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsQuality$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsQuality
+  > = FindOnePromptSnippetResponseBodyPromptSnippetsQuality$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsQuality$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsQuality$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsQuality$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsQuality$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsQuality$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type
+  > =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippets2$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippets2,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$inboundSchema,
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseFormatPromptSnippets2$Outbound = {
+  type: string;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippets2$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippets2$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseFormatPromptSnippets2
+  > = z.object({
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$outboundSchema,
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippets2$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippets2$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippets2$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippets2$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippets2$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippets2$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseFormatPromptSnippets2$Outbound;
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippets2ToJSON(
+  findOnePromptSnippetResponseFormatPromptSnippets2:
+    FindOnePromptSnippetResponseFormatPromptSnippets2,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseFormatPromptSnippets2$outboundSchema.parse(
+      findOnePromptSnippetResponseFormatPromptSnippets2,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippets2FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseFormatPromptSnippets2,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseFormatPromptSnippets2$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippets2' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponseType
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponseType,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponseType
+  > =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    name: z.string(),
+    strict: z.boolean(),
+    schema: z.record(z.any()),
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$Outbound =
+  {
+    name: string;
+    strict: boolean;
+    schema: { [k: string]: any };
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema
+  > = z.object({
+    name: z.string(),
+    strict: z.boolean(),
+    schema: z.record(z.any()),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$Outbound;
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsJsonSchemaToJSON(
+  findOnePromptSnippetResponseFormatPromptSnippetsJsonSchema:
+    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$outboundSchema
+      .parse(findOnePromptSnippetResponseFormatPromptSnippetsJsonSchema),
+  );
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsJsonSchemaFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippets1$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippets1,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$inboundSchema,
+    json_schema: z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$inboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      "json_schema": "jsonSchema",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseFormatPromptSnippets1$Outbound = {
+  type: string;
+  json_schema:
+    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$Outbound;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippets1$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippets1$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseFormatPromptSnippets1
+  > = z.object({
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$outboundSchema,
+    jsonSchema: z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$outboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      jsonSchema: "json_schema",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippets1$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippets1$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippets1$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippets1$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippets1$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippets1$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseFormatPromptSnippets1$Outbound;
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippets1ToJSON(
+  findOnePromptSnippetResponseFormatPromptSnippets1:
+    FindOnePromptSnippetResponseFormatPromptSnippets1,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseFormatPromptSnippets1$outboundSchema.parse(
+      findOnePromptSnippetResponseFormatPromptSnippets1,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippets1FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseFormatPromptSnippets1,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseFormatPromptSnippets1$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippets1' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
+    z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippets2$inboundSchema
+    ),
+    z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippets1$inboundSchema
+    ),
+  ]);
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$Outbound =
+  | FindOnePromptSnippetResponseFormatPromptSnippets2$Outbound
+  | FindOnePromptSnippetResponseFormatPromptSnippets1$Outbound;
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat
+  > = z.union([
+    z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippets2$outboundSchema
+    ),
+    z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippets1$outboundSchema
+    ),
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseFormatToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponseFormat:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseFormat),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponseFormatFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseFormat' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    temperature: z.number().optional(),
+    maxTokens: z.number().optional(),
+    topK: z.number().optional(),
+    topP: z.number().optional(),
+    frequencyPenalty: z.number().optional(),
+    presencePenalty: z.number().optional(),
+    numImages: z.number().optional(),
+    seed: z.number().optional(),
+    format: FindOnePromptSnippetResponseBodyPromptSnippetsFormat$inboundSchema
+      .optional(),
+    dimensions: z.string().optional(),
+    quality: FindOnePromptSnippetResponseBodyPromptSnippetsQuality$inboundSchema
+      .optional(),
+    style: z.string().optional(),
+    responseFormat: z.nullable(
+      z.union([
+        z.lazy(() =>
+          FindOnePromptSnippetResponseFormatPromptSnippets2$inboundSchema
+        ),
+        z.lazy(() =>
+          FindOnePromptSnippetResponseFormatPromptSnippets1$inboundSchema
+        ),
+      ]),
+    ).optional(),
+    photoRealVersion:
+      FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$inboundSchema
+        .optional(),
+    encoding_format:
+      FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$inboundSchema
+        .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "encoding_format": "encodingFormat",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$Outbound =
+  {
+    temperature?: number | undefined;
+    maxTokens?: number | undefined;
+    topK?: number | undefined;
+    topP?: number | undefined;
+    frequencyPenalty?: number | undefined;
+    presencePenalty?: number | undefined;
+    numImages?: number | undefined;
+    seed?: number | undefined;
+    format?: string | undefined;
+    dimensions?: string | undefined;
+    quality?: string | undefined;
+    style?: string | undefined;
+    responseFormat?:
+      | FindOnePromptSnippetResponseFormatPromptSnippets2$Outbound
+      | FindOnePromptSnippetResponseFormatPromptSnippets1$Outbound
+      | null
+      | undefined;
+    photoRealVersion?: string | undefined;
+    encoding_format?: string | undefined;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters
+  > = z.object({
+    temperature: z.number().optional(),
+    maxTokens: z.number().optional(),
+    topK: z.number().optional(),
+    topP: z.number().optional(),
+    frequencyPenalty: z.number().optional(),
+    presencePenalty: z.number().optional(),
+    numImages: z.number().optional(),
+    seed: z.number().optional(),
+    format: FindOnePromptSnippetResponseBodyPromptSnippetsFormat$outboundSchema
+      .optional(),
+    dimensions: z.string().optional(),
+    quality:
+      FindOnePromptSnippetResponseBodyPromptSnippetsQuality$outboundSchema
+        .optional(),
+    style: z.string().optional(),
+    responseFormat: z.nullable(
+      z.union([
+        z.lazy(() =>
+          FindOnePromptSnippetResponseFormatPromptSnippets2$outboundSchema
+        ),
+        z.lazy(() =>
+          FindOnePromptSnippetResponseFormatPromptSnippets1$outboundSchema
+        ),
+      ]),
+    ).optional(),
+    photoRealVersion:
+      FindOnePromptSnippetResponseBodyPromptSnippetsPhotoRealVersion$outboundSchema
+        .optional(),
+    encodingFormat:
+      FindOnePromptSnippetResponseBodyPromptSnippetsEncodingFormat$outboundSchema
+        .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      encodingFormat: "encoding_format",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsModelParametersToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsModelParameters:
+    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsModelParameters),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsModelParametersFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsProvider$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsProvider
+  > = z.nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsProvider);
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsProvider$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsProvider
+  > = FindOnePromptSnippetResponseBodyPromptSnippetsProvider$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsProvider$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsProvider$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsProvider$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsProvider$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsProvider$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsRole$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsRole> = z
+    .nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsRole);
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsRole$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsRole> =
+    FindOnePromptSnippetResponseBodyPromptSnippetsRole$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsRole$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsRole$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsRole$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsRole$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsRole$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200Type$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippet2PromptSnippetsResponse200Type> = z
+    .nativeEnum(FindOnePromptSnippet2PromptSnippetsResponse200Type);
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200Type$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippet2PromptSnippetsResponse200Type> =
+    FindOnePromptSnippet2PromptSnippetsResponse200Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsResponse200Type$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200Type$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200Type$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200Type$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200Type$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsImageUrl$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsImageUrl,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    id: z.string().optional(),
+    url: z.string(),
+    detail: z.string().optional(),
+  });
+
+/** @internal */
+export type FindOnePromptSnippet2PromptSnippetsImageUrl$Outbound = {
+  id?: string | undefined;
+  url: string;
+  detail?: string | undefined;
+};
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsImageUrl$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsImageUrl$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippet2PromptSnippetsImageUrl
+  > = z.object({
+    id: z.string().optional(),
+    url: z.string(),
+    detail: z.string().optional(),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsImageUrl$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsImageUrl$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsImageUrl$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsImageUrl$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsImageUrl$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsImageUrl$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippet2PromptSnippetsImageUrl$Outbound;
+}
+
+export function findOnePromptSnippet2PromptSnippetsImageUrlToJSON(
+  findOnePromptSnippet2PromptSnippetsImageUrl:
+    FindOnePromptSnippet2PromptSnippetsImageUrl,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippet2PromptSnippetsImageUrl$outboundSchema.parse(
+      findOnePromptSnippet2PromptSnippetsImageUrl,
+    ),
+  );
+}
+
+export function findOnePromptSnippet2PromptSnippetsImageUrlFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippet2PromptSnippetsImageUrl,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippet2PromptSnippetsImageUrl$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsImageUrl' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippets2$inboundSchema: z.ZodType<
+  FindOnePromptSnippet2PromptSnippets2,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  type: FindOnePromptSnippet2PromptSnippetsResponse200Type$inboundSchema,
+  image_url: z.lazy(() =>
+    FindOnePromptSnippet2PromptSnippetsImageUrl$inboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    "image_url": "imageUrl",
+  });
+});
+
+/** @internal */
+export type FindOnePromptSnippet2PromptSnippets2$Outbound = {
+  type: string;
+  image_url: FindOnePromptSnippet2PromptSnippetsImageUrl$Outbound;
+};
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippets2$outboundSchema: z.ZodType<
+  FindOnePromptSnippet2PromptSnippets2$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippet2PromptSnippets2
+> = z.object({
+  type: FindOnePromptSnippet2PromptSnippetsResponse200Type$outboundSchema,
+  imageUrl: z.lazy(() =>
+    FindOnePromptSnippet2PromptSnippetsImageUrl$outboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    imageUrl: "image_url",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippets2$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippets2$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippets2$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippets2$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippets2$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippets2$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippet2PromptSnippets2$Outbound;
+}
+
+export function findOnePromptSnippet2PromptSnippets2ToJSON(
+  findOnePromptSnippet2PromptSnippets2: FindOnePromptSnippet2PromptSnippets2,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippet2PromptSnippets2$outboundSchema.parse(
+      findOnePromptSnippet2PromptSnippets2,
+    ),
+  );
+}
+
+export function findOnePromptSnippet2PromptSnippets2FromJSON(
+  jsonString: string,
+): SafeParseResult<FindOnePromptSnippet2PromptSnippets2, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippet2PromptSnippets2$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippet2PromptSnippets2' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponseType$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippet2PromptSnippetsResponseType> = z
+    .nativeEnum(FindOnePromptSnippet2PromptSnippetsResponseType);
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponseType$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippet2PromptSnippetsResponseType> =
+    FindOnePromptSnippet2PromptSnippetsResponseType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsResponseType$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponseType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponseType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponseType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponseType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippets1$inboundSchema: z.ZodType<
+  FindOnePromptSnippet2PromptSnippets1,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  type: FindOnePromptSnippet2PromptSnippetsResponseType$inboundSchema,
+  text: z.string(),
+});
+
+/** @internal */
+export type FindOnePromptSnippet2PromptSnippets1$Outbound = {
+  type: string;
+  text: string;
+};
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippets1$outboundSchema: z.ZodType<
+  FindOnePromptSnippet2PromptSnippets1$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippet2PromptSnippets1
+> = z.object({
+  type: FindOnePromptSnippet2PromptSnippetsResponseType$outboundSchema,
+  text: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippets1$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippets1$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippets1$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippets1$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippets1$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippets1$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippet2PromptSnippets1$Outbound;
+}
+
+export function findOnePromptSnippet2PromptSnippets1ToJSON(
+  findOnePromptSnippet2PromptSnippets1: FindOnePromptSnippet2PromptSnippets1,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippet2PromptSnippets1$outboundSchema.parse(
+      findOnePromptSnippet2PromptSnippets1,
+    ),
+  );
+}
+
+export function findOnePromptSnippet2PromptSnippets1FromJSON(
+  jsonString: string,
+): SafeParseResult<FindOnePromptSnippet2PromptSnippets1, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippet2PromptSnippets1$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippet2PromptSnippets1' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetContentPromptSnippets2$inboundSchema:
+  z.ZodType<FindOnePromptSnippetContentPromptSnippets2, z.ZodTypeDef, unknown> =
+    z.union([
+      z.lazy(() => FindOnePromptSnippet2PromptSnippets1$inboundSchema),
+      z.lazy(() => FindOnePromptSnippet2PromptSnippets2$inboundSchema),
+    ]);
+
+/** @internal */
+export type FindOnePromptSnippetContentPromptSnippets2$Outbound =
+  | FindOnePromptSnippet2PromptSnippets1$Outbound
+  | FindOnePromptSnippet2PromptSnippets2$Outbound;
+
+/** @internal */
+export const FindOnePromptSnippetContentPromptSnippets2$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetContentPromptSnippets2$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetContentPromptSnippets2
+  > = z.union([
+    z.lazy(() => FindOnePromptSnippet2PromptSnippets1$outboundSchema),
+    z.lazy(() => FindOnePromptSnippet2PromptSnippets2$outboundSchema),
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetContentPromptSnippets2$ {
+  /** @deprecated use `FindOnePromptSnippetContentPromptSnippets2$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetContentPromptSnippets2$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetContentPromptSnippets2$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetContentPromptSnippets2$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetContentPromptSnippets2$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetContentPromptSnippets2$Outbound;
+}
+
+export function findOnePromptSnippetContentPromptSnippets2ToJSON(
+  findOnePromptSnippetContentPromptSnippets2:
+    FindOnePromptSnippetContentPromptSnippets2,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetContentPromptSnippets2$outboundSchema.parse(
+      findOnePromptSnippetContentPromptSnippets2,
+    ),
+  );
+}
+
+export function findOnePromptSnippetContentPromptSnippets2FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetContentPromptSnippets2,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetContentPromptSnippets2$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetContentPromptSnippets2' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsContent$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsContent,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
+    z.string(),
+    z.array(z.union([
+      z.lazy(() => FindOnePromptSnippet2PromptSnippets1$inboundSchema),
+      z.lazy(() => FindOnePromptSnippet2PromptSnippets2$inboundSchema),
+    ])),
+  ]);
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsContent$Outbound =
+  | string
+  | Array<
+    | FindOnePromptSnippet2PromptSnippets1$Outbound
+    | FindOnePromptSnippet2PromptSnippets2$Outbound
+  >;
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsContent$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsContent$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsContent
+  > = z.union([
+    z.string(),
+    z.array(z.union([
+      z.lazy(() => FindOnePromptSnippet2PromptSnippets1$outboundSchema),
+      z.lazy(() => FindOnePromptSnippet2PromptSnippets2$outboundSchema),
+    ])),
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsContent$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsContent$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsContent$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsContent$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsContent$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsContent$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsContent$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsContentToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsContent:
+    FindOnePromptSnippetResponseBodyPromptSnippetsContent,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsContent$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyPromptSnippetsContent,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsContentFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsContent,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsContent$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsContent' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsFunction$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsFunction,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    name: z.string(),
+    arguments: z.string(),
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsFunction$Outbound = {
+  name: string;
+  arguments: string;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsFunction$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsFunction$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsFunction
+  > = z.object({
+    name: z.string(),
+    arguments: z.string(),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsFunction$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsFunction$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsFunction$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsFunction$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsFunction$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsFunction$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsFunction$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsFunctionToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsFunction:
+    FindOnePromptSnippetResponseBodyPromptSnippetsFunction,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsFunction$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyPromptSnippetsFunction,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsFunctionFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsFunction,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsFunction$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsFunction' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    id: z.string().optional(),
+    index: z.number().optional(),
+    type:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$inboundSchema,
+    function: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsFunction$inboundSchema
+    ),
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$Outbound = {
+  id?: string | undefined;
+  index?: number | undefined;
+  type: string;
+  function: FindOnePromptSnippetResponseBodyPromptSnippetsFunction$Outbound;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls
+  > = z.object({
+    id: z.string().optional(),
+    index: z.number().optional(),
+    type:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$outboundSchema,
+    function: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsFunction$outboundSchema
+    ),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsToolCallsToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsToolCalls:
+    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsToolCalls),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsToolCallsFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsMessages$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsMessages,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    role: FindOnePromptSnippetResponseBodyPromptSnippetsRole$inboundSchema,
+    content: z.union([
+      z.string(),
+      z.array(z.union([
+        z.lazy(() => FindOnePromptSnippet2PromptSnippets1$inboundSchema),
+        z.lazy(() => FindOnePromptSnippet2PromptSnippets2$inboundSchema),
+      ])),
+    ]),
+    tool_calls: z.array(
+      z.lazy(() =>
+        FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$inboundSchema
+      ),
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "tool_calls": "toolCalls",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsMessages$Outbound = {
+  role: string;
+  content:
+    | string
+    | Array<
+      | FindOnePromptSnippet2PromptSnippets1$Outbound
+      | FindOnePromptSnippet2PromptSnippets2$Outbound
+    >;
+  tool_calls?:
+    | Array<FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$Outbound>
+    | undefined;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsMessages$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsMessages$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsMessages
+  > = z.object({
+    role: FindOnePromptSnippetResponseBodyPromptSnippetsRole$outboundSchema,
+    content: z.union([
+      z.string(),
+      z.array(z.union([
+        z.lazy(() => FindOnePromptSnippet2PromptSnippets1$outboundSchema),
+        z.lazy(() => FindOnePromptSnippet2PromptSnippets2$outboundSchema),
+      ])),
+    ]),
+    toolCalls: z.array(
+      z.lazy(() =>
+        FindOnePromptSnippetResponseBodyPromptSnippetsToolCalls$outboundSchema
+      ),
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      toolCalls: "tool_calls",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsMessages$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsMessages$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsMessages$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsMessages$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsMessages$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsMessages$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsMessages$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsMessagesToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsMessages:
+    FindOnePromptSnippetResponseBodyPromptSnippetsMessages,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsMessages$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyPromptSnippetsMessages,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsMessagesFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsMessages,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsMessages$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsMessages' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    stream: z.boolean().optional(),
+    model: z.string().optional(),
+    model_db_id: z.string().optional(),
+    model_type:
+      FindOnePromptSnippetResponseBodyPromptSnippetsModelType$inboundSchema
+        .optional(),
+    model_parameters: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$inboundSchema
+    ).optional(),
+    provider:
+      FindOnePromptSnippetResponseBodyPromptSnippetsProvider$inboundSchema
+        .optional(),
+    integration_id: z.nullable(z.string()).optional(),
+    version: z.string().optional(),
+    messages: z.array(
+      z.lazy(() =>
+        FindOnePromptSnippetResponseBodyPromptSnippetsMessages$inboundSchema
+      ),
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      "model_db_id": "modelDbId",
+      "model_type": "modelType",
+      "model_parameters": "modelParameters",
+      "integration_id": "integrationId",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$Outbound =
+  {
+    stream?: boolean | undefined;
+    model?: string | undefined;
+    model_db_id?: string | undefined;
+    model_type?: string | undefined;
+    model_parameters?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$Outbound
+      | undefined;
+    provider?: string | undefined;
+    integration_id?: string | null | undefined;
+    version?: string | undefined;
+    messages: Array<
+      FindOnePromptSnippetResponseBodyPromptSnippetsMessages$Outbound
+    >;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig
+  > = z.object({
+    stream: z.boolean().optional(),
+    model: z.string().optional(),
+    modelDbId: z.string().optional(),
+    modelType:
+      FindOnePromptSnippetResponseBodyPromptSnippetsModelType$outboundSchema
+        .optional(),
+    modelParameters: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsModelParameters$outboundSchema
+    ).optional(),
+    provider:
+      FindOnePromptSnippetResponseBodyPromptSnippetsProvider$outboundSchema
+        .optional(),
+    integrationId: z.nullable(z.string()).optional(),
+    version: z.string().optional(),
+    messages: z.array(
+      z.lazy(() =>
+        FindOnePromptSnippetResponseBodyPromptSnippetsMessages$outboundSchema
+      ),
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      modelDbId: "model_db_id",
+      modelType: "model_type",
+      modelParameters: "model_parameters",
+      integrationId: "integration_id",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsPromptConfigToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsPromptConfig:
+    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsPromptConfig),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsPromptConfigFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    use_cases: z.array(z.string()).optional(),
+    language: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "use_cases": "useCases",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$Outbound = {
+  use_cases?: Array<string> | undefined;
+  language?: string | undefined;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata
+  > = z.object({
+    useCases: z.array(z.string()).optional(),
+    language: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      useCases: "use_cases",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsMetadataToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsMetadata:
+    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyPromptSnippetsMetadata,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsMetadataFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsMetadata,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsMetadata' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType
+  > =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema,
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$Outbound =
+  {
+    type: string;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002
+  > = z.object({
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema,
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$Outbound;
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsResponse2002ToJSON(
+  findOnePromptSnippetResponseFormatPromptSnippetsResponse2002:
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$outboundSchema
+      .parse(findOnePromptSnippetResponseFormatPromptSnippetsResponse2002),
+  );
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsResponse2002FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type
+  > =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    name: z.string(),
+    strict: z.boolean(),
+    schema: z.record(z.any()),
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$Outbound =
+  {
+    name: string;
+    strict: boolean;
+    schema: { [k: string]: any };
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema
+  > = z.object({
+    name: z.string(),
+    strict: z.boolean(),
+    schema: z.record(z.any()),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$Outbound;
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchemaToJSON(
+  findOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema:
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchemaFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema,
+    json_schema: z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$inboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      "json_schema": "jsonSchema",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$Outbound =
+  {
+    type: string;
+    json_schema:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$Outbound;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001
+  > = z.object({
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema,
+    jsonSchema: z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$outboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      jsonSchema: "json_schema",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$Outbound;
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsResponse2001ToJSON(
+  findOnePromptSnippetResponseFormatPromptSnippetsResponse2001:
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$outboundSchema
+      .parse(findOnePromptSnippetResponseFormatPromptSnippetsResponse2001),
+  );
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsResponse2001FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
+    z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$inboundSchema
+    ),
+    z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$inboundSchema
+    ),
+  ]);
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$Outbound =
+  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$Outbound
+  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$Outbound;
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat
+  > = z.union([
+    z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$outboundSchema
+    ),
+    z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$outboundSchema
+    ),
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormatToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormatFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    temperature: z.number().optional(),
+    maxTokens: z.number().optional(),
+    topK: z.number().optional(),
+    topP: z.number().optional(),
+    frequencyPenalty: z.number().optional(),
+    presencePenalty: z.number().optional(),
+    numImages: z.number().optional(),
+    seed: z.number().optional(),
+    format:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$inboundSchema
+        .optional(),
+    dimensions: z.string().optional(),
+    quality:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$inboundSchema
+        .optional(),
+    style: z.string().optional(),
+    responseFormat: z.nullable(
+      z.union([
+        z.lazy(() =>
+          FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$inboundSchema
+        ),
+        z.lazy(() =>
+          FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$inboundSchema
+        ),
+      ]),
+    ).optional(),
+    photoRealVersion:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$inboundSchema
+        .optional(),
+    encoding_format:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$inboundSchema
+        .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "encoding_format": "encodingFormat",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$Outbound =
+  {
+    temperature?: number | undefined;
+    maxTokens?: number | undefined;
+    topK?: number | undefined;
+    topP?: number | undefined;
+    frequencyPenalty?: number | undefined;
+    presencePenalty?: number | undefined;
+    numImages?: number | undefined;
+    seed?: number | undefined;
+    format?: string | undefined;
+    dimensions?: string | undefined;
+    quality?: string | undefined;
+    style?: string | undefined;
+    responseFormat?:
+      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$Outbound
+      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$Outbound
+      | null
+      | undefined;
+    photoRealVersion?: string | undefined;
+    encoding_format?: string | undefined;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters
+  > = z.object({
+    temperature: z.number().optional(),
+    maxTokens: z.number().optional(),
+    topK: z.number().optional(),
+    topP: z.number().optional(),
+    frequencyPenalty: z.number().optional(),
+    presencePenalty: z.number().optional(),
+    numImages: z.number().optional(),
+    seed: z.number().optional(),
+    format:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$outboundSchema
+        .optional(),
+    dimensions: z.string().optional(),
+    quality:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$outboundSchema
+        .optional(),
+    style: z.string().optional(),
+    responseFormat: z.nullable(
+      z.union([
+        z.lazy(() =>
+          FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$outboundSchema
+        ),
+        z.lazy(() =>
+          FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$outboundSchema
+        ),
+      ]),
+    ).optional(),
+    photoRealVersion:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$outboundSchema
+        .optional(),
+    encodingFormat:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$outboundSchema
+        .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      encodingFormat: "encoding_format",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParametersToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParametersFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType
+  > = z.nativeEnum(
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType,
+  );
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType
+  > =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    id: z.string().optional(),
+    url: z.string(),
+    detail: z.string().optional(),
+  });
+
+/** @internal */
+export type FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$Outbound = {
+  id?: string | undefined;
+  url: string;
+  detail?: string | undefined;
+};
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl
+  > = z.object({
+    id: z.string().optional(),
+    url: z.string(),
+    detail: z.string().optional(),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$Outbound;
+}
+
+export function findOnePromptSnippet2PromptSnippetsResponse200ImageUrlToJSON(
+  findOnePromptSnippet2PromptSnippetsResponse200ImageUrl:
+    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$outboundSchema.parse(
+      findOnePromptSnippet2PromptSnippetsResponse200ImageUrl,
+    ),
+  );
+}
+
+export function findOnePromptSnippet2PromptSnippetsResponse200ImageUrlFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsResponse2002,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    type:
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema,
+    image_url: z.lazy(() =>
+      FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$inboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      "image_url": "imageUrl",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound = {
+  type: string;
+  image_url: FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$Outbound;
+};
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippet2PromptSnippetsResponse2002
+  > = z.object({
+    type:
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema,
+    imageUrl: z.lazy(() =>
+      FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$outboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      imageUrl: "image_url",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsResponse2002$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound;
+}
+
+export function findOnePromptSnippet2PromptSnippetsResponse2002ToJSON(
+  findOnePromptSnippet2PromptSnippetsResponse2002:
+    FindOnePromptSnippet2PromptSnippetsResponse2002,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema.parse(
+      findOnePromptSnippet2PromptSnippetsResponse2002,
+    ),
+  );
+}
+
+export function findOnePromptSnippet2PromptSnippetsResponse2002FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippet2PromptSnippetsResponse2002,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsResponse2002' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type
+  > = z.nativeEnum(
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type,
+  );
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type
+  > =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsResponse2001,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    type:
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema,
+    text: z.string(),
+  });
+
+/** @internal */
+export type FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound = {
+  type: string;
+  text: string;
+};
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippet2PromptSnippetsResponse2001
+  > = z.object({
+    type:
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema,
+    text: z.string(),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsResponse2001$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound;
+}
+
+export function findOnePromptSnippet2PromptSnippetsResponse2001ToJSON(
+  findOnePromptSnippet2PromptSnippetsResponse2001:
+    FindOnePromptSnippet2PromptSnippetsResponse2001,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema.parse(
+      findOnePromptSnippet2PromptSnippetsResponse2001,
+    ),
+  );
+}
+
+export function findOnePromptSnippet2PromptSnippetsResponse2001FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippet2PromptSnippetsResponse2001,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsResponse2001' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetContentPromptSnippetsResponse2002$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetContentPromptSnippetsResponse2002,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
+    z.lazy(() => FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema),
+    z.lazy(() => FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema),
+  ]);
+
+/** @internal */
+export type FindOnePromptSnippetContentPromptSnippetsResponse2002$Outbound =
+  | FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound
+  | FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound;
+
+/** @internal */
+export const FindOnePromptSnippetContentPromptSnippetsResponse2002$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetContentPromptSnippetsResponse2002$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetContentPromptSnippetsResponse2002
+  > = z.union([
+    z.lazy(() =>
+      FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema
+    ),
+    z.lazy(() =>
+      FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema
+    ),
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetContentPromptSnippetsResponse2002$ {
+  /** @deprecated use `FindOnePromptSnippetContentPromptSnippetsResponse2002$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetContentPromptSnippetsResponse2002$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetContentPromptSnippetsResponse2002$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetContentPromptSnippetsResponse2002$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetContentPromptSnippetsResponse2002$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetContentPromptSnippetsResponse2002$Outbound;
+}
+
+export function findOnePromptSnippetContentPromptSnippetsResponse2002ToJSON(
+  findOnePromptSnippetContentPromptSnippetsResponse2002:
+    FindOnePromptSnippetContentPromptSnippetsResponse2002,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetContentPromptSnippetsResponse2002$outboundSchema.parse(
+      findOnePromptSnippetContentPromptSnippetsResponse2002,
+    ),
+  );
+}
+
+export function findOnePromptSnippetContentPromptSnippetsResponse2002FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetContentPromptSnippetsResponse2002,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetContentPromptSnippetsResponse2002$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetContentPromptSnippetsResponse2002' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
+    z.string(),
+    z.array(z.union([
+      z.lazy(() =>
+        FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema
+      ),
+      z.lazy(() =>
+        FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema
+      ),
+    ])),
+  ]);
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$Outbound =
+  | string
+  | Array<
+    | FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound
+    | FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound
+  >;
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content
+  > = z.union([
+    z.string(),
+    z.array(z.union([
+      z.lazy(() =>
+        FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema
+      ),
+      z.lazy(() =>
+        FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema
+      ),
+    ])),
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ContentToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200Content:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponse200Content),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ContentFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    name: z.string(),
+    arguments: z.string(),
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$Outbound =
+  {
+    name: string;
+    arguments: string;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function
+  > = z.object({
+    name: z.string(),
+    arguments: z.string(),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200FunctionToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200Function:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponse200Function),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200FunctionFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    id: z.string().optional(),
+    index: z.number().optional(),
+    type:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType$inboundSchema,
+    function: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$inboundSchema
+    ),
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$Outbound =
+  {
+    id?: string | undefined;
+    index?: number | undefined;
+    type: string;
+    function:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$Outbound;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls
+  > = z.object({
+    id: z.string().optional(),
+    index: z.number().optional(),
+    type:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2VersionsType$outboundSchema,
+    function: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$outboundSchema
+    ),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCallsToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCallsFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    role:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$inboundSchema,
+    content: z.union([
+      z.string(),
+      z.array(z.union([
+        z.lazy(() =>
+          FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema
+        ),
+        z.lazy(() =>
+          FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema
+        ),
+      ])),
+    ]),
+    tool_calls: z.array(
+      z.lazy(() =>
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$inboundSchema
+      ),
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "tool_calls": "toolCalls",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$Outbound =
+  {
+    role: string;
+    content:
+      | string
+      | Array<
+        | FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound
+        | FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound
+      >;
+    tool_calls?:
+      | Array<
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$Outbound
+      >
+      | undefined;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages
+  > = z.object({
+    role:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$outboundSchema,
+    content: z.union([
+      z.string(),
+      z.array(z.union([
+        z.lazy(() =>
+          FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema
+        ),
+        z.lazy(() =>
+          FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema
+        ),
+      ])),
+    ]),
+    toolCalls: z.array(
+      z.lazy(() =>
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$outboundSchema
+      ),
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      toolCalls: "tool_calls",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200MessagesToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200MessagesFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    stream: z.boolean().optional(),
+    model: z.string().optional(),
+    model_db_id: z.string().optional(),
+    model_type:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$inboundSchema
+        .optional(),
+    model_parameters: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$inboundSchema
+    ).optional(),
+    provider:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$inboundSchema
+        .optional(),
+    integration_id: z.nullable(z.string()).optional(),
+    version: z.string().optional(),
+    messages: z.array(
+      z.lazy(() =>
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$inboundSchema
+      ),
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      "model_db_id": "modelDbId",
+      "model_type": "modelType",
+      "model_parameters": "modelParameters",
+      "integration_id": "integrationId",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$Outbound =
+  {
+    stream?: boolean | undefined;
+    model?: string | undefined;
+    model_db_id?: string | undefined;
+    model_type?: string | undefined;
+    model_parameters?:
+      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$Outbound
+      | undefined;
+    provider?: string | undefined;
+    integration_id?: string | null | undefined;
+    version?: string | undefined;
+    messages: Array<
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$Outbound
+    >;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig
+  > = z.object({
+    stream: z.boolean().optional(),
+    model: z.string().optional(),
+    modelDbId: z.string().optional(),
+    modelType:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$outboundSchema
+        .optional(),
+    modelParameters: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$outboundSchema
+    ).optional(),
+    provider:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$outboundSchema
+        .optional(),
+    integrationId: z.nullable(z.string()).optional(),
+    version: z.string().optional(),
+    messages: z.array(
+      z.lazy(() =>
+        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$outboundSchema
+      ),
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      modelDbId: "model_db_id",
+      modelType: "model_type",
+      modelParameters: "model_parameters",
+      integrationId: "integration_id",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfigToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfigFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    use_cases: z.array(z.string()).optional(),
+    language: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "use_cases": "useCases",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$Outbound =
+  {
+    use_cases?: Array<string> | undefined;
+    language?: string | undefined;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata
+  > = z.object({
+    useCases: z.array(z.string()).optional(),
+    language: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      useCases: "use_cases",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200MetadataToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$outboundSchema
+      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200MetadataFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsVersions$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsVersions,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    _id: z.string(),
+    created_by_id: z.string(),
+    display_name: z.string(),
+    updated_by_id: z.string(),
+    description: z.nullable(z.string()).optional(),
+    prompt_config: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$inboundSchema
+    ),
+    metadata: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$inboundSchema
+    ),
+    commit: z.string(),
+    timestamp: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "_id": "id",
+      "created_by_id": "createdById",
+      "display_name": "displayName",
+      "updated_by_id": "updatedById",
+      "prompt_config": "promptConfig",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsVersions$Outbound = {
+  _id: string;
+  created_by_id: string;
+  display_name: string;
+  updated_by_id: string;
+  description?: string | null | undefined;
+  prompt_config:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$Outbound;
+  metadata:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$Outbound;
+  commit: string;
+  timestamp: string;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsVersions$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsVersions$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsVersions
+  > = z.object({
+    id: z.string(),
+    createdById: z.string(),
+    displayName: z.string(),
+    updatedById: z.string(),
+    description: z.nullable(z.string()).optional(),
+    promptConfig: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$outboundSchema
+    ),
+    metadata: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$outboundSchema
+    ),
+    commit: z.string(),
+    timestamp: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      id: "_id",
+      createdById: "created_by_id",
+      displayName: "display_name",
+      updatedById: "updated_by_id",
+      promptConfig: "prompt_config",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsVersions$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsVersions$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsVersions$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsVersions$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsVersions$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsVersions$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsVersions$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsVersionsToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsVersions:
+    FindOnePromptSnippetResponseBodyPromptSnippetsVersions,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsVersions$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyPromptSnippetsVersions,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsVersionsFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsVersions,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsVersions$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsVersions' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsType$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsType> = z
+    .nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsType);
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsType$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsType> =
+    FindOnePromptSnippetResponseBodyPromptSnippetsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBody2$inboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBody2,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  _id: z.string(),
+  owner: z.union([
+    z.string(),
+    FindOnePromptSnippetOwnerPromptSnippets2$inboundSchema,
+  ]),
+  domain_id: z.string(),
+  created_by_id: z.string(),
+  display_name: z.string(),
+  updated_by_id: z.string(),
+  description: z.nullable(z.string()).optional(),
+  prompt_config: z.lazy(() =>
+    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$inboundSchema
+  ),
+  metadata: z.lazy(() =>
+    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$inboundSchema
+  ),
+  created: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  updated: z.string().datetime({ offset: true }).default(
+    "2024-11-26T03:17:57.484Z",
+  ).transform(v => new Date(v)),
+  versions: z.array(
+    z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsVersions$inboundSchema
+    ),
+  ),
+  key: z.string(),
+  type: FindOnePromptSnippetResponseBodyPromptSnippetsType$inboundSchema,
+}).transform((v) => {
+  return remap$(v, {
+    "_id": "id",
+    "domain_id": "domainId",
+    "created_by_id": "createdById",
+    "display_name": "displayName",
+    "updated_by_id": "updatedById",
+    "prompt_config": "promptConfig",
+  });
+});
+
+/** @internal */
+export type FindOnePromptSnippetResponseBody2$Outbound = {
+  _id: string;
+  owner: string | string;
+  domain_id: string;
+  created_by_id: string;
+  display_name: string;
+  updated_by_id: string;
+  description?: string | null | undefined;
+  prompt_config:
+    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$Outbound;
+  metadata: FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$Outbound;
+  created?: string | undefined;
+  updated: string;
+  versions: Array<
+    FindOnePromptSnippetResponseBodyPromptSnippetsVersions$Outbound
+  >;
+  key: string;
+  type: string;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBody2$outboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBody2$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippetResponseBody2
+> = z.object({
+  id: z.string(),
+  owner: z.union([
+    z.string(),
+    FindOnePromptSnippetOwnerPromptSnippets2$outboundSchema,
+  ]),
+  domainId: z.string(),
+  createdById: z.string(),
+  displayName: z.string(),
+  updatedById: z.string(),
+  description: z.nullable(z.string()).optional(),
+  promptConfig: z.lazy(() =>
+    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$outboundSchema
+  ),
+  metadata: z.lazy(() =>
+    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$outboundSchema
+  ),
+  created: z.date().transform(v => v.toISOString()).optional(),
+  updated: z.date().default(() => new Date("2024-11-26T03:17:57.484Z"))
+    .transform(v => v.toISOString()),
+  versions: z.array(
+    z.lazy(() =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsVersions$outboundSchema
+    ),
+  ),
+  key: z.string(),
+  type: FindOnePromptSnippetResponseBodyPromptSnippetsType$outboundSchema,
+}).transform((v) => {
+  return remap$(v, {
+    id: "_id",
+    domainId: "domain_id",
+    createdById: "created_by_id",
+    displayName: "display_name",
+    updatedById: "updated_by_id",
+    promptConfig: "prompt_config",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBody2$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBody2$inboundSchema` instead. */
+  export const inboundSchema = FindOnePromptSnippetResponseBody2$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBody2$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBody2$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBody2$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseBody2$Outbound;
+}
+
+export function findOnePromptSnippetResponseBody2ToJSON(
+  findOnePromptSnippetResponseBody2: FindOnePromptSnippetResponseBody2,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBody2$outboundSchema.parse(
+      findOnePromptSnippetResponseBody2,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBody2FromJSON(
+  jsonString: string,
+): SafeParseResult<FindOnePromptSnippetResponseBody2, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => FindOnePromptSnippetResponseBody2$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBody2' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetOwner2$inboundSchema: z.ZodNativeEnum<
+  typeof FindOnePromptSnippetOwner2
+> = z.nativeEnum(FindOnePromptSnippetOwner2);
+
+/** @internal */
+export const FindOnePromptSnippetOwner2$outboundSchema: z.ZodNativeEnum<
+  typeof FindOnePromptSnippetOwner2
+> = FindOnePromptSnippetOwner2$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetOwner2$ {
+  /** @deprecated use `FindOnePromptSnippetOwner2$inboundSchema` instead. */
+  export const inboundSchema = FindOnePromptSnippetOwner2$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetOwner2$outboundSchema` instead. */
+  export const outboundSchema = FindOnePromptSnippetOwner2$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyOwner$inboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBodyOwner,
+  z.ZodTypeDef,
+  unknown
+> = z.union([z.string(), FindOnePromptSnippetOwner2$inboundSchema]);
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyOwner$Outbound = string | string;
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyOwner$outboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBodyOwner$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippetResponseBodyOwner
+> = z.union([z.string(), FindOnePromptSnippetOwner2$outboundSchema]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyOwner$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyOwner$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyOwner$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyOwner$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyOwner$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyOwner$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseBodyOwner$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyOwnerToJSON(
+  findOnePromptSnippetResponseBodyOwner: FindOnePromptSnippetResponseBodyOwner,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyOwner$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyOwner,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyOwnerFromJSON(
+  jsonString: string,
+): SafeParseResult<FindOnePromptSnippetResponseBodyOwner, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyOwner$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyOwner' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyModelType$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyModelType> = z
+    .nativeEnum(FindOnePromptSnippetResponseBodyModelType);
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyModelType$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyModelType> =
+    FindOnePromptSnippetResponseBodyModelType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyModelType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyModelType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyModelType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyModelType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyModelType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyFormat$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyFormat> = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyFormat,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyFormat$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyFormat> =
+    FindOnePromptSnippetResponseBodyFormat$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyFormat$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyFormat$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyFormat$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyQuality$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyQuality> = z
+    .nativeEnum(FindOnePromptSnippetResponseBodyQuality);
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyQuality$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyQuality> =
+    FindOnePromptSnippetResponseBodyQuality$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyQuality$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyQuality$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyQuality$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyQuality$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyQuality$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsType$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseFormatPromptSnippetsType> =
+    z.nativeEnum(FindOnePromptSnippetResponseFormatPromptSnippetsType);
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsType$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseFormatPromptSnippetsType> =
+    FindOnePromptSnippetResponseFormatPromptSnippetsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormat2$inboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseFormat2,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  type: FindOnePromptSnippetResponseFormatPromptSnippetsType$inboundSchema,
+});
+
+/** @internal */
+export type FindOnePromptSnippetResponseFormat2$Outbound = {
+  type: string;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormat2$outboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseFormat2$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippetResponseFormat2
+> = z.object({
+  type: FindOnePromptSnippetResponseFormatPromptSnippetsType$outboundSchema,
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormat2$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormat2$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormat2$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormat2$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormat2$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormat2$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseFormat2$Outbound;
+}
+
+export function findOnePromptSnippetResponseFormat2ToJSON(
+  findOnePromptSnippetResponseFormat2: FindOnePromptSnippetResponseFormat2,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseFormat2$outboundSchema.parse(
+      findOnePromptSnippetResponseFormat2,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseFormat2FromJSON(
+  jsonString: string,
+): SafeParseResult<FindOnePromptSnippetResponseFormat2, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseFormat2$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseFormat2' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatType$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseFormatType> = z.nativeEnum(
+    FindOnePromptSnippetResponseFormatType,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatType$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseFormatType> =
+    FindOnePromptSnippetResponseFormatType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatJsonSchema$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatJsonSchema,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    name: z.string(),
+    strict: z.boolean(),
+    schema: z.record(z.any()),
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseFormatJsonSchema$Outbound = {
+  name: string;
+  strict: boolean;
+  schema: { [k: string]: any };
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatJsonSchema$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatJsonSchema$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseFormatJsonSchema
+  > = z.object({
+    name: z.string(),
+    strict: z.boolean(),
+    schema: z.record(z.any()),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatJsonSchema$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatJsonSchema$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatJsonSchema$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatJsonSchema$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatJsonSchema$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatJsonSchema$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseFormatJsonSchema$Outbound;
+}
+
+export function findOnePromptSnippetResponseFormatJsonSchemaToJSON(
+  findOnePromptSnippetResponseFormatJsonSchema:
+    FindOnePromptSnippetResponseFormatJsonSchema,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseFormatJsonSchema$outboundSchema.parse(
+      findOnePromptSnippetResponseFormatJsonSchema,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseFormatJsonSchemaFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseFormatJsonSchema,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseFormatJsonSchema$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseFormatJsonSchema' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormat1$inboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseFormat1,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  type: FindOnePromptSnippetResponseFormatType$inboundSchema,
+  json_schema: z.lazy(() =>
+    FindOnePromptSnippetResponseFormatJsonSchema$inboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    "json_schema": "jsonSchema",
+  });
+});
+
+/** @internal */
+export type FindOnePromptSnippetResponseFormat1$Outbound = {
+  type: string;
+  json_schema: FindOnePromptSnippetResponseFormatJsonSchema$Outbound;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormat1$outboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseFormat1$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippetResponseFormat1
+> = z.object({
+  type: FindOnePromptSnippetResponseFormatType$outboundSchema,
+  jsonSchema: z.lazy(() =>
+    FindOnePromptSnippetResponseFormatJsonSchema$outboundSchema
+  ),
+}).transform((v) => {
+  return remap$(v, {
+    jsonSchema: "json_schema",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormat1$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormat1$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormat1$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormat1$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormat1$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormat1$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseFormat1$Outbound;
+}
+
+export function findOnePromptSnippetResponseFormat1ToJSON(
+  findOnePromptSnippetResponseFormat1: FindOnePromptSnippetResponseFormat1,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseFormat1$outboundSchema.parse(
+      findOnePromptSnippetResponseFormat1,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseFormat1FromJSON(
+  jsonString: string,
+): SafeParseResult<FindOnePromptSnippetResponseFormat1, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseFormat1$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseFormat1' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyResponseFormat$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyResponseFormat,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
+    z.lazy(() => FindOnePromptSnippetResponseFormat2$inboundSchema),
+    z.lazy(() => FindOnePromptSnippetResponseFormat1$inboundSchema),
+  ]);
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyResponseFormat$Outbound =
+  | FindOnePromptSnippetResponseFormat2$Outbound
+  | FindOnePromptSnippetResponseFormat1$Outbound;
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyResponseFormat$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyResponseFormat$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyResponseFormat
+  > = z.union([
+    z.lazy(() => FindOnePromptSnippetResponseFormat2$outboundSchema),
+    z.lazy(() => FindOnePromptSnippetResponseFormat1$outboundSchema),
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyResponseFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyResponseFormat$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyResponseFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyResponseFormat$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyResponseFormat$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyResponseFormat$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyResponseFormat$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyResponseFormatToJSON(
+  findOnePromptSnippetResponseBodyResponseFormat:
+    FindOnePromptSnippetResponseBodyResponseFormat,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyResponseFormat$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyResponseFormat,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyResponseFormatFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyResponseFormat,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyResponseFormat$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyResponseFormat' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPhotoRealVersion$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPhotoRealVersion> = z
+    .nativeEnum(FindOnePromptSnippetResponseBodyPhotoRealVersion);
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPhotoRealVersion$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPhotoRealVersion> =
+    FindOnePromptSnippetResponseBodyPhotoRealVersion$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPhotoRealVersion$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPhotoRealVersion$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPhotoRealVersion$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPhotoRealVersion$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPhotoRealVersion$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyEncodingFormat$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyEncodingFormat> = z
+    .nativeEnum(FindOnePromptSnippetResponseBodyEncodingFormat);
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyEncodingFormat$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyEncodingFormat> =
+    FindOnePromptSnippetResponseBodyEncodingFormat$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyEncodingFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyEncodingFormat$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyEncodingFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyEncodingFormat$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyEncodingFormat$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyModelParameters$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyModelParameters,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    temperature: z.number().optional(),
+    maxTokens: z.number().optional(),
+    topK: z.number().optional(),
+    topP: z.number().optional(),
+    frequencyPenalty: z.number().optional(),
+    presencePenalty: z.number().optional(),
+    numImages: z.number().optional(),
+    seed: z.number().optional(),
+    format: FindOnePromptSnippetResponseBodyFormat$inboundSchema.optional(),
+    dimensions: z.string().optional(),
+    quality: FindOnePromptSnippetResponseBodyQuality$inboundSchema.optional(),
+    style: z.string().optional(),
+    responseFormat: z.nullable(
+      z.union([
+        z.lazy(() => FindOnePromptSnippetResponseFormat2$inboundSchema),
+        z.lazy(() => FindOnePromptSnippetResponseFormat1$inboundSchema),
+      ]),
+    ).optional(),
+    photoRealVersion:
+      FindOnePromptSnippetResponseBodyPhotoRealVersion$inboundSchema.optional(),
+    encoding_format:
+      FindOnePromptSnippetResponseBodyEncodingFormat$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "encoding_format": "encodingFormat",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyModelParameters$Outbound = {
+  temperature?: number | undefined;
+  maxTokens?: number | undefined;
+  topK?: number | undefined;
+  topP?: number | undefined;
+  frequencyPenalty?: number | undefined;
+  presencePenalty?: number | undefined;
+  numImages?: number | undefined;
+  seed?: number | undefined;
+  format?: string | undefined;
+  dimensions?: string | undefined;
+  quality?: string | undefined;
+  style?: string | undefined;
+  responseFormat?:
+    | FindOnePromptSnippetResponseFormat2$Outbound
+    | FindOnePromptSnippetResponseFormat1$Outbound
+    | null
+    | undefined;
+  photoRealVersion?: string | undefined;
+  encoding_format?: string | undefined;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyModelParameters$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyModelParameters$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyModelParameters
+  > = z.object({
+    temperature: z.number().optional(),
+    maxTokens: z.number().optional(),
+    topK: z.number().optional(),
+    topP: z.number().optional(),
+    frequencyPenalty: z.number().optional(),
+    presencePenalty: z.number().optional(),
+    numImages: z.number().optional(),
+    seed: z.number().optional(),
+    format: FindOnePromptSnippetResponseBodyFormat$outboundSchema.optional(),
+    dimensions: z.string().optional(),
+    quality: FindOnePromptSnippetResponseBodyQuality$outboundSchema.optional(),
+    style: z.string().optional(),
+    responseFormat: z.nullable(
+      z.union([
+        z.lazy(() => FindOnePromptSnippetResponseFormat2$outboundSchema),
+        z.lazy(() => FindOnePromptSnippetResponseFormat1$outboundSchema),
+      ]),
+    ).optional(),
+    photoRealVersion:
+      FindOnePromptSnippetResponseBodyPhotoRealVersion$outboundSchema
+        .optional(),
+    encodingFormat:
+      FindOnePromptSnippetResponseBodyEncodingFormat$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      encodingFormat: "encoding_format",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyModelParameters$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyModelParameters$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyModelParameters$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyModelParameters$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyModelParameters$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyModelParameters$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyModelParameters$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyModelParametersToJSON(
+  findOnePromptSnippetResponseBodyModelParameters:
+    FindOnePromptSnippetResponseBodyModelParameters,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyModelParameters$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyModelParameters,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyModelParametersFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyModelParameters,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyModelParameters$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyModelParameters' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyProvider$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyProvider> = z
+    .nativeEnum(FindOnePromptSnippetResponseBodyProvider);
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyProvider$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyProvider> =
+    FindOnePromptSnippetResponseBodyProvider$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyProvider$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyProvider$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyProvider$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyProvider$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyProvider$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyRole$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyRole> = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyRole,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyRole$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyRole> =
+    FindOnePromptSnippetResponseBodyRole$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyRole$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyRole$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyRole$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyRole$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyRole$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsType$inboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippet2PromptSnippetsType> = z
+    .nativeEnum(FindOnePromptSnippet2PromptSnippetsType);
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsType$outboundSchema:
+  z.ZodNativeEnum<typeof FindOnePromptSnippet2PromptSnippetsType> =
+    FindOnePromptSnippet2PromptSnippetsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsType$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippet2ImageUrl$inboundSchema: z.ZodType<
+  FindOnePromptSnippet2ImageUrl,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  id: z.string().optional(),
+  url: z.string(),
+  detail: z.string().optional(),
+});
+
+/** @internal */
+export type FindOnePromptSnippet2ImageUrl$Outbound = {
+  id?: string | undefined;
+  url: string;
+  detail?: string | undefined;
+};
+
+/** @internal */
+export const FindOnePromptSnippet2ImageUrl$outboundSchema: z.ZodType<
+  FindOnePromptSnippet2ImageUrl$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippet2ImageUrl
+> = z.object({
+  id: z.string().optional(),
+  url: z.string(),
+  detail: z.string().optional(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2ImageUrl$ {
+  /** @deprecated use `FindOnePromptSnippet2ImageUrl$inboundSchema` instead. */
+  export const inboundSchema = FindOnePromptSnippet2ImageUrl$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2ImageUrl$outboundSchema` instead. */
+  export const outboundSchema = FindOnePromptSnippet2ImageUrl$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2ImageUrl$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippet2ImageUrl$Outbound;
+}
+
+export function findOnePromptSnippet2ImageUrlToJSON(
+  findOnePromptSnippet2ImageUrl: FindOnePromptSnippet2ImageUrl,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippet2ImageUrl$outboundSchema.parse(
+      findOnePromptSnippet2ImageUrl,
+    ),
+  );
+}
+
+export function findOnePromptSnippet2ImageUrlFromJSON(
+  jsonString: string,
+): SafeParseResult<FindOnePromptSnippet2ImageUrl, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => FindOnePromptSnippet2ImageUrl$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippet2ImageUrl' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippet22$inboundSchema: z.ZodType<
+  FindOnePromptSnippet22,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  type: FindOnePromptSnippet2PromptSnippetsType$inboundSchema,
+  image_url: z.lazy(() => FindOnePromptSnippet2ImageUrl$inboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    "image_url": "imageUrl",
+  });
+});
+
+/** @internal */
+export type FindOnePromptSnippet22$Outbound = {
+  type: string;
+  image_url: FindOnePromptSnippet2ImageUrl$Outbound;
+};
+
+/** @internal */
+export const FindOnePromptSnippet22$outboundSchema: z.ZodType<
+  FindOnePromptSnippet22$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippet22
+> = z.object({
+  type: FindOnePromptSnippet2PromptSnippetsType$outboundSchema,
+  imageUrl: z.lazy(() => FindOnePromptSnippet2ImageUrl$outboundSchema),
+}).transform((v) => {
+  return remap$(v, {
+    imageUrl: "image_url",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet22$ {
+  /** @deprecated use `FindOnePromptSnippet22$inboundSchema` instead. */
+  export const inboundSchema = FindOnePromptSnippet22$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet22$outboundSchema` instead. */
+  export const outboundSchema = FindOnePromptSnippet22$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippet22$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippet22$Outbound;
+}
+
+export function findOnePromptSnippet22ToJSON(
+  findOnePromptSnippet22: FindOnePromptSnippet22,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippet22$outboundSchema.parse(findOnePromptSnippet22),
+  );
+}
+
+export function findOnePromptSnippet22FromJSON(
+  jsonString: string,
+): SafeParseResult<FindOnePromptSnippet22, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => FindOnePromptSnippet22$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippet22' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippet2Type$inboundSchema: z.ZodNativeEnum<
+  typeof FindOnePromptSnippet2Type
+> = z.nativeEnum(FindOnePromptSnippet2Type);
+
+/** @internal */
+export const FindOnePromptSnippet2Type$outboundSchema: z.ZodNativeEnum<
+  typeof FindOnePromptSnippet2Type
+> = FindOnePromptSnippet2Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2Type$ {
+  /** @deprecated use `FindOnePromptSnippet2Type$inboundSchema` instead. */
+  export const inboundSchema = FindOnePromptSnippet2Type$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2Type$outboundSchema` instead. */
+  export const outboundSchema = FindOnePromptSnippet2Type$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippet21$inboundSchema: z.ZodType<
+  FindOnePromptSnippet21,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  type: FindOnePromptSnippet2Type$inboundSchema,
+  text: z.string(),
+});
+
+/** @internal */
+export type FindOnePromptSnippet21$Outbound = {
+  type: string;
+  text: string;
+};
+
+/** @internal */
+export const FindOnePromptSnippet21$outboundSchema: z.ZodType<
+  FindOnePromptSnippet21$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippet21
+> = z.object({
+  type: FindOnePromptSnippet2Type$outboundSchema,
+  text: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet21$ {
+  /** @deprecated use `FindOnePromptSnippet21$inboundSchema` instead. */
+  export const inboundSchema = FindOnePromptSnippet21$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet21$outboundSchema` instead. */
+  export const outboundSchema = FindOnePromptSnippet21$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippet21$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippet21$Outbound;
+}
+
+export function findOnePromptSnippet21ToJSON(
+  findOnePromptSnippet21: FindOnePromptSnippet21,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippet21$outboundSchema.parse(findOnePromptSnippet21),
+  );
+}
+
+export function findOnePromptSnippet21FromJSON(
+  jsonString: string,
+): SafeParseResult<FindOnePromptSnippet21, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => FindOnePromptSnippet21$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippet21' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetContent2$inboundSchema: z.ZodType<
+  FindOnePromptSnippetContent2,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => FindOnePromptSnippet21$inboundSchema),
+  z.lazy(() => FindOnePromptSnippet22$inboundSchema),
+]);
+
+/** @internal */
+export type FindOnePromptSnippetContent2$Outbound =
+  | FindOnePromptSnippet21$Outbound
+  | FindOnePromptSnippet22$Outbound;
+
+/** @internal */
+export const FindOnePromptSnippetContent2$outboundSchema: z.ZodType<
+  FindOnePromptSnippetContent2$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippetContent2
+> = z.union([
+  z.lazy(() => FindOnePromptSnippet21$outboundSchema),
+  z.lazy(() => FindOnePromptSnippet22$outboundSchema),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetContent2$ {
+  /** @deprecated use `FindOnePromptSnippetContent2$inboundSchema` instead. */
+  export const inboundSchema = FindOnePromptSnippetContent2$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetContent2$outboundSchema` instead. */
+  export const outboundSchema = FindOnePromptSnippetContent2$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetContent2$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetContent2$Outbound;
+}
+
+export function findOnePromptSnippetContent2ToJSON(
+  findOnePromptSnippetContent2: FindOnePromptSnippetContent2,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetContent2$outboundSchema.parse(
+      findOnePromptSnippetContent2,
+    ),
+  );
+}
+
+export function findOnePromptSnippetContent2FromJSON(
+  jsonString: string,
+): SafeParseResult<FindOnePromptSnippetContent2, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => FindOnePromptSnippetContent2$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetContent2' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyContent$inboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBodyContent,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.string(),
+  z.array(z.union([
+    z.lazy(() => FindOnePromptSnippet21$inboundSchema),
+    z.lazy(() => FindOnePromptSnippet22$inboundSchema),
+  ])),
+]);
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyContent$Outbound =
+  | string
+  | Array<FindOnePromptSnippet21$Outbound | FindOnePromptSnippet22$Outbound>;
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyContent$outboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBodyContent$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippetResponseBodyContent
+> = z.union([
+  z.string(),
+  z.array(z.union([
+    z.lazy(() => FindOnePromptSnippet21$outboundSchema),
+    z.lazy(() => FindOnePromptSnippet22$outboundSchema),
+  ])),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyContent$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyContent$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyContent$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyContent$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyContent$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyContent$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseBodyContent$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyContentToJSON(
+  findOnePromptSnippetResponseBodyContent:
+    FindOnePromptSnippetResponseBodyContent,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyContent$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyContent,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyContentFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyContent,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyContent$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyContent' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyFunction$inboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBodyFunction,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  name: z.string(),
+  arguments: z.string(),
+});
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyFunction$Outbound = {
+  name: string;
+  arguments: string;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyFunction$outboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBodyFunction$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippetResponseBodyFunction
+> = z.object({
+  name: z.string(),
+  arguments: z.string(),
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyFunction$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyFunction$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyFunction$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyFunction$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyFunction$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyFunction$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseBodyFunction$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyFunctionToJSON(
+  findOnePromptSnippetResponseBodyFunction:
+    FindOnePromptSnippetResponseBodyFunction,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyFunction$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyFunction,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyFunctionFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyFunction,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyFunction$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyFunction' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyToolCalls$inboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBodyToolCalls,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  id: z.string().optional(),
+  index: z.number().optional(),
+  type:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$inboundSchema,
+  function: z.lazy(() =>
+    FindOnePromptSnippetResponseBodyFunction$inboundSchema
+  ),
+});
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyToolCalls$Outbound = {
+  id?: string | undefined;
+  index?: number | undefined;
+  type: string;
+  function: FindOnePromptSnippetResponseBodyFunction$Outbound;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyToolCalls$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyToolCalls$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyToolCalls
+  > = z.object({
+    id: z.string().optional(),
+    index: z.number().optional(),
+    type:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Type$outboundSchema,
+    function: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyFunction$outboundSchema
+    ),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyToolCalls$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyToolCalls$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyToolCalls$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyToolCalls$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyToolCalls$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyToolCalls$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseBodyToolCalls$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyToolCallsToJSON(
+  findOnePromptSnippetResponseBodyToolCalls:
+    FindOnePromptSnippetResponseBodyToolCalls,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyToolCalls$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyToolCalls,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyToolCallsFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyToolCalls,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyToolCalls$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyToolCalls' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyMessages$inboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBodyMessages,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  role: FindOnePromptSnippetResponseBodyRole$inboundSchema,
+  content: z.union([
+    z.string(),
+    z.array(z.union([
+      z.lazy(() => FindOnePromptSnippet21$inboundSchema),
+      z.lazy(() => FindOnePromptSnippet22$inboundSchema),
+    ])),
+  ]),
+  tool_calls: z.array(
+    z.lazy(() => FindOnePromptSnippetResponseBodyToolCalls$inboundSchema),
+  ).optional(),
+}).transform((v) => {
+  return remap$(v, {
+    "tool_calls": "toolCalls",
+  });
+});
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyMessages$Outbound = {
+  role: string;
+  content:
+    | string
+    | Array<FindOnePromptSnippet21$Outbound | FindOnePromptSnippet22$Outbound>;
+  tool_calls?:
+    | Array<FindOnePromptSnippetResponseBodyToolCalls$Outbound>
+    | undefined;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyMessages$outboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBodyMessages$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippetResponseBodyMessages
+> = z.object({
+  role: FindOnePromptSnippetResponseBodyRole$outboundSchema,
+  content: z.union([
+    z.string(),
+    z.array(z.union([
+      z.lazy(() => FindOnePromptSnippet21$outboundSchema),
+      z.lazy(() => FindOnePromptSnippet22$outboundSchema),
+    ])),
+  ]),
+  toolCalls: z.array(
+    z.lazy(() => FindOnePromptSnippetResponseBodyToolCalls$outboundSchema),
+  ).optional(),
+}).transform((v) => {
+  return remap$(v, {
+    toolCalls: "tool_calls",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyMessages$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyMessages$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyMessages$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyMessages$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyMessages$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyMessages$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseBodyMessages$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyMessagesToJSON(
+  findOnePromptSnippetResponseBodyMessages:
+    FindOnePromptSnippetResponseBodyMessages,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyMessages$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyMessages,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyMessagesFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyMessages,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyMessages$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyMessages' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptConfig$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptConfig,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    stream: z.boolean().optional(),
+    model: z.string().optional(),
+    model_db_id: z.string().optional(),
+    model_type: FindOnePromptSnippetResponseBodyModelType$inboundSchema
+      .optional(),
+    model_parameters: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyModelParameters$inboundSchema
+    ).optional(),
+    provider: FindOnePromptSnippetResponseBodyProvider$inboundSchema.optional(),
+    integration_id: z.nullable(z.string()).optional(),
+    version: z.string().optional(),
+    messages: z.array(
+      z.lazy(() => FindOnePromptSnippetResponseBodyMessages$inboundSchema),
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      "model_db_id": "modelDbId",
+      "model_type": "modelType",
+      "model_parameters": "modelParameters",
+      "integration_id": "integrationId",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptConfig$Outbound = {
+  stream?: boolean | undefined;
+  model?: string | undefined;
+  model_db_id?: string | undefined;
+  model_type?: string | undefined;
+  model_parameters?:
+    | FindOnePromptSnippetResponseBodyModelParameters$Outbound
+    | undefined;
+  provider?: string | undefined;
+  integration_id?: string | null | undefined;
+  version?: string | undefined;
+  messages: Array<FindOnePromptSnippetResponseBodyMessages$Outbound>;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptConfig$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptConfig$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptConfig
+  > = z.object({
+    stream: z.boolean().optional(),
+    model: z.string().optional(),
+    modelDbId: z.string().optional(),
+    modelType: FindOnePromptSnippetResponseBodyModelType$outboundSchema
+      .optional(),
+    modelParameters: z.lazy(() =>
+      FindOnePromptSnippetResponseBodyModelParameters$outboundSchema
+    ).optional(),
+    provider: FindOnePromptSnippetResponseBodyProvider$outboundSchema
+      .optional(),
+    integrationId: z.nullable(z.string()).optional(),
+    version: z.string().optional(),
+    messages: z.array(
+      z.lazy(() => FindOnePromptSnippetResponseBodyMessages$outboundSchema),
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      modelDbId: "model_db_id",
+      modelType: "model_type",
+      modelParameters: "model_parameters",
+      integrationId: "integration_id",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptConfig$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptConfig$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptConfig$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptConfig$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptConfig$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptConfig$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseBodyPromptConfig$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptConfigToJSON(
+  findOnePromptSnippetResponseBodyPromptConfig:
+    FindOnePromptSnippetResponseBodyPromptConfig,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptConfig$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyPromptConfig,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptConfigFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptConfig,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptConfig$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptConfig' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyMetadata$inboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBodyMetadata,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  use_cases: z.array(z.string()).optional(),
+  language: z.string().optional(),
+}).transform((v) => {
+  return remap$(v, {
+    "use_cases": "useCases",
+  });
+});
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyMetadata$Outbound = {
+  use_cases?: Array<string> | undefined;
+  language?: string | undefined;
+};
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyMetadata$outboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBodyMetadata$Outbound,
+  z.ZodTypeDef,
+  FindOnePromptSnippetResponseBodyMetadata
+> = z.object({
+  useCases: z.array(z.string()).optional(),
+  language: z.string().optional(),
+}).transform((v) => {
+  return remap$(v, {
+    useCases: "use_cases",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyMetadata$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyMetadata$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyMetadata$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyMetadata$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyMetadata$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyMetadata$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseBodyMetadata$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyMetadataToJSON(
+  findOnePromptSnippetResponseBodyMetadata:
+    FindOnePromptSnippetResponseBodyMetadata,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyMetadata$outboundSchema.parse(
+      findOnePromptSnippetResponseBodyMetadata,
+    ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyMetadataFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyMetadata,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyMetadata$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyMetadata' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType
+  > =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema,
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$Outbound =
+  {
+    type: string;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2
+  > = z.object({
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema,
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$Outbound;
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2ToJSON(
+  findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2:
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type
+  > =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    name: z.string(),
+    strict: z.boolean(),
+    schema: z.record(z.any()),
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$Outbound =
+  {
+    name: string;
+    strict: boolean;
+    schema: { [k: string]: any };
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema
+  > = z.object({
+    name: z.string(),
+    strict: z.boolean(),
+    schema: z.record(z.any()),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$Outbound;
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchemaToJSON(
+  findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema:
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchemaFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema,
+    json_schema: z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$inboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      "json_schema": "jsonSchema",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$Outbound =
+  {
+    type: string;
+    json_schema:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$Outbound;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1
+  > = z.object({
+    type:
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema,
+    jsonSchema: z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$outboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      jsonSchema: "json_schema",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$ {
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$Outbound;
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1ToJSON(
+  findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1:
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
+    z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$inboundSchema
+    ),
+    z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$inboundSchema
+    ),
+  ]);
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$Outbound =
+  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$Outbound
+  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$Outbound;
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat
+  > = z.union([
+    z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$outboundSchema
+    ),
+    z.lazy(() =>
+      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$outboundSchema
+    ),
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormatToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormatFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONResponseFormat' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    temperature: z.number().optional(),
+    maxTokens: z.number().optional(),
+    topK: z.number().optional(),
+    topP: z.number().optional(),
+    frequencyPenalty: z.number().optional(),
+    presencePenalty: z.number().optional(),
+    numImages: z.number().optional(),
+    seed: z.number().optional(),
+    format:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format$inboundSchema
+        .optional(),
+    dimensions: z.string().optional(),
+    quality:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$inboundSchema
+        .optional(),
+    style: z.string().optional(),
+    responseFormat: z.nullable(
+      z.union([
+        z.lazy(() =>
+          FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$inboundSchema
+        ),
+        z.lazy(() =>
+          FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$inboundSchema
+        ),
+      ]),
+    ).optional(),
+    photoRealVersion:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$inboundSchema
+        .optional(),
+    encoding_format:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$inboundSchema
+        .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "encoding_format": "encodingFormat",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$Outbound =
+  {
+    temperature?: number | undefined;
+    maxTokens?: number | undefined;
+    topK?: number | undefined;
+    topP?: number | undefined;
+    frequencyPenalty?: number | undefined;
+    presencePenalty?: number | undefined;
+    numImages?: number | undefined;
+    seed?: number | undefined;
+    format?: string | undefined;
+    dimensions?: string | undefined;
+    quality?: string | undefined;
+    style?: string | undefined;
+    responseFormat?:
+      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$Outbound
+      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$Outbound
+      | null
+      | undefined;
+    photoRealVersion?: string | undefined;
+    encoding_format?: string | undefined;
+  };
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters
+  > = z.object({
+    temperature: z.number().optional(),
+    maxTokens: z.number().optional(),
+    topK: z.number().optional(),
+    topP: z.number().optional(),
+    frequencyPenalty: z.number().optional(),
+    presencePenalty: z.number().optional(),
+    numImages: z.number().optional(),
+    seed: z.number().optional(),
+    format:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Format$outboundSchema
+        .optional(),
+    dimensions: z.string().optional(),
+    quality:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONQuality$outboundSchema
+        .optional(),
+    style: z.string().optional(),
+    responseFormat: z.nullable(
+      z.union([
+        z.lazy(() =>
+          FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$outboundSchema
+        ),
+        z.lazy(() =>
+          FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$outboundSchema
+        ),
+      ]),
+    ).optional(),
+    photoRealVersion:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONPhotoRealVersion$outboundSchema
+        .optional(),
+    encodingFormat:
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat$outboundSchema
+        .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      encodingFormat: "encoding_format",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$Outbound;
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParametersToJSON(
+  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters:
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$outboundSchema
+      .parse(
+        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters,
+      ),
+  );
+}
+
+export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParametersFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONModelParameters' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole
+  > = z.nativeEnum(
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole,
+  );
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole
+  > =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONRole$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType
+  > = z.nativeEnum(
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType,
+  );
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType
+  > =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    id: z.string().optional(),
+    url: z.string(),
+    detail: z.string().optional(),
+  });
+
+/** @internal */
+export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$Outbound =
+  {
+    id?: string | undefined;
+    url: string;
+    detail?: string | undefined;
+  };
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl
+  > = z.object({
+    id: z.string().optional(),
+    url: z.string(),
+    detail: z.string().optional(),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$Outbound;
+}
+
+export function findOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrlToJSON(
+  findOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl:
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$outboundSchema
+      .parse(
+        findOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl,
+      ),
+  );
+}
+
+export function findOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrlFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    type:
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema,
+    image_url: z.lazy(() =>
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$inboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      "image_url": "imageUrl",
+    });
+  });
+
+/** @internal */
+export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound =
+  {
+    type: string;
+    image_url:
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$Outbound;
+  };
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2
+  > = z.object({
+    type:
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema,
+    imageUrl: z.lazy(() =>
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$outboundSchema
+    ),
+  }).transform((v) => {
+    return remap$(v, {
+      imageUrl: "image_url",
+    });
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound;
+}
+
+export function findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2ToJSON(
+  findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2:
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema
+      .parse(findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2),
+  );
+}
+
+export function findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type
+  > = z.nativeEnum(
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type,
+  );
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema:
+  z.ZodNativeEnum<
+    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type
+  > =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema;
+}
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1,
+    z.ZodTypeDef,
+    unknown
+  > = z.object({
+    type:
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema,
+    text: z.string(),
+  });
+
+/** @internal */
+export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound =
+  {
+    type: string;
+    text: string;
+  };
+
+/** @internal */
+export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1
+  > = z.object({
+    type:
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema,
+    text: z.string(),
+  });
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$ {
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound;
+}
+
+export function findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1ToJSON(
+  findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1:
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema
+      .parse(findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1),
+  );
+}
+
+export function findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
+    z.lazy(() =>
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema
+    ),
+    z.lazy(() =>
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema
+    ),
+  ]);
+
+/** @internal */
+export type FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$Outbound =
+  | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound
+  | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound;
+
+/** @internal */
+export const FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$outboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$Outbound,
+    z.ZodTypeDef,
+    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2
+  > = z.union([
+    z.lazy(() =>
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema
+    ),
+    z.lazy(() =>
+      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema
+    ),
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$ {
+  /** @deprecated use `FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$inboundSchema` instead. */
+  export const inboundSchema =
+    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$outboundSchema` instead. */
+  export const outboundSchema =
+    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$Outbound` instead. */
+  export type Outbound =
+    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$Outbound;
+}
+
+export function findOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2ToJSON(
+  findOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2:
+    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2,
+): string {
+  return JSON.stringify(
+    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$outboundSchema
+      .parse(
+        findOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2,
+      ),
+  );
+}
+
+export function findOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2FromJSON(
+  jsonString: string,
+): SafeParseResult<
+  FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2' from JSON`,
+  );
+}
+
+/** @internal */
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONContent$inboundSchema:
+  z.ZodType<
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONContent,
+    z.ZodTypeDef,
+    unknown
+  > = z.union([
+    z.string(),
+    z.array(z.union([
+      z.lazy(() =>
+        FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema
+      ),
+      z.lazy(() =>
+        FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema
+      ),
+    ])),
+  ]);
+
+/** @internal */
+export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONContent$Outbound =
+  | string
+  | Array<
+    | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound
+    | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound
   >;
 
 /** @internal */
@@ -5479,10 +12720,10 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
     z.string(),
     z.array(z.union([
       z.lazy(() =>
-        FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1$outboundSchema
+        FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema
       ),
       z.lazy(() =>
-        FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2$outboundSchema
+        FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema
       ),
     ])),
   ]);
@@ -5531,31 +12772,31 @@ export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200Applica
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$inboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$inboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type
   > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type,
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type,
   );
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$outboundSchema:
+export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$outboundSchema:
   z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type
+    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type
   > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$inboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$inboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$inboundSchema` instead. */
   export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$outboundSchema` instead. */
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$outboundSchema;
+    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$outboundSchema;
 }
 
 /** @internal */
@@ -5640,7 +12881,7 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
     id: z.string().optional(),
     index: z.number().optional(),
     type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$inboundSchema,
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$inboundSchema,
     function: z.lazy(() =>
       FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFunction$inboundSchema
     ),
@@ -5666,7 +12907,7 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
     id: z.string().optional(),
     index: z.number().optional(),
     type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson3Type$outboundSchema,
+      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$outboundSchema,
     function: z.lazy(() =>
       FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFunction$outboundSchema
     ),
@@ -5728,10 +12969,10 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
       z.string(),
       z.array(z.union([
         z.lazy(() =>
-          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1$inboundSchema
+          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema
         ),
         z.lazy(() =>
-          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2$inboundSchema
+          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema
         ),
       ])),
     ]),
@@ -5753,8 +12994,8 @@ export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Application
     content:
       | string
       | Array<
-        | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1$Outbound
-        | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2$Outbound
+        | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound
+        | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound
       >;
     tool_calls?:
       | Array<
@@ -5776,10 +13017,10 @@ export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Applicatio
       z.string(),
       z.array(z.union([
         z.lazy(() =>
-          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1$outboundSchema
+          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema
         ),
         z.lazy(() =>
-          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2$outboundSchema
+          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema
         ),
       ])),
     ]),
@@ -6164,3539 +13405,6 @@ export function findOnePromptSnippetResponseBodyVersionsFromJSON(
 }
 
 /** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsType$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsType> = z
-    .nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsType);
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsType$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPromptSnippetsType> =
-    FindOnePromptSnippetResponseBodyPromptSnippetsType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsType$outboundSchema;
-}
-
-/** @internal */
-export const ResponseBody3$inboundSchema: z.ZodType<
-  ResponseBody3,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  _id: z.string(),
-  owner: z.union([
-    z.string(),
-    FindOnePromptSnippetOwnerPromptSnippets2$inboundSchema,
-  ]),
-  domain_id: z.string(),
-  created_by_id: z.string(),
-  display_name: z.string(),
-  updated_by_id: z.string(),
-  description: z.nullable(z.string()).optional(),
-  prompt_config: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$inboundSchema
-  ),
-  metadata: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$inboundSchema
-  ),
-  created: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  updated: z.string().datetime({ offset: true }).default(
-    "2024-11-26T03:17:57.484Z",
-  ).transform(v => new Date(v)),
-  versions: z.array(
-    z.lazy(() => FindOnePromptSnippetResponseBodyVersions$inboundSchema),
-  ),
-  type: FindOnePromptSnippetResponseBodyPromptSnippetsType$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "_id": "id",
-    "domain_id": "domainId",
-    "created_by_id": "createdById",
-    "display_name": "displayName",
-    "updated_by_id": "updatedById",
-    "prompt_config": "promptConfig",
-  });
-});
-
-/** @internal */
-export type ResponseBody3$Outbound = {
-  _id: string;
-  owner: string | string;
-  domain_id: string;
-  created_by_id: string;
-  display_name: string;
-  updated_by_id: string;
-  description?: string | null | undefined;
-  prompt_config:
-    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$Outbound;
-  metadata: FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$Outbound;
-  created?: string | undefined;
-  updated: string;
-  versions: Array<FindOnePromptSnippetResponseBodyVersions$Outbound>;
-  type: string;
-};
-
-/** @internal */
-export const ResponseBody3$outboundSchema: z.ZodType<
-  ResponseBody3$Outbound,
-  z.ZodTypeDef,
-  ResponseBody3
-> = z.object({
-  id: z.string(),
-  owner: z.union([
-    z.string(),
-    FindOnePromptSnippetOwnerPromptSnippets2$outboundSchema,
-  ]),
-  domainId: z.string(),
-  createdById: z.string(),
-  displayName: z.string(),
-  updatedById: z.string(),
-  description: z.nullable(z.string()).optional(),
-  promptConfig: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig$outboundSchema
-  ),
-  metadata: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$outboundSchema
-  ),
-  created: z.date().transform(v => v.toISOString()).optional(),
-  updated: z.date().default(() => new Date("2024-11-26T03:17:57.484Z"))
-    .transform(v => v.toISOString()),
-  versions: z.array(
-    z.lazy(() => FindOnePromptSnippetResponseBodyVersions$outboundSchema),
-  ),
-  type: FindOnePromptSnippetResponseBodyPromptSnippetsType$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    id: "_id",
-    domainId: "domain_id",
-    createdById: "created_by_id",
-    displayName: "display_name",
-    updatedById: "updated_by_id",
-    promptConfig: "prompt_config",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBody3$ {
-  /** @deprecated use `ResponseBody3$inboundSchema` instead. */
-  export const inboundSchema = ResponseBody3$inboundSchema;
-  /** @deprecated use `ResponseBody3$outboundSchema` instead. */
-  export const outboundSchema = ResponseBody3$outboundSchema;
-  /** @deprecated use `ResponseBody3$Outbound` instead. */
-  export type Outbound = ResponseBody3$Outbound;
-}
-
-export function responseBody3ToJSON(responseBody3: ResponseBody3): string {
-  return JSON.stringify(ResponseBody3$outboundSchema.parse(responseBody3));
-}
-
-export function responseBody3FromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBody3, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBody3$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBody3' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetOwner2$inboundSchema: z.ZodNativeEnum<
-  typeof FindOnePromptSnippetOwner2
-> = z.nativeEnum(FindOnePromptSnippetOwner2);
-
-/** @internal */
-export const FindOnePromptSnippetOwner2$outboundSchema: z.ZodNativeEnum<
-  typeof FindOnePromptSnippetOwner2
-> = FindOnePromptSnippetOwner2$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetOwner2$ {
-  /** @deprecated use `FindOnePromptSnippetOwner2$inboundSchema` instead. */
-  export const inboundSchema = FindOnePromptSnippetOwner2$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetOwner2$outboundSchema` instead. */
-  export const outboundSchema = FindOnePromptSnippetOwner2$outboundSchema;
-}
-
-/** @internal */
-export const ResponseBodyOwner$inboundSchema: z.ZodType<
-  ResponseBodyOwner,
-  z.ZodTypeDef,
-  unknown
-> = z.union([z.string(), FindOnePromptSnippetOwner2$inboundSchema]);
-
-/** @internal */
-export type ResponseBodyOwner$Outbound = string | string;
-
-/** @internal */
-export const ResponseBodyOwner$outboundSchema: z.ZodType<
-  ResponseBodyOwner$Outbound,
-  z.ZodTypeDef,
-  ResponseBodyOwner
-> = z.union([z.string(), FindOnePromptSnippetOwner2$outboundSchema]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyOwner$ {
-  /** @deprecated use `ResponseBodyOwner$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyOwner$inboundSchema;
-  /** @deprecated use `ResponseBodyOwner$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyOwner$outboundSchema;
-  /** @deprecated use `ResponseBodyOwner$Outbound` instead. */
-  export type Outbound = ResponseBodyOwner$Outbound;
-}
-
-export function responseBodyOwnerToJSON(
-  responseBodyOwner: ResponseBodyOwner,
-): string {
-  return JSON.stringify(
-    ResponseBodyOwner$outboundSchema.parse(responseBodyOwner),
-  );
-}
-
-export function responseBodyOwnerFromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBodyOwner, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBodyOwner$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBodyOwner' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyModelType$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyModelType> = z
-    .nativeEnum(FindOnePromptSnippetResponseBodyModelType);
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyModelType$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyModelType> =
-    FindOnePromptSnippetResponseBodyModelType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyModelType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyModelType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyModelType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyModelType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyModelType$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyFormat$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyFormat> = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyFormat,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyFormat$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyFormat> =
-    FindOnePromptSnippetResponseBodyFormat$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyFormat$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyFormat$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyFormat$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyQuality$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyQuality> = z
-    .nativeEnum(FindOnePromptSnippetResponseBodyQuality);
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyQuality$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyQuality> =
-    FindOnePromptSnippetResponseBodyQuality$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyQuality$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyQuality$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyQuality$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyQuality$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyQuality$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type
-  > =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippets2$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippets2,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$inboundSchema,
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseFormatPromptSnippets2$Outbound = {
-  type: string;
-};
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippets2$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippets2$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseFormatPromptSnippets2
-  > = z.object({
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200Type$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippets2$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippets2$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippets2$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippets2$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippets2$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippets2$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseFormatPromptSnippets2$Outbound;
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippets2ToJSON(
-  findOnePromptSnippetResponseFormatPromptSnippets2:
-    FindOnePromptSnippetResponseFormatPromptSnippets2,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseFormatPromptSnippets2$outboundSchema.parse(
-      findOnePromptSnippetResponseFormatPromptSnippets2,
-    ),
-  );
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippets2FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseFormatPromptSnippets2,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseFormatPromptSnippets2$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippets2' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponseType
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponseType,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponseType
-  > =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: z.string(),
-    strict: z.boolean(),
-    schema: z.record(z.any()),
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$Outbound =
-  {
-    name: string;
-    strict: boolean;
-    schema: { [k: string]: any };
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema
-  > = z.object({
-    name: z.string(),
-    strict: z.boolean(),
-    schema: z.record(z.any()),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$Outbound;
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsJsonSchemaToJSON(
-  findOnePromptSnippetResponseFormatPromptSnippetsJsonSchema:
-    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$outboundSchema
-      .parse(findOnePromptSnippetResponseFormatPromptSnippetsJsonSchema),
-  );
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsJsonSchemaFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippets1$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippets1,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$inboundSchema,
-    json_schema: z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$inboundSchema
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      "json_schema": "jsonSchema",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseFormatPromptSnippets1$Outbound = {
-  type: string;
-  json_schema:
-    FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$Outbound;
-};
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippets1$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippets1$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseFormatPromptSnippets1
-  > = z.object({
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponseType$outboundSchema,
-    jsonSchema: z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsJsonSchema$outboundSchema
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      jsonSchema: "json_schema",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippets1$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippets1$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippets1$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippets1$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippets1$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippets1$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseFormatPromptSnippets1$Outbound;
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippets1ToJSON(
-  findOnePromptSnippetResponseFormatPromptSnippets1:
-    FindOnePromptSnippetResponseFormatPromptSnippets1,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseFormatPromptSnippets1$outboundSchema.parse(
-      findOnePromptSnippetResponseFormatPromptSnippets1,
-    ),
-  );
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippets1FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseFormatPromptSnippets1,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseFormatPromptSnippets1$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippets1' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyResponseFormat$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyResponseFormat,
-    z.ZodTypeDef,
-    unknown
-  > = z.union([
-    z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippets2$inboundSchema
-    ),
-    z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippets1$inboundSchema
-    ),
-  ]);
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyResponseFormat$Outbound =
-  | FindOnePromptSnippetResponseFormatPromptSnippets2$Outbound
-  | FindOnePromptSnippetResponseFormatPromptSnippets1$Outbound;
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyResponseFormat$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyResponseFormat$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyResponseFormat
-  > = z.union([
-    z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippets2$outboundSchema
-    ),
-    z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippets1$outboundSchema
-    ),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyResponseFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyResponseFormat$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyResponseFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyResponseFormat$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyResponseFormat$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyResponseFormat$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyResponseFormat$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyResponseFormatToJSON(
-  findOnePromptSnippetResponseBodyResponseFormat:
-    FindOnePromptSnippetResponseBodyResponseFormat,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyResponseFormat$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyResponseFormat,
-    ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyResponseFormatFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyResponseFormat,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyResponseFormat$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyResponseFormat' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPhotoRealVersion$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPhotoRealVersion> = z
-    .nativeEnum(FindOnePromptSnippetResponseBodyPhotoRealVersion);
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPhotoRealVersion$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyPhotoRealVersion> =
-    FindOnePromptSnippetResponseBodyPhotoRealVersion$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPhotoRealVersion$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPhotoRealVersion$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPhotoRealVersion$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPhotoRealVersion$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPhotoRealVersion$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyEncodingFormat$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyEncodingFormat> = z
-    .nativeEnum(FindOnePromptSnippetResponseBodyEncodingFormat);
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyEncodingFormat$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyEncodingFormat> =
-    FindOnePromptSnippetResponseBodyEncodingFormat$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyEncodingFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyEncodingFormat$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyEncodingFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyEncodingFormat$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyEncodingFormat$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyModelParameters$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyModelParameters,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    temperature: z.number().optional(),
-    maxTokens: z.number().optional(),
-    topK: z.number().optional(),
-    topP: z.number().optional(),
-    frequencyPenalty: z.number().optional(),
-    presencePenalty: z.number().optional(),
-    numImages: z.number().optional(),
-    seed: z.number().optional(),
-    format: FindOnePromptSnippetResponseBodyFormat$inboundSchema.optional(),
-    dimensions: z.string().optional(),
-    quality: FindOnePromptSnippetResponseBodyQuality$inboundSchema.optional(),
-    style: z.string().optional(),
-    responseFormat: z.nullable(
-      z.union([
-        z.lazy(() =>
-          FindOnePromptSnippetResponseFormatPromptSnippets2$inboundSchema
-        ),
-        z.lazy(() =>
-          FindOnePromptSnippetResponseFormatPromptSnippets1$inboundSchema
-        ),
-      ]),
-    ).optional(),
-    photoRealVersion:
-      FindOnePromptSnippetResponseBodyPhotoRealVersion$inboundSchema.optional(),
-    encoding_format:
-      FindOnePromptSnippetResponseBodyEncodingFormat$inboundSchema.optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "encoding_format": "encodingFormat",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyModelParameters$Outbound = {
-  temperature?: number | undefined;
-  maxTokens?: number | undefined;
-  topK?: number | undefined;
-  topP?: number | undefined;
-  frequencyPenalty?: number | undefined;
-  presencePenalty?: number | undefined;
-  numImages?: number | undefined;
-  seed?: number | undefined;
-  format?: string | undefined;
-  dimensions?: string | undefined;
-  quality?: string | undefined;
-  style?: string | undefined;
-  responseFormat?:
-    | FindOnePromptSnippetResponseFormatPromptSnippets2$Outbound
-    | FindOnePromptSnippetResponseFormatPromptSnippets1$Outbound
-    | null
-    | undefined;
-  photoRealVersion?: string | undefined;
-  encoding_format?: string | undefined;
-};
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyModelParameters$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyModelParameters$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyModelParameters
-  > = z.object({
-    temperature: z.number().optional(),
-    maxTokens: z.number().optional(),
-    topK: z.number().optional(),
-    topP: z.number().optional(),
-    frequencyPenalty: z.number().optional(),
-    presencePenalty: z.number().optional(),
-    numImages: z.number().optional(),
-    seed: z.number().optional(),
-    format: FindOnePromptSnippetResponseBodyFormat$outboundSchema.optional(),
-    dimensions: z.string().optional(),
-    quality: FindOnePromptSnippetResponseBodyQuality$outboundSchema.optional(),
-    style: z.string().optional(),
-    responseFormat: z.nullable(
-      z.union([
-        z.lazy(() =>
-          FindOnePromptSnippetResponseFormatPromptSnippets2$outboundSchema
-        ),
-        z.lazy(() =>
-          FindOnePromptSnippetResponseFormatPromptSnippets1$outboundSchema
-        ),
-      ]),
-    ).optional(),
-    photoRealVersion:
-      FindOnePromptSnippetResponseBodyPhotoRealVersion$outboundSchema
-        .optional(),
-    encodingFormat:
-      FindOnePromptSnippetResponseBodyEncodingFormat$outboundSchema.optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      encodingFormat: "encoding_format",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyModelParameters$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyModelParameters$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyModelParameters$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyModelParameters$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyModelParameters$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyModelParameters$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyModelParameters$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyModelParametersToJSON(
-  findOnePromptSnippetResponseBodyModelParameters:
-    FindOnePromptSnippetResponseBodyModelParameters,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyModelParameters$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyModelParameters,
-    ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyModelParametersFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyModelParameters,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyModelParameters$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyModelParameters' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyProvider$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyProvider> = z
-    .nativeEnum(FindOnePromptSnippetResponseBodyProvider);
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyProvider$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyProvider> =
-    FindOnePromptSnippetResponseBodyProvider$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyProvider$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyProvider$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyProvider$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyProvider$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyProvider$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyRole$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyRole> = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyRole,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyRole$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyRole> =
-    FindOnePromptSnippetResponseBodyRole$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyRole$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyRole$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyRole$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyRole$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyRole$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200Type$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippet2PromptSnippetsResponse200Type> = z
-    .nativeEnum(FindOnePromptSnippet2PromptSnippetsResponse200Type);
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200Type$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippet2PromptSnippetsResponse200Type> =
-    FindOnePromptSnippet2PromptSnippetsResponse200Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsResponse200Type$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200Type$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200Type$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200Type$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200Type$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsImageUrl$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsImageUrl,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    id: z.string().optional(),
-    url: z.string(),
-    detail: z.string().optional(),
-  });
-
-/** @internal */
-export type FindOnePromptSnippet2PromptSnippetsImageUrl$Outbound = {
-  id?: string | undefined;
-  url: string;
-  detail?: string | undefined;
-};
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsImageUrl$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsImageUrl$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippet2PromptSnippetsImageUrl
-  > = z.object({
-    id: z.string().optional(),
-    url: z.string(),
-    detail: z.string().optional(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsImageUrl$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsImageUrl$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsImageUrl$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsImageUrl$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsImageUrl$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsImageUrl$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippet2PromptSnippetsImageUrl$Outbound;
-}
-
-export function findOnePromptSnippet2PromptSnippetsImageUrlToJSON(
-  findOnePromptSnippet2PromptSnippetsImageUrl:
-    FindOnePromptSnippet2PromptSnippetsImageUrl,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippet2PromptSnippetsImageUrl$outboundSchema.parse(
-      findOnePromptSnippet2PromptSnippetsImageUrl,
-    ),
-  );
-}
-
-export function findOnePromptSnippet2PromptSnippetsImageUrlFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippet2PromptSnippetsImageUrl,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippet2PromptSnippetsImageUrl$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsImageUrl' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippets2$inboundSchema: z.ZodType<
-  FindOnePromptSnippet2PromptSnippets2,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  type: FindOnePromptSnippet2PromptSnippetsResponse200Type$inboundSchema,
-  image_url: z.lazy(() =>
-    FindOnePromptSnippet2PromptSnippetsImageUrl$inboundSchema
-  ),
-}).transform((v) => {
-  return remap$(v, {
-    "image_url": "imageUrl",
-  });
-});
-
-/** @internal */
-export type FindOnePromptSnippet2PromptSnippets2$Outbound = {
-  type: string;
-  image_url: FindOnePromptSnippet2PromptSnippetsImageUrl$Outbound;
-};
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippets2$outboundSchema: z.ZodType<
-  FindOnePromptSnippet2PromptSnippets2$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippet2PromptSnippets2
-> = z.object({
-  type: FindOnePromptSnippet2PromptSnippetsResponse200Type$outboundSchema,
-  imageUrl: z.lazy(() =>
-    FindOnePromptSnippet2PromptSnippetsImageUrl$outboundSchema
-  ),
-}).transform((v) => {
-  return remap$(v, {
-    imageUrl: "image_url",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippets2$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippets2$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippets2$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippets2$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippets2$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippets2$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippet2PromptSnippets2$Outbound;
-}
-
-export function findOnePromptSnippet2PromptSnippets2ToJSON(
-  findOnePromptSnippet2PromptSnippets2: FindOnePromptSnippet2PromptSnippets2,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippet2PromptSnippets2$outboundSchema.parse(
-      findOnePromptSnippet2PromptSnippets2,
-    ),
-  );
-}
-
-export function findOnePromptSnippet2PromptSnippets2FromJSON(
-  jsonString: string,
-): SafeParseResult<FindOnePromptSnippet2PromptSnippets2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippet2PromptSnippets2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippet2PromptSnippets2' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponseType$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippet2PromptSnippetsResponseType> = z
-    .nativeEnum(FindOnePromptSnippet2PromptSnippetsResponseType);
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponseType$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippet2PromptSnippetsResponseType> =
-    FindOnePromptSnippet2PromptSnippetsResponseType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsResponseType$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponseType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponseType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponseType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponseType$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippets1$inboundSchema: z.ZodType<
-  FindOnePromptSnippet2PromptSnippets1,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  type: FindOnePromptSnippet2PromptSnippetsResponseType$inboundSchema,
-  text: z.string(),
-});
-
-/** @internal */
-export type FindOnePromptSnippet2PromptSnippets1$Outbound = {
-  type: string;
-  text: string;
-};
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippets1$outboundSchema: z.ZodType<
-  FindOnePromptSnippet2PromptSnippets1$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippet2PromptSnippets1
-> = z.object({
-  type: FindOnePromptSnippet2PromptSnippetsResponseType$outboundSchema,
-  text: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippets1$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippets1$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippets1$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippets1$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippets1$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippets1$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippet2PromptSnippets1$Outbound;
-}
-
-export function findOnePromptSnippet2PromptSnippets1ToJSON(
-  findOnePromptSnippet2PromptSnippets1: FindOnePromptSnippet2PromptSnippets1,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippet2PromptSnippets1$outboundSchema.parse(
-      findOnePromptSnippet2PromptSnippets1,
-    ),
-  );
-}
-
-export function findOnePromptSnippet2PromptSnippets1FromJSON(
-  jsonString: string,
-): SafeParseResult<FindOnePromptSnippet2PromptSnippets1, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippet2PromptSnippets1$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippet2PromptSnippets1' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetContentPromptSnippets2$inboundSchema:
-  z.ZodType<FindOnePromptSnippetContentPromptSnippets2, z.ZodTypeDef, unknown> =
-    z.union([
-      z.lazy(() => FindOnePromptSnippet2PromptSnippets1$inboundSchema),
-      z.lazy(() => FindOnePromptSnippet2PromptSnippets2$inboundSchema),
-    ]);
-
-/** @internal */
-export type FindOnePromptSnippetContentPromptSnippets2$Outbound =
-  | FindOnePromptSnippet2PromptSnippets1$Outbound
-  | FindOnePromptSnippet2PromptSnippets2$Outbound;
-
-/** @internal */
-export const FindOnePromptSnippetContentPromptSnippets2$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetContentPromptSnippets2$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetContentPromptSnippets2
-  > = z.union([
-    z.lazy(() => FindOnePromptSnippet2PromptSnippets1$outboundSchema),
-    z.lazy(() => FindOnePromptSnippet2PromptSnippets2$outboundSchema),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetContentPromptSnippets2$ {
-  /** @deprecated use `FindOnePromptSnippetContentPromptSnippets2$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetContentPromptSnippets2$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetContentPromptSnippets2$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetContentPromptSnippets2$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetContentPromptSnippets2$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippetContentPromptSnippets2$Outbound;
-}
-
-export function findOnePromptSnippetContentPromptSnippets2ToJSON(
-  findOnePromptSnippetContentPromptSnippets2:
-    FindOnePromptSnippetContentPromptSnippets2,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetContentPromptSnippets2$outboundSchema.parse(
-      findOnePromptSnippetContentPromptSnippets2,
-    ),
-  );
-}
-
-export function findOnePromptSnippetContentPromptSnippets2FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetContentPromptSnippets2,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetContentPromptSnippets2$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetContentPromptSnippets2' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyContent$inboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseBodyContent,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.string(),
-  z.array(z.union([
-    z.lazy(() => FindOnePromptSnippet2PromptSnippets1$inboundSchema),
-    z.lazy(() => FindOnePromptSnippet2PromptSnippets2$inboundSchema),
-  ])),
-]);
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyContent$Outbound =
-  | string
-  | Array<
-    | FindOnePromptSnippet2PromptSnippets1$Outbound
-    | FindOnePromptSnippet2PromptSnippets2$Outbound
-  >;
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyContent$outboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseBodyContent$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippetResponseBodyContent
-> = z.union([
-  z.string(),
-  z.array(z.union([
-    z.lazy(() => FindOnePromptSnippet2PromptSnippets1$outboundSchema),
-    z.lazy(() => FindOnePromptSnippet2PromptSnippets2$outboundSchema),
-  ])),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyContent$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyContent$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyContent$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyContent$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyContent$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyContent$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippetResponseBodyContent$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyContentToJSON(
-  findOnePromptSnippetResponseBodyContent:
-    FindOnePromptSnippetResponseBodyContent,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyContent$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyContent,
-    ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyContentFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyContent,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyContent$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyContent' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyFunction$inboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseBodyFunction,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  arguments: z.string(),
-});
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyFunction$Outbound = {
-  name: string;
-  arguments: string;
-};
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyFunction$outboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseBodyFunction$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippetResponseBodyFunction
-> = z.object({
-  name: z.string(),
-  arguments: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyFunction$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyFunction$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyFunction$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyFunction$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyFunction$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyFunction$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippetResponseBodyFunction$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyFunctionToJSON(
-  findOnePromptSnippetResponseBodyFunction:
-    FindOnePromptSnippetResponseBodyFunction,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyFunction$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyFunction,
-    ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyFunctionFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyFunction,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyFunction$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyFunction' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyToolCalls$inboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseBodyToolCalls,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  id: z.string().optional(),
-  index: z.number().optional(),
-  type:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$inboundSchema,
-  function: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyFunction$inboundSchema
-  ),
-});
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyToolCalls$Outbound = {
-  id?: string | undefined;
-  index?: number | undefined;
-  type: string;
-  function: FindOnePromptSnippetResponseBodyFunction$Outbound;
-};
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyToolCalls$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyToolCalls$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyToolCalls
-  > = z.object({
-    id: z.string().optional(),
-    index: z.number().optional(),
-    type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONType$outboundSchema,
-    function: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyFunction$outboundSchema
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyToolCalls$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyToolCalls$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyToolCalls$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyToolCalls$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyToolCalls$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyToolCalls$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippetResponseBodyToolCalls$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyToolCallsToJSON(
-  findOnePromptSnippetResponseBodyToolCalls:
-    FindOnePromptSnippetResponseBodyToolCalls,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyToolCalls$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyToolCalls,
-    ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyToolCallsFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyToolCalls,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyToolCalls$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyToolCalls' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyMessages$inboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseBodyMessages,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  role: FindOnePromptSnippetResponseBodyRole$inboundSchema,
-  content: z.union([
-    z.string(),
-    z.array(z.union([
-      z.lazy(() => FindOnePromptSnippet2PromptSnippets1$inboundSchema),
-      z.lazy(() => FindOnePromptSnippet2PromptSnippets2$inboundSchema),
-    ])),
-  ]),
-  tool_calls: z.array(
-    z.lazy(() => FindOnePromptSnippetResponseBodyToolCalls$inboundSchema),
-  ).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "tool_calls": "toolCalls",
-  });
-});
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyMessages$Outbound = {
-  role: string;
-  content:
-    | string
-    | Array<
-      | FindOnePromptSnippet2PromptSnippets1$Outbound
-      | FindOnePromptSnippet2PromptSnippets2$Outbound
-    >;
-  tool_calls?:
-    | Array<FindOnePromptSnippetResponseBodyToolCalls$Outbound>
-    | undefined;
-};
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyMessages$outboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseBodyMessages$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippetResponseBodyMessages
-> = z.object({
-  role: FindOnePromptSnippetResponseBodyRole$outboundSchema,
-  content: z.union([
-    z.string(),
-    z.array(z.union([
-      z.lazy(() => FindOnePromptSnippet2PromptSnippets1$outboundSchema),
-      z.lazy(() => FindOnePromptSnippet2PromptSnippets2$outboundSchema),
-    ])),
-  ]),
-  toolCalls: z.array(
-    z.lazy(() => FindOnePromptSnippetResponseBodyToolCalls$outboundSchema),
-  ).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    toolCalls: "tool_calls",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyMessages$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyMessages$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyMessages$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyMessages$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyMessages$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyMessages$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippetResponseBodyMessages$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyMessagesToJSON(
-  findOnePromptSnippetResponseBodyMessages:
-    FindOnePromptSnippetResponseBodyMessages,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyMessages$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyMessages,
-    ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyMessagesFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyMessages,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyMessages$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyMessages' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptConfig$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptConfig,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    stream: z.boolean().optional(),
-    model: z.string().optional(),
-    model_db_id: z.string().optional(),
-    model_type: FindOnePromptSnippetResponseBodyModelType$inboundSchema
-      .optional(),
-    model_parameters: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyModelParameters$inboundSchema
-    ).optional(),
-    provider: FindOnePromptSnippetResponseBodyProvider$inboundSchema.optional(),
-    integration_id: z.nullable(z.string()).optional(),
-    version: z.string().optional(),
-    messages: z.array(
-      z.lazy(() => FindOnePromptSnippetResponseBodyMessages$inboundSchema),
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      "model_db_id": "modelDbId",
-      "model_type": "modelType",
-      "model_parameters": "modelParameters",
-      "integration_id": "integrationId",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptConfig$Outbound = {
-  stream?: boolean | undefined;
-  model?: string | undefined;
-  model_db_id?: string | undefined;
-  model_type?: string | undefined;
-  model_parameters?:
-    | FindOnePromptSnippetResponseBodyModelParameters$Outbound
-    | undefined;
-  provider?: string | undefined;
-  integration_id?: string | null | undefined;
-  version?: string | undefined;
-  messages: Array<FindOnePromptSnippetResponseBodyMessages$Outbound>;
-};
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptConfig$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptConfig$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptConfig
-  > = z.object({
-    stream: z.boolean().optional(),
-    model: z.string().optional(),
-    modelDbId: z.string().optional(),
-    modelType: FindOnePromptSnippetResponseBodyModelType$outboundSchema
-      .optional(),
-    modelParameters: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyModelParameters$outboundSchema
-    ).optional(),
-    provider: FindOnePromptSnippetResponseBodyProvider$outboundSchema
-      .optional(),
-    integrationId: z.nullable(z.string()).optional(),
-    version: z.string().optional(),
-    messages: z.array(
-      z.lazy(() => FindOnePromptSnippetResponseBodyMessages$outboundSchema),
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      modelDbId: "model_db_id",
-      modelType: "model_type",
-      modelParameters: "model_parameters",
-      integrationId: "integration_id",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptConfig$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptConfig$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptConfig$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptConfig$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptConfig$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptConfig$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippetResponseBodyPromptConfig$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptConfigToJSON(
-  findOnePromptSnippetResponseBodyPromptConfig:
-    FindOnePromptSnippetResponseBodyPromptConfig,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptConfig$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyPromptConfig,
-    ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptConfigFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptConfig,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptConfig$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptConfig' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyMetadata$inboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseBodyMetadata,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  use_cases: z.array(z.string()).optional(),
-  language: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "use_cases": "useCases",
-  });
-});
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyMetadata$Outbound = {
-  use_cases?: Array<string> | undefined;
-  language?: string | undefined;
-};
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyMetadata$outboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseBodyMetadata$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippetResponseBodyMetadata
-> = z.object({
-  useCases: z.array(z.string()).optional(),
-  language: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    useCases: "use_cases",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyMetadata$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyMetadata$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyMetadata$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyMetadata$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyMetadata$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyMetadata$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippetResponseBodyMetadata$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyMetadataToJSON(
-  findOnePromptSnippetResponseBodyMetadata:
-    FindOnePromptSnippetResponseBodyMetadata,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyMetadata$outboundSchema.parse(
-      findOnePromptSnippetResponseBodyMetadata,
-    ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyMetadataFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyMetadata,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyMetadata$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyMetadata' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType
-  > =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema,
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$Outbound =
-  {
-    type: string;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002
-  > = z.object({
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$Outbound;
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsResponse2002ToJSON(
-  findOnePromptSnippetResponseFormatPromptSnippetsResponse2002:
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$outboundSchema
-      .parse(findOnePromptSnippetResponseFormatPromptSnippetsResponse2002),
-  );
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsResponse2002FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type
-  > =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: z.string(),
-    strict: z.boolean(),
-    schema: z.record(z.any()),
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$Outbound =
-  {
-    name: string;
-    strict: boolean;
-    schema: { [k: string]: any };
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema
-  > = z.object({
-    name: z.string(),
-    strict: z.boolean(),
-    schema: z.record(z.any()),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$Outbound;
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchemaToJSON(
-  findOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema:
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$outboundSchema
-      .parse(
-        findOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema,
-      ),
-  );
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchemaFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema,
-    json_schema: z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$inboundSchema
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      "json_schema": "jsonSchema",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$Outbound =
-  {
-    type: string;
-    json_schema:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$Outbound;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001
-  > = z.object({
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema,
-    jsonSchema: z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200JsonSchema$outboundSchema
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      jsonSchema: "json_schema",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$Outbound;
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsResponse2001ToJSON(
-  findOnePromptSnippetResponseFormatPromptSnippetsResponse2001:
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$outboundSchema
-      .parse(findOnePromptSnippetResponseFormatPromptSnippetsResponse2001),
-  );
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsResponse2001FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat,
-    z.ZodTypeDef,
-    unknown
-  > = z.union([
-    z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$inboundSchema
-    ),
-    z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$inboundSchema
-    ),
-  ]);
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$Outbound =
-  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$Outbound
-  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$Outbound;
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat
-  > = z.union([
-    z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$outboundSchema
-    ),
-    z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$outboundSchema
-    ),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormatToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$outboundSchema
-      .parse(
-        findOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat,
-      ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormatFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseResponseFormat' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    temperature: z.number().optional(),
-    maxTokens: z.number().optional(),
-    topK: z.number().optional(),
-    topP: z.number().optional(),
-    frequencyPenalty: z.number().optional(),
-    presencePenalty: z.number().optional(),
-    numImages: z.number().optional(),
-    seed: z.number().optional(),
-    format:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$inboundSchema
-        .optional(),
-    dimensions: z.string().optional(),
-    quality:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$inboundSchema
-        .optional(),
-    style: z.string().optional(),
-    responseFormat: z.nullable(
-      z.union([
-        z.lazy(() =>
-          FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$inboundSchema
-        ),
-        z.lazy(() =>
-          FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$inboundSchema
-        ),
-      ]),
-    ).optional(),
-    photoRealVersion:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$inboundSchema
-        .optional(),
-    encoding_format:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$inboundSchema
-        .optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "encoding_format": "encodingFormat",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$Outbound =
-  {
-    temperature?: number | undefined;
-    maxTokens?: number | undefined;
-    topK?: number | undefined;
-    topP?: number | undefined;
-    frequencyPenalty?: number | undefined;
-    presencePenalty?: number | undefined;
-    numImages?: number | undefined;
-    seed?: number | undefined;
-    format?: string | undefined;
-    dimensions?: string | undefined;
-    quality?: string | undefined;
-    style?: string | undefined;
-    responseFormat?:
-      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$Outbound
-      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$Outbound
-      | null
-      | undefined;
-    photoRealVersion?: string | undefined;
-    encoding_format?: string | undefined;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters
-  > = z.object({
-    temperature: z.number().optional(),
-    maxTokens: z.number().optional(),
-    topK: z.number().optional(),
-    topP: z.number().optional(),
-    frequencyPenalty: z.number().optional(),
-    presencePenalty: z.number().optional(),
-    numImages: z.number().optional(),
-    seed: z.number().optional(),
-    format:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format$outboundSchema
-        .optional(),
-    dimensions: z.string().optional(),
-    quality:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseQuality$outboundSchema
-        .optional(),
-    style: z.string().optional(),
-    responseFormat: z.nullable(
-      z.union([
-        z.lazy(() =>
-          FindOnePromptSnippetResponseFormatPromptSnippetsResponse2002$outboundSchema
-        ),
-        z.lazy(() =>
-          FindOnePromptSnippetResponseFormatPromptSnippetsResponse2001$outboundSchema
-        ),
-      ]),
-    ).optional(),
-    photoRealVersion:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponsePhotoRealVersion$outboundSchema
-        .optional(),
-    encodingFormat:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseEncodingFormat$outboundSchema
-        .optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      encodingFormat: "encoding_format",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseModelParametersToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$outboundSchema
-      .parse(
-        findOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters,
-      ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseModelParametersFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole
-  > = z.nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole);
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole
-  > = FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType
-  > = z.nativeEnum(
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType,
-  );
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType
-  > =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    id: z.string().optional(),
-    url: z.string(),
-    detail: z.string().optional(),
-  });
-
-/** @internal */
-export type FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$Outbound = {
-  id?: string | undefined;
-  url: string;
-  detail?: string | undefined;
-};
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl
-  > = z.object({
-    id: z.string().optional(),
-    url: z.string(),
-    detail: z.string().optional(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$Outbound;
-}
-
-export function findOnePromptSnippet2PromptSnippetsResponse200ImageUrlToJSON(
-  findOnePromptSnippet2PromptSnippetsResponse200ImageUrl:
-    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$outboundSchema.parse(
-      findOnePromptSnippet2PromptSnippetsResponse200ImageUrl,
-    ),
-  );
-}
-
-export function findOnePromptSnippet2PromptSnippetsResponse200ImageUrlFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsResponse2002,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    type:
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$inboundSchema,
-    image_url: z.lazy(() =>
-      FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$inboundSchema
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      "image_url": "imageUrl",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound = {
-  type: string;
-  image_url: FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$Outbound;
-};
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippet2PromptSnippetsResponse2002
-  > = z.object({
-    type:
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2VersionsType$outboundSchema,
-    imageUrl: z.lazy(() =>
-      FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl$outboundSchema
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      imageUrl: "image_url",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsResponse2002$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound;
-}
-
-export function findOnePromptSnippet2PromptSnippetsResponse2002ToJSON(
-  findOnePromptSnippet2PromptSnippetsResponse2002:
-    FindOnePromptSnippet2PromptSnippetsResponse2002,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema.parse(
-      findOnePromptSnippet2PromptSnippetsResponse2002,
-    ),
-  );
-}
-
-export function findOnePromptSnippet2PromptSnippetsResponse2002FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippet2PromptSnippetsResponse2002,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsResponse2002' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type
-  > = z.nativeEnum(
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type,
-  );
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type
-  > =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsResponse2001,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    type:
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$inboundSchema,
-    text: z.string(),
-  });
-
-/** @internal */
-export type FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound = {
-  type: string;
-  text: string;
-};
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippet2PromptSnippetsResponse2001
-  > = z.object({
-    type:
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody2Type$outboundSchema,
-    text: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsResponse2001$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound;
-}
-
-export function findOnePromptSnippet2PromptSnippetsResponse2001ToJSON(
-  findOnePromptSnippet2PromptSnippetsResponse2001:
-    FindOnePromptSnippet2PromptSnippetsResponse2001,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema.parse(
-      findOnePromptSnippet2PromptSnippetsResponse2001,
-    ),
-  );
-}
-
-export function findOnePromptSnippet2PromptSnippetsResponse2001FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippet2PromptSnippetsResponse2001,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsResponse2001' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetContentPromptSnippetsResponse2002$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetContentPromptSnippetsResponse2002,
-    z.ZodTypeDef,
-    unknown
-  > = z.union([
-    z.lazy(() => FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema),
-    z.lazy(() => FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema),
-  ]);
-
-/** @internal */
-export type FindOnePromptSnippetContentPromptSnippetsResponse2002$Outbound =
-  | FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound
-  | FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound;
-
-/** @internal */
-export const FindOnePromptSnippetContentPromptSnippetsResponse2002$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetContentPromptSnippetsResponse2002$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetContentPromptSnippetsResponse2002
-  > = z.union([
-    z.lazy(() =>
-      FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema
-    ),
-    z.lazy(() =>
-      FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema
-    ),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetContentPromptSnippetsResponse2002$ {
-  /** @deprecated use `FindOnePromptSnippetContentPromptSnippetsResponse2002$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetContentPromptSnippetsResponse2002$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetContentPromptSnippetsResponse2002$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetContentPromptSnippetsResponse2002$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetContentPromptSnippetsResponse2002$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetContentPromptSnippetsResponse2002$Outbound;
-}
-
-export function findOnePromptSnippetContentPromptSnippetsResponse2002ToJSON(
-  findOnePromptSnippetContentPromptSnippetsResponse2002:
-    FindOnePromptSnippetContentPromptSnippetsResponse2002,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetContentPromptSnippetsResponse2002$outboundSchema.parse(
-      findOnePromptSnippetContentPromptSnippetsResponse2002,
-    ),
-  );
-}
-
-export function findOnePromptSnippetContentPromptSnippetsResponse2002FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetContentPromptSnippetsResponse2002,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetContentPromptSnippetsResponse2002$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetContentPromptSnippetsResponse2002' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent,
-    z.ZodTypeDef,
-    unknown
-  > = z.union([
-    z.string(),
-    z.array(z.union([
-      z.lazy(() =>
-        FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema
-      ),
-      z.lazy(() =>
-        FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema
-      ),
-    ])),
-  ]);
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$Outbound =
-  | string
-  | Array<
-    | FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound
-    | FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound
-  >;
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent
-  > = z.union([
-    z.string(),
-    z.array(z.union([
-      z.lazy(() =>
-        FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema
-      ),
-      z.lazy(() =>
-        FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema
-      ),
-    ])),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseContentToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponseContent:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseContent),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseContentFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseContent' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: z.string(),
-    arguments: z.string(),
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$Outbound =
-  {
-    name: string;
-    arguments: string;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction
-  > = z.object({
-    name: z.string(),
-    arguments: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseFunctionToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponseFunction:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseFunction),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseFunctionFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    id: z.string().optional(),
-    index: z.number().optional(),
-    type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$inboundSchema,
-    function: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$inboundSchema
-    ),
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$Outbound =
-  {
-    id?: string | undefined;
-    index?: number | undefined;
-    type: string;
-    function:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$Outbound;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls
-  > = z.object({
-    id: z.string().optional(),
-    index: z.number().optional(),
-    type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson2Type$outboundSchema,
-    function: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseFunction$outboundSchema
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseToolCallsToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseToolCallsFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    role:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$inboundSchema,
-    content: z.union([
-      z.string(),
-      z.array(z.union([
-        z.lazy(() =>
-          FindOnePromptSnippet2PromptSnippetsResponse2001$inboundSchema
-        ),
-        z.lazy(() =>
-          FindOnePromptSnippet2PromptSnippetsResponse2002$inboundSchema
-        ),
-      ])),
-    ]),
-    tool_calls: z.array(
-      z.lazy(() =>
-        FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$inboundSchema
-      ),
-    ).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "tool_calls": "toolCalls",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$Outbound =
-  {
-    role: string;
-    content:
-      | string
-      | Array<
-        | FindOnePromptSnippet2PromptSnippetsResponse2001$Outbound
-        | FindOnePromptSnippet2PromptSnippetsResponse2002$Outbound
-      >;
-    tool_calls?:
-      | Array<
-        FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$Outbound
-      >
-      | undefined;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages
-  > = z.object({
-    role:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole$outboundSchema,
-    content: z.union([
-      z.string(),
-      z.array(z.union([
-        z.lazy(() =>
-          FindOnePromptSnippet2PromptSnippetsResponse2001$outboundSchema
-        ),
-        z.lazy(() =>
-          FindOnePromptSnippet2PromptSnippetsResponse2002$outboundSchema
-        ),
-      ])),
-    ]),
-    toolCalls: z.array(
-      z.lazy(() =>
-        FindOnePromptSnippetResponseBodyPromptSnippetsResponseToolCalls$outboundSchema
-      ),
-    ).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      toolCalls: "tool_calls",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseMessagesToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponseMessages:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseMessages),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseMessagesFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    stream: z.boolean().optional(),
-    model: z.string().optional(),
-    model_db_id: z.string().optional(),
-    model_type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$inboundSchema
-        .optional(),
-    model_parameters: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$inboundSchema
-    ).optional(),
-    provider:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$inboundSchema
-        .optional(),
-    integration_id: z.nullable(z.string()).optional(),
-    version: z.string().optional(),
-    messages: z.array(
-      z.lazy(() =>
-        FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$inboundSchema
-      ),
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      "model_db_id": "modelDbId",
-      "model_type": "modelType",
-      "model_parameters": "modelParameters",
-      "integration_id": "integrationId",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$Outbound =
-  {
-    stream?: boolean | undefined;
-    model?: string | undefined;
-    model_db_id?: string | undefined;
-    model_type?: string | undefined;
-    model_parameters?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$Outbound
-      | undefined;
-    provider?: string | undefined;
-    integration_id?: string | null | undefined;
-    version?: string | undefined;
-    messages: Array<
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$Outbound
-    >;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig
-  > = z.object({
-    stream: z.boolean().optional(),
-    model: z.string().optional(),
-    modelDbId: z.string().optional(),
-    modelType:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType$outboundSchema
-        .optional(),
-    modelParameters: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelParameters$outboundSchema
-    ).optional(),
-    provider:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseProvider$outboundSchema
-        .optional(),
-    integrationId: z.nullable(z.string()).optional(),
-    version: z.string().optional(),
-    messages: z.array(
-      z.lazy(() =>
-        FindOnePromptSnippetResponseBodyPromptSnippetsResponseMessages$outboundSchema
-      ),
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      modelDbId: "model_db_id",
-      modelType: "model_type",
-      modelParameters: "model_parameters",
-      integrationId: "integration_id",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfigToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$outboundSchema
-      .parse(
-        findOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig,
-      ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfigFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    use_cases: z.array(z.string()).optional(),
-    language: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "use_cases": "useCases",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$Outbound =
-  {
-    use_cases?: Array<string> | undefined;
-    language?: string | undefined;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata
-  > = z.object({
-    useCases: z.array(z.string()).optional(),
-    language: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      useCases: "use_cases",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseMetadataToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponseMetadataFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata' from JSON`,
-  );
-}
-
-/** @internal */
-export const ResponseBodyVersions$inboundSchema: z.ZodType<
-  ResponseBodyVersions,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  _id: z.string(),
-  created_by_id: z.string(),
-  display_name: z.string(),
-  updated_by_id: z.string(),
-  description: z.nullable(z.string()).optional(),
-  prompt_config: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$inboundSchema
-  ),
-  metadata: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$inboundSchema
-  ),
-  commit: z.string(),
-  timestamp: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "_id": "id",
-    "created_by_id": "createdById",
-    "display_name": "displayName",
-    "updated_by_id": "updatedById",
-    "prompt_config": "promptConfig",
-  });
-});
-
-/** @internal */
-export type ResponseBodyVersions$Outbound = {
-  _id: string;
-  created_by_id: string;
-  display_name: string;
-  updated_by_id: string;
-  description?: string | null | undefined;
-  prompt_config:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$Outbound;
-  metadata:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$Outbound;
-  commit: string;
-  timestamp: string;
-};
-
-/** @internal */
-export const ResponseBodyVersions$outboundSchema: z.ZodType<
-  ResponseBodyVersions$Outbound,
-  z.ZodTypeDef,
-  ResponseBodyVersions
-> = z.object({
-  id: z.string(),
-  createdById: z.string(),
-  displayName: z.string(),
-  updatedById: z.string(),
-  description: z.nullable(z.string()).optional(),
-  promptConfig: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig$outboundSchema
-  ),
-  metadata: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$outboundSchema
-  ),
-  commit: z.string(),
-  timestamp: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    id: "_id",
-    createdById: "created_by_id",
-    displayName: "display_name",
-    updatedById: "updated_by_id",
-    promptConfig: "prompt_config",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyVersions$ {
-  /** @deprecated use `ResponseBodyVersions$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyVersions$inboundSchema;
-  /** @deprecated use `ResponseBodyVersions$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyVersions$outboundSchema;
-  /** @deprecated use `ResponseBodyVersions$Outbound` instead. */
-  export type Outbound = ResponseBodyVersions$Outbound;
-}
-
-export function responseBodyVersionsToJSON(
-  responseBodyVersions: ResponseBodyVersions,
-): string {
-  return JSON.stringify(
-    ResponseBodyVersions$outboundSchema.parse(responseBodyVersions),
-  );
-}
-
-export function responseBodyVersionsFromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBodyVersions, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBodyVersions$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBodyVersions' from JSON`,
-  );
-}
-
-/** @internal */
 export const FindOnePromptSnippetResponseBodyType$inboundSchema:
   z.ZodNativeEnum<typeof FindOnePromptSnippetResponseBodyType> = z.nativeEnum(
     FindOnePromptSnippetResponseBodyType,
@@ -9721,8 +13429,8 @@ export namespace FindOnePromptSnippetResponseBodyType$ {
 }
 
 /** @internal */
-export const ResponseBody2$inboundSchema: z.ZodType<
-  ResponseBody2,
+export const FindOnePromptSnippetResponseBody1$inboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBody1,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -9744,8 +13452,9 @@ export const ResponseBody2$inboundSchema: z.ZodType<
   updated: z.string().datetime({ offset: true }).default(
     "2024-11-26T03:17:57.484Z",
   ).transform(v => new Date(v)),
-  versions: z.array(z.lazy(() => ResponseBodyVersions$inboundSchema)),
-  key: z.string(),
+  versions: z.array(
+    z.lazy(() => FindOnePromptSnippetResponseBodyVersions$inboundSchema),
+  ),
   type: FindOnePromptSnippetResponseBodyType$inboundSchema,
 }).transform((v) => {
   return remap$(v, {
@@ -9759,7 +13468,7 @@ export const ResponseBody2$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ResponseBody2$Outbound = {
+export type FindOnePromptSnippetResponseBody1$Outbound = {
   _id: string;
   owner: string | string;
   domain_id: string;
@@ -9771,16 +13480,15 @@ export type ResponseBody2$Outbound = {
   metadata: FindOnePromptSnippetResponseBodyMetadata$Outbound;
   created?: string | undefined;
   updated: string;
-  versions: Array<ResponseBodyVersions$Outbound>;
-  key: string;
+  versions: Array<FindOnePromptSnippetResponseBodyVersions$Outbound>;
   type: string;
 };
 
 /** @internal */
-export const ResponseBody2$outboundSchema: z.ZodType<
-  ResponseBody2$Outbound,
+export const FindOnePromptSnippetResponseBody1$outboundSchema: z.ZodType<
+  FindOnePromptSnippetResponseBody1$Outbound,
   z.ZodTypeDef,
-  ResponseBody2
+  FindOnePromptSnippetResponseBody1
 > = z.object({
   id: z.string(),
   owner: z.union([z.string(), FindOnePromptSnippetOwner2$outboundSchema]),
@@ -9798,8 +13506,9 @@ export const ResponseBody2$outboundSchema: z.ZodType<
   created: z.date().transform(v => v.toISOString()).optional(),
   updated: z.date().default(() => new Date("2024-11-26T03:17:57.484Z"))
     .transform(v => v.toISOString()),
-  versions: z.array(z.lazy(() => ResponseBodyVersions$outboundSchema)),
-  key: z.string(),
+  versions: z.array(
+    z.lazy(() => FindOnePromptSnippetResponseBodyVersions$outboundSchema),
+  ),
   type: FindOnePromptSnippetResponseBodyType$outboundSchema,
 }).transform((v) => {
   return remap$(v, {
@@ -9816,3312 +13525,33 @@ export const ResponseBody2$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ResponseBody2$ {
-  /** @deprecated use `ResponseBody2$inboundSchema` instead. */
-  export const inboundSchema = ResponseBody2$inboundSchema;
-  /** @deprecated use `ResponseBody2$outboundSchema` instead. */
-  export const outboundSchema = ResponseBody2$outboundSchema;
-  /** @deprecated use `ResponseBody2$Outbound` instead. */
-  export type Outbound = ResponseBody2$Outbound;
-}
-
-export function responseBody2ToJSON(responseBody2: ResponseBody2): string {
-  return JSON.stringify(ResponseBody2$outboundSchema.parse(responseBody2));
-}
-
-export function responseBody2FromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBody2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBody2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBody2' from JSON`,
-  );
-}
-
-/** @internal */
-export const Owner2$inboundSchema: z.ZodNativeEnum<typeof Owner2> = z
-  .nativeEnum(Owner2);
-
-/** @internal */
-export const Owner2$outboundSchema: z.ZodNativeEnum<typeof Owner2> =
-  Owner2$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Owner2$ {
-  /** @deprecated use `Owner2$inboundSchema` instead. */
-  export const inboundSchema = Owner2$inboundSchema;
-  /** @deprecated use `Owner2$outboundSchema` instead. */
-  export const outboundSchema = Owner2$outboundSchema;
-}
-
-/** @internal */
-export const Owner$inboundSchema: z.ZodType<Owner, z.ZodTypeDef, unknown> = z
-  .union([z.string(), Owner2$inboundSchema]);
-
-/** @internal */
-export type Owner$Outbound = string | string;
-
-/** @internal */
-export const Owner$outboundSchema: z.ZodType<
-  Owner$Outbound,
-  z.ZodTypeDef,
-  Owner
-> = z.union([z.string(), Owner2$outboundSchema]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Owner$ {
-  /** @deprecated use `Owner$inboundSchema` instead. */
-  export const inboundSchema = Owner$inboundSchema;
-  /** @deprecated use `Owner$outboundSchema` instead. */
-  export const outboundSchema = Owner$outboundSchema;
-  /** @deprecated use `Owner$Outbound` instead. */
-  export type Outbound = Owner$Outbound;
-}
-
-export function ownerToJSON(owner: Owner): string {
-  return JSON.stringify(Owner$outboundSchema.parse(owner));
-}
-
-export function ownerFromJSON(
-  jsonString: string,
-): SafeParseResult<Owner, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Owner$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Owner' from JSON`,
-  );
-}
-
-/** @internal */
-export const ResponseBodyModelType$inboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyModelType
-> = z.nativeEnum(ResponseBodyModelType);
-
-/** @internal */
-export const ResponseBodyModelType$outboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyModelType
-> = ResponseBodyModelType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyModelType$ {
-  /** @deprecated use `ResponseBodyModelType$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyModelType$inboundSchema;
-  /** @deprecated use `ResponseBodyModelType$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyModelType$outboundSchema;
-}
-
-/** @internal */
-export const ResponseBodyFormat$inboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyFormat
-> = z.nativeEnum(ResponseBodyFormat);
-
-/** @internal */
-export const ResponseBodyFormat$outboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyFormat
-> = ResponseBodyFormat$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyFormat$ {
-  /** @deprecated use `ResponseBodyFormat$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyFormat$inboundSchema;
-  /** @deprecated use `ResponseBodyFormat$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyFormat$outboundSchema;
-}
-
-/** @internal */
-export const ResponseBodyQuality$inboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyQuality
-> = z.nativeEnum(ResponseBodyQuality);
-
-/** @internal */
-export const ResponseBodyQuality$outboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyQuality
-> = ResponseBodyQuality$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyQuality$ {
-  /** @deprecated use `ResponseBodyQuality$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyQuality$inboundSchema;
-  /** @deprecated use `ResponseBodyQuality$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyQuality$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsType$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseFormatPromptSnippetsType> =
-    z.nativeEnum(FindOnePromptSnippetResponseFormatPromptSnippetsType);
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsType$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseFormatPromptSnippetsType> =
-    FindOnePromptSnippetResponseFormatPromptSnippetsType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsType$outboundSchema` instead. */
+export namespace FindOnePromptSnippetResponseBody1$ {
+  /** @deprecated use `FindOnePromptSnippetResponseBody1$inboundSchema` instead. */
+  export const inboundSchema = FindOnePromptSnippetResponseBody1$inboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBody1$outboundSchema` instead. */
   export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsType$outboundSchema;
+    FindOnePromptSnippetResponseBody1$outboundSchema;
+  /** @deprecated use `FindOnePromptSnippetResponseBody1$Outbound` instead. */
+  export type Outbound = FindOnePromptSnippetResponseBody1$Outbound;
 }
 
-/** @internal */
-export const FindOnePromptSnippetResponseFormat2$inboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseFormat2,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  type: FindOnePromptSnippetResponseFormatPromptSnippetsType$inboundSchema,
-});
-
-/** @internal */
-export type FindOnePromptSnippetResponseFormat2$Outbound = {
-  type: string;
-};
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormat2$outboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseFormat2$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippetResponseFormat2
-> = z.object({
-  type: FindOnePromptSnippetResponseFormatPromptSnippetsType$outboundSchema,
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormat2$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormat2$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormat2$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormat2$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormat2$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormat2$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippetResponseFormat2$Outbound;
-}
-
-export function findOnePromptSnippetResponseFormat2ToJSON(
-  findOnePromptSnippetResponseFormat2: FindOnePromptSnippetResponseFormat2,
+export function findOnePromptSnippetResponseBody1ToJSON(
+  findOnePromptSnippetResponseBody1: FindOnePromptSnippetResponseBody1,
 ): string {
   return JSON.stringify(
-    FindOnePromptSnippetResponseFormat2$outboundSchema.parse(
-      findOnePromptSnippetResponseFormat2,
+    FindOnePromptSnippetResponseBody1$outboundSchema.parse(
+      findOnePromptSnippetResponseBody1,
     ),
   );
 }
 
-export function findOnePromptSnippetResponseFormat2FromJSON(
+export function findOnePromptSnippetResponseBody1FromJSON(
   jsonString: string,
-): SafeParseResult<FindOnePromptSnippetResponseFormat2, SDKValidationError> {
+): SafeParseResult<FindOnePromptSnippetResponseBody1, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseFormat2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseFormat2' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatType$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseFormatType> = z.nativeEnum(
-    FindOnePromptSnippetResponseFormatType,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatType$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippetResponseFormatType> =
-    FindOnePromptSnippetResponseFormatType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatType$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatJsonSchema$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatJsonSchema,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: z.string(),
-    strict: z.boolean(),
-    schema: z.record(z.any()),
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseFormatJsonSchema$Outbound = {
-  name: string;
-  strict: boolean;
-  schema: { [k: string]: any };
-};
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatJsonSchema$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatJsonSchema$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseFormatJsonSchema
-  > = z.object({
-    name: z.string(),
-    strict: z.boolean(),
-    schema: z.record(z.any()),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatJsonSchema$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatJsonSchema$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatJsonSchema$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatJsonSchema$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatJsonSchema$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatJsonSchema$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippetResponseFormatJsonSchema$Outbound;
-}
-
-export function findOnePromptSnippetResponseFormatJsonSchemaToJSON(
-  findOnePromptSnippetResponseFormatJsonSchema:
-    FindOnePromptSnippetResponseFormatJsonSchema,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseFormatJsonSchema$outboundSchema.parse(
-      findOnePromptSnippetResponseFormatJsonSchema,
-    ),
-  );
-}
-
-export function findOnePromptSnippetResponseFormatJsonSchemaFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseFormatJsonSchema,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseFormatJsonSchema$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'FindOnePromptSnippetResponseFormatJsonSchema' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormat1$inboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseFormat1,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  type: FindOnePromptSnippetResponseFormatType$inboundSchema,
-  json_schema: z.lazy(() =>
-    FindOnePromptSnippetResponseFormatJsonSchema$inboundSchema
-  ),
-}).transform((v) => {
-  return remap$(v, {
-    "json_schema": "jsonSchema",
-  });
-});
-
-/** @internal */
-export type FindOnePromptSnippetResponseFormat1$Outbound = {
-  type: string;
-  json_schema: FindOnePromptSnippetResponseFormatJsonSchema$Outbound;
-};
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormat1$outboundSchema: z.ZodType<
-  FindOnePromptSnippetResponseFormat1$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippetResponseFormat1
-> = z.object({
-  type: FindOnePromptSnippetResponseFormatType$outboundSchema,
-  jsonSchema: z.lazy(() =>
-    FindOnePromptSnippetResponseFormatJsonSchema$outboundSchema
-  ),
-}).transform((v) => {
-  return remap$(v, {
-    jsonSchema: "json_schema",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormat1$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormat1$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormat1$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormat1$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormat1$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormat1$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippetResponseFormat1$Outbound;
-}
-
-export function findOnePromptSnippetResponseFormat1ToJSON(
-  findOnePromptSnippetResponseFormat1: FindOnePromptSnippetResponseFormat1,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseFormat1$outboundSchema.parse(
-      findOnePromptSnippetResponseFormat1,
-    ),
-  );
-}
-
-export function findOnePromptSnippetResponseFormat1FromJSON(
-  jsonString: string,
-): SafeParseResult<FindOnePromptSnippetResponseFormat1, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseFormat1$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseFormat1' from JSON`,
-  );
-}
-
-/** @internal */
-export const ResponseBodyResponseFormat$inboundSchema: z.ZodType<
-  ResponseBodyResponseFormat,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => FindOnePromptSnippetResponseFormat2$inboundSchema),
-  z.lazy(() => FindOnePromptSnippetResponseFormat1$inboundSchema),
-]);
-
-/** @internal */
-export type ResponseBodyResponseFormat$Outbound =
-  | FindOnePromptSnippetResponseFormat2$Outbound
-  | FindOnePromptSnippetResponseFormat1$Outbound;
-
-/** @internal */
-export const ResponseBodyResponseFormat$outboundSchema: z.ZodType<
-  ResponseBodyResponseFormat$Outbound,
-  z.ZodTypeDef,
-  ResponseBodyResponseFormat
-> = z.union([
-  z.lazy(() => FindOnePromptSnippetResponseFormat2$outboundSchema),
-  z.lazy(() => FindOnePromptSnippetResponseFormat1$outboundSchema),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyResponseFormat$ {
-  /** @deprecated use `ResponseBodyResponseFormat$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyResponseFormat$inboundSchema;
-  /** @deprecated use `ResponseBodyResponseFormat$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyResponseFormat$outboundSchema;
-  /** @deprecated use `ResponseBodyResponseFormat$Outbound` instead. */
-  export type Outbound = ResponseBodyResponseFormat$Outbound;
-}
-
-export function responseBodyResponseFormatToJSON(
-  responseBodyResponseFormat: ResponseBodyResponseFormat,
-): string {
-  return JSON.stringify(
-    ResponseBodyResponseFormat$outboundSchema.parse(responseBodyResponseFormat),
-  );
-}
-
-export function responseBodyResponseFormatFromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBodyResponseFormat, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBodyResponseFormat$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBodyResponseFormat' from JSON`,
-  );
-}
-
-/** @internal */
-export const ResponseBodyPhotoRealVersion$inboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyPhotoRealVersion
-> = z.nativeEnum(ResponseBodyPhotoRealVersion);
-
-/** @internal */
-export const ResponseBodyPhotoRealVersion$outboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyPhotoRealVersion
-> = ResponseBodyPhotoRealVersion$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyPhotoRealVersion$ {
-  /** @deprecated use `ResponseBodyPhotoRealVersion$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyPhotoRealVersion$inboundSchema;
-  /** @deprecated use `ResponseBodyPhotoRealVersion$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyPhotoRealVersion$outboundSchema;
-}
-
-/** @internal */
-export const ResponseBodyEncodingFormat$inboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyEncodingFormat
-> = z.nativeEnum(ResponseBodyEncodingFormat);
-
-/** @internal */
-export const ResponseBodyEncodingFormat$outboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyEncodingFormat
-> = ResponseBodyEncodingFormat$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyEncodingFormat$ {
-  /** @deprecated use `ResponseBodyEncodingFormat$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyEncodingFormat$inboundSchema;
-  /** @deprecated use `ResponseBodyEncodingFormat$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyEncodingFormat$outboundSchema;
-}
-
-/** @internal */
-export const ResponseBodyModelParameters$inboundSchema: z.ZodType<
-  ResponseBodyModelParameters,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  temperature: z.number().optional(),
-  maxTokens: z.number().optional(),
-  topK: z.number().optional(),
-  topP: z.number().optional(),
-  frequencyPenalty: z.number().optional(),
-  presencePenalty: z.number().optional(),
-  numImages: z.number().optional(),
-  seed: z.number().optional(),
-  format: ResponseBodyFormat$inboundSchema.optional(),
-  dimensions: z.string().optional(),
-  quality: ResponseBodyQuality$inboundSchema.optional(),
-  style: z.string().optional(),
-  responseFormat: z.nullable(
-    z.union([
-      z.lazy(() => FindOnePromptSnippetResponseFormat2$inboundSchema),
-      z.lazy(() => FindOnePromptSnippetResponseFormat1$inboundSchema),
-    ]),
-  ).optional(),
-  photoRealVersion: ResponseBodyPhotoRealVersion$inboundSchema.optional(),
-  encoding_format: ResponseBodyEncodingFormat$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "encoding_format": "encodingFormat",
-  });
-});
-
-/** @internal */
-export type ResponseBodyModelParameters$Outbound = {
-  temperature?: number | undefined;
-  maxTokens?: number | undefined;
-  topK?: number | undefined;
-  topP?: number | undefined;
-  frequencyPenalty?: number | undefined;
-  presencePenalty?: number | undefined;
-  numImages?: number | undefined;
-  seed?: number | undefined;
-  format?: string | undefined;
-  dimensions?: string | undefined;
-  quality?: string | undefined;
-  style?: string | undefined;
-  responseFormat?:
-    | FindOnePromptSnippetResponseFormat2$Outbound
-    | FindOnePromptSnippetResponseFormat1$Outbound
-    | null
-    | undefined;
-  photoRealVersion?: string | undefined;
-  encoding_format?: string | undefined;
-};
-
-/** @internal */
-export const ResponseBodyModelParameters$outboundSchema: z.ZodType<
-  ResponseBodyModelParameters$Outbound,
-  z.ZodTypeDef,
-  ResponseBodyModelParameters
-> = z.object({
-  temperature: z.number().optional(),
-  maxTokens: z.number().optional(),
-  topK: z.number().optional(),
-  topP: z.number().optional(),
-  frequencyPenalty: z.number().optional(),
-  presencePenalty: z.number().optional(),
-  numImages: z.number().optional(),
-  seed: z.number().optional(),
-  format: ResponseBodyFormat$outboundSchema.optional(),
-  dimensions: z.string().optional(),
-  quality: ResponseBodyQuality$outboundSchema.optional(),
-  style: z.string().optional(),
-  responseFormat: z.nullable(
-    z.union([
-      z.lazy(() => FindOnePromptSnippetResponseFormat2$outboundSchema),
-      z.lazy(() => FindOnePromptSnippetResponseFormat1$outboundSchema),
-    ]),
-  ).optional(),
-  photoRealVersion: ResponseBodyPhotoRealVersion$outboundSchema.optional(),
-  encodingFormat: ResponseBodyEncodingFormat$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    encodingFormat: "encoding_format",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyModelParameters$ {
-  /** @deprecated use `ResponseBodyModelParameters$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyModelParameters$inboundSchema;
-  /** @deprecated use `ResponseBodyModelParameters$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyModelParameters$outboundSchema;
-  /** @deprecated use `ResponseBodyModelParameters$Outbound` instead. */
-  export type Outbound = ResponseBodyModelParameters$Outbound;
-}
-
-export function responseBodyModelParametersToJSON(
-  responseBodyModelParameters: ResponseBodyModelParameters,
-): string {
-  return JSON.stringify(
-    ResponseBodyModelParameters$outboundSchema.parse(
-      responseBodyModelParameters,
-    ),
-  );
-}
-
-export function responseBodyModelParametersFromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBodyModelParameters, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBodyModelParameters$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBodyModelParameters' from JSON`,
-  );
-}
-
-/** @internal */
-export const ResponseBodyProvider$inboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyProvider
-> = z.nativeEnum(ResponseBodyProvider);
-
-/** @internal */
-export const ResponseBodyProvider$outboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyProvider
-> = ResponseBodyProvider$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyProvider$ {
-  /** @deprecated use `ResponseBodyProvider$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyProvider$inboundSchema;
-  /** @deprecated use `ResponseBodyProvider$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyProvider$outboundSchema;
-}
-
-/** @internal */
-export const ResponseBodyRole$inboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyRole
-> = z.nativeEnum(ResponseBodyRole);
-
-/** @internal */
-export const ResponseBodyRole$outboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyRole
-> = ResponseBodyRole$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyRole$ {
-  /** @deprecated use `ResponseBodyRole$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyRole$inboundSchema;
-  /** @deprecated use `ResponseBodyRole$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyRole$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsType$inboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippet2PromptSnippetsType> = z
-    .nativeEnum(FindOnePromptSnippet2PromptSnippetsType);
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsType$outboundSchema:
-  z.ZodNativeEnum<typeof FindOnePromptSnippet2PromptSnippetsType> =
-    FindOnePromptSnippet2PromptSnippetsType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsType$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsType$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippet2ImageUrl$inboundSchema: z.ZodType<
-  FindOnePromptSnippet2ImageUrl,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  id: z.string().optional(),
-  url: z.string(),
-  detail: z.string().optional(),
-});
-
-/** @internal */
-export type FindOnePromptSnippet2ImageUrl$Outbound = {
-  id?: string | undefined;
-  url: string;
-  detail?: string | undefined;
-};
-
-/** @internal */
-export const FindOnePromptSnippet2ImageUrl$outboundSchema: z.ZodType<
-  FindOnePromptSnippet2ImageUrl$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippet2ImageUrl
-> = z.object({
-  id: z.string().optional(),
-  url: z.string(),
-  detail: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2ImageUrl$ {
-  /** @deprecated use `FindOnePromptSnippet2ImageUrl$inboundSchema` instead. */
-  export const inboundSchema = FindOnePromptSnippet2ImageUrl$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2ImageUrl$outboundSchema` instead. */
-  export const outboundSchema = FindOnePromptSnippet2ImageUrl$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2ImageUrl$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippet2ImageUrl$Outbound;
-}
-
-export function findOnePromptSnippet2ImageUrlToJSON(
-  findOnePromptSnippet2ImageUrl: FindOnePromptSnippet2ImageUrl,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippet2ImageUrl$outboundSchema.parse(
-      findOnePromptSnippet2ImageUrl,
-    ),
-  );
-}
-
-export function findOnePromptSnippet2ImageUrlFromJSON(
-  jsonString: string,
-): SafeParseResult<FindOnePromptSnippet2ImageUrl, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => FindOnePromptSnippet2ImageUrl$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippet2ImageUrl' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippet22$inboundSchema: z.ZodType<
-  FindOnePromptSnippet22,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  type: FindOnePromptSnippet2PromptSnippetsType$inboundSchema,
-  image_url: z.lazy(() => FindOnePromptSnippet2ImageUrl$inboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    "image_url": "imageUrl",
-  });
-});
-
-/** @internal */
-export type FindOnePromptSnippet22$Outbound = {
-  type: string;
-  image_url: FindOnePromptSnippet2ImageUrl$Outbound;
-};
-
-/** @internal */
-export const FindOnePromptSnippet22$outboundSchema: z.ZodType<
-  FindOnePromptSnippet22$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippet22
-> = z.object({
-  type: FindOnePromptSnippet2PromptSnippetsType$outboundSchema,
-  imageUrl: z.lazy(() => FindOnePromptSnippet2ImageUrl$outboundSchema),
-}).transform((v) => {
-  return remap$(v, {
-    imageUrl: "image_url",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet22$ {
-  /** @deprecated use `FindOnePromptSnippet22$inboundSchema` instead. */
-  export const inboundSchema = FindOnePromptSnippet22$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet22$outboundSchema` instead. */
-  export const outboundSchema = FindOnePromptSnippet22$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippet22$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippet22$Outbound;
-}
-
-export function findOnePromptSnippet22ToJSON(
-  findOnePromptSnippet22: FindOnePromptSnippet22,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippet22$outboundSchema.parse(findOnePromptSnippet22),
-  );
-}
-
-export function findOnePromptSnippet22FromJSON(
-  jsonString: string,
-): SafeParseResult<FindOnePromptSnippet22, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => FindOnePromptSnippet22$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippet22' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippet2Type$inboundSchema: z.ZodNativeEnum<
-  typeof FindOnePromptSnippet2Type
-> = z.nativeEnum(FindOnePromptSnippet2Type);
-
-/** @internal */
-export const FindOnePromptSnippet2Type$outboundSchema: z.ZodNativeEnum<
-  typeof FindOnePromptSnippet2Type
-> = FindOnePromptSnippet2Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2Type$ {
-  /** @deprecated use `FindOnePromptSnippet2Type$inboundSchema` instead. */
-  export const inboundSchema = FindOnePromptSnippet2Type$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2Type$outboundSchema` instead. */
-  export const outboundSchema = FindOnePromptSnippet2Type$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippet21$inboundSchema: z.ZodType<
-  FindOnePromptSnippet21,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  type: FindOnePromptSnippet2Type$inboundSchema,
-  text: z.string(),
-});
-
-/** @internal */
-export type FindOnePromptSnippet21$Outbound = {
-  type: string;
-  text: string;
-};
-
-/** @internal */
-export const FindOnePromptSnippet21$outboundSchema: z.ZodType<
-  FindOnePromptSnippet21$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippet21
-> = z.object({
-  type: FindOnePromptSnippet2Type$outboundSchema,
-  text: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet21$ {
-  /** @deprecated use `FindOnePromptSnippet21$inboundSchema` instead. */
-  export const inboundSchema = FindOnePromptSnippet21$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet21$outboundSchema` instead. */
-  export const outboundSchema = FindOnePromptSnippet21$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippet21$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippet21$Outbound;
-}
-
-export function findOnePromptSnippet21ToJSON(
-  findOnePromptSnippet21: FindOnePromptSnippet21,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippet21$outboundSchema.parse(findOnePromptSnippet21),
-  );
-}
-
-export function findOnePromptSnippet21FromJSON(
-  jsonString: string,
-): SafeParseResult<FindOnePromptSnippet21, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => FindOnePromptSnippet21$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippet21' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetContent2$inboundSchema: z.ZodType<
-  FindOnePromptSnippetContent2,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => FindOnePromptSnippet21$inboundSchema),
-  z.lazy(() => FindOnePromptSnippet22$inboundSchema),
-]);
-
-/** @internal */
-export type FindOnePromptSnippetContent2$Outbound =
-  | FindOnePromptSnippet21$Outbound
-  | FindOnePromptSnippet22$Outbound;
-
-/** @internal */
-export const FindOnePromptSnippetContent2$outboundSchema: z.ZodType<
-  FindOnePromptSnippetContent2$Outbound,
-  z.ZodTypeDef,
-  FindOnePromptSnippetContent2
-> = z.union([
-  z.lazy(() => FindOnePromptSnippet21$outboundSchema),
-  z.lazy(() => FindOnePromptSnippet22$outboundSchema),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetContent2$ {
-  /** @deprecated use `FindOnePromptSnippetContent2$inboundSchema` instead. */
-  export const inboundSchema = FindOnePromptSnippetContent2$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetContent2$outboundSchema` instead. */
-  export const outboundSchema = FindOnePromptSnippetContent2$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetContent2$Outbound` instead. */
-  export type Outbound = FindOnePromptSnippetContent2$Outbound;
-}
-
-export function findOnePromptSnippetContent2ToJSON(
-  findOnePromptSnippetContent2: FindOnePromptSnippetContent2,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetContent2$outboundSchema.parse(
-      findOnePromptSnippetContent2,
-    ),
-  );
-}
-
-export function findOnePromptSnippetContent2FromJSON(
-  jsonString: string,
-): SafeParseResult<FindOnePromptSnippetContent2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => FindOnePromptSnippetContent2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetContent2' from JSON`,
-  );
-}
-
-/** @internal */
-export const ResponseBodyContent$inboundSchema: z.ZodType<
-  ResponseBodyContent,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.string(),
-  z.array(z.union([
-    z.lazy(() => FindOnePromptSnippet21$inboundSchema),
-    z.lazy(() => FindOnePromptSnippet22$inboundSchema),
-  ])),
-]);
-
-/** @internal */
-export type ResponseBodyContent$Outbound =
-  | string
-  | Array<FindOnePromptSnippet21$Outbound | FindOnePromptSnippet22$Outbound>;
-
-/** @internal */
-export const ResponseBodyContent$outboundSchema: z.ZodType<
-  ResponseBodyContent$Outbound,
-  z.ZodTypeDef,
-  ResponseBodyContent
-> = z.union([
-  z.string(),
-  z.array(z.union([
-    z.lazy(() => FindOnePromptSnippet21$outboundSchema),
-    z.lazy(() => FindOnePromptSnippet22$outboundSchema),
-  ])),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyContent$ {
-  /** @deprecated use `ResponseBodyContent$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyContent$inboundSchema;
-  /** @deprecated use `ResponseBodyContent$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyContent$outboundSchema;
-  /** @deprecated use `ResponseBodyContent$Outbound` instead. */
-  export type Outbound = ResponseBodyContent$Outbound;
-}
-
-export function responseBodyContentToJSON(
-  responseBodyContent: ResponseBodyContent,
-): string {
-  return JSON.stringify(
-    ResponseBodyContent$outboundSchema.parse(responseBodyContent),
-  );
-}
-
-export function responseBodyContentFromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBodyContent, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBodyContent$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBodyContent' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseType
-  > = z.nativeEnum(FindOnePromptSnippetResponseBodyPromptSnippetsResponseType);
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponseType
-  > = FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$outboundSchema;
-}
-
-/** @internal */
-export const ResponseBodyFunction$inboundSchema: z.ZodType<
-  ResponseBodyFunction,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  name: z.string(),
-  arguments: z.string(),
-});
-
-/** @internal */
-export type ResponseBodyFunction$Outbound = {
-  name: string;
-  arguments: string;
-};
-
-/** @internal */
-export const ResponseBodyFunction$outboundSchema: z.ZodType<
-  ResponseBodyFunction$Outbound,
-  z.ZodTypeDef,
-  ResponseBodyFunction
-> = z.object({
-  name: z.string(),
-  arguments: z.string(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyFunction$ {
-  /** @deprecated use `ResponseBodyFunction$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyFunction$inboundSchema;
-  /** @deprecated use `ResponseBodyFunction$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyFunction$outboundSchema;
-  /** @deprecated use `ResponseBodyFunction$Outbound` instead. */
-  export type Outbound = ResponseBodyFunction$Outbound;
-}
-
-export function responseBodyFunctionToJSON(
-  responseBodyFunction: ResponseBodyFunction,
-): string {
-  return JSON.stringify(
-    ResponseBodyFunction$outboundSchema.parse(responseBodyFunction),
-  );
-}
-
-export function responseBodyFunctionFromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBodyFunction, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBodyFunction$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBodyFunction' from JSON`,
-  );
-}
-
-/** @internal */
-export const ResponseBodyToolCalls$inboundSchema: z.ZodType<
-  ResponseBodyToolCalls,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  id: z.string().optional(),
-  index: z.number().optional(),
-  type:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$inboundSchema,
-  function: z.lazy(() => ResponseBodyFunction$inboundSchema),
-});
-
-/** @internal */
-export type ResponseBodyToolCalls$Outbound = {
-  id?: string | undefined;
-  index?: number | undefined;
-  type: string;
-  function: ResponseBodyFunction$Outbound;
-};
-
-/** @internal */
-export const ResponseBodyToolCalls$outboundSchema: z.ZodType<
-  ResponseBodyToolCalls$Outbound,
-  z.ZodTypeDef,
-  ResponseBodyToolCalls
-> = z.object({
-  id: z.string().optional(),
-  index: z.number().optional(),
-  type:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponseType$outboundSchema,
-  function: z.lazy(() => ResponseBodyFunction$outboundSchema),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyToolCalls$ {
-  /** @deprecated use `ResponseBodyToolCalls$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyToolCalls$inboundSchema;
-  /** @deprecated use `ResponseBodyToolCalls$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyToolCalls$outboundSchema;
-  /** @deprecated use `ResponseBodyToolCalls$Outbound` instead. */
-  export type Outbound = ResponseBodyToolCalls$Outbound;
-}
-
-export function responseBodyToolCallsToJSON(
-  responseBodyToolCalls: ResponseBodyToolCalls,
-): string {
-  return JSON.stringify(
-    ResponseBodyToolCalls$outboundSchema.parse(responseBodyToolCalls),
-  );
-}
-
-export function responseBodyToolCallsFromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBodyToolCalls, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBodyToolCalls$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBodyToolCalls' from JSON`,
-  );
-}
-
-/** @internal */
-export const ResponseBodyMessages$inboundSchema: z.ZodType<
-  ResponseBodyMessages,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  role: ResponseBodyRole$inboundSchema,
-  content: z.union([
-    z.string(),
-    z.array(z.union([
-      z.lazy(() => FindOnePromptSnippet21$inboundSchema),
-      z.lazy(() => FindOnePromptSnippet22$inboundSchema),
-    ])),
-  ]),
-  tool_calls: z.array(z.lazy(() => ResponseBodyToolCalls$inboundSchema))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "tool_calls": "toolCalls",
-  });
-});
-
-/** @internal */
-export type ResponseBodyMessages$Outbound = {
-  role: string;
-  content:
-    | string
-    | Array<FindOnePromptSnippet21$Outbound | FindOnePromptSnippet22$Outbound>;
-  tool_calls?: Array<ResponseBodyToolCalls$Outbound> | undefined;
-};
-
-/** @internal */
-export const ResponseBodyMessages$outboundSchema: z.ZodType<
-  ResponseBodyMessages$Outbound,
-  z.ZodTypeDef,
-  ResponseBodyMessages
-> = z.object({
-  role: ResponseBodyRole$outboundSchema,
-  content: z.union([
-    z.string(),
-    z.array(z.union([
-      z.lazy(() => FindOnePromptSnippet21$outboundSchema),
-      z.lazy(() => FindOnePromptSnippet22$outboundSchema),
-    ])),
-  ]),
-  toolCalls: z.array(z.lazy(() => ResponseBodyToolCalls$outboundSchema))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    toolCalls: "tool_calls",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyMessages$ {
-  /** @deprecated use `ResponseBodyMessages$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyMessages$inboundSchema;
-  /** @deprecated use `ResponseBodyMessages$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyMessages$outboundSchema;
-  /** @deprecated use `ResponseBodyMessages$Outbound` instead. */
-  export type Outbound = ResponseBodyMessages$Outbound;
-}
-
-export function responseBodyMessagesToJSON(
-  responseBodyMessages: ResponseBodyMessages,
-): string {
-  return JSON.stringify(
-    ResponseBodyMessages$outboundSchema.parse(responseBodyMessages),
-  );
-}
-
-export function responseBodyMessagesFromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBodyMessages, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBodyMessages$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBodyMessages' from JSON`,
-  );
-}
-
-/** @internal */
-export const ResponseBodyPromptConfig$inboundSchema: z.ZodType<
-  ResponseBodyPromptConfig,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  stream: z.boolean().optional(),
-  model: z.string().optional(),
-  model_db_id: z.string().optional(),
-  model_type: ResponseBodyModelType$inboundSchema.optional(),
-  model_parameters: z.lazy(() => ResponseBodyModelParameters$inboundSchema)
-    .optional(),
-  provider: ResponseBodyProvider$inboundSchema.optional(),
-  integration_id: z.nullable(z.string()).optional(),
-  version: z.string().optional(),
-  messages: z.array(z.lazy(() => ResponseBodyMessages$inboundSchema)),
-}).transform((v) => {
-  return remap$(v, {
-    "model_db_id": "modelDbId",
-    "model_type": "modelType",
-    "model_parameters": "modelParameters",
-    "integration_id": "integrationId",
-  });
-});
-
-/** @internal */
-export type ResponseBodyPromptConfig$Outbound = {
-  stream?: boolean | undefined;
-  model?: string | undefined;
-  model_db_id?: string | undefined;
-  model_type?: string | undefined;
-  model_parameters?: ResponseBodyModelParameters$Outbound | undefined;
-  provider?: string | undefined;
-  integration_id?: string | null | undefined;
-  version?: string | undefined;
-  messages: Array<ResponseBodyMessages$Outbound>;
-};
-
-/** @internal */
-export const ResponseBodyPromptConfig$outboundSchema: z.ZodType<
-  ResponseBodyPromptConfig$Outbound,
-  z.ZodTypeDef,
-  ResponseBodyPromptConfig
-> = z.object({
-  stream: z.boolean().optional(),
-  model: z.string().optional(),
-  modelDbId: z.string().optional(),
-  modelType: ResponseBodyModelType$outboundSchema.optional(),
-  modelParameters: z.lazy(() => ResponseBodyModelParameters$outboundSchema)
-    .optional(),
-  provider: ResponseBodyProvider$outboundSchema.optional(),
-  integrationId: z.nullable(z.string()).optional(),
-  version: z.string().optional(),
-  messages: z.array(z.lazy(() => ResponseBodyMessages$outboundSchema)),
-}).transform((v) => {
-  return remap$(v, {
-    modelDbId: "model_db_id",
-    modelType: "model_type",
-    modelParameters: "model_parameters",
-    integrationId: "integration_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyPromptConfig$ {
-  /** @deprecated use `ResponseBodyPromptConfig$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyPromptConfig$inboundSchema;
-  /** @deprecated use `ResponseBodyPromptConfig$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyPromptConfig$outboundSchema;
-  /** @deprecated use `ResponseBodyPromptConfig$Outbound` instead. */
-  export type Outbound = ResponseBodyPromptConfig$Outbound;
-}
-
-export function responseBodyPromptConfigToJSON(
-  responseBodyPromptConfig: ResponseBodyPromptConfig,
-): string {
-  return JSON.stringify(
-    ResponseBodyPromptConfig$outboundSchema.parse(responseBodyPromptConfig),
-  );
-}
-
-export function responseBodyPromptConfigFromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBodyPromptConfig, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBodyPromptConfig$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBodyPromptConfig' from JSON`,
-  );
-}
-
-/** @internal */
-export const ResponseBodyMetadata$inboundSchema: z.ZodType<
-  ResponseBodyMetadata,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  use_cases: z.array(z.string()).optional(),
-  language: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "use_cases": "useCases",
-  });
-});
-
-/** @internal */
-export type ResponseBodyMetadata$Outbound = {
-  use_cases?: Array<string> | undefined;
-  language?: string | undefined;
-};
-
-/** @internal */
-export const ResponseBodyMetadata$outboundSchema: z.ZodType<
-  ResponseBodyMetadata$Outbound,
-  z.ZodTypeDef,
-  ResponseBodyMetadata
-> = z.object({
-  useCases: z.array(z.string()).optional(),
-  language: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    useCases: "use_cases",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyMetadata$ {
-  /** @deprecated use `ResponseBodyMetadata$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyMetadata$inboundSchema;
-  /** @deprecated use `ResponseBodyMetadata$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyMetadata$outboundSchema;
-  /** @deprecated use `ResponseBodyMetadata$Outbound` instead. */
-  export type Outbound = ResponseBodyMetadata$Outbound;
-}
-
-export function responseBodyMetadataToJSON(
-  responseBodyMetadata: ResponseBodyMetadata,
-): string {
-  return JSON.stringify(
-    ResponseBodyMetadata$outboundSchema.parse(responseBodyMetadata),
-  );
-}
-
-export function responseBodyMetadataFromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBodyMetadata, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBodyMetadata$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBodyMetadata' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType
-  > =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema,
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$Outbound =
-  {
-    type: string;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2
-  > = z.object({
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema,
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$Outbound;
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2ToJSON(
-  findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2:
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$outboundSchema
-      .parse(
-        findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2,
-      ),
-  );
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type
-  > =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: z.string(),
-    strict: z.boolean(),
-    schema: z.record(z.any()),
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$Outbound =
-  {
-    name: string;
-    strict: boolean;
-    schema: { [k: string]: any };
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema
-  > = z.object({
-    name: z.string(),
-    strict: z.boolean(),
-    schema: z.record(z.any()),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$Outbound;
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchemaToJSON(
-  findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema:
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$outboundSchema
-      .parse(
-        findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema,
-      ),
-  );
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchemaFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema,
-    json_schema: z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$inboundSchema
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      "json_schema": "jsonSchema",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$Outbound =
-  {
-    type: string;
-    json_schema:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$Outbound;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1
-  > = z.object({
-    type:
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema,
-    jsonSchema: z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJSONJSONSchema$outboundSchema
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      jsonSchema: "json_schema",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$ {
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$Outbound;
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1ToJSON(
-  findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1:
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$outboundSchema
-      .parse(
-        findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1,
-      ),
-  );
-}
-
-export function findOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat,
-    z.ZodTypeDef,
-    unknown
-  > = z.union([
-    z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$inboundSchema
-    ),
-    z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$inboundSchema
-    ),
-  ]);
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$Outbound =
-  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$Outbound
-  | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$Outbound;
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat
-  > = z.union([
-    z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$outboundSchema
-    ),
-    z.lazy(() =>
-      FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$outboundSchema
-    ),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormatToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$outboundSchema
-      .parse(
-        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat,
-      ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormatFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ResponseFormat' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    temperature: z.number().optional(),
-    maxTokens: z.number().optional(),
-    topK: z.number().optional(),
-    topP: z.number().optional(),
-    frequencyPenalty: z.number().optional(),
-    presencePenalty: z.number().optional(),
-    numImages: z.number().optional(),
-    seed: z.number().optional(),
-    format:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$inboundSchema
-        .optional(),
-    dimensions: z.string().optional(),
-    quality:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$inboundSchema
-        .optional(),
-    style: z.string().optional(),
-    responseFormat: z.nullable(
-      z.union([
-        z.lazy(() =>
-          FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$inboundSchema
-        ),
-        z.lazy(() =>
-          FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$inboundSchema
-        ),
-      ]),
-    ).optional(),
-    photoRealVersion:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$inboundSchema
-        .optional(),
-    encoding_format:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$inboundSchema
-        .optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "encoding_format": "encodingFormat",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$Outbound =
-  {
-    temperature?: number | undefined;
-    maxTokens?: number | undefined;
-    topK?: number | undefined;
-    topP?: number | undefined;
-    frequencyPenalty?: number | undefined;
-    presencePenalty?: number | undefined;
-    numImages?: number | undefined;
-    seed?: number | undefined;
-    format?: string | undefined;
-    dimensions?: string | undefined;
-    quality?: string | undefined;
-    style?: string | undefined;
-    responseFormat?:
-      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$Outbound
-      | FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$Outbound
-      | null
-      | undefined;
-    photoRealVersion?: string | undefined;
-    encoding_format?: string | undefined;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters
-  > = z.object({
-    temperature: z.number().optional(),
-    maxTokens: z.number().optional(),
-    topK: z.number().optional(),
-    topP: z.number().optional(),
-    frequencyPenalty: z.number().optional(),
-    presencePenalty: z.number().optional(),
-    numImages: z.number().optional(),
-    seed: z.number().optional(),
-    format:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat$outboundSchema
-        .optional(),
-    dimensions: z.string().optional(),
-    quality:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Quality$outboundSchema
-        .optional(),
-    style: z.string().optional(),
-    responseFormat: z.nullable(
-      z.union([
-        z.lazy(() =>
-          FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson2$outboundSchema
-        ),
-        z.lazy(() =>
-          FindOnePromptSnippetResponseFormatPromptSnippetsResponse200ApplicationJson1$outboundSchema
-        ),
-      ]),
-    ).optional(),
-    photoRealVersion:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PhotoRealVersion$outboundSchema
-        .optional(),
-    encodingFormat:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat$outboundSchema
-        .optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      encodingFormat: "encoding_format",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParametersToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$outboundSchema
-      .parse(
-        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters,
-      ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParametersFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType
-  > = z.nativeEnum(
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType,
-  );
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType
-  > =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    id: z.string().optional(),
-    url: z.string(),
-    detail: z.string().optional(),
-  });
-
-/** @internal */
-export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$Outbound =
-  {
-    id?: string | undefined;
-    url: string;
-    detail?: string | undefined;
-  };
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl
-  > = z.object({
-    id: z.string().optional(),
-    url: z.string(),
-    detail: z.string().optional(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$Outbound;
-}
-
-export function findOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrlToJSON(
-  findOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl:
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$outboundSchema
-      .parse(
-        findOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl,
-      ),
-  );
-}
-
-export function findOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrlFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    type:
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$inboundSchema,
-    image_url: z.lazy(() =>
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$inboundSchema
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      "image_url": "imageUrl",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound =
-  {
-    type: string;
-    image_url:
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$Outbound;
-  };
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2
-  > = z.object({
-    type:
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1VersionsType$outboundSchema,
-    imageUrl: z.lazy(() =>
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONImageUrl$outboundSchema
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      imageUrl: "image_url",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound;
-}
-
-export function findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2ToJSON(
-  findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2:
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema
-      .parse(findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2),
-  );
-}
-
-export function findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type
-  > = z.nativeEnum(
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type,
-  );
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type
-  > =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    type:
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$inboundSchema,
-    text: z.string(),
-  });
-
-/** @internal */
-export type FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound =
-  {
-    type: string;
-    text: string;
-  };
-
-/** @internal */
-export const FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1
-  > = z.object({
-    type:
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJSONResponseBody1Type$outboundSchema,
-    text: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$ {
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound;
-}
-
-export function findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1ToJSON(
-  findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1:
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema
-      .parse(findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1),
-  );
-}
-
-export function findOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2,
-    z.ZodTypeDef,
-    unknown
-  > = z.union([
-    z.lazy(() =>
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema
-    ),
-    z.lazy(() =>
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema
-    ),
-  ]);
-
-/** @internal */
-export type FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$Outbound =
-  | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound
-  | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound;
-
-/** @internal */
-export const FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2
-  > = z.union([
-    z.lazy(() =>
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema
-    ),
-    z.lazy(() =>
-      FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema
-    ),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$ {
-  /** @deprecated use `FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$Outbound;
-}
-
-export function findOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2ToJSON(
-  findOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2:
-    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$outboundSchema
-      .parse(
-        findOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2,
-      ),
-  );
-}
-
-export function findOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2FromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content,
-    z.ZodTypeDef,
-    unknown
-  > = z.union([
-    z.string(),
-    z.array(z.union([
-      z.lazy(() =>
-        FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema
-      ),
-      z.lazy(() =>
-        FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema
-      ),
-    ])),
-  ]);
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$Outbound =
-  | string
-  | Array<
-    | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound
-    | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound
-  >;
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content
-  > = z.union([
-    z.string(),
-    z.array(z.union([
-      z.lazy(() =>
-        FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema
-      ),
-      z.lazy(() =>
-        FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema
-      ),
-    ])),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ContentToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponse200Content:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponse200Content),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ContentFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Content' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$inboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type
-  > = z.nativeEnum(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type,
-  );
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$outboundSchema:
-  z.ZodNativeEnum<
-    typeof FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type
-  > =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$outboundSchema;
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    name: z.string(),
-    arguments: z.string(),
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$Outbound =
-  {
-    name: string;
-    arguments: string;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function
-  > = z.object({
-    name: z.string(),
-    arguments: z.string(),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200FunctionToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponse200Function:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponse200Function),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200FunctionFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    id: z.string().optional(),
-    index: z.number().optional(),
-    type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$inboundSchema,
-    function: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$inboundSchema
-    ),
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$Outbound =
-  {
-    id?: string | undefined;
-    index?: number | undefined;
-    type: string;
-    function:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$Outbound;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls
-  > = z.object({
-    id: z.string().optional(),
-    index: z.number().optional(),
-    type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJson1Type$outboundSchema,
-    function: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Function$outboundSchema
-    ),
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCallsToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$outboundSchema
-      .parse(
-        findOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls,
-      ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCallsFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    role:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$inboundSchema,
-    content: z.union([
-      z.string(),
-      z.array(z.union([
-        z.lazy(() =>
-          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$inboundSchema
-        ),
-        z.lazy(() =>
-          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$inboundSchema
-        ),
-      ])),
-    ]),
-    tool_calls: z.array(
-      z.lazy(() =>
-        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$inboundSchema
-      ),
-    ).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "tool_calls": "toolCalls",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$Outbound =
-  {
-    role: string;
-    content:
-      | string
-      | Array<
-        | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$Outbound
-        | FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$Outbound
-      >;
-    tool_calls?:
-      | Array<
-        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$Outbound
-      >
-      | undefined;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages
-  > = z.object({
-    role:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Role$outboundSchema,
-    content: z.union([
-      z.string(),
-      z.array(z.union([
-        z.lazy(() =>
-          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson1$outboundSchema
-        ),
-        z.lazy(() =>
-          FindOnePromptSnippet2PromptSnippetsResponse200ApplicationJson2$outboundSchema
-        ),
-      ])),
-    ]),
-    toolCalls: z.array(
-      z.lazy(() =>
-        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ToolCalls$outboundSchema
-      ),
-    ).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      toolCalls: "tool_calls",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200MessagesToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200MessagesFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    stream: z.boolean().optional(),
-    model: z.string().optional(),
-    model_db_id: z.string().optional(),
-    model_type:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$inboundSchema
-        .optional(),
-    model_parameters: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$inboundSchema
-    ).optional(),
-    provider:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$inboundSchema
-        .optional(),
-    integration_id: z.nullable(z.string()).optional(),
-    version: z.string().optional(),
-    messages: z.array(
-      z.lazy(() =>
-        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$inboundSchema
-      ),
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      "model_db_id": "modelDbId",
-      "model_type": "modelType",
-      "model_parameters": "modelParameters",
-      "integration_id": "integrationId",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$Outbound =
-  {
-    stream?: boolean | undefined;
-    model?: string | undefined;
-    model_db_id?: string | undefined;
-    model_type?: string | undefined;
-    model_parameters?:
-      | FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$Outbound
-      | undefined;
-    provider?: string | undefined;
-    integration_id?: string | null | undefined;
-    version?: string | undefined;
-    messages: Array<
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$Outbound
-    >;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig
-  > = z.object({
-    stream: z.boolean().optional(),
-    model: z.string().optional(),
-    modelDbId: z.string().optional(),
-    modelType:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelType$outboundSchema
-        .optional(),
-    modelParameters: z.lazy(() =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ModelParameters$outboundSchema
-    ).optional(),
-    provider:
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Provider$outboundSchema
-        .optional(),
-    integrationId: z.nullable(z.string()).optional(),
-    version: z.string().optional(),
-    messages: z.array(
-      z.lazy(() =>
-        FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages$outboundSchema
-      ),
-    ),
-  }).transform((v) => {
-    return remap$(v, {
-      modelDbId: "model_db_id",
-      modelType: "model_type",
-      modelParameters: "model_parameters",
-      integrationId: "integration_id",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfigToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$outboundSchema
-      .parse(
-        findOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig,
-      ),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfigFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig' from JSON`,
-  );
-}
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$inboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata,
-    z.ZodTypeDef,
-    unknown
-  > = z.object({
-    use_cases: z.array(z.string()).optional(),
-    language: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "use_cases": "useCases",
-    });
-  });
-
-/** @internal */
-export type FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$Outbound =
-  {
-    use_cases?: Array<string> | undefined;
-    language?: string | undefined;
-  };
-
-/** @internal */
-export const FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$outboundSchema:
-  z.ZodType<
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$Outbound,
-    z.ZodTypeDef,
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata
-  > = z.object({
-    useCases: z.array(z.string()).optional(),
-    language: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      useCases: "use_cases",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$ {
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$inboundSchema` instead. */
-  export const inboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$inboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$outboundSchema` instead. */
-  export const outboundSchema =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$outboundSchema;
-  /** @deprecated use `FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$Outbound` instead. */
-  export type Outbound =
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$Outbound;
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200MetadataToJSON(
-  findOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata,
-): string {
-  return JSON.stringify(
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$outboundSchema
-      .parse(findOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata),
-  );
-}
-
-export function findOnePromptSnippetResponseBodyPromptSnippetsResponse200MetadataFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$inboundSchema
-        .parse(JSON.parse(x)),
-    `Failed to parse 'FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata' from JSON`,
-  );
-}
-
-/** @internal */
-export const Versions$inboundSchema: z.ZodType<
-  Versions,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  _id: z.string(),
-  created_by_id: z.string(),
-  display_name: z.string(),
-  updated_by_id: z.string(),
-  description: z.nullable(z.string()).optional(),
-  prompt_config: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$inboundSchema
-  ),
-  metadata: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$inboundSchema
-  ),
-  commit: z.string(),
-  timestamp: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "_id": "id",
-    "created_by_id": "createdById",
-    "display_name": "displayName",
-    "updated_by_id": "updatedById",
-    "prompt_config": "promptConfig",
-  });
-});
-
-/** @internal */
-export type Versions$Outbound = {
-  _id: string;
-  created_by_id: string;
-  display_name: string;
-  updated_by_id: string;
-  description?: string | null | undefined;
-  prompt_config:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$Outbound;
-  metadata:
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$Outbound;
-  commit: string;
-  timestamp: string;
-};
-
-/** @internal */
-export const Versions$outboundSchema: z.ZodType<
-  Versions$Outbound,
-  z.ZodTypeDef,
-  Versions
-> = z.object({
-  id: z.string(),
-  createdById: z.string(),
-  displayName: z.string(),
-  updatedById: z.string(),
-  description: z.nullable(z.string()).optional(),
-  promptConfig: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200PromptConfig$outboundSchema
-  ),
-  metadata: z.lazy(() =>
-    FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Metadata$outboundSchema
-  ),
-  commit: z.string(),
-  timestamp: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    id: "_id",
-    createdById: "created_by_id",
-    displayName: "display_name",
-    updatedById: "updated_by_id",
-    promptConfig: "prompt_config",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Versions$ {
-  /** @deprecated use `Versions$inboundSchema` instead. */
-  export const inboundSchema = Versions$inboundSchema;
-  /** @deprecated use `Versions$outboundSchema` instead. */
-  export const outboundSchema = Versions$outboundSchema;
-  /** @deprecated use `Versions$Outbound` instead. */
-  export type Outbound = Versions$Outbound;
-}
-
-export function versionsToJSON(versions: Versions): string {
-  return JSON.stringify(Versions$outboundSchema.parse(versions));
-}
-
-export function versionsFromJSON(
-  jsonString: string,
-): SafeParseResult<Versions, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Versions$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Versions' from JSON`,
-  );
-}
-
-/** @internal */
-export const ResponseBodyType$inboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyType
-> = z.nativeEnum(ResponseBodyType);
-
-/** @internal */
-export const ResponseBodyType$outboundSchema: z.ZodNativeEnum<
-  typeof ResponseBodyType
-> = ResponseBodyType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBodyType$ {
-  /** @deprecated use `ResponseBodyType$inboundSchema` instead. */
-  export const inboundSchema = ResponseBodyType$inboundSchema;
-  /** @deprecated use `ResponseBodyType$outboundSchema` instead. */
-  export const outboundSchema = ResponseBodyType$outboundSchema;
-}
-
-/** @internal */
-export const ResponseBody1$inboundSchema: z.ZodType<
-  ResponseBody1,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  _id: z.string(),
-  owner: z.union([z.string(), Owner2$inboundSchema]),
-  domain_id: z.string(),
-  created_by_id: z.string(),
-  display_name: z.string(),
-  updated_by_id: z.string(),
-  description: z.nullable(z.string()).optional(),
-  prompt_config: z.lazy(() => ResponseBodyPromptConfig$inboundSchema),
-  metadata: z.lazy(() => ResponseBodyMetadata$inboundSchema),
-  created: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  updated: z.string().datetime({ offset: true }).default(
-    "2024-11-26T03:17:57.484Z",
-  ).transform(v => new Date(v)),
-  versions: z.array(z.lazy(() => Versions$inboundSchema)),
-  type: ResponseBodyType$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "_id": "id",
-    "domain_id": "domainId",
-    "created_by_id": "createdById",
-    "display_name": "displayName",
-    "updated_by_id": "updatedById",
-    "prompt_config": "promptConfig",
-  });
-});
-
-/** @internal */
-export type ResponseBody1$Outbound = {
-  _id: string;
-  owner: string | string;
-  domain_id: string;
-  created_by_id: string;
-  display_name: string;
-  updated_by_id: string;
-  description?: string | null | undefined;
-  prompt_config: ResponseBodyPromptConfig$Outbound;
-  metadata: ResponseBodyMetadata$Outbound;
-  created?: string | undefined;
-  updated: string;
-  versions: Array<Versions$Outbound>;
-  type: string;
-};
-
-/** @internal */
-export const ResponseBody1$outboundSchema: z.ZodType<
-  ResponseBody1$Outbound,
-  z.ZodTypeDef,
-  ResponseBody1
-> = z.object({
-  id: z.string(),
-  owner: z.union([z.string(), Owner2$outboundSchema]),
-  domainId: z.string(),
-  createdById: z.string(),
-  displayName: z.string(),
-  updatedById: z.string(),
-  description: z.nullable(z.string()).optional(),
-  promptConfig: z.lazy(() => ResponseBodyPromptConfig$outboundSchema),
-  metadata: z.lazy(() => ResponseBodyMetadata$outboundSchema),
-  created: z.date().transform(v => v.toISOString()).optional(),
-  updated: z.date().default(() => new Date("2024-11-26T03:17:57.484Z"))
-    .transform(v => v.toISOString()),
-  versions: z.array(z.lazy(() => Versions$outboundSchema)),
-  type: ResponseBodyType$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    id: "_id",
-    domainId: "domain_id",
-    createdById: "created_by_id",
-    displayName: "display_name",
-    updatedById: "updated_by_id",
-    promptConfig: "prompt_config",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseBody1$ {
-  /** @deprecated use `ResponseBody1$inboundSchema` instead. */
-  export const inboundSchema = ResponseBody1$inboundSchema;
-  /** @deprecated use `ResponseBody1$outboundSchema` instead. */
-  export const outboundSchema = ResponseBody1$outboundSchema;
-  /** @deprecated use `ResponseBody1$Outbound` instead. */
-  export type Outbound = ResponseBody1$Outbound;
-}
-
-export function responseBody1ToJSON(responseBody1: ResponseBody1): string {
-  return JSON.stringify(ResponseBody1$outboundSchema.parse(responseBody1));
-}
-
-export function responseBody1FromJSON(
-  jsonString: string,
-): SafeParseResult<ResponseBody1, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ResponseBody1$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ResponseBody1' from JSON`,
+    (x) => FindOnePromptSnippetResponseBody1$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'FindOnePromptSnippetResponseBody1' from JSON`,
   );
 }
 
@@ -13131,16 +13561,16 @@ export const FindOnePromptSnippetResponseBody$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.union([
-  z.lazy(() => ResponseBody1$inboundSchema),
-  z.lazy(() => ResponseBody3$inboundSchema),
-  z.lazy(() => ResponseBody2$inboundSchema),
+  z.lazy(() => FindOnePromptSnippetResponseBody1$inboundSchema),
+  z.lazy(() => FindOnePromptSnippetResponseBody3$inboundSchema),
+  z.lazy(() => FindOnePromptSnippetResponseBody2$inboundSchema),
 ]);
 
 /** @internal */
 export type FindOnePromptSnippetResponseBody$Outbound =
-  | ResponseBody1$Outbound
-  | ResponseBody3$Outbound
-  | ResponseBody2$Outbound;
+  | FindOnePromptSnippetResponseBody1$Outbound
+  | FindOnePromptSnippetResponseBody3$Outbound
+  | FindOnePromptSnippetResponseBody2$Outbound;
 
 /** @internal */
 export const FindOnePromptSnippetResponseBody$outboundSchema: z.ZodType<
@@ -13148,9 +13578,9 @@ export const FindOnePromptSnippetResponseBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   FindOnePromptSnippetResponseBody
 > = z.union([
-  z.lazy(() => ResponseBody1$outboundSchema),
-  z.lazy(() => ResponseBody3$outboundSchema),
-  z.lazy(() => ResponseBody2$outboundSchema),
+  z.lazy(() => FindOnePromptSnippetResponseBody1$outboundSchema),
+  z.lazy(() => FindOnePromptSnippetResponseBody3$outboundSchema),
+  z.lazy(() => FindOnePromptSnippetResponseBody2$outboundSchema),
 ]);
 
 /**

@@ -17,10 +17,8 @@ const value: string = "<value>";
 const value:
   operations.GetAllPromptsContentPromptsResponse200ApplicationJson2[] = [
     {
-      type: "image_url",
-      imageUrl: {
-        url: "https://cute-tomb.biz/",
-      },
+      type: "text",
+      text: "<value>",
     },
   ];
 ```

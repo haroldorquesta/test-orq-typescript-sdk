@@ -9,13 +9,13 @@ import { GetAllPromptsItemsPromptsResponseVersions } from "orq-poc-typescript-mu
 
 let value: GetAllPromptsItemsPromptsResponseVersions = {
   id: "<id>",
-  createdById: "380f80a4-1d31-40ba-b03b-2937d4a715df",
-  displayName: "Carrie77",
-  updatedById: "157fe616-8e44-4a83-927c-cf660dac7e01",
+  createdById: "b31d0ce1-87c9-4407-9ee2-d01f61700839",
+  displayName: "Brennan.Friesen-Berge25",
+  updatedById: "5c051f27-7c4b-40e1-b725-a24ad9812f07",
   promptConfig: {
     messages: [
       {
-        role: "system",
+        role: "assistant",
         content: "<value>",
       },
     ],

@@ -7,7 +7,7 @@ The role of the prompt message
 ```typescript
 import { FindOnePromptSnippetResponseBodyPromptSnippetsRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: FindOnePromptSnippetResponseBodyPromptSnippetsRole = "correction";
+let value: FindOnePromptSnippetResponseBodyPromptSnippetsRole = "user";
 ```
 
 ## Values

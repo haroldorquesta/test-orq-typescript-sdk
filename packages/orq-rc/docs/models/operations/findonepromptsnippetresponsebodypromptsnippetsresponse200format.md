@@ -8,7 +8,7 @@ Only supported on `image` models.
 import { FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Format =
-  "b64_json";
+  "json_object";
 ```
 
 ## Values

@@ -9,7 +9,7 @@ import { GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBody3Format 
 
 let value:
   GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBody3Format =
-    "url";
+    "json_object";
 ```
 
 ## Values

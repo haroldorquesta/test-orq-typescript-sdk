@@ -8,13 +8,11 @@ import { GetAllPromptsItemsPromptsResponsePromptConfig } from "orq-poc-typescrip
 let value: GetAllPromptsItemsPromptsResponsePromptConfig = {
   messages: [
     {
-      role: "correction",
+      role: "prompt",
       content: [
         {
-          type: "image_url",
-          imageUrl: {
-            url: "https://humble-sustenance.com/",
-          },
+          type: "text",
+          text: "<value>",
         },
       ],
     },

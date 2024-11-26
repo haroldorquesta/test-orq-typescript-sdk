@@ -18,7 +18,7 @@ const value: operations.GetAllPromptsContentPromptsResponse2[] = [
   {
     type: "image_url",
     imageUrl: {
-      url: "https://courteous-postbox.org",
+      url: "https://different-scratch.info",
     },
   },
 ];

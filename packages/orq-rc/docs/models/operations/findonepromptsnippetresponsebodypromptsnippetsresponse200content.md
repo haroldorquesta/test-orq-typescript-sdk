@@ -11,18 +11,17 @@ The contents of the user message. Either the text content of the message or an a
 const value: string = "<value>";
 ```
 
-### `operations.FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2[]`
+### `operations.FindOnePromptSnippetContentPromptSnippetsResponse2002[]`
 
 ```typescript
 const value:
-  operations.FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2[] =
-    [
-      {
-        type: "image_url",
-        imageUrl: {
-          url: "https://doting-middle.net",
-        },
+  operations.FindOnePromptSnippetContentPromptSnippetsResponse2002[] = [
+    {
+      type: "image_url",
+      imageUrl: {
+        url: "https://honorable-unblinking.net/",
       },
-    ];
+    },
+  ];
 ```
 

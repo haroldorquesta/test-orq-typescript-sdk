@@ -7,14 +7,7 @@ import { PrefixMessages } from "orq-poc-typescript-multi-env-version/models/comp
 
 let value: PrefixMessages = {
   role: "user",
-  content: [
-    {
-      type: "image_url",
-      imageUrl: {
-        url: "https://mixed-cake.com",
-      },
-    },
-  ],
+  content: "<value>",
 };
 ```
 

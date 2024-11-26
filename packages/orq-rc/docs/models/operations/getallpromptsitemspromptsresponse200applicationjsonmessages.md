@@ -7,7 +7,12 @@ import { GetAllPromptsItemsPromptsResponse200ApplicationJSONMessages } from "orq
 
 let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONMessages = {
   role: "exception",
-  content: "<value>",
+  content: [
+    {
+      type: "text",
+      text: "<value>",
+    },
+  ],
 };
 ```
 

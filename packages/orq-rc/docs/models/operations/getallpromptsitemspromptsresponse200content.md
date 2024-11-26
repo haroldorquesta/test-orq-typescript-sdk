@@ -18,7 +18,7 @@ const value: operations.GetAllPromptsContentPromptsResponse2002[] = [
   {
     type: "image_url",
     imageUrl: {
-      url: "https://closed-hunger.biz",
+      url: "https://spanish-dependency.biz",
     },
   },
 ];

@@ -9,14 +9,19 @@ import { FindOnePromptSnippetResponseBodyVersions } from "orq-poc-typescript-mul
 
 let value: FindOnePromptSnippetResponseBodyVersions = {
   id: "<id>",
-  createdById: "bd72d9bb-f4b5-4635-9f43-947d3698fabf",
-  displayName: "Finn18",
-  updatedById: "8ad35b60-6e65-4fa5-a1cb-e31b325d807a",
+  createdById: "c0659c12-ab9f-472a-9998-f2123993777c",
+  displayName: "Nils_Lemke",
+  updatedById: "92c1f751-6a14-4da3-82e4-2f4176e211e7",
   promptConfig: {
     messages: [
       {
         role: "tool",
-        content: "<value>",
+        content: [
+          {
+            type: "text",
+            text: "<value>",
+          },
+        ],
       },
     ],
   },

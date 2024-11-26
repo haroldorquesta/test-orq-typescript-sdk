@@ -5,6 +5,7 @@
 export * from "./createcontact.js";
 export * from "./createfeedback.js";
 export * from "./createprompt.js";
+export * from "./createpromptversion.js";
 export * from "./deleteprompt.js";
 export * from "./deploymentcreatemetric.js";
 export * from "./deploymentgetconfig.js";
@@ -18,3 +19,4 @@ export * from "./getallprompttemplates.js";
 export * from "./getoneprompt.js";
 export * from "./invaliddeployment.js";
 export * from "./remoteconfigsgetconfig.js";
+export * from "./updateprompt.js";

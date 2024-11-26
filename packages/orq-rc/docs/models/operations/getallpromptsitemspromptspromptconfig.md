@@ -8,7 +8,7 @@ import { GetAllPromptsItemsPromptsPromptConfig } from "orq-poc-typescript-multi-
 let value: GetAllPromptsItemsPromptsPromptConfig = {
   messages: [
     {
-      role: "system",
+      role: "user",
       content: "<value>",
     },
   ],

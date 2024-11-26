@@ -11,28 +11,26 @@ Important: when using JSON mode, you must also instruct the model to produce JSO
 
 ## Supported Types
 
-### `operations.FindOnePromptSnippetResponseFormatPromptSnippetsResponse1`
+### `operations.FindOnePromptSnippetResponseFormatPromptSnippets1`
 
 ```typescript
-const value:
-  operations.FindOnePromptSnippetResponseFormatPromptSnippetsResponse1 = {
-    type: "json_schema",
-    jsonSchema: {
-      name: "<value>",
-      strict: false,
-      schema: {
-        "key": "<value>",
-      },
+const value: operations.FindOnePromptSnippetResponseFormatPromptSnippets1 = {
+  type: "json_schema",
+  jsonSchema: {
+    name: "<value>",
+    strict: false,
+    schema: {
+      "key": "<value>",
     },
-  };
+  },
+};
 ```
 
-### `operations.FindOnePromptSnippetResponseFormatPromptSnippetsResponse2`
+### `operations.FindOnePromptSnippetResponseFormatPromptSnippets2`
 
 ```typescript
-const value:
-  operations.FindOnePromptSnippetResponseFormatPromptSnippetsResponse2 = {
-    type: "json_object",
-  };
+const value: operations.FindOnePromptSnippetResponseFormatPromptSnippets2 = {
+  type: "json_object",
+};
 ```
 

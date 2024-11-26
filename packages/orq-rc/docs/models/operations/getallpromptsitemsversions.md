@@ -9,14 +9,21 @@ import { GetAllPromptsItemsVersions } from "orq-poc-typescript-multi-env-version
 
 let value: GetAllPromptsItemsVersions = {
   id: "<id>",
-  createdById: "abc5e247-94e7-41df-b589-c2db09079ae4",
-  displayName: "Izabella_Schowalter",
-  updatedById: "cee5f097-3818-4d25-9a56-5752317d1a6d",
+  createdById: "f7e2f00d-c337-4fad-ad29-f17cf16c9e18",
+  displayName: "Rashad0",
+  updatedById: "0a8f26d8-d8ae-40e2-9c95-fd43552eed7c",
   promptConfig: {
     messages: [
       {
-        role: "prompt",
-        content: "<value>",
+        role: "correction",
+        content: [
+          {
+            type: "image_url",
+            imageUrl: {
+              url: "https://mundane-descent.com/",
+            },
+          },
+        ],
       },
     ],
   },

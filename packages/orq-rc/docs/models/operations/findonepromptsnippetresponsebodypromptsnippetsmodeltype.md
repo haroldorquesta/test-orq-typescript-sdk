@@ -7,7 +7,8 @@ The type of the model
 ```typescript
 import { FindOnePromptSnippetResponseBodyPromptSnippetsModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: FindOnePromptSnippetResponseBodyPromptSnippetsModelType = "image";
+let value: FindOnePromptSnippetResponseBodyPromptSnippetsModelType =
+  "embedding";
 ```
 
 ## Values
