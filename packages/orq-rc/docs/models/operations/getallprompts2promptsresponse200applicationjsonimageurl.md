@@ -6,7 +6,7 @@
 import { GetAllPrompts2PromptsResponse200ApplicationJSONImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPrompts2PromptsResponse200ApplicationJSONImageUrl = {
-  url: "https://cuddly-bookcase.name/",
+  url: "https://remarkable-charlatan.info/",
 };
 ```
 

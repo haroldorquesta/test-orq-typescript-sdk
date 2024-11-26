@@ -7,7 +7,7 @@ The type of the model
 ```typescript
 import { GetAllPromptsItemsPromptsModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsItemsPromptsModelType = "tts";
+let value: GetAllPromptsItemsPromptsModelType = "completion";
 ```
 
 ## Values

@@ -7,7 +7,7 @@ Only supported on `image` models.
 ```typescript
 import { GetAllPromptsItemsPromptsResponse200ApplicationJSONFormat } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONFormat = "url";
+let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONFormat = "text";
 ```
 
 ## Values

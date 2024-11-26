@@ -7,8 +7,7 @@ The role of the prompt message
 ```typescript
 import { GetAllPromptsItemsPromptsResponse200ApplicationJSONRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONRole =
-  "assistant";
+let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONRole = "user";
 ```
 
 ## Values

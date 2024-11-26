@@ -10,7 +10,7 @@ import { GetAllPrompts2Prompts2 } from "orq-poc-typescript-multi-env-version/mod
 let value: GetAllPrompts2Prompts2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://wobbly-cauliflower.name",
+    url: "https://pretty-complication.net/",
   },
 };
 ```

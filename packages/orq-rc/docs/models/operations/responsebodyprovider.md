@@ -5,7 +5,7 @@
 ```typescript
 import { ResponseBodyProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: ResponseBodyProvider = "azure";
+let value: ResponseBodyProvider = "cohere";
 ```
 
 ## Values

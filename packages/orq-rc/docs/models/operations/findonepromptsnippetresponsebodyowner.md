@@ -9,9 +9,9 @@
 const value: string = "<value>";
 ```
 
-### `operations.FindOnePromptSnippetOwner2`
+### `operations.FindOnePromptSnippetOwnerPromptSnippets2`
 
 ```typescript
-const value: operations.FindOnePromptSnippetOwner2 = "vendor";
+const value: operations.FindOnePromptSnippetOwnerPromptSnippets2 = "vendor";
 ```
 

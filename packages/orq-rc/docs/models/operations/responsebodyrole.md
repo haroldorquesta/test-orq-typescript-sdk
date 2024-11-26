@@ -7,7 +7,7 @@ The role of the prompt message
 ```typescript
 import { ResponseBodyRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: ResponseBodyRole = "user";
+let value: ResponseBodyRole = "correction";
 ```
 
 ## Values

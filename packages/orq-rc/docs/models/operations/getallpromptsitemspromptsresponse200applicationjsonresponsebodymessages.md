@@ -7,7 +7,7 @@ import { GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyMessages
 
 let value:
   GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyMessages = {
-    role: "system",
+    role: "tool",
     content: [
       {
         type: "text",

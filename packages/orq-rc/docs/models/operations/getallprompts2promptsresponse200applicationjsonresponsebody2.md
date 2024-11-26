@@ -10,7 +10,7 @@ import { GetAllPrompts2PromptsResponse200ApplicationJSONResponseBody2 } from "or
 let value: GetAllPrompts2PromptsResponse200ApplicationJSONResponseBody2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://informal-scorn.biz/",
+    url: "https://infamous-thigh.info",
   },
 };
 ```

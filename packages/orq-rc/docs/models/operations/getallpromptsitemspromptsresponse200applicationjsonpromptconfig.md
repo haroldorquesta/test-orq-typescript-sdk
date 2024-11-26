@@ -8,8 +8,15 @@ import { GetAllPromptsItemsPromptsResponse200ApplicationJSONPromptConfig } from 
 let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONPromptConfig = {
   messages: [
     {
-      role: "assistant",
-      content: "<value>",
+      role: "tool",
+      content: [
+        {
+          type: "image_url",
+          imageUrl: {
+            url: "https://steel-bar.org",
+          },
+        },
+      ],
     },
   ],
 };

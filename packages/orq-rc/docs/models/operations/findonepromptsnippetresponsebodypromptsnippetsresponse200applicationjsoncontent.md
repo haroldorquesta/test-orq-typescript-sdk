@@ -11,11 +11,11 @@ The contents of the user message. Either the text content of the message or an a
 const value: string = "<value>";
 ```
 
-### `operations.FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2[]`
+### `operations.FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJSONResponseBody2[]`
 
 ```typescript
 const value:
-  operations.FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJson2[] =
+  operations.FindOnePromptSnippetContentPromptSnippetsResponse200ApplicationJSONResponseBody2[] =
     [
       {
         type: "text",

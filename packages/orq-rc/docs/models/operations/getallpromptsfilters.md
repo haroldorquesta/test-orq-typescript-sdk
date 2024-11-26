@@ -9,7 +9,7 @@
 const value: operations.GetAllPromptsFilters1 = {
   type: "id",
   id: "<id>",
-  path: "/System",
+  path: "/var/yp",
 };
 ```
 
@@ -32,7 +32,7 @@ const value: operations.GetAllPromptsFilters3 = {
   type: "string",
   operator: "equals",
   value: "<value>",
-  path: "/lib",
+  path: "/rescue",
 };
 ```
 
@@ -45,7 +45,7 @@ const value: operations.Filters4 = {
   values: [
     "<value>",
   ],
-  path: "/proc",
+  path: "/usr/local/src",
 };
 ```
 

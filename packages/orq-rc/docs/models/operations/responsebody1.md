@@ -9,16 +9,21 @@ import { ResponseBody1 } from "orq-poc-typescript-multi-env-version/models/opera
 
 let value: ResponseBody1 = {
   id: "<id>",
-  owner: "<value>",
-  domainId: "96545ef1-baa0-44b7-b08d-ee873dcd31be",
-  createdById: "8a148e79-0f72-4582-b3ed-14a40b354222",
-  displayName: "Mona.Marquardt",
-  updatedById: "7c83d280-5a28-48e7-8124-c491391b74da",
+  owner: "vendor",
+  domainId: "95d44877-2846-4bec-869b-652bd5c9c6b6",
+  createdById: "874e6066-dc3d-4351-b0ae-7dcafc4cb613",
+  displayName: "Delmer61",
+  updatedById: "24b3d520-9d4e-4c09-8935-70226bd2caef",
   promptConfig: {
     messages: [
       {
-        role: "prompt",
-        content: "<value>",
+        role: "system",
+        content: [
+          {
+            type: "text",
+            text: "<value>",
+          },
+        ],
       },
     ],
   },
@@ -26,13 +31,13 @@ let value: ResponseBody1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "e293f592-79c8-4bd4-9508-fbf7b26a705a",
-      displayName: "Isidro84",
-      updatedById: "3042048a-639c-4bd4-9875-a2c0696a0d14",
+      createdById: "3ef5dd99-9493-426b-89fa-22139de68c49",
+      displayName: "Jasen.Koepp43",
+      updatedById: "243bb919-1053-49eb-9cfa-99d6ca403b94",
       promptConfig: {
         messages: [
           {
-            role: "system",
+            role: "prompt",
             content: "<value>",
           },
         ],

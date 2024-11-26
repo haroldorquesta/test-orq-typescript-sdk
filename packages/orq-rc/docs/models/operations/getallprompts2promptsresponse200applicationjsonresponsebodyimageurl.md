@@ -7,7 +7,7 @@ import { GetAllPrompts2PromptsResponse200ApplicationJSONResponseBodyImageUrl } f
 
 let value: GetAllPrompts2PromptsResponse200ApplicationJSONResponseBodyImageUrl =
   {
-    url: "https://ill-hydrocarbon.name/",
+    url: "https://made-up-attraction.com/",
   };
 ```
 

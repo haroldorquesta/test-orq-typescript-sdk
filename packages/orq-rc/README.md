@@ -155,7 +155,6 @@ run();
 * [create](docs/sdks/prompts/README.md#create) - Create a new prompt
 * [delete](docs/sdks/prompts/README.md#delete) - Delete a prompt
 * [getOne](docs/sdks/prompts/README.md#getone) - Get one prompt
-* [update](docs/sdks/prompts/README.md#update) - Update a prompt
 * [duplicate](docs/sdks/prompts/README.md#duplicate) - Duplicate a prompt
 * [getAll](docs/sdks/prompts/README.md#getall) - Get all prompts
 
@@ -196,7 +195,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`promptsGetAll`](docs/sdks/prompts/README.md#getall) - Get all prompts
 - [`promptsGetOne`](docs/sdks/prompts/README.md#getone) - Get one prompt
 - [`promptSnippetsFindOne`](docs/sdks/snippets/README.md#findone) - Get one prompt snippet
-- [`promptsUpdate`](docs/sdks/prompts/README.md#update) - Update a prompt
 - [`promptTemplatesGetAll`](docs/sdks/templates/README.md#getall) - Get all prompt templates
 - [`remoteconfigGetConfig`](docs/sdks/remoteconfig/README.md#getconfig) - Get Configurations
 

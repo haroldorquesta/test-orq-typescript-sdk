@@ -10,7 +10,7 @@ import { GetAllPrompts2PromptsResponse2002 } from "orq-poc-typescript-multi-env-
 let value: GetAllPrompts2PromptsResponse2002 = {
   type: "image_url",
   imageUrl: {
-    url: "https://harmful-heating.biz/",
+    url: "https://disloyal-reasoning.info/",
   },
 };
 ```

@@ -18,7 +18,7 @@ const value: operations.GetAllPrompts2PromptsResponse1 = {
 const value: operations.GetAllPrompts2PromptsResponse2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://simple-tenement.name/",
+    url: "https://infatuated-bug.info",
   },
 };
 ```

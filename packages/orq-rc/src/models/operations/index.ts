@@ -19,4 +19,3 @@ export * from "./getallprompttemplates.js";
 export * from "./getoneprompt.js";
 export * from "./getv2resourcesevaluatorstemplates.js";
 export * from "./remoteconfigsgetconfig.js";
-export * from "./updateprompt.js";

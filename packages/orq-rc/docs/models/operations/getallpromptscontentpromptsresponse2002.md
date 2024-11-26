@@ -18,7 +18,7 @@ const value: operations.GetAllPrompts2PromptsResponse2001 = {
 const value: operations.GetAllPrompts2PromptsResponse2002 = {
   type: "image_url",
   imageUrl: {
-    url: "https://tattered-repeat.info",
+    url: "https://tiny-guide.com/",
   },
 };
 ```

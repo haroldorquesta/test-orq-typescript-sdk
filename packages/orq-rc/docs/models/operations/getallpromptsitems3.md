@@ -9,23 +9,16 @@ import { GetAllPromptsItems3 } from "orq-poc-typescript-multi-env-version/models
 
 let value: GetAllPromptsItems3 = {
   id: "<id>",
-  owner: "<value>",
-  domainId: "663ccb0e-50ab-4a6d-b58e-b1ced7d14d06",
-  createdById: "717b5ef2-1472-43eb-b9b0-2bbd986dd760",
-  displayName: "Margarita_Labadie87",
-  updatedById: "d814ae19-a4c1-4308-b41e-3949ab40dfe1",
+  owner: "vendor",
+  domainId: "47b85282-f82b-41c7-a20f-4f881fb81265",
+  createdById: "10800606-3361-456d-be44-9250618af33f",
+  displayName: "Lewis_Ebert86",
+  updatedById: "8eaa84f7-4b95-4431-ba83-00b3402d3f24",
   promptConfig: {
     messages: [
       {
         role: "exception",
-        content: [
-          {
-            type: "image_url",
-            imageUrl: {
-              url: "https://regal-obligation.name",
-            },
-          },
-        ],
+        content: "<value>",
       },
     ],
   },
@@ -33,13 +26,13 @@ let value: GetAllPromptsItems3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "2dcfc9ea-429b-4d4e-b9bc-e46ed67b0538",
-      displayName: "Breana48",
-      updatedById: "b034fca1-c22d-401e-b4ca-1c3b68f44459",
+      createdById: "b0ed1cf7-9a4a-476e-9ced-09ba46018937",
+      displayName: "Aditya_Muller65",
+      updatedById: "d619365a-6138-4c09-a19d-37c22ebbd878",
       promptConfig: {
         messages: [
           {
-            role: "expected_output",
+            role: "exception",
             content: "<value>",
           },
         ],

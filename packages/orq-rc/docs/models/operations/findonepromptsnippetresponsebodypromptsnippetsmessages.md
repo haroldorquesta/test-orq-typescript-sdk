@@ -9,10 +9,8 @@ let value: FindOnePromptSnippetResponseBodyPromptSnippetsMessages = {
   role: "tool",
   content: [
     {
-      type: "image_url",
-      imageUrl: {
-        url: "https://unwritten-silk.info",
-      },
+      type: "text",
+      text: "<value>",
     },
   ],
 };

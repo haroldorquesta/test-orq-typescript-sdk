@@ -20,7 +20,7 @@ const value:
   operations.GetAllPrompts2PromptsResponse200ApplicationJSONResponseBody2 = {
     type: "image_url",
     imageUrl: {
-      url: "https://affectionate-charlatan.org",
+      url: "https://french-birdcage.biz/",
     },
   };
 ```

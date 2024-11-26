@@ -8,7 +8,8 @@ Only supported on `image` models.
 import { GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyQuality } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value:
-  GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyQuality = "hd";
+  GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyQuality =
+    "standard";
 ```
 
 ## Values

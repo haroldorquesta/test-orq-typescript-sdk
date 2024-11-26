@@ -5,7 +5,7 @@
 ```typescript
 import { FindOnePromptSnippetResponseBodyProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: FindOnePromptSnippetResponseBodyProvider = "cohere";
+let value: FindOnePromptSnippetResponseBodyProvider = "perplexity";
 ```
 
 ## Values

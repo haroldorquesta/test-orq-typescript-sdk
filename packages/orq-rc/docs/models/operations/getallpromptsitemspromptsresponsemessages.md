@@ -6,11 +6,13 @@
 import { GetAllPromptsItemsPromptsResponseMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsItemsPromptsResponseMessages = {
-  role: "expected_output",
+  role: "tool",
   content: [
     {
-      type: "text",
-      text: "<value>",
+      type: "image_url",
+      imageUrl: {
+        url: "https://impartial-consistency.org/",
+      },
     },
   ],
 };

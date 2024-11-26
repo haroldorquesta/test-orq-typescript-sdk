@@ -8,11 +8,9 @@ import { GetAllPromptsRequestBody } from "orq-poc-typescript-multi-env-version/m
 let value: GetAllPromptsRequestBody = {
   filters: [
     {
-      type: "string_array",
-      operator: "in",
-      values: [
-        "<value>",
-      ],
+      type: "string",
+      operator: "contains",
+      value: "<value>",
       path: "/home/user/dir",
     },
   ],

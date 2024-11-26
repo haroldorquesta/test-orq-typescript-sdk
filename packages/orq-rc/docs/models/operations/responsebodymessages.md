@@ -6,13 +6,11 @@
 import { ResponseBodyMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: ResponseBodyMessages = {
-  role: "expected_output",
+  role: "exception",
   content: [
     {
-      type: "image_url",
-      imageUrl: {
-        url: "https://old-fashioned-fen.name/",
-      },
+      type: "text",
+      text: "<value>",
     },
   ],
 };

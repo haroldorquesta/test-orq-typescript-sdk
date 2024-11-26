@@ -9,7 +9,7 @@ import { GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyEncoding
 
 let value:
   GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyEncodingFormat =
-    "base64";
+    "float";
 ```
 
 ## Values

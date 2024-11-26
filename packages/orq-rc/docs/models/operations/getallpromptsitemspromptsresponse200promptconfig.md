@@ -8,13 +8,11 @@ import { GetAllPromptsItemsPromptsResponse200PromptConfig } from "orq-poc-typesc
 let value: GetAllPromptsItemsPromptsResponse200PromptConfig = {
   messages: [
     {
-      role: "prompt",
+      role: "expected_output",
       content: [
         {
-          type: "image_url",
-          imageUrl: {
-            url: "https://failing-baseboard.info/",
-          },
+          type: "text",
+          text: "<value>",
         },
       ],
     },

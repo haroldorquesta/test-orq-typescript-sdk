@@ -8,12 +8,12 @@ import { GetAllPromptsItemsPromptsPromptConfig } from "orq-poc-typescript-multi-
 let value: GetAllPromptsItemsPromptsPromptConfig = {
   messages: [
     {
-      role: "prompt",
+      role: "tool",
       content: [
         {
           type: "image_url",
           imageUrl: {
-            url: "https://avaricious-electronics.biz",
+            url: "https://lucky-tenant.biz",
           },
         },
       ],

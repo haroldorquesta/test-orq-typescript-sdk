@@ -7,7 +7,6 @@ import { promptsDelete } from "../funcs/promptsDelete.js";
 import { promptsDuplicate } from "../funcs/promptsDuplicate.js";
 import { promptsGetAll } from "../funcs/promptsGetAll.js";
 import { promptsGetOne } from "../funcs/promptsGetOne.js";
-import { promptsUpdate } from "../funcs/promptsUpdate.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
@@ -49,20 +48,6 @@ export class Prompts extends ClientSDK {
     options?: RequestOptions,
   ): Promise<void> {
     return unwrapAsync(promptsGetOne(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Update a prompt
-   */
-  async update(
-    request: operations.UpdatePromptRequest,
-    options?: RequestOptions,
-  ): Promise<operations.UpdatePromptResponseBody> {
-    return unwrapAsync(promptsUpdate(
       this,
       request,
       options,
