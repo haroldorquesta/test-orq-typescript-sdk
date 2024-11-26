@@ -20,7 +20,7 @@ const value:
       {
         type: "image_url",
         imageUrl: {
-          url: "https://naughty-reward.com",
+          url: "https://serene-independence.info",
         },
       },
     ];

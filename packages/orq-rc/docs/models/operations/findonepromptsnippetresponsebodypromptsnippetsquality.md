@@ -7,7 +7,7 @@ Only supported on `image` models.
 ```typescript
 import { FindOnePromptSnippetResponseBodyPromptSnippetsQuality } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: FindOnePromptSnippetResponseBodyPromptSnippetsQuality = "hd";
+let value: FindOnePromptSnippetResponseBodyPromptSnippetsQuality = "standard";
 ```
 
 ## Values

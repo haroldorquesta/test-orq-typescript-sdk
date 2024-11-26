@@ -8,7 +8,7 @@ import { FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig } from "orq-
 let value: FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig = {
   messages: [
     {
-      role: "tool",
+      role: "expected_output",
       content: "<value>",
     },
   ],

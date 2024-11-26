@@ -18,7 +18,7 @@ const value: operations.FindOnePromptSnippet2PromptSnippetsResponse2001 = {
 const value: operations.FindOnePromptSnippet2PromptSnippetsResponse2002 = {
   type: "image_url",
   imageUrl: {
-    url: "https://quintessential-bathrobe.com",
+    url: "https://heartfelt-breastplate.info/",
   },
 };
 ```

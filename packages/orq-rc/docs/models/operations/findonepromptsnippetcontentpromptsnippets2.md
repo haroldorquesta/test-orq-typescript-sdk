@@ -18,7 +18,7 @@ const value: operations.FindOnePromptSnippet2PromptSnippets1 = {
 const value: operations.FindOnePromptSnippet2PromptSnippets2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://lanky-sundae.info/",
+    url: "https://potable-onset.org/",
   },
 };
 ```

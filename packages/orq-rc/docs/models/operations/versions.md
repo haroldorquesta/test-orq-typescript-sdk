@@ -9,14 +9,19 @@ import { Versions } from "orq-poc-typescript-multi-env-version/models/operations
 
 let value: Versions = {
   id: "<id>",
-  createdById: "d5c54147-d7f8-406b-a3b8-0c8174e4f85d",
-  displayName: "Harrison_Satterfield81",
-  updatedById: "d0391946-518f-494f-86ba-fe21ce7b1329",
+  createdById: "c0659c12-ab9f-472a-9998-f2123993777c",
+  displayName: "Nils_Lemke",
+  updatedById: "92c1f751-6a14-4da3-82e4-2f4176e211e7",
   promptConfig: {
     messages: [
       {
-        role: "system",
-        content: "<value>",
+        role: "tool",
+        content: [
+          {
+            type: "text",
+            text: "<value>",
+          },
+        ],
       },
     ],
   },

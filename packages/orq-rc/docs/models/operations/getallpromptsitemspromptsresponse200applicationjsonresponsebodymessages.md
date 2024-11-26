@@ -7,11 +7,13 @@ import { GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyMessages
 
 let value:
   GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyMessages = {
-    role: "tool",
+    role: "correction",
     content: [
       {
-        type: "text",
-        text: "<value>",
+        type: "image_url",
+        imageUrl: {
+          url: "https://scientific-bowler.info",
+        },
       },
     ],
   };

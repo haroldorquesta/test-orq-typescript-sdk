@@ -8,23 +8,28 @@ Prompts retrieved.
 import { GetAllPromptsResponseBody } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsResponseBody = {
-  count: 3190.02,
-  page: 2820.80,
-  limit: 6909.86,
-  totalPages: 9718.77,
+  count: 6980.47,
+  page: 4863.54,
+  limit: 9408.65,
+  totalPages: 683.75,
   items: [
     {
       id: "<id>",
       owner: "<value>",
-      domainId: "9f3f8bc2-ffdd-45de-a42c-9165a6acb9e3",
-      createdById: "c33ace7b-25a2-4f2c-b5b6-be92f836bee2",
-      displayName: "Lamont_Kohler",
-      updatedById: "0c067846-c4d0-42e7-9097-159ae71162e3",
+      domainId: "332b3336-f541-453c-a124-4dc9459b68ea",
+      createdById: "1239105b-bcb9-4739-9a19-18211e94182c",
+      displayName: "Mollie56",
+      updatedById: "994e8682-448b-4428-ad67-4c12fa8cf3c5",
       promptConfig: {
         messages: [
           {
-            role: "tool",
-            content: "<value>",
+            role: "prompt",
+            content: [
+              {
+                type: "text",
+                text: "<value>",
+              },
+            ],
           },
         ],
       },
@@ -32,19 +37,17 @@ let value: GetAllPromptsResponseBody = {
       versions: [
         {
           id: "<id>",
-          createdById: "a9fd9799-4284-460a-a0b3-29f6d08a6206",
-          displayName: "Yolanda.Grimes",
-          updatedById: "a90aa8f4-d243-4ec7-960b-fc34663ccb0e",
+          createdById: "0b9bc75c-69e2-404c-a9f8-4cada7404063",
+          displayName: "Daisy75",
+          updatedById: "187c9407-ee2d-401f-9617-0083952f3044",
           promptConfig: {
             messages: [
               {
-                role: "system",
+                role: "user",
                 content: [
                   {
-                    type: "image_url",
-                    imageUrl: {
-                      url: "https://illustrious-straw.info",
-                    },
+                    type: "text",
+                    text: "<value>",
                   },
                 ],
               },

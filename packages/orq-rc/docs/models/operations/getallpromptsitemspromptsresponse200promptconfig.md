@@ -8,13 +8,8 @@ import { GetAllPromptsItemsPromptsResponse200PromptConfig } from "orq-poc-typesc
 let value: GetAllPromptsItemsPromptsResponse200PromptConfig = {
   messages: [
     {
-      role: "expected_output",
-      content: [
-        {
-          type: "text",
-          text: "<value>",
-        },
-      ],
+      role: "prompt",
+      content: "<value>",
     },
   ],
 };

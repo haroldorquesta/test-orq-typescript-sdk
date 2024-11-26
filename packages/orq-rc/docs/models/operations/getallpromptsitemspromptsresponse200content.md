@@ -18,7 +18,7 @@ const value: operations.GetAllPromptsContentPromptsResponse2002[] = [
   {
     type: "image_url",
     imageUrl: {
-      url: "https://oblong-opera.org/",
+      url: "https://closed-hunger.biz",
     },
   },
 ];

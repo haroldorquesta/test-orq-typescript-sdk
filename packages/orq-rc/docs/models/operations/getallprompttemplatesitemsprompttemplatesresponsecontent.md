@@ -19,7 +19,7 @@ const value:
     {
       type: "image_url",
       imageUrl: {
-        url: "https://gullible-disclosure.biz",
+        url: "https://intelligent-squid.net/",
       },
     },
   ];

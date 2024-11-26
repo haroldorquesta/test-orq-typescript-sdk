@@ -11,7 +11,7 @@ import {
 
 let value:
   GetAllPromptTemplatesItemsPromptTemplatesResponse200ApplicationJSONEncodingFormat =
-    "base64";
+    "float";
 ```
 
 ## Values

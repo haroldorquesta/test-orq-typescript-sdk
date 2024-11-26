@@ -9,14 +9,19 @@ import { ResponseBodyVersions } from "orq-poc-typescript-multi-env-version/model
 
 let value: ResponseBodyVersions = {
   id: "<id>",
-  createdById: "c68c7fcd-f69b-4af4-b4ec-39b5697c0659",
-  displayName: "Ardella58",
-  updatedById: "72a998f2-1239-4937-977c-7c28d2792c1f",
+  createdById: "3256f47c-dc47-4236-8b8e-d099f08309cc",
+  displayName: "Gwen.Franey",
+  updatedById: "4f5e2c07-0cf0-4ec5-ae46-1a07ad2cb891",
   promptConfig: {
     messages: [
       {
-        role: "user",
-        content: "<value>",
+        role: "exception",
+        content: [
+          {
+            type: "text",
+            text: "<value>",
+          },
+        ],
       },
     ],
   },

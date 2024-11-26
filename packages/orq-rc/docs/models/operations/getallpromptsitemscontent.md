@@ -18,7 +18,7 @@ const value: operations.GetAllPromptsContent2[] = [
   {
     type: "image_url",
     imageUrl: {
-      url: "https://flawed-valentine.net/",
+      url: "https://incomplete-cleaner.name/",
     },
   },
 ];

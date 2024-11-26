@@ -19,7 +19,7 @@ const value:
     {
       type: "image_url",
       imageUrl: {
-        url: "https://gentle-cross-contamination.org/",
+        url: "https://honorable-unblinking.net/",
       },
     },
   ];

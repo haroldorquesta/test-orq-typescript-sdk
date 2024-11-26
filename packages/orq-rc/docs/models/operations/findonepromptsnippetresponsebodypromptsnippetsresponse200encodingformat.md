@@ -9,7 +9,7 @@ import { FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat
 
 let value:
   FindOnePromptSnippetResponseBodyPromptSnippetsResponse200EncodingFormat =
-    "base64";
+    "float";
 ```
 
 ## Values

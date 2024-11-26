@@ -18,10 +18,8 @@ const value:
   operations.GetAllPromptTemplatesContentPromptTemplatesResponse200ApplicationJson2[] =
     [
       {
-        type: "image_url",
-        imageUrl: {
-          url: "https://specific-colonialism.info",
-        },
+        type: "text",
+        text: "<value>",
       },
     ];
 ```

@@ -3,8 +3,8 @@
  */
 
 import { deploymentsAll } from "../funcs/deploymentsAll.js";
-import { deploymentsDeleteV2DeploymentsInvalidateDeploymentId } from "../funcs/deploymentsDeleteV2DeploymentsInvalidateDeploymentId.js";
 import { deploymentsGetConfig } from "../funcs/deploymentsGetConfig.js";
+import { deploymentsInvalidate } from "../funcs/deploymentsInvalidate.js";
 import {
   deploymentsInvoke,
   InvokeAcceptEnum,
@@ -41,6 +41,23 @@ export class Deployments extends ClientSDK {
   }
 
   /**
+   * Invalidates cache
+   *
+   * @remarks
+   * Explicitly invalidate a cache of a deployment
+   */
+  async invalidate(
+    request: operations.InvalidDeploymentRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(deploymentsInvalidate(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Get config
    *
    * @remarks
@@ -68,23 +85,6 @@ export class Deployments extends ClientSDK {
     options?: RequestOptions & { acceptHeaderOverride?: InvokeAcceptEnum },
   ): Promise<operations.DeploymentInvokeResponse | undefined> {
     return unwrapAsync(deploymentsInvoke(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Invalidates cache
-   *
-   * @remarks
-   * Explicitly invalidate a cache of a deployment
-   */
-  async deleteV2DeploymentsInvalidateDeploymentId(
-    request: operations.DeleteV2DeploymentsInvalidateDeploymentIdRequest,
-    options?: RequestOptions,
-  ): Promise<void> {
-    return unwrapAsync(deploymentsDeleteV2DeploymentsInvalidateDeploymentId(
       this,
       request,
       options,

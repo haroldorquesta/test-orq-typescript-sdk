@@ -9,21 +9,16 @@ import { GetAllPromptsItems2 } from "orq-poc-typescript-multi-env-version/models
 
 let value: GetAllPromptsItems2 = {
   id: "<id>",
-  owner: "vendor",
-  domainId: "ae4d7acb-cace-4e5f-9097-3818d25a5657",
-  createdById: "2317d1a6-d5b6-48cf-b282-0bf910560d7f",
-  displayName: "Jevon.Haley",
-  updatedById: "175c6e3e-9184-4ba1-96e6-b1d8f8cfb950",
+  owner: "<value>",
+  domainId: "336156de-4492-4506-b18a-f33fd9d3dd38",
+  createdById: "aa84f74b-9543-41a8-9300-b3402d3f24d6",
+  displayName: "Matilda8",
+  updatedById: "f79a4a76-eced-409b-8a46-0189377029fa",
   promptConfig: {
     messages: [
       {
-        role: "exception",
-        content: [
-          {
-            type: "text",
-            text: "<value>",
-          },
-        ],
+        role: "correction",
+        content: "<value>",
       },
     ],
   },
@@ -31,13 +26,13 @@ let value: GetAllPromptsItems2 = {
   versions: [
     {
       id: "<id>",
-      createdById: "b0ea6429-6be4-4a60-9950-71a88eeb9401",
-      displayName: "Clifford80",
-      updatedById: "b806770a-408e-4009-b801-d712950a0122",
+      createdById: "19365a61-38c0-4919-8d37-c22ebbd878b6",
+      displayName: "Brice12",
+      updatedById: "43de5a2c-e5ae-40d9-968d-b87e31ab9449",
       promptConfig: {
         messages: [
           {
-            role: "system",
+            role: "exception",
             content: "<value>",
           },
         ],

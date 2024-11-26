@@ -6,13 +6,8 @@
 import { ItemsMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: ItemsMessages = {
-  role: "expected_output",
-  content: [
-    {
-      type: "text",
-      text: "<value>",
-    },
-  ],
+  role: "system",
+  content: "<value>",
 };
 ```
 

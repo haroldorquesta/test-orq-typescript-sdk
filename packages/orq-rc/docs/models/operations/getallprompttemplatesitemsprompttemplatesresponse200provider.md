@@ -6,7 +6,7 @@
 import { GetAllPromptTemplatesItemsPromptTemplatesResponse200Provider } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptTemplatesItemsPromptTemplatesResponse200Provider =
-  "leonardoai";
+  "google-ai";
 ```
 
 ## Values

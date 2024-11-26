@@ -8,23 +8,16 @@
 ```typescript
 const value: operations.Items1 = {
   id: "<id>",
-  owner: "vendor",
-  domainId: "64ff3a1a-da66-469e-be02-1358abefadc4",
-  createdById: "0047a1ac-2687-4cfc-a1c1-3238a7f3cd87",
-  displayName: "Hildegard.Johnson69",
-  updatedById: "2dc46ed9-306a-4dd0-a353-cc8f2e12b196",
+  owner: "<value>",
+  domainId: "48bfbc25-6a44-45c9-a115-cbbc488bf4ca",
+  createdById: "cf02c183-4b0d-4788-9a51-5285ff99fec5",
+  displayName: "Colin_Zboncak11",
+  updatedById: "e83aa140-323a-4012-b544-cf8f61647a7e",
   promptConfig: {
     messages: [
       {
-        role: "expected_output",
-        content: [
-          {
-            type: "image_url",
-            imageUrl: {
-              url: "https://gaseous-lay.info/",
-            },
-          },
-        ],
+        role: "prompt",
+        content: "<value>",
       },
     ],
   },
@@ -32,13 +25,13 @@ const value: operations.Items1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "34f450d2-34e3-4cce-b13b-342271560617",
-      displayName: "Rebeka23",
-      updatedById: "ec103496-b525-4ef3-8c4e-2a1fbd97987c",
+      createdById: "26b41eb9-cd7e-4e49-a88f-4fe7dca53ad0",
+      displayName: "Imelda.Hand51",
+      updatedById: "bd040faf-8c55-46a5-bef0-31037d37eac8",
       promptConfig: {
         messages: [
           {
-            role: "assistant",
+            role: "tool",
             content: "<value>",
           },
         ],
@@ -58,14 +51,14 @@ const value: operations.Items1 = {
 const value: operations.Items2 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "1dc8f1c4-53c2-4da0-acae-b8d484f30580",
-  createdById: "db9ffd97-09fd-452c-8bfd-817584dd596e",
-  displayName: "Maxie_Daniel-Douglas",
-  updatedById: "9371547e-269f-42e1-8773-57df8d953680",
+  domainId: "69c6bc5f-ae8b-4ce2-886e-1fe17bbec47b",
+  createdById: "374d95dc-fd62-4d05-9efa-b088513569b5",
+  displayName: "Aisha62",
+  updatedById: "cdbfe990-f2bd-4531-ab7b-e2e64ff3a1ad",
   promptConfig: {
     messages: [
       {
-        role: "tool",
+        role: "exception",
         content: "<value>",
       },
     ],
@@ -74,21 +67,14 @@ const value: operations.Items2 = {
   versions: [
     {
       id: "<id>",
-      createdById: "d511e12d-4ad9-4fb1-88bc-0bdb878be9eb",
-      displayName: "Jevon.Graham",
-      updatedById: "a420920e-81df-4701-86e2-d07a09f2b920",
+      createdById: "69ee0213-58ab-4efa-9dc4-e0047a1ac268",
+      displayName: "Polly_Schmeler-Blick6",
+      updatedById: "238a7f3c-d879-4686-b6b1-2dc46ed9306a",
       promptConfig: {
         messages: [
           {
-            role: "tool",
-            content: [
-              {
-                type: "image_url",
-                imageUrl: {
-                  url: "https://magnificent-mom.com",
-                },
-              },
-            ],
+            role: "correction",
+            content: "<value>",
           },
         ],
       },
@@ -107,15 +93,15 @@ const value: operations.Items2 = {
 ```typescript
 const value: operations.Items3 = {
   id: "<id>",
-  owner: "vendor",
-  domainId: "cf432fc2-8622-4f4f-9172-081bb2fb4bb5",
-  createdById: "59e2e0a6-cb7a-48c7-a849-492266420047",
-  displayName: "Jarred.Barton",
-  updatedById: "d540d69f-02cc-4c8f-b691-6b3fa4c1f0e4",
+  owner: "<value>",
+  domainId: "53cc8f2e-12b1-496b-8ecd-048634f450d2",
+  createdById: "4e3cce13-b342-4271-8560-617dd19d3cec",
+  displayName: "Adelbert38",
+  updatedById: "525ef3c4-e2a1-4fbd-8979-87c22651dc8f",
   promptConfig: {
     messages: [
       {
-        role: "system",
+        role: "correction",
         content: "<value>",
       },
     ],
@@ -124,13 +110,13 @@ const value: operations.Items3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "b81669ad-762c-4b68-9a20-597bd72d9bbf",
-      displayName: "Meda34",
-      updatedById: "43947d36-98fa-4bf6-b502-32c8ad35b606",
+      createdById: "53c2da0c-aeb8-4d48-94f3-05808db9ffd9",
+      displayName: "Adrain_Yundt34",
+      updatedById: "cbfd8175-84dd-4596-9e2b-f23bc7937154",
       promptConfig: {
         messages: [
           {
-            role: "exception",
+            role: "expected_output",
             content: "<value>",
           },
         ],

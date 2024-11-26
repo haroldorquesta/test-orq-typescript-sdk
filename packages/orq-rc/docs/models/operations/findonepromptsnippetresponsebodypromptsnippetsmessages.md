@@ -6,13 +6,8 @@
 import { FindOnePromptSnippetResponseBodyPromptSnippetsMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: FindOnePromptSnippetResponseBodyPromptSnippetsMessages = {
-  role: "tool",
-  content: [
-    {
-      type: "text",
-      text: "<value>",
-    },
-  ],
+  role: "expected_output",
+  content: "<value>",
 };
 ```
 

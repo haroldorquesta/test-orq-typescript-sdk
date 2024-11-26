@@ -7,7 +7,7 @@ import { GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyProvider
 
 let value:
   GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyProvider =
-    "azure";
+    "cohere";
 ```
 
 ## Values

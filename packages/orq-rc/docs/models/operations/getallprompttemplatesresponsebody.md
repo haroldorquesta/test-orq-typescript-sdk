@@ -8,19 +8,19 @@ Prompt templates retrieved.
 import { GetAllPromptTemplatesResponseBody } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptTemplatesResponseBody = {
-  count: 9895.25,
+  count: 4013.88,
   items: [
     {
       id: "<id>",
-      owner: "<value>",
-      domainId: "1cbe31b3-25d8-407a-9893-d8bf6e009434",
-      createdById: "b9cdd66e-a185-4f09-ab4f-de094da818af",
-      displayName: "Vivian.OConner-Lakin89",
-      updatedById: "11c5a968-af99-41f8-bc06-44c970ff308f",
+      owner: "vendor",
+      domainId: "2e177357-df8d-4953-a680-293d511e12d4",
+      createdById: "d9fb18bc-0bdb-4878-8be9-eb1844559a42",
+      displayName: "Kira_Altenwerth53",
+      updatedById: "df7016e2-d07a-409f-b2b9-2008fab792ec",
       promptConfig: {
         messages: [
           {
-            role: "tool",
+            role: "user",
             content: "<value>",
           },
         ],
@@ -29,21 +29,14 @@ let value: GetAllPromptTemplatesResponseBody = {
       versions: [
         {
           id: "<id>",
-          createdById: "5e723417-ea10-445c-af6a-fba15e3db588",
-          displayName: "Josefa.Rutherford96",
-          updatedById: "459e2497-7de7-4ac8-a4a9-e0e805b7f65d",
+          createdById: "2fc28622-f4f1-4720-881b-b2fb4bb5659e",
+          displayName: "Sean79",
+          updatedById: "7a8c7849-4922-4664-8200-47b7e0259d54",
           promptConfig: {
             messages: [
               {
-                role: "prompt",
-                content: [
-                  {
-                    type: "image_url",
-                    imageUrl: {
-                      url: "https://coarse-molasses.org/",
-                    },
-                  },
-                ],
+                role: "correction",
+                content: "<value>",
               },
             ],
           },

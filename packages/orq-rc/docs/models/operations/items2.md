@@ -9,21 +9,19 @@ import { Items2 } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Items2 = {
   id: "<id>",
-  owner: "vendor",
-  domainId: "d8df1aff-9290-43f5-aa4f-b5c163a16485",
-  createdById: "0a34cf5d-1ac2-46e1-a096-ce4679fb64f2",
-  displayName: "Tiana36",
-  updatedById: "aedde456-8a40-464f-8eda-58d1c0dc0a82",
+  owner: "<value>",
+  domainId: "5ee459f2-4d7e-4285-b576-5ebb49cc5cb2",
+  createdById: "777997da-66c5-430e-ae15-21e0f1d955c5",
+  displayName: "Joseph82",
+  updatedById: "0c3e0517-d425-4d23-a1b6-4b5bd3f24257",
   promptConfig: {
     messages: [
       {
         role: "correction",
         content: [
           {
-            type: "image_url",
-            imageUrl: {
-              url: "https://yellow-cardboard.org",
-            },
+            type: "text",
+            text: "<value>",
           },
         ],
       },
@@ -33,13 +31,13 @@ let value: Items2 = {
   versions: [
     {
       id: "<id>",
-      createdById: "37c39211-506a-4611-842f-2c998f5c86f9",
-      displayName: "Haylie25",
-      updatedById: "79ffd5ea-60c8-4cbc-b4c8-7a014f25055f",
+      createdById: "917557b1-eb2f-48f3-9844-9ecb8e7dd3c0",
+      displayName: "Daphnee51",
+      updatedById: "3a907b0e-803f-4914-b706-739c39afcd72",
       promptConfig: {
         messages: [
           {
-            role: "exception",
+            role: "assistant",
             content: "<value>",
           },
         ],

@@ -5,7 +5,7 @@
 ```typescript
 import { GetAllPromptsItemsProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsItemsProvider = "cohere";
+let value: GetAllPromptsItemsProvider = "huggingface";
 ```
 
 ## Values

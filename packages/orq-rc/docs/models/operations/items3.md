@@ -9,15 +9,15 @@ import { Items3 } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: Items3 = {
   id: "<id>",
-  owner: "<value>",
-  domainId: "6b870613-e3dc-4291-9bac-7e04b621d7eb",
-  createdById: "58eb0beb-2725-4ee4-b59f-24d7e2855765",
-  displayName: "Mose77",
-  updatedById: "5cb2d777-997d-4a66-ac53-0ee1521e0f1d",
+  owner: "vendor",
+  domainId: "92fd8e8e-dfe0-426f-a42e-7e2a71b3000e",
+  createdById: "ea84f576-f25a-4197-a438-575f2159a6f5",
+  displayName: "Louvenia76",
+  updatedById: "521368cf-119b-4def-9662-aad17932d071",
   promptConfig: {
     messages: [
       {
-        role: "user",
+        role: "expected_output",
         content: "<value>",
       },
     ],
@@ -26,13 +26,13 @@ let value: Items3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "c5a87e8d-b0c3-4e05-a17d-425d231b64b5",
-      displayName: "Raul.Wiza29",
-      updatedById: "578de391-7557-4b1e-9b2f-8f38449ecb8e",
+      createdById: "d1466a5b-a669-41da-8b81-6650b19baf1d",
+      displayName: "Kaelyn.Ledner19",
+      updatedById: "8d531131-411d-428c-b723-685cce0e6ebf",
       promptConfig: {
         messages: [
           {
-            role: "correction",
+            role: "user",
             content: [
               {
                 type: "text",

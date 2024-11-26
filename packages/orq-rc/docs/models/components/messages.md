@@ -6,15 +6,8 @@
 import { Messages } from "orq-poc-typescript-multi-env-version/models/components";
 
 let value: Messages = {
-  role: "prompt",
-  content: [
-    {
-      type: "image_url",
-      imageUrl: {
-        url: "https://nocturnal-grouper.net",
-      },
-    },
-  ],
+  role: "user",
+  content: "<value>",
 };
 ```
 

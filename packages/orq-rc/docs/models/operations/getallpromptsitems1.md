@@ -9,23 +9,16 @@ import { GetAllPromptsItems1 } from "orq-poc-typescript-multi-env-version/models
 
 let value: GetAllPromptsItems1 = {
   id: "<id>",
-  owner: "<value>",
-  domainId: "8e0d89f2-4379-4b06-9e7d-14b97ace7a6e",
-  createdById: "6f05d759-6545-4ef1-bbaa-04b708dee873",
-  displayName: "Polly69",
-  updatedById: "e8a148e7-90f7-4258-823e-d14a40b35422",
+  owner: "vendor",
+  domainId: "cf2820bf-9105-460d-87fe-8a5428175c6e",
+  createdById: "e9184ba1-6e6b-41d8-af8c-fb95066d3b0e",
+  displayName: "Heloise41",
+  updatedById: "e4a60950-71a8-48ee-9b94-0153986cbb80",
   promptConfig: {
     messages: [
       {
-        role: "expected_output",
-        content: [
-          {
-            type: "image_url",
-            imageUrl: {
-              url: "https://grandiose-coin.info",
-            },
-          },
-        ],
+        role: "exception",
+        content: "<value>",
       },
     ],
   },
@@ -33,13 +26,13 @@ let value: GetAllPromptsItems1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "7c83d280-5a28-48e7-8124-c491391b74da",
-      displayName: "Marcia.Waelchi61",
-      updatedById: "f59279c8-bd45-408f-abf7-b26a705a67d4",
+      createdById: "0a408e00-9801-4d71-9295-0a0122c1272b",
+      displayName: "Shanel.Steuber92",
+      updatedById: "80b3ea44-2c74-4fc9-ac1a-5bfc9b740a27",
       promptConfig: {
         messages: [
           {
-            role: "correction",
+            role: "expected_output",
             content: [
               {
                 type: "text",

@@ -5,7 +5,7 @@
 ```typescript
 import { GetAllPromptsItemsPromptsResponseProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsItemsPromptsResponseProvider = "perplexity";
+let value: GetAllPromptsItemsPromptsResponseProvider = "replicate";
 ```
 
 ## Values

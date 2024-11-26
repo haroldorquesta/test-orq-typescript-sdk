@@ -11,8 +11,10 @@ let value: GetAllPromptsItemsPromptsResponsePromptConfig = {
       role: "correction",
       content: [
         {
-          type: "text",
-          text: "<value>",
+          type: "image_url",
+          imageUrl: {
+            url: "https://humble-sustenance.com/",
+          },
         },
       ],
     },

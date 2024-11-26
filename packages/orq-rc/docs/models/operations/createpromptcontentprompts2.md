@@ -18,7 +18,7 @@ const value: operations.CreatePrompt2Prompts1 = {
 const value: operations.CreatePrompt2Prompts2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://sleepy-importance.org/",
+    url: "https://sarcastic-captain.name",
   },
 };
 ```

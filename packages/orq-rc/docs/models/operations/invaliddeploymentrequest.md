@@ -1,12 +1,12 @@
-# DeleteV2DeploymentsInvalidateDeploymentIdRequest
+# InvalidDeploymentRequest
 
 ## Example Usage
 
 ```typescript
-import { DeleteV2DeploymentsInvalidateDeploymentIdRequest } from "orq-poc-typescript-multi-env-version/models/operations";
+import { InvalidDeploymentRequest } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: DeleteV2DeploymentsInvalidateDeploymentIdRequest = {
-  deploymentId: "c0bcc459-4537-40c1-b849-fa0688a426f2",
+let value: InvalidDeploymentRequest = {
+  deploymentId: "a78ef3a4-0c56-49da-9d4c-2fa3fb438036",
 };
 ```
 

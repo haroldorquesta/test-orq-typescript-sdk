@@ -8,7 +8,7 @@ An individual remote config
 import { RemoteConfigsGetConfigResponseBody } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: RemoteConfigsGetConfigResponseBody = {
-  type: "deployment",
+  type: "boolean",
 };
 ```
 

@@ -6,7 +6,7 @@
 import { CreatePromptPromptsMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: CreatePromptPromptsMessages = {
-  role: "system",
+  role: "exception",
   content: "<value>",
 };
 ```

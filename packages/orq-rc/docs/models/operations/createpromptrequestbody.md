@@ -6,8 +6,8 @@
 import { CreatePromptRequestBody } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: CreatePromptRequestBody = {
-  displayName: "Cecile.Kertzmann55",
-  type: "snippet",
+  displayName: "Loraine65",
+  type: "prompt",
 };
 ```
 

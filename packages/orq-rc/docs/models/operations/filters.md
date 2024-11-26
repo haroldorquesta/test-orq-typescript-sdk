@@ -9,7 +9,7 @@
 const value: operations.Filters1 = {
   type: "id",
   id: "<id>",
-  path: "/sys",
+  path: "/var/yp",
 };
 ```
 
@@ -30,9 +30,9 @@ const value: operations.Filters2 = {
 ```typescript
 const value: operations.Filters3 = {
   type: "string",
-  operator: "equals",
+  operator: "contains",
   value: "<value>",
-  path: "/tmp",
+  path: "/etc/periodic",
 };
 ```
 
@@ -45,7 +45,7 @@ const value: operations.Four = {
   values: [
     "<value>",
   ],
-  path: "/var/spool",
+  path: "/tmp",
 };
 ```
 

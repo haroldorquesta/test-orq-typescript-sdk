@@ -6,7 +6,7 @@
 import { GetAllPrompts2PromptsImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPrompts2PromptsImageUrl = {
-  url: "https://ethical-sticker.org/",
+  url: "https://naughty-reward.com",
 };
 ```
 

@@ -8,8 +8,15 @@ import { GetAllPromptTemplatesItemsPromptTemplatesResponse200PromptConfig } from
 let value: GetAllPromptTemplatesItemsPromptTemplatesResponse200PromptConfig = {
   messages: [
     {
-      role: "user",
-      content: "<value>",
+      role: "expected_output",
+      content: [
+        {
+          type: "image_url",
+          imageUrl: {
+            url: "https://rural-tinderbox.name/",
+          },
+        },
+      ],
     },
   ],
 };

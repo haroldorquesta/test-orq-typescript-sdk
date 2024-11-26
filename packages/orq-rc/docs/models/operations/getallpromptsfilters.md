@@ -9,7 +9,7 @@
 const value: operations.GetAllPromptsFilters1 = {
   type: "id",
   id: "<id>",
-  path: "/var/yp",
+  path: "/etc/defaults",
 };
 ```
 
@@ -30,9 +30,9 @@ const value: operations.GetAllPromptsFilters2 = {
 ```typescript
 const value: operations.GetAllPromptsFilters3 = {
   type: "string",
-  operator: "equals",
+  operator: "contains",
   value: "<value>",
-  path: "/rescue",
+  path: "/usr/include",
 };
 ```
 
@@ -45,7 +45,7 @@ const value: operations.Filters4 = {
   values: [
     "<value>",
   ],
-  path: "/usr/local/src",
+  path: "/tmp",
 };
 ```
 

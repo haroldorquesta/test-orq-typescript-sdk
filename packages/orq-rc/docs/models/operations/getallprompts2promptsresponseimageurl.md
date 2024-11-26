@@ -6,7 +6,7 @@
 import { GetAllPrompts2PromptsResponseImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPrompts2PromptsResponseImageUrl = {
-  url: "https://flickering-halt.biz",
+  url: "https://rubbery-designation.biz/",
 };
 ```
 

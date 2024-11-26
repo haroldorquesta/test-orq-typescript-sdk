@@ -9,7 +9,7 @@ let value: FindOnePromptSnippetResponseBodyPromptSnippetsResponsePromptConfig =
   {
     messages: [
       {
-        role: "prompt",
+        role: "exception",
         content: "<value>",
       },
     ],

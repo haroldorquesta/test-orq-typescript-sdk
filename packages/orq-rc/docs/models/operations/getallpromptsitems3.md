@@ -10,15 +10,20 @@ import { GetAllPromptsItems3 } from "orq-poc-typescript-multi-env-version/models
 let value: GetAllPromptsItems3 = {
   id: "<id>",
   owner: "vendor",
-  domainId: "47b85282-f82b-41c7-a20f-4f881fb81265",
-  createdById: "10800606-3361-456d-be44-9250618af33f",
-  displayName: "Lewis_Ebert86",
-  updatedById: "8eaa84f7-4b95-4431-ba83-00b3402d3f24",
+  domainId: "3aed31ff-572b-46c9-905c-baa9a98c5763",
+  createdById: "05613335-2b51-4920-826b-a0c5a060d2a4",
+  displayName: "Tom82",
+  updatedById: "6e55ff3d-5fde-4943-a8ab-28638483e591",
   promptConfig: {
     messages: [
       {
-        role: "exception",
-        content: "<value>",
+        role: "user",
+        content: [
+          {
+            type: "text",
+            text: "<value>",
+          },
+        ],
       },
     ],
   },
@@ -26,14 +31,19 @@ let value: GetAllPromptsItems3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "b0ed1cf7-9a4a-476e-9ced-09ba46018937",
-      displayName: "Aditya_Muller65",
-      updatedById: "d619365a-6138-4c09-a19d-37c22ebbd878",
+      createdById: "93dc3e0c-7d71-43f5-92c0-140fb8ca23d5",
+      displayName: "Giovanny_Purdy67",
+      updatedById: "636afa86-1729-4bf4-862e-dc0831c38837",
       promptConfig: {
         messages: [
           {
-            role: "exception",
-            content: "<value>",
+            role: "system",
+            content: [
+              {
+                type: "text",
+                text: "<value>",
+              },
+            ],
           },
         ],
       },

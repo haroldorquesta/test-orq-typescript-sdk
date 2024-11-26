@@ -8,12 +8,12 @@ import { ResponseBodyPromptConfig } from "orq-poc-typescript-multi-env-version/m
 let value: ResponseBodyPromptConfig = {
   messages: [
     {
-      role: "user",
+      role: "expected_output",
       content: [
         {
           type: "image_url",
           imageUrl: {
-            url: "https://quiet-ribbon.info",
+            url: "https://glaring-obesity.info",
           },
         },
       ],

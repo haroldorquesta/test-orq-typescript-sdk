@@ -10,7 +10,7 @@ import { GetAllPrompts22 } from "orq-poc-typescript-multi-env-version/models/ope
 let value: GetAllPrompts22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://shady-custom.org/",
+    url: "https://posh-vestment.biz",
   },
 };
 ```

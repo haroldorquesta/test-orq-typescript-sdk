@@ -5,7 +5,7 @@
 ```typescript
 import { FindOnePromptSnippetResponseBodyPromptSnippetsProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: FindOnePromptSnippetResponseBodyPromptSnippetsProvider = "aws";
+let value: FindOnePromptSnippetResponseBodyPromptSnippetsProvider = "fal";
 ```
 
 ## Values

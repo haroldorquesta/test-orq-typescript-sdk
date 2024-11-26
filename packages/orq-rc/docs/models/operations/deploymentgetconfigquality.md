@@ -7,7 +7,7 @@ Only supported on `image` models.
 ```typescript
 import { DeploymentGetConfigQuality } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: DeploymentGetConfigQuality = "hd";
+let value: DeploymentGetConfigQuality = "standard";
 ```
 
 ## Values

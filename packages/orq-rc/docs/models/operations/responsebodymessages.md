@@ -6,13 +6,8 @@
 import { ResponseBodyMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: ResponseBodyMessages = {
-  role: "exception",
-  content: [
-    {
-      type: "text",
-      text: "<value>",
-    },
-  ],
+  role: "user",
+  content: "<value>",
 };
 ```
 

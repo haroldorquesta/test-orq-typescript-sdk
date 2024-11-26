@@ -11,14 +11,7 @@ let value:
       messages: [
         {
           role: "assistant",
-          content: [
-            {
-              type: "image_url",
-              imageUrl: {
-                url: "https://grandiose-outrun.info/",
-              },
-            },
-          ],
+          content: "<value>",
         },
       ],
     };

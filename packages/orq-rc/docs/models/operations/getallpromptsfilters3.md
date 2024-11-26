@@ -9,7 +9,7 @@ let value: GetAllPromptsFilters3 = {
   type: "string",
   operator: "contains",
   value: "<value>",
-  path: "/media",
+  path: "/opt/sbin",
 };
 ```
 

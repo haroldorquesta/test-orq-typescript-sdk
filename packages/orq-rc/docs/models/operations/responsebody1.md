@@ -10,20 +10,15 @@ import { ResponseBody1 } from "orq-poc-typescript-multi-env-version/models/opera
 let value: ResponseBody1 = {
   id: "<id>",
   owner: "vendor",
-  domainId: "95d44877-2846-4bec-869b-652bd5c9c6b6",
-  createdById: "874e6066-dc3d-4351-b0ae-7dcafc4cb613",
-  displayName: "Delmer61",
-  updatedById: "24b3d520-9d4e-4c09-8935-70226bd2caef",
+  domainId: "53843e24-643c-4518-a25e-5a82ad1cbd14",
+  createdById: "0bd76402-fd4f-4542-aef5-b51681d739c5",
+  displayName: "Hilario.Russel-Hermiston65",
+  updatedById: "1ef4427d-bd3b-4e4b-964f-5167cfde7b41",
   promptConfig: {
     messages: [
       {
-        role: "system",
-        content: [
-          {
-            type: "text",
-            text: "<value>",
-          },
-        ],
+        role: "prompt",
+        content: "<value>",
       },
     ],
   },
@@ -31,14 +26,21 @@ let value: ResponseBody1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "3ef5dd99-9493-426b-89fa-22139de68c49",
-      displayName: "Jasen.Koepp43",
-      updatedById: "243bb919-1053-49eb-9cfa-99d6ca403b94",
+      createdById: "dc35d355-c019-46a4-9ec1-cffb194fb9b7",
+      displayName: "Tremaine.Bauch",
+      updatedById: "f1e57613-b020-4d92-bcfe-e09495277f04",
       promptConfig: {
         messages: [
           {
             role: "prompt",
-            content: "<value>",
+            content: [
+              {
+                type: "image_url",
+                imageUrl: {
+                  url: "https://made-up-creature.net",
+                },
+              },
+            ],
           },
         ],
       },

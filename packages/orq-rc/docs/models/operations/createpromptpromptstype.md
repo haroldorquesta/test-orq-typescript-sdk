@@ -5,7 +5,7 @@
 ```typescript
 import { CreatePromptPromptsType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: CreatePromptPromptsType = "template";
+let value: CreatePromptPromptsType = "snippet";
 ```
 
 ## Values

@@ -9,10 +9,10 @@
 const value: operations.GetAllPromptsItems1 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "42048a63-9cbd-4487-85a2-c0696a0d1440",
-  createdById: "dcbb1400-0300-43c0-afad-ac44a982386f",
-  displayName: "Hollie85",
-  updatedById: "4d17a414-7561-40e1-94ad-5a7060fc5365",
+  domainId: "a3bc8d38-ebc3-495a-98a9-bc0f62ec6936",
+  createdById: "c6cc6780-3dc1-4a08-92d9-1aeb1a9ac453",
+  displayName: "Halie.Flatley55",
+  updatedById: "5d98f6e9-65e9-4483-a32b-c56c0548e0d8",
   promptConfig: {
     messages: [
       {
@@ -25,13 +25,13 @@ const value: operations.GetAllPromptsItems1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "b2879ad3-609e-46f9-a38a-aa333b7ac976",
-      displayName: "Camden82",
-      updatedById: "2fa6e9fc-5bb5-4e25-ba7a-f1cd4476837d",
+      createdById: "4379b06e-7d14-4b97-aace-7a6e76f05d75",
+      displayName: "Gunner92",
+      updatedById: "1baa04b7-08de-4e87-93dc-d31bee8a148e",
       promptConfig: {
         messages: [
           {
-            role: "prompt",
+            role: "tool",
             content: "<value>",
           },
         ],
@@ -51,10 +51,10 @@ const value: operations.GetAllPromptsItems1 = {
 const value: operations.GetAllPromptsItems2 = {
   id: "<id>",
   owner: "vendor",
-  domainId: "632f183d-3b2f-4a6f-8862-b9333704b9db",
-  createdById: "975fa481-b522-40cb-9746-e103801b7fe4",
-  displayName: "Terrill92",
-  updatedById: "3d6b7f12-3332-4b33-a36f-54153c1244dc",
+  domainId: "725823ed-14a4-40b3-8542-22fbf95277c8",
+  createdById: "d2805a28-8e71-424c-8491-391b74da1a3e",
+  displayName: "Lexie.Weissnat58",
+  updatedById: "79c8bd45-08fb-4f7b-826a-705a67d49dc3",
   promptConfig: {
     messages: [
       {
@@ -67,21 +67,14 @@ const value: operations.GetAllPromptsItems2 = {
   versions: [
     {
       id: "<id>",
-      createdById: "9b68ea81-2391-405b-bbcb-9739a1918211",
-      displayName: "Lavina14",
-      updatedById: "7b6ba8d9-94e8-4682-a448-b428d674c12f",
+      createdById: "048a639c-bd48-475a-b2c0-696a0d14401d",
+      displayName: "Myrna.Blanda0",
+      updatedById: "03003c0f-adac-444a-9982-386f86f145dc",
       promptConfig: {
         messages: [
           {
-            role: "tool",
-            content: [
-              {
-                type: "image_url",
-                imageUrl: {
-                  url: "https://squiggly-flint.net/",
-                },
-              },
-            ],
+            role: "correction",
+            content: "<value>",
           },
         ],
       },
@@ -100,21 +93,16 @@ const value: operations.GetAllPromptsItems2 = {
 ```typescript
 const value: operations.GetAllPromptsItems3 = {
   id: "<id>",
-  owner: "vendor",
-  domainId: "f10b9bc7-5c69-4e20-94c9-f84cada74040",
-  createdById: "3b31d0ce-187c-4940-a7ee-2d01f6170083",
-  displayName: "Estevan.Wyman6",
-  updatedById: "445c051f-277c-44b0-8e17-25a24ad9812f",
+  owner: "<value>",
+  domainId: "a4147561-0e14-4ad5-8a70-60fc53655e6b",
+  createdById: "879ad360-9e6f-4938-baaa-333b7ac97682",
+  displayName: "Tara17",
+  updatedById: "a6e9fc5b-b5e2-45a7-9af1-cd4476837dea",
   promptConfig: {
     messages: [
       {
-        role: "exception",
-        content: [
-          {
-            type: "text",
-            text: "<value>",
-          },
-        ],
+        role: "correction",
+        content: "<value>",
       },
     ],
   },
@@ -122,13 +110,13 @@ const value: operations.GetAllPromptsItems3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "774eeb0a-3429-473e-83c0-2d8a6622e77a",
-      displayName: "Kacey45",
-      updatedById: "9bb0fb90-e7e6-49e7-b266-bd0742ad83c8",
+      createdById: "32f183d3-b2fa-46f8-a62b-9333704b9db0",
+      displayName: "Ibrahim_Zemlak",
+      updatedById: "1b5220cb-746e-4103-8801-b7fe46e95cea",
       promptConfig: {
         messages: [
           {
-            role: "expected_output",
+            role: "correction",
             content: "<value>",
           },
         ],

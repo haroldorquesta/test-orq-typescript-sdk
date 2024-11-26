@@ -6,12 +6,12 @@
 import { CreatePromptMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: CreatePromptMessages = {
-  role: "user",
+  role: "prompt",
   content: [
     {
       type: "image_url",
       imageUrl: {
-        url: "https://tattered-flint.org/",
+        url: "https://any-molasses.info/",
       },
     },
   ],

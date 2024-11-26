@@ -10,7 +10,7 @@ import { GetAllPrompts2PromptsResponse200ApplicationJson2 } from "orq-poc-typesc
 let value: GetAllPrompts2PromptsResponse200ApplicationJson2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://unique-nudge.biz",
+    url: "https://strange-waterspout.info/",
   },
 };
 ```

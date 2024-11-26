@@ -5,7 +5,7 @@
 ```typescript
 import { GetAllPromptsFiltersOperator } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsFiltersOperator = "contains";
+let value: GetAllPromptsFiltersOperator = "equals";
 ```
 
 ## Values

@@ -8,7 +8,7 @@ The type of the model
 import { GetAllPromptTemplatesItemsPromptTemplatesResponse200ModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptTemplatesItemsPromptTemplatesResponse200ModelType =
-  "stt";
+  "embedding";
 ```
 
 ## Values

@@ -6,7 +6,7 @@
 import { DeploymentInvokeMessageDeployments2 } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: DeploymentInvokeMessageDeployments2 = {
-  role: "prompt",
+  role: "system",
   content: "<value>",
 };
 ```

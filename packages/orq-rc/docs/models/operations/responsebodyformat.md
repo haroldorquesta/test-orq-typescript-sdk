@@ -7,7 +7,7 @@ Only supported on `image` models.
 ```typescript
 import { ResponseBodyFormat } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: ResponseBodyFormat = "url";
+let value: ResponseBodyFormat = "b64_json";
 ```
 
 ## Values

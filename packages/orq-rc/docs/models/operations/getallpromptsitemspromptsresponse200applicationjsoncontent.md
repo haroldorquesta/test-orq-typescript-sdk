@@ -19,7 +19,7 @@ const value:
     {
       type: "image_url",
       imageUrl: {
-        url: "https://tiny-declaration.name",
+        url: "https://cute-tomb.biz/",
       },
     },
   ];

@@ -9,7 +9,7 @@ import { FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSO
 
 let value:
   FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONFormat =
-    "json_object";
+    "text";
 ```
 
 ## Values

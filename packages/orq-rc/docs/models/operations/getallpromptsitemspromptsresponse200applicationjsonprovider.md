@@ -6,7 +6,7 @@
 import { GetAllPromptsItemsPromptsResponse200ApplicationJSONProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONProvider =
-  "azure";
+  "google-ai";
 ```
 
 ## Values

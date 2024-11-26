@@ -7,7 +7,7 @@ The format to return the embeddings
 ```typescript
 import { DeploymentGetConfigEncodingFormat } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: DeploymentGetConfigEncodingFormat = "base64";
+let value: DeploymentGetConfigEncodingFormat = "float";
 ```
 
 ## Values

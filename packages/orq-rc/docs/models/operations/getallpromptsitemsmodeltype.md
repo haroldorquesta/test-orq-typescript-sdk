@@ -7,7 +7,7 @@ The type of the model
 ```typescript
 import { GetAllPromptsItemsModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsItemsModelType = "vision";
+let value: GetAllPromptsItemsModelType = "image";
 ```
 
 ## Values

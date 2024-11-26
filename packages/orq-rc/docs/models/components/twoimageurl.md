@@ -6,7 +6,7 @@
 import { TwoImageUrl } from "orq-poc-typescript-multi-env-version/models/components";
 
 let value: TwoImageUrl = {
-  url: "https://dead-bourgeoisie.biz",
+  url: "https://lovable-retention.biz/",
 };
 ```
 

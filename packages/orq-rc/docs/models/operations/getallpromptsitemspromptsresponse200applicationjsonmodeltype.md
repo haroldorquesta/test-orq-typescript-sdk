@@ -7,7 +7,8 @@ The type of the model
 ```typescript
 import { GetAllPromptsItemsPromptsResponse200ApplicationJSONModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONModelType = "tts";
+let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONModelType =
+  "image";
 ```
 
 ## Values

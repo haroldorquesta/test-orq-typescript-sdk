@@ -11,7 +11,7 @@ let value: GetAllPromptsRequestBody = {
       type: "string",
       operator: "contains",
       value: "<value>",
-      path: "/home/user/dir",
+      path: "/usr/local/bin",
     },
   ],
 };

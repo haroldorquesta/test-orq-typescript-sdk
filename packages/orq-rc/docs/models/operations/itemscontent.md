@@ -16,10 +16,8 @@ const value: string = "<value>";
 ```typescript
 const value: operations.GetAllPromptTemplatesContent2[] = [
   {
-    type: "image_url",
-    imageUrl: {
-      url: "https://uneven-vibration.net",
-    },
+    type: "text",
+    text: "<value>",
   },
 ];
 ```
