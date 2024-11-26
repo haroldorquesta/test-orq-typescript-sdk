@@ -20,7 +20,7 @@ export type CreateFeedbackRequestBody = {
   /**
    * A string describing the specific property or aspect rated.
    */
-  property: string;
+  field: string;
   /**
    * The feedback value. For single selection of multiple choice, the value should be an array of strings. For `correction`, the value should be a string.
    */
@@ -107,6 +107,7 @@ export const CreateFeedbackRequestBody$inboundSchema: z.ZodType<
   trace_id: z.string(),
 }).transform((v) => {
   return remap$(v, {
+    "property": "field",
     "trace_id": "traceId",
   });
 });
@@ -124,11 +125,12 @@ export const CreateFeedbackRequestBody$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateFeedbackRequestBody
 > = z.object({
-  property: z.string(),
+  field: z.string(),
   value: z.union([z.string(), z.array(z.string())]),
   traceId: z.string(),
 }).transform((v) => {
   return remap$(v, {
+    field: "property",
     traceId: "trace_id",
   });
 });

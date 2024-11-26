@@ -22,7 +22,7 @@ const orq = new Orq({
 
 async function run() {
   const result = await orq.feedback.create({
-    property: "rating",
+    field: "rating",
     value: [
       "good",
     ],
@@ -52,7 +52,7 @@ const orq = new OrqCore({
 
 async function run() {
   const res = await feedbackCreate(orq, {
-    property: "rating",
+    field: "rating",
     value: [
       "good",
     ],

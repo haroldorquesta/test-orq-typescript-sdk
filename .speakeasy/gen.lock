@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: b6abfdfc-6ec7-434d-841f-6c1f3ba96acf
 management:
-  docChecksum: 662de9a1182b4717293eba746a87401e
+  docChecksum: 35eeb758a279079e51814c5bda2a24b9
   docVersion: "2.0"
   speakeasyVersion: 1.446.1
   generationVersion: 2.462.1
-  releaseVersion: 1.43.2
-  configChecksum: 6f4c1825dcc3c7c87de4eec15877fce7
+  releaseVersion: 1.43.3
+  configChecksum: e30e9d317a9608cfef822ee7420fe287
   repoURL: https://github.com/haroldorquesta/test-orq-typescript-sdk.git
   installationURL: https://github.com/haroldorquesta/test-orq-typescript-sdk
   published: true
