@@ -5,7 +5,7 @@
 ```typescript
 import { GetAllPromptsItemsPromptsProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsItemsPromptsProvider = "replicate";
+let value: GetAllPromptsItemsPromptsProvider = "groq";
 ```
 
 ## Values

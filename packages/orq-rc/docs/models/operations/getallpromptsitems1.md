@@ -10,15 +10,22 @@ import { GetAllPromptsItems1 } from "orq-poc-typescript-multi-env-version/models
 let value: GetAllPromptsItems1 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "cad71806-3d27-46d8-b793-851c540045b5",
-  createdById: "9520665c-1138-4be4-a284-f03c68da9a11",
-  displayName: "Fredy.Schuster-Walter62",
-  updatedById: "b0a3940a-7b08-402c-b312-2d9c4ae8d3f1",
+  domainId: "7a214ea3-9a8c-403f-a714-09f99538e096",
+  createdById: "d736216a-4eba-4b0d-8e09-a3da3f3a7b1f",
+  displayName: "Dakota.Heller3",
+  updatedById: "ce3c0062-2adc-45ed-8870-218a9dad22e5",
   promptConfig: {
     messages: [
       {
-        role: "assistant",
-        content: "<value>",
+        role: "expected_output",
+        content: [
+          {
+            type: "image_url",
+            imageUrl: {
+              url: "https://robust-advertisement.com/",
+            },
+          },
+        ],
       },
     ],
   },
@@ -26,19 +33,14 @@ let value: GetAllPromptsItems1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "8537fa4f-4b4c-4a97-939d-0be945b50146",
-      displayName: "Rachelle_Jenkins79",
-      updatedById: "52185899-f3e0-401a-a822-8f2419e37eb8",
+      createdById: "5d406306-5b16-45ae-b2d9-0c8c6a3358ba",
+      displayName: "Herta.Brekke68",
+      updatedById: "2e1fdda3-c097-4c06-b726-e74804ca093f",
       promptConfig: {
         messages: [
           {
-            role: "prompt",
-            content: [
-              {
-                type: "text",
-                text: "<value>",
-              },
-            ],
+            role: "assistant",
+            content: "<value>",
           },
         ],
       },

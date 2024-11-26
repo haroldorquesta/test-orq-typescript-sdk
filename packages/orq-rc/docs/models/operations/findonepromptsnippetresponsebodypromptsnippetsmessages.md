@@ -6,8 +6,15 @@
 import { FindOnePromptSnippetResponseBodyPromptSnippetsMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: FindOnePromptSnippetResponseBodyPromptSnippetsMessages = {
-  role: "system",
-  content: "<value>",
+  role: "tool",
+  content: [
+    {
+      type: "image_url",
+      imageUrl: {
+        url: "https://unwritten-silk.info",
+      },
+    },
+  ],
 };
 ```
 

@@ -8,8 +8,15 @@ import { FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig } from "orq-
 let value: FindOnePromptSnippetResponseBodyPromptSnippetsPromptConfig = {
   messages: [
     {
-      role: "exception",
-      content: "<value>",
+      role: "tool",
+      content: [
+        {
+          type: "image_url",
+          imageUrl: {
+            url: "https://sorrowful-hyena.name/",
+          },
+        },
+      ],
     },
   ],
 };

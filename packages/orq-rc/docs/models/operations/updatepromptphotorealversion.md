@@ -7,7 +7,7 @@ The version of photoReal to use. Must be v1 or v2. Only available for `leonardoa
 ```typescript
 import { UpdatePromptPhotoRealVersion } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: UpdatePromptPhotoRealVersion = "v2";
+let value: UpdatePromptPhotoRealVersion = "v1";
 ```
 
 ## Values

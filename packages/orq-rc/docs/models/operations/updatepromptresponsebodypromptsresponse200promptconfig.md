@@ -8,8 +8,15 @@ import { UpdatePromptResponseBodyPromptsResponse200PromptConfig } from "orq-poc-
 let value: UpdatePromptResponseBodyPromptsResponse200PromptConfig = {
   messages: [
     {
-      role: "prompt",
-      content: "<value>",
+      role: "system",
+      content: [
+        {
+          type: "image_url",
+          imageUrl: {
+            url: "https://stale-exasperation.info",
+          },
+        },
+      ],
     },
   ],
 };

@@ -7,7 +7,7 @@ The role of the prompt message
 ```typescript
 import { GetAllPromptsItemsRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsItemsRole = "system";
+let value: GetAllPromptsItemsRole = "user";
 ```
 
 ## Values

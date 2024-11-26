@@ -7,8 +7,7 @@ The type of the model
 ```typescript
 import { FindOnePromptSnippetResponseBodyPromptSnippetsModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: FindOnePromptSnippetResponseBodyPromptSnippetsModelType =
-  "embedding";
+let value: FindOnePromptSnippetResponseBodyPromptSnippetsModelType = "tts";
 ```
 
 ## Values

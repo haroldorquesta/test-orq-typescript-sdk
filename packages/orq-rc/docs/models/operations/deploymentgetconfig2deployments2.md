@@ -10,7 +10,7 @@ import { DeploymentGetConfig2Deployments2 } from "orq-poc-typescript-multi-env-v
 let value: DeploymentGetConfig2Deployments2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://super-cop-out.name/",
+    url: "https://sniveling-republican.org",
   },
 };
 ```

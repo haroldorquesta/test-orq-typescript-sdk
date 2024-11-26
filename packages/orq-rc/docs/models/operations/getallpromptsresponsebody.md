@@ -8,18 +8,18 @@ Prompts retrieved.
 import { GetAllPromptsResponseBody } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsResponseBody = {
-  count: 5480.83,
-  page: 5592.32,
-  limit: 6233.73,
-  totalPages: 2303.52,
+  count: 5412.45,
+  page: 8963.05,
+  limit: 5923.78,
+  totalPages: 2566.31,
   items: [
     {
       id: "<id>",
       owner: "<value>",
-      domainId: "047bc6cb-a248-4d6f-8a58-6e031c3b8df2",
-      createdById: "a0d66954-3bc9-43b2-ae77-39f9a4538297",
-      displayName: "Antone50",
-      updatedById: "b54a157c-5cc0-43a7-905a-f3258a530213",
+      domainId: "7eb8b76a-bedf-41f3-b1aa-fc699c96a351",
+      createdById: "14e83fe1-3a38-42a8-af28-493e76ce7c24",
+      displayName: "Tiffany_Collier9",
+      updatedById: "83495f3d-e7f4-4190-a7d6-34ea2798c049",
       promptConfig: {
         messages: [
           {
@@ -32,13 +32,13 @@ let value: GetAllPromptsResponseBody = {
       versions: [
         {
           id: "<id>",
-          createdById: "296ac16f-077d-44c0-875c-61b057b51d0d",
-          displayName: "Brain_Cormier81",
-          updatedById: "19b80cbb-31f7-4b18-b815-ebbe4c198636",
+          createdById: "c8ad9582-4a00-4efe-93c7-1ccbff2cabfd",
+          displayName: "Tressie46",
+          updatedById: "09b6d748-eaf7-4aa3-8b19-23f68a7b0a5e",
           promptConfig: {
             messages: [
               {
-                role: "prompt",
+                role: "system",
                 content: "<value>",
               },
             ],
@@ -48,8 +48,7 @@ let value: GetAllPromptsResponseBody = {
           timestamp: "<value>",
         },
       ],
-      key: "<key>",
-      type: "snippet",
+      type: "template",
     },
   ],
 };

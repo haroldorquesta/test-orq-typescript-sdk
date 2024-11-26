@@ -9,19 +9,19 @@
 const value: operations.GetAllPromptsItems1 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "3e05b961-2b75-456a-b912-10cd6fdd5fb5",
-  createdById: "0981d467-d995-4474-857d-ed8b57f527a2",
-  displayName: "Ellie.Padberg",
-  updatedById: "8c03f714-09f9-4953-b8e0-969d736216a4",
+  domainId: "2bd024f6-21ec-498c-a5ab-92fc79c7bc73",
+  createdById: "880c86d3-4a64-447c-acce-0f63fde8b88f",
+  displayName: "Kenton29",
+  updatedById: "321d336a-9ea8-4bac-b9ce-b54aa0b302a8",
   promptConfig: {
     messages: [
       {
-        role: "prompt",
+        role: "system",
         content: [
           {
             type: "image_url",
             imageUrl: {
-              url: "https://stylish-tomography.com/",
+              url: "https://shoddy-release.com/",
             },
           },
         ],
@@ -32,13 +32,13 @@ const value: operations.GetAllPromptsItems1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "9a3da3f3-a7b1-4f33-b857-03ce3c00622a",
-      displayName: "Orpha_Swift",
-      updatedById: "0218a9da-d22e-453e-afa6-b025d4063065",
+      createdById: "4a6c8d1b-7844-4353-83f7-a5979bac2157",
+      displayName: "Oma_Volkman",
+      updatedById: "64948980-5c58-4533-abae-6a77d7e911f6",
       promptConfig: {
         messages: [
           {
-            role: "system",
+            role: "exception",
             content: "<value>",
           },
         ],
@@ -58,15 +58,20 @@ const value: operations.GetAllPromptsItems1 = {
 const value: operations.GetAllPromptsItems2 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "ae2d90c8-c6a3-4358-abad-6e12a42e1fdd",
-  createdById: "3c097c06-726e-4748-804c-a093fc2672bd",
-  displayName: "Brent.Wyman17",
-  updatedById: "ec98c5ab-92fc-479c-a7bc-739880c86d34",
+  domainId: "3985056c-b33a-4a81-940c-ce1eefc44baa",
+  createdById: "849cb68c-3377-4096-a9e5-134d8f414fbe",
+  displayName: "Dortha.Fay-Hyatt",
+  updatedById: "ff1ecb5a-cdc5-4284-9c06-c1a3240a5f1e",
   promptConfig: {
     messages: [
       {
-        role: "exception",
-        content: "<value>",
+        role: "system",
+        content: [
+          {
+            type: "text",
+            text: "<value>",
+          },
+        ],
       },
     ],
   },
@@ -74,14 +79,19 @@ const value: operations.GetAllPromptsItems2 = {
   versions: [
     {
       id: "<id>",
-      createdById: "47ccce0f-63fd-4e8b-888f-b96214b321d3",
-      displayName: "Giovanni_McGlynn",
-      updatedById: "bac9ceb5-4aa0-4b30-a2a8-d1da3bb14a6c",
+      createdById: "a379e463-5288-4936-b004-7bc6cba248d6",
+      displayName: "Malvina.MacGyver91",
+      updatedById: "31c3b8df-22a0-4d66-b954-3bc93b2e7739",
       promptConfig: {
         messages: [
           {
-            role: "correction",
-            content: "<value>",
+            role: "tool",
+            content: [
+              {
+                type: "text",
+                text: "<value>",
+              },
+            ],
           },
         ],
       },
@@ -100,20 +110,20 @@ const value: operations.GetAllPromptsItems2 = {
 ```typescript
 const value: operations.GetAllPromptsItems3 = {
   id: "<id>",
-  owner: "vendor",
-  domainId: "78443533-f7a5-4979-9bac-21573cbeb1a6",
-  createdById: "9489805c-5853-43ba-8e6a-77d7e911f696",
-  displayName: "Brain_Moen32",
-  updatedById: "56cb33aa-8140-4cce-a1ee-fc44baa5849c",
+  owner: "<value>",
+  domainId: "3829791e-638e-4b54-ba15-7c5cc03a705a",
+  createdById: "3258a530-2135-4162-996a-c16f077d4c07",
+  displayName: "Raheem_Bernier",
+  updatedById: "7b51d0d1-222c-4c21-89b8-0cbb31f7b188",
   promptConfig: {
     messages: [
       {
-        role: "exception",
+        role: "user",
         content: [
           {
             type: "image_url",
             imageUrl: {
-              url: "https://elegant-jellyfish.info/",
+              url: "https://unaware-experience.net",
             },
           },
         ],
@@ -124,14 +134,21 @@ const value: operations.GetAllPromptsItems3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "0969e513-4d8f-4414-bfbe-94f364a6ff1e",
-      displayName: "Mertie83",
-      updatedById: "5284c06c-1a32-440a-85f1-e71d1a379e46",
+      createdById: "198636db-7fc0-4cb0-9e73-7d4e1198a04b",
+      displayName: "Ellis62",
+      updatedById: "02744f00-e207-4e4e-9d46-e103320b2715",
       promptConfig: {
         messages: [
           {
-            role: "user",
-            content: "<value>",
+            role: "expected_output",
+            content: [
+              {
+                type: "image_url",
+                imageUrl: {
+                  url: "https://deafening-handful.name/",
+                },
+              },
+            ],
           },
         ],
       },

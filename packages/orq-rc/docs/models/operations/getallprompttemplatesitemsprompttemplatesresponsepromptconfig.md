@@ -9,7 +9,14 @@ let value: GetAllPromptTemplatesItemsPromptTemplatesResponsePromptConfig = {
   messages: [
     {
       role: "user",
-      content: "<value>",
+      content: [
+        {
+          type: "image_url",
+          imageUrl: {
+            url: "https://international-pecan.org/",
+          },
+        },
+      ],
     },
   ],
 };

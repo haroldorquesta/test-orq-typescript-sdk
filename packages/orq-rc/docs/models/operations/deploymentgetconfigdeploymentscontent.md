@@ -16,10 +16,8 @@ const value: string = "<value>";
 ```typescript
 const value: operations.DeploymentGetConfigContent2[] = [
   {
-    type: "image_url",
-    imageUrl: {
-      url: "https://sorrowful-finger.com",
-    },
+    type: "text",
+    text: "<value>",
   },
 ];
 ```

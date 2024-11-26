@@ -8,8 +8,13 @@ import { UpdatePromptResponseBodyPromptsResponsePromptConfig } from "orq-poc-typ
 let value: UpdatePromptResponseBodyPromptsResponsePromptConfig = {
   messages: [
     {
-      role: "exception",
-      content: "<value>",
+      role: "correction",
+      content: [
+        {
+          type: "text",
+          text: "<value>",
+        },
+      ],
     },
   ],
 };

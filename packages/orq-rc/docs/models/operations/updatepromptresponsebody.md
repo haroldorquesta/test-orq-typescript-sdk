@@ -10,16 +10,21 @@ Prompt updated.
 ```typescript
 const value: operations.ResponseBody1 = {
   id: "<id>",
-  owner: "<value>",
-  domainId: "1825d98f-6e96-45e9-8483-32bc56c0548e",
-  createdById: "d89f2437-9b06-4e7d-814b-97ace7a6e76f",
-  displayName: "Esperanza.Klein",
-  updatedById: "545ef1ba-a04b-4708-adee-873dcd31bee8",
+  owner: "vendor",
+  domainId: "cbb14000-3003-4c0f-9ada-c44a982386f8",
+  createdById: "f145dc4d-17a4-4147-b561-0e14ad5a7060",
+  displayName: "Nona.Feil",
+  updatedById: "e6b2879a-d360-49e6-9f93-8aaa333b7ac9",
   promptConfig: {
     messages: [
       {
-        role: "system",
-        content: "<value>",
+        role: "exception",
+        content: [
+          {
+            type: "text",
+            text: "<value>",
+          },
+        ],
       },
     ],
   },
@@ -27,13 +32,13 @@ const value: operations.ResponseBody1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "8e790f72-5823-4ed1-94a4-0b354222fbf9",
-      displayName: "Casandra_Kunde52",
-      updatedById: "d2805a28-8e71-424c-8491-391b74da1a3e",
+      createdById: "cecdd2fa-6e9f-4c5b-9b5e-25a7af1cd447",
+      displayName: "Joesph88",
+      updatedById: "4d632f18-3d3b-42fa-b6f8-62b9333704b9",
       promptConfig: {
         messages: [
           {
-            role: "tool",
+            role: "prompt",
             content: "<value>",
           },
         ],
@@ -53,15 +58,20 @@ const value: operations.ResponseBody1 = {
 const value: operations.ResponseBody2 = {
   id: "<id>",
   owner: "vendor",
-  domainId: "59279c8b-d450-48fb-bf7b-26a705a67d49",
-  createdById: "c3042048-a639-4cbd-9487-5a2c0696a0d1",
-  displayName: "Eldon77",
-  updatedById: "b1400030-03c0-4fad-8ac4-4a982386f86f",
+  domainId: "75fa481b-5220-4cb7-b46e-103801b7fe46",
+  createdById: "95cea3d6-b7f1-4233-832b-3336f54153c1",
+  displayName: "Dudley_Stamm57",
+  updatedById: "59b68ea8-1239-4105-8bbc-b9739a191821",
   promptConfig: {
     messages: [
       {
-        role: "user",
-        content: "<value>",
+        role: "expected_output",
+        content: [
+          {
+            type: "text",
+            text: "<value>",
+          },
+        ],
       },
     ],
   },
@@ -69,21 +79,14 @@ const value: operations.ResponseBody2 = {
   versions: [
     {
       id: "<id>",
-      createdById: "dc4d17a4-1475-4610-9e14-ad5a7060fc53",
-      displayName: "Emie.VonRueden74",
-      updatedById: "879ad360-9e6f-4938-baaa-333b7ac97682",
+      createdById: "182c7b6b-a8d9-494e-b868-2448b428d674",
+      displayName: "Blaze54",
+      updatedById: "f3c5bbf1-0b9b-4c75-ac69-e204c9f84cad",
       promptConfig: {
         messages: [
           {
-            role: "expected_output",
-            content: [
-              {
-                type: "image_url",
-                imageUrl: {
-                  url: "https://defensive-yeast.name",
-                },
-              },
-            ],
+            role: "exception",
+            content: "<value>",
           },
         ],
       },
@@ -103,15 +106,20 @@ const value: operations.ResponseBody2 = {
 const value: operations.ResponseBody3 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "e9fc5bb5-e25a-47af-91cd-4476837dea4d",
-  createdById: "32f183d3-b2fa-46f8-a62b-9333704b9db0",
-  displayName: "Ibrahim_Zemlak",
-  updatedById: "1b5220cb-746e-4103-8801-b7fe46e95cea",
+  domainId: "4063b31d-0ce1-487c-8940-7ee2d01f6170",
+  createdById: "83952f30-4445-4c05-81f2-77c4b0e1725a",
+  displayName: "Edwina_Sporer52",
+  updatedById: "2f07c377-4eeb-40a3-8429-73e3c02d8a66",
   promptConfig: {
     messages: [
       {
-        role: "correction",
-        content: "<value>",
+        role: "assistant",
+        content: [
+          {
+            type: "text",
+            text: "<value>",
+          },
+        ],
       },
     ],
   },
@@ -119,13 +127,13 @@ const value: operations.ResponseBody3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "b7f12333-2b33-436f-a541-53c1244dc945",
-      displayName: "Nadia_Langosh",
-      updatedById: "1239105b-bcb9-4739-9a19-18211e94182c",
+      createdById: "7a08e667-d9bb-40fb-990e-7e69e7266bd0",
+      displayName: "Dolly_OReilly54",
+      updatedById: "c8cf654b-f479-4f3f-88bc-2ffdd5de42c9",
       promptConfig: {
         messages: [
           {
-            role: "prompt",
+            role: "exception",
             content: "<value>",
           },
         ],

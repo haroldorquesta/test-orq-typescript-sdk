@@ -6,13 +6,11 @@
 import { PrefixMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: PrefixMessages = {
-  role: "tool",
+  role: "expected_output",
   content: [
     {
-      type: "image_url",
-      imageUrl: {
-        url: "https://exalted-breastplate.com/",
-      },
+      type: "text",
+      text: "<value>",
     },
   ],
 };

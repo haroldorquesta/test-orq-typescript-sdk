@@ -6,7 +6,7 @@
 import { UpdatePrompt2PromptsResponse200ApplicationJSONImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: UpdatePrompt2PromptsResponse200ApplicationJSONImageUrl = {
-  url: "https://defensive-hospitalization.info/",
+  url: "https://thrifty-safe.com/",
 };
 ```
 

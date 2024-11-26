@@ -7,7 +7,7 @@ The type of the model
 ```typescript
 import { ResponseBodyModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: ResponseBodyModelType = "chat";
+let value: ResponseBodyModelType = "tts";
 ```
 
 ## Values

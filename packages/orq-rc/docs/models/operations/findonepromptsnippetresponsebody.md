@@ -10,16 +10,21 @@ Prompt snippet retrieved.
 ```typescript
 const value: operations.FindOnePromptSnippetResponseBody1 = {
   id: "<id>",
-  owner: "vendor",
-  domainId: "2cf541af-2710-4ad5-9e13-e89020e2d5c5",
-  createdById: "147d7f80-6b3b-480c-b817-4e4f85db6acd",
-  displayName: "Cassidy.Beer62",
-  updatedById: "946518f9-4f6b-4afe-921c-e7b1329304a9",
+  owner: "<value>",
+  domainId: "6885c106-e42e-425b-a436-ce02f98d00fd",
+  createdById: "27ee0c0f-6f54-45b3-bd9f-f2f00ff277da",
+  displayName: "Jazmyne_Rice0",
+  updatedById: "5066e9be-704d-4e54-be5a-418e93ac58a2",
   promptConfig: {
     messages: [
       {
-        role: "correction",
-        content: "<value>",
+        role: "exception",
+        content: [
+          {
+            type: "text",
+            text: "<value>",
+          },
+        ],
       },
     ],
   },
@@ -27,13 +32,13 @@ const value: operations.FindOnePromptSnippetResponseBody1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "48772846-bec6-49b6-b52b-d5c9c6b61874",
-      displayName: "Geovany86",
-      updatedById: "3d3510ae-7dca-4fc4-acb6-13c3fb799f24",
+      createdById: "720366ea-6f95-4b7e-be58-4afd51f6457f",
+      displayName: "Elena17",
+      updatedById: "016b444d-38fb-45cf-a5b1-e1584a8b58cc",
       promptConfig: {
         messages: [
           {
-            role: "assistant",
+            role: "tool",
             content: [
               {
                 type: "text",
@@ -58,20 +63,15 @@ const value: operations.FindOnePromptSnippetResponseBody1 = {
 const value: operations.FindOnePromptSnippetResponseBody2 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "09d4ec09-9357-4022-96bd-2caef11c23ef",
-  createdById: "dd999493-26b9-4fa2-9213-9de68c492727",
-  displayName: "Horace23",
-  updatedById: "b9191053-9ebc-4fa9-99d6-ca403b946a26",
+  domainId: "d9f41a1c-48cc-47f7-944b-6604dcb0047e",
+  createdById: "49ebd228-bf55-48a9-8b6d-25c5a424e735",
+  displayName: "Nicolette.Metz83",
+  updatedById: "04e4864e-cc8d-4777-93e4-33dc60f2dcfc",
   promptConfig: {
     messages: [
       {
-        role: "tool",
-        content: [
-          {
-            type: "text",
-            text: "<value>",
-          },
-        ],
+        role: "assistant",
+        content: "<value>",
       },
     ],
   },
@@ -79,21 +79,14 @@ const value: operations.FindOnePromptSnippetResponseBody2 = {
   versions: [
     {
       id: "<id>",
-      createdById: "c106e42e-25b4-436c-be02-f98d00fdb27e",
-      displayName: "Adelbert41",
-      updatedById: "545b3d9f-f2f0-40ff-9277-dac7abb01506",
+      createdById: "3bda2097-358a-47f0-aae3-3c7f9e02a6d6",
+      displayName: "Kennith_Raynor",
+      updatedById: "5761213d-06c1-43ba-b92c-22c55455b35c",
       promptConfig: {
         messages: [
           {
-            role: "expected_output",
-            content: [
-              {
-                type: "image_url",
-                imageUrl: {
-                  url: "https://judicious-suv.biz",
-                },
-              },
-            ],
+            role: "tool",
+            content: "<value>",
           },
         ],
       },
@@ -113,15 +106,22 @@ const value: operations.FindOnePromptSnippetResponseBody2 = {
 const value: operations.FindOnePromptSnippetResponseBody3 = {
   id: "<id>",
   owner: "vendor",
-  domainId: "e54e5a41-8e93-4ac5-98a2-f7f3720366ea",
-  createdById: "f95b7ee5-84af-4d51-9f64-57ff45802e01",
-  displayName: "Mose.Haag87",
-  updatedById: "8fb5cf5b-1e15-484a-88b5-8ccb8a17d9f4",
+  domainId: "a5dc92be-4fc4-4941-ada9-26e2034ca009",
+  createdById: "293561ff-74fd-4b76-ac8a-9b1623380f80",
+  displayName: "Domenico.Simonis10",
+  updatedById: "ba03b293-7d4a-4715-8dfd-25d8cc157fe6",
   promptConfig: {
     messages: [
       {
-        role: "prompt",
-        content: "<value>",
+        role: "exception",
+        content: [
+          {
+            type: "image_url",
+            imageUrl: {
+              url: "https://fussy-order.name/",
+            },
+          },
+        ],
       },
     ],
   },
@@ -129,19 +129,17 @@ const value: operations.FindOnePromptSnippetResponseBody3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "c48cc7f7-44b6-4604-8dcb-0047e649ebd2",
-      displayName: "Karine.Wilkinson",
-      updatedById: "a9b6d25c-5a42-44e7-9350-c390d204e486",
+      createdById: "327ccf66-0dac-47e0-8161-193aed31ff57",
+      displayName: "Mercedes_Schmitt",
+      updatedById: "cbaa9a98-c576-4350-9561-33352b519202",
       promptConfig: {
         messages: [
           {
-            role: "expected_output",
+            role: "prompt",
             content: [
               {
-                type: "image_url",
-                imageUrl: {
-                  url: "https://superficial-impostor.info",
-                },
+                type: "text",
+                text: "<value>",
               },
             ],
           },

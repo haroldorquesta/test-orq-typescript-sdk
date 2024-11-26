@@ -118,13 +118,17 @@ run();
 ### [deployments](docs/sdks/deployments/README.md)
 
 * [all](docs/sdks/deployments/README.md#all) - List all deployments
-* [invalidate](docs/sdks/deployments/README.md#invalidate) - Invalidates cache
 * [getConfig](docs/sdks/deployments/README.md#getconfig) - Get config
 * [invoke](docs/sdks/deployments/README.md#invoke) - Invoke
+* [deleteV2DeploymentsInvalidateDeploymentId](docs/sdks/deployments/README.md#deletev2deploymentsinvalidatedeploymentid) - Invalidates cache
 
 #### [deployments.metrics](docs/sdks/metrics/README.md)
 
 * [create](docs/sdks/metrics/README.md#create) - Add metrics
+
+### [evaluators](docs/sdks/evaluators/README.md)
+
+* [getV2ResourcesEvaluatorsTemplates](docs/sdks/evaluators/README.md#getv2resourcesevaluatorstemplates) - Templates
 
 ### [feedback](docs/sdks/feedback/README.md)
 
@@ -149,7 +153,6 @@ run();
 ### [prompts](docs/sdks/prompts/README.md)
 
 * [create](docs/sdks/prompts/README.md#create) - Create a new prompt
-* [createVersion](docs/sdks/prompts/README.md#createversion) - Create a new prompt version
 * [delete](docs/sdks/prompts/README.md#delete) - Delete a prompt
 * [getOne](docs/sdks/prompts/README.md#getone) - Get one prompt
 * [update](docs/sdks/prompts/README.md#update) - Update a prompt
@@ -180,14 +183,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 - [`contactsCreate`](docs/sdks/contacts/README.md#create) - Update user information
 - [`deploymentsAll`](docs/sdks/deployments/README.md#all) - List all deployments
+- [`deploymentsDeleteV2DeploymentsInvalidateDeploymentId`](docs/sdks/deployments/README.md#deletev2deploymentsinvalidatedeploymentid) - Invalidates cache
 - [`deploymentsGetConfig`](docs/sdks/deployments/README.md#getconfig) - Get config
-- [`deploymentsInvalidate`](docs/sdks/deployments/README.md#invalidate) - Invalidates cache
 - [`deploymentsInvoke`](docs/sdks/deployments/README.md#invoke) - Invoke
 - [`deploymentsMetricsCreate`](docs/sdks/metrics/README.md#create) - Add metrics
+- [`evaluatorsGetV2ResourcesEvaluatorsTemplates`](docs/sdks/evaluators/README.md#getv2resourcesevaluatorstemplates) - Templates
 - [`feedbackCreate`](docs/sdks/feedback/README.md#create) - Submit feedback
 - [`filesUpload`](docs/sdks/files/README.md#upload) - Upload file
 - [`promptsCreate`](docs/sdks/prompts/README.md#create) - Create a new prompt
-- [`promptsCreateVersion`](docs/sdks/prompts/README.md#createversion) - Create a new prompt version
 - [`promptsDelete`](docs/sdks/prompts/README.md#delete) - Delete a prompt
 - [`promptsDuplicate`](docs/sdks/prompts/README.md#duplicate) - Duplicate a prompt
 - [`promptsGetAll`](docs/sdks/prompts/README.md#getall) - Get all prompts

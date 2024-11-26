@@ -8,12 +8,12 @@ import { FindOnePromptSnippetResponseBodyPromptConfig } from "orq-poc-typescript
 let value: FindOnePromptSnippetResponseBodyPromptConfig = {
   messages: [
     {
-      role: "expected_output",
+      role: "user",
       content: [
         {
           type: "image_url",
           imageUrl: {
-            url: "https://glaring-obesity.info",
+            url: "https://quiet-ribbon.info",
           },
         },
       ],

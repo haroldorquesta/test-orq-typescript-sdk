@@ -5,7 +5,7 @@
 ```typescript
 import { GetAllPromptTemplatesItemsProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptTemplatesItemsProvider = "azure";
+let value: GetAllPromptTemplatesItemsProvider = "groq";
 ```
 
 ## Values

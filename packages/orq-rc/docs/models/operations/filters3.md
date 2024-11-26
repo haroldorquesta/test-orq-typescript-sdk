@@ -9,7 +9,7 @@ let value: Filters3 = {
   type: "string",
   operator: "contains",
   value: "<value>",
-  path: "/System",
+  path: "/usr/lib",
 };
 ```
 

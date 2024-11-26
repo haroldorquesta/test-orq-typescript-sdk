@@ -9,7 +9,7 @@ import { UpdatePromptResponseBodyPromptsResponse200ApplicationJSONEncodingFormat
 
 let value:
   UpdatePromptResponseBodyPromptsResponse200ApplicationJSONEncodingFormat =
-    "float";
+    "base64";
 ```
 
 ## Values

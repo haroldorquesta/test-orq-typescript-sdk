@@ -20,7 +20,7 @@ const value:
       {
         type: "image_url",
         imageUrl: {
-          url: "https://wide-eyed-yarmulke.info",
+          url: "https://monstrous-carboxyl.com/",
         },
       },
     ];

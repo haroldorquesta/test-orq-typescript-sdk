@@ -12,7 +12,7 @@ let value:
     {
       messages: [
         {
-          role: "tool",
+          role: "expected_output",
           content: "<value>",
         },
       ],

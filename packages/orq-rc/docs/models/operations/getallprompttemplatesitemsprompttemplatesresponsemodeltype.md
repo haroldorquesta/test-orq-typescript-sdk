@@ -7,7 +7,7 @@ The type of the model
 ```typescript
 import { GetAllPromptTemplatesItemsPromptTemplatesResponseModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptTemplatesItemsPromptTemplatesResponseModelType = "stt";
+let value: GetAllPromptTemplatesItemsPromptTemplatesResponseModelType = "chat";
 ```
 
 ## Values

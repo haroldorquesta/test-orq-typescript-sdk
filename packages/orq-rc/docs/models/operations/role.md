@@ -7,7 +7,7 @@ The role of the prompt message
 ```typescript
 import { Role } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: Role = "user";
+let value: Role = "exception";
 ```
 
 ## Values

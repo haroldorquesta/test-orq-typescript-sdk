@@ -16,10 +16,8 @@ const value: string = "<value>";
 ```typescript
 const value: operations.GetAllPromptsContentPromptsResponse2[] = [
   {
-    type: "image_url",
-    imageUrl: {
-      url: "https://different-scratch.info",
-    },
+    type: "text",
+    text: "<value>",
   },
 ];
 ```

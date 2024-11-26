@@ -6,8 +6,15 @@
 import { UpdatePromptResponseBodyPromptsResponse200ApplicationJSONMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: UpdatePromptResponseBodyPromptsResponse200ApplicationJSONMessages = {
-  role: "user",
-  content: "<value>",
+  role: "exception",
+  content: [
+    {
+      type: "image_url",
+      imageUrl: {
+        url: "https://determined-diver.com",
+      },
+    },
+  ],
 };
 ```
 

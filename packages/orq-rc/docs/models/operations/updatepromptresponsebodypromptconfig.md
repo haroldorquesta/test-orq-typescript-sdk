@@ -9,7 +9,12 @@ let value: UpdatePromptResponseBodyPromptConfig = {
   messages: [
     {
       role: "expected_output",
-      content: "<value>",
+      content: [
+        {
+          type: "text",
+          text: "<value>",
+        },
+      ],
     },
   ],
 };

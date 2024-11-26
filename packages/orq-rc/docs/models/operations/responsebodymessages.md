@@ -6,12 +6,12 @@
 import { ResponseBodyMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: ResponseBodyMessages = {
-  role: "prompt",
+  role: "expected_output",
   content: [
     {
       type: "image_url",
       imageUrl: {
-        url: "https://prime-self-confidence.org",
+        url: "https://old-fashioned-fen.name/",
       },
     },
   ],

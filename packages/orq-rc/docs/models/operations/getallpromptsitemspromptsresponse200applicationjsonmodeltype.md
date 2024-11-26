@@ -8,7 +8,7 @@ The type of the model
 import { GetAllPromptsItemsPromptsResponse200ApplicationJSONModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONModelType =
-  "image";
+  "embedding";
 ```
 
 ## Values

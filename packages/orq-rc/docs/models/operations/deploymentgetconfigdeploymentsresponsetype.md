@@ -7,7 +7,7 @@ The type of the model. Current `chat`,`completion` and `image` are supported
 ```typescript
 import { DeploymentGetConfigDeploymentsResponseType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: DeploymentGetConfigDeploymentsResponseType = "completion";
+let value: DeploymentGetConfigDeploymentsResponseType = "vision";
 ```
 
 ## Values

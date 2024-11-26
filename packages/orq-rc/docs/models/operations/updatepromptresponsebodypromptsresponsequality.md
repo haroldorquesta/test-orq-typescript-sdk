@@ -7,7 +7,7 @@ Only supported on `image` models.
 ```typescript
 import { UpdatePromptResponseBodyPromptsResponseQuality } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: UpdatePromptResponseBodyPromptsResponseQuality = "hd";
+let value: UpdatePromptResponseBodyPromptsResponseQuality = "standard";
 ```
 
 ## Values

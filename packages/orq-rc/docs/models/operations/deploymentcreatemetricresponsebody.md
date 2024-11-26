@@ -8,7 +8,7 @@ Successful operation
 import { DeploymentCreateMetricResponseBody } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: DeploymentCreateMetricResponseBody = {
-  code: 2211.61,
+  code: 9292.91,
   success: false,
 };
 ```

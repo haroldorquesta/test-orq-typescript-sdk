@@ -10,19 +10,19 @@ import { ResponseBody3 } from "orq-poc-typescript-multi-env-version/models/opera
 let value: ResponseBody3 = {
   id: "<id>",
   owner: "vendor",
-  domainId: "ab286384-83e5-491a-84f6-93dc3e0c7d71",
-  createdById: "f52c0140-fb8c-4a23-ad57-60b8a4636afa",
-  displayName: "Hayden58",
-  updatedById: "f462edc0-831c-4388-b370-0e6e764149c8",
+  domainId: "881fb812-6581-4080-8060-6336156de449",
+  createdById: "50618af3-3fd9-4d3d-8d38-eaa84f74b954",
+  displayName: "Aric.Lakin5",
+  updatedById: "b3402d3f-24d6-44b0-bed1-cf79a4a76ece",
   promptConfig: {
     messages: [
       {
-        role: "assistant",
+        role: "system",
         content: [
           {
             type: "image_url",
             imageUrl: {
-              url: "https://enchanted-republican.net/",
+              url: "https://firm-honesty.com",
             },
           },
         ],
@@ -33,17 +33,19 @@ let value: ResponseBody3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "35a697cd-d997-4041-a7d9-a342d4821555",
-      displayName: "Emery.Borer",
-      updatedById: "174a2a74-b320-4d78-9115-8b7d60615fd3",
+      createdById: "18937702-9fa1-4d61-8936-5a6138c0919d",
+      displayName: "Jeromy90",
+      updatedById: "bd878b61-2f0b-4f2b-943d-e5a2ce5ae0d9",
       promptConfig: {
         messages: [
           {
-            role: "exception",
+            role: "tool",
             content: [
               {
-                type: "text",
-                text: "<value>",
+                type: "image_url",
+                imageUrl: {
+                  url: "https://lucky-tenant.biz",
+                },
               },
             ],
           },

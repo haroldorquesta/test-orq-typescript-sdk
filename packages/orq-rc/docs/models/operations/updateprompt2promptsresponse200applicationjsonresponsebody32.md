@@ -10,7 +10,7 @@ import { UpdatePrompt2PromptsResponse200ApplicationJSONResponseBody32 } from "or
 let value: UpdatePrompt2PromptsResponse200ApplicationJSONResponseBody32 = {
   type: "image_url",
   imageUrl: {
-    url: "https://huge-blowgun.com/",
+    url: "https://terrible-subexpression.name",
   },
 };
 ```

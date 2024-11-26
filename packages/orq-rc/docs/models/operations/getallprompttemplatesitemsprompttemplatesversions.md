@@ -9,19 +9,14 @@ import { GetAllPromptTemplatesItemsPromptTemplatesVersions } from "orq-poc-types
 
 let value: GetAllPromptTemplatesItemsPromptTemplatesVersions = {
   id: "<id>",
-  createdById: "51ce1c0f-984e-44df-ac81-7736527480ed",
-  displayName: "Roxanne_Brown-Murray",
-  updatedById: "2903f5a4-fb5c-4163-8a16-485b0a34cf5d",
+  createdById: "c9115cbb-c488-4bf4-9ca9-cf02c1834b0d",
+  displayName: "Jimmy.Oberbrunner10",
+  updatedById: "285ff99f-ec55-437f-8e10-e83aa140323a",
   promptConfig: {
     messages: [
       {
-        role: "prompt",
-        content: [
-          {
-            type: "text",
-            text: "<value>",
-          },
-        ],
+        role: "system",
+        content: "<value>",
       },
     ],
   },

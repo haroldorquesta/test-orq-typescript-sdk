@@ -6,7 +6,7 @@
 import { GetAllPromptTemplates2ImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptTemplates2ImageUrl = {
-  url: "https://monthly-characterization.biz/",
+  url: "https://stale-planula.org/",
 };
 ```
 

@@ -10,7 +10,7 @@ import { FindOnePromptSnippet2PromptSnippetsResponse2002 } from "orq-poc-typescr
 let value: FindOnePromptSnippet2PromptSnippetsResponse2002 = {
   type: "image_url",
   imageUrl: {
-    url: "https://yummy-department.info",
+    url: "https://frivolous-recovery.biz",
   },
 };
 ```

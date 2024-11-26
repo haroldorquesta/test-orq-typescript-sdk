@@ -11,7 +11,7 @@ let value: Filters4 = {
   values: [
     "<value>",
   ],
-  path: "/usr/bin",
+  path: "/Users",
 };
 ```
 

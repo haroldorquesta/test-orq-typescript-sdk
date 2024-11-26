@@ -10,7 +10,7 @@ import { UpdatePrompt2PromptsResponse2 } from "orq-poc-typescript-multi-env-vers
 let value: UpdatePrompt2PromptsResponse2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://corny-turret.name",
+    url: "https://disloyal-reasoning.info/",
   },
 };
 ```

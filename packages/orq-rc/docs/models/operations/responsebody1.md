@@ -9,11 +9,11 @@ import { ResponseBody1 } from "orq-poc-typescript-multi-env-version/models/opera
 
 let value: ResponseBody1 = {
   id: "<id>",
-  owner: "vendor",
-  domainId: "6be4a609-5071-4a88-aeeb-940153986cbb",
-  createdById: "06770a40-8e00-4980-81d7-12950a0122c1",
-  displayName: "Isadore.Rogahn87",
-  updatedById: "d2e580b3-ea44-42c7-84fc-9c1a5bfc9b74",
+  owner: "<value>",
+  domainId: "96545ef1-baa0-44b7-b08d-ee873dcd31be",
+  createdById: "8a148e79-0f72-4582-b3ed-14a40b354222",
+  displayName: "Mona.Marquardt",
+  updatedById: "7c83d280-5a28-48e7-8124-c491391b74da",
   promptConfig: {
     messages: [
       {
@@ -26,13 +26,13 @@ let value: ResponseBody1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "7ae937a3-bc8d-438e-bbc3-95a8a9bc0f62",
-      displayName: "Ottis.Miller",
-      updatedById: "c6cc6780-3dc1-4a08-92d9-1aeb1a9ac453",
+      createdById: "e293f592-79c8-4bd4-9508-fbf7b26a705a",
+      displayName: "Isidro84",
+      updatedById: "3042048a-639c-4bd4-9875-a2c0696a0d14",
       promptConfig: {
         messages: [
           {
-            role: "exception",
+            role: "system",
             content: "<value>",
           },
         ],

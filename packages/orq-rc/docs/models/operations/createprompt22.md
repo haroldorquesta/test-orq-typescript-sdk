@@ -10,7 +10,7 @@ import { CreatePrompt22 } from "orq-poc-typescript-multi-env-version/models/oper
 let value: CreatePrompt22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://thorough-scale.org/",
+    url: "https://parched-tail.biz",
   },
 };
 ```

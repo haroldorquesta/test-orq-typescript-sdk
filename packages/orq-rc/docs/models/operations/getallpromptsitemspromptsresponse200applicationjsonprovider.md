@@ -5,8 +5,7 @@
 ```typescript
 import { GetAllPromptsItemsPromptsResponse200ApplicationJSONProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONProvider =
-  "anthropic";
+let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONProvider = "groq";
 ```
 
 ## Values

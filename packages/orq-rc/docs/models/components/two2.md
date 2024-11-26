@@ -10,7 +10,7 @@ import { Two2 } from "orq-poc-typescript-multi-env-version/models/components";
 let value: Two2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://key-soup.biz/",
+    url: "https://tender-schedule.biz/",
   },
 };
 ```

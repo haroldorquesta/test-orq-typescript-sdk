@@ -7,7 +7,7 @@ Only supported on `image` models.
 ```typescript
 import { ItemsFormat } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: ItemsFormat = "json_object";
+let value: ItemsFormat = "text";
 ```
 
 ## Values

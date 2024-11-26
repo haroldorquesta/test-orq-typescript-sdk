@@ -8,7 +8,7 @@ Only supported on `image` models.
 import { UpdatePromptResponseBodyPromptsResponse200ApplicationJson3Format } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: UpdatePromptResponseBodyPromptsResponse200ApplicationJson3Format =
-  "json_object";
+  "url";
 ```
 
 ## Values

@@ -10,7 +10,7 @@ import { FindOnePromptSnippet22 } from "orq-poc-typescript-multi-env-version/mod
 let value: FindOnePromptSnippet22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://outlandish-exasperation.name/",
+    url: "https://utilized-accountability.name",
   },
 };
 ```

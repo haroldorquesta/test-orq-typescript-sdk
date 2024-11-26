@@ -9,7 +9,7 @@ let value: GetAllPromptsFilters3 = {
   type: "string",
   operator: "equals",
   value: "<value>",
-  path: "/usr/ports",
+  path: "/usr/local/bin",
 };
 ```
 

@@ -16,10 +16,8 @@ const value: string = "<value>";
 ```typescript
 const value: operations.GetAllPromptsContentPrompts2[] = [
   {
-    type: "image_url",
-    imageUrl: {
-      url: "https://common-advertisement.info/",
-    },
+    type: "text",
+    text: "<value>",
   },
 ];
 ```

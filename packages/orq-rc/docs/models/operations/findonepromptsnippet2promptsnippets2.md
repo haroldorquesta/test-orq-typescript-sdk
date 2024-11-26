@@ -10,7 +10,7 @@ import { FindOnePromptSnippet2PromptSnippets2 } from "orq-poc-typescript-multi-e
 let value: FindOnePromptSnippet2PromptSnippets2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://helpless-taro.com/",
+    url: "https://gracious-statue.info",
   },
 };
 ```

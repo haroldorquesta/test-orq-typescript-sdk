@@ -8,7 +8,7 @@ The role of the prompt message
 import { UpdatePromptResponseBodyPromptsResponse200ApplicationJSONRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: UpdatePromptResponseBodyPromptsResponse200ApplicationJSONRole =
-  "prompt";
+  "user";
 ```
 
 ## Values

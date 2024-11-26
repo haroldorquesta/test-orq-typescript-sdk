@@ -10,7 +10,7 @@ import { DeploymentCreateMetric22 } from "orq-poc-typescript-multi-env-version/m
 let value: DeploymentCreateMetric22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://sugary-thongs.net",
+    url: "https://good-natured-retention.name",
   },
 };
 ```

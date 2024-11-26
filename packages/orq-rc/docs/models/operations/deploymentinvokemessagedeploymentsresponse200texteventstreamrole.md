@@ -8,7 +8,7 @@ The role of the prompt message
 import { DeploymentInvokeMessageDeploymentsResponse200TextEventStreamRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: DeploymentInvokeMessageDeploymentsResponse200TextEventStreamRole =
-  "assistant";
+  "expected_output";
 ```
 
 ## Values

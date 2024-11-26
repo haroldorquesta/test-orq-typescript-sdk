@@ -6,7 +6,7 @@
 import { FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: FindOnePromptSnippet2PromptSnippetsResponse200ImageUrl = {
-  url: "https://firsthand-gloom.info",
+  url: "https://illiterate-monocle.biz",
 };
 ```
 

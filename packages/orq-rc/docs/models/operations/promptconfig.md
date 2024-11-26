@@ -8,8 +8,15 @@ import { PromptConfig } from "orq-poc-typescript-multi-env-version/models/operat
 let value: PromptConfig = {
   messages: [
     {
-      role: "assistant",
-      content: "<value>",
+      role: "correction",
+      content: [
+        {
+          type: "image_url",
+          imageUrl: {
+            url: "https://discrete-linseed.net/",
+          },
+        },
+      ],
     },
   ],
 };

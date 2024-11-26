@@ -7,7 +7,7 @@ Indicates the type of model used to generate the response
 ```typescript
 import { DeploymentInvokeDeploymentsObject } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: DeploymentInvokeDeploymentsObject = "chat";
+let value: DeploymentInvokeDeploymentsObject = "completion";
 ```
 
 ## Values

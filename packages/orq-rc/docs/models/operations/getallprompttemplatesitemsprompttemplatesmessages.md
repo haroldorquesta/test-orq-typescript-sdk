@@ -6,13 +6,11 @@
 import { GetAllPromptTemplatesItemsPromptTemplatesMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptTemplatesItemsPromptTemplatesMessages = {
-  role: "correction",
+  role: "tool",
   content: [
     {
-      type: "image_url",
-      imageUrl: {
-        url: "https://frequent-wriggler.biz",
-      },
+      type: "text",
+      text: "<value>",
     },
   ],
 };

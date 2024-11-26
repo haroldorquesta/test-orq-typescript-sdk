@@ -8,7 +8,7 @@ import { Filters1 } from "orq-poc-typescript-multi-env-version/models/operations
 let value: Filters1 = {
   type: "id",
   id: "<id>",
-  path: "/var/tmp",
+  path: "/etc/defaults",
 };
 ```
 

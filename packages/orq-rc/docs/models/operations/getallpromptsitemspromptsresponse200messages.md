@@ -6,7 +6,7 @@
 import { GetAllPromptsItemsPromptsResponse200Messages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsItemsPromptsResponse200Messages = {
-  role: "exception",
+  role: "user",
   content: "<value>",
 };
 ```

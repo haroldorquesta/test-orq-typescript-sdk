@@ -5,8 +5,8 @@
 export * from "./createcontact.js";
 export * from "./createfeedback.js";
 export * from "./createprompt.js";
-export * from "./createpromptversion.js";
 export * from "./deleteprompt.js";
+export * from "./deletev2deploymentsinvalidatedeploymentid.js";
 export * from "./deploymentcreatemetric.js";
 export * from "./deploymentgetconfig.js";
 export * from "./deploymentinvoke.js";
@@ -17,6 +17,6 @@ export * from "./findonepromptsnippet.js";
 export * from "./getallprompts.js";
 export * from "./getallprompttemplates.js";
 export * from "./getoneprompt.js";
-export * from "./invaliddeployment.js";
+export * from "./getv2resourcesevaluatorstemplates.js";
 export * from "./remoteconfigsgetconfig.js";
 export * from "./updateprompt.js";

@@ -10,7 +10,7 @@ import { GetAllPromptTemplates22 } from "orq-poc-typescript-multi-env-version/mo
 let value: GetAllPromptTemplates22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://shabby-airmail.info",
+    url: "https://busy-switchboard.net",
   },
 };
 ```

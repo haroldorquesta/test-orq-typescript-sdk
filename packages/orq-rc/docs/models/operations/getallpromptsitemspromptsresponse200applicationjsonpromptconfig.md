@@ -8,7 +8,7 @@ import { GetAllPromptsItemsPromptsResponse200ApplicationJSONPromptConfig } from 
 let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONPromptConfig = {
   messages: [
     {
-      role: "tool",
+      role: "assistant",
       content: "<value>",
     },
   ],

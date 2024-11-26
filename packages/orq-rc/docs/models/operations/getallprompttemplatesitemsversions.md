@@ -9,21 +9,14 @@ import { GetAllPromptTemplatesItemsVersions } from "orq-poc-typescript-multi-env
 
 let value: GetAllPromptTemplatesItemsVersions = {
   id: "<id>",
-  createdById: "296ef849-e684-4763-a845-8c5ed04715ba",
-  displayName: "Meredith_Heaney",
-  updatedById: "40b058e1-6059-4431-89ba-f0a99f0bd85c",
+  createdById: "ebf848e8-4e50-435d-9775-eff6fca332e4",
+  displayName: "Jermain42",
+  updatedById: "d1241619-391f-4e63-b470-a66cbf5ec594",
   promptConfig: {
     messages: [
       {
-        role: "exception",
-        content: [
-          {
-            type: "image_url",
-            imageUrl: {
-              url: "https://enchanted-handle.name/",
-            },
-          },
-        ],
+        role: "system",
+        content: "<value>",
       },
     ],
   },

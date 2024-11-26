@@ -6,13 +6,8 @@
 import { UpdatePromptResponseBodyPromptsMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: UpdatePromptResponseBodyPromptsMessages = {
-  role: "tool",
-  content: [
-    {
-      type: "text",
-      text: "<value>",
-    },
-  ],
+  role: "user",
+  content: "<value>",
 };
 ```
 

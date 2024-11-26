@@ -10,7 +10,7 @@ import { DeploymentGetConfig22 } from "orq-poc-typescript-multi-env-version/mode
 let value: DeploymentGetConfig22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://lovely-warming.org/",
+    url: "https://dreary-hippodrome.info/",
   },
 };
 ```

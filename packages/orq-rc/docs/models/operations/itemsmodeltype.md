@@ -7,7 +7,7 @@ The type of the model
 ```typescript
 import { ItemsModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: ItemsModelType = "chat";
+let value: ItemsModelType = "stt";
 ```
 
 ## Values

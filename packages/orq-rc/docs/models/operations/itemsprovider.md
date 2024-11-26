@@ -5,7 +5,7 @@
 ```typescript
 import { ItemsProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: ItemsProvider = "huggingface";
+let value: ItemsProvider = "leonardoai";
 ```
 
 ## Values

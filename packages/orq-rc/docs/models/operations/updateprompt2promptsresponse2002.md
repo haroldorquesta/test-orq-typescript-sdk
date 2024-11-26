@@ -10,7 +10,7 @@ import { UpdatePrompt2PromptsResponse2002 } from "orq-poc-typescript-multi-env-v
 let value: UpdatePrompt2PromptsResponse2002 = {
   type: "image_url",
   imageUrl: {
-    url: "https://swift-marksman.net/",
+    url: "https://made-up-attraction.com/",
   },
 };
 ```

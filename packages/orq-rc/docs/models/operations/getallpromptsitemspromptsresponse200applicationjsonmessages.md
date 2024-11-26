@@ -6,11 +6,13 @@
 import { GetAllPromptsItemsPromptsResponse200ApplicationJSONMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONMessages = {
-  role: "exception",
+  role: "system",
   content: [
     {
-      type: "text",
-      text: "<value>",
+      type: "image_url",
+      imageUrl: {
+        url: "https://crazy-loaf.org/",
+      },
     },
   ],
 };

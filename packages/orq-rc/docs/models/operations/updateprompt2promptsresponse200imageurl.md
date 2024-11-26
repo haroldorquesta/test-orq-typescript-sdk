@@ -6,7 +6,7 @@
 import { UpdatePrompt2PromptsResponse200ImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: UpdatePrompt2PromptsResponse200ImageUrl = {
-  url: "https://winged-statue.com",
+  url: "https://each-knickers.name",
 };
 ```
 

@@ -7,7 +7,12 @@ import { UpdatePromptResponseBodyPromptsResponseMessages } from "orq-poc-typescr
 
 let value: UpdatePromptResponseBodyPromptsResponseMessages = {
   role: "assistant",
-  content: "<value>",
+  content: [
+    {
+      type: "text",
+      text: "<value>",
+    },
+  ],
 };
 ```
 

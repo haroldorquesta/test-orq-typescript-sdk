@@ -7,7 +7,7 @@ import { FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSO
 
 let value:
   FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONProvider =
-    "azure";
+    "nvidia";
 ```
 
 ## Values

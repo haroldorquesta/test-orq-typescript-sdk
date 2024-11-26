@@ -8,12 +8,12 @@ import { GetAllPromptsItemsPromptsResponse200PromptConfig } from "orq-poc-typesc
 let value: GetAllPromptsItemsPromptsResponse200PromptConfig = {
   messages: [
     {
-      role: "assistant",
+      role: "prompt",
       content: [
         {
           type: "image_url",
           imageUrl: {
-            url: "https://accomplished-tomography.info",
+            url: "https://failing-baseboard.info/",
           },
         },
       ],

@@ -10,7 +10,7 @@ import { GetAllPromptTemplates2PromptTemplates2 } from "orq-poc-typescript-multi
 let value: GetAllPromptTemplates2PromptTemplates2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://pleasant-birdcage.org/",
+    url: "https://adolescent-interchange.net",
   },
 };
 ```

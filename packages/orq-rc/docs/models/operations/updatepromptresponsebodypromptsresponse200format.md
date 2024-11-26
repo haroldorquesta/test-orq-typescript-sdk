@@ -7,7 +7,7 @@ Only supported on `image` models.
 ```typescript
 import { UpdatePromptResponseBodyPromptsResponse200Format } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: UpdatePromptResponseBodyPromptsResponse200Format = "text";
+let value: UpdatePromptResponseBodyPromptsResponse200Format = "b64_json";
 ```
 
 ## Values

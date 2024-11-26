@@ -5,7 +5,7 @@
 ```typescript
 import { GetAllPromptTemplatesItemsPromptTemplatesProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptTemplatesItemsPromptTemplatesProvider = "anyscale";
+let value: GetAllPromptTemplatesItemsPromptTemplatesProvider = "anthropic";
 ```
 
 ## Values

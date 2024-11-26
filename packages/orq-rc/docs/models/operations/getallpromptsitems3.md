@@ -10,19 +10,19 @@ import { GetAllPromptsItems3 } from "orq-poc-typescript-multi-env-version/models
 let value: GetAllPromptsItems3 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "4eeb0a34-2973-4e3c-b02d-8a6622e77a08",
-  createdById: "667d9bb0-fb90-4e7e-a69e-7266bd0742ad",
-  displayName: "Clementina_Lebsack",
-  updatedById: "54bf479f-3f8b-4c2f-afdd-5de42c9165a6",
+  domainId: "663ccb0e-50ab-4a6d-b58e-b1ced7d14d06",
+  createdById: "717b5ef2-1472-43eb-b9b0-2bbd986dd760",
+  displayName: "Margarita_Labadie87",
+  updatedById: "d814ae19-a4c1-4308-b41e-3949ab40dfe1",
   promptConfig: {
     messages: [
       {
-        role: "correction",
+        role: "exception",
         content: [
           {
             type: "image_url",
             imageUrl: {
-              url: "https://experienced-lady.net",
+              url: "https://regal-obligation.name",
             },
           },
         ],
@@ -33,21 +33,14 @@ let value: GetAllPromptsItems3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "33ace7b2-5a2f-42c5-ab6b-e92f836bee2d",
-      displayName: "Halie_Schimmel65",
-      updatedById: "c067846c-4d02-4e70-a971-59ae71162e36",
+      createdById: "2dcfc9ea-429b-4d4e-b9bc-e46ed67b0538",
+      displayName: "Breana48",
+      updatedById: "b034fca1-c22d-401e-b4ca-1c3b68f44459",
       promptConfig: {
         messages: [
           {
-            role: "user",
-            content: [
-              {
-                type: "image_url",
-                imageUrl: {
-                  url: "https://swift-newsletter.info",
-                },
-              },
-            ],
+            role: "expected_output",
+            content: "<value>",
           },
         ],
       },

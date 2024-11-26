@@ -6,7 +6,7 @@
 import { DeploymentCreateMetricMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: DeploymentCreateMetricMessages = {
-  role: "user",
+  role: "tool",
   content: [
     {
       type: "text",

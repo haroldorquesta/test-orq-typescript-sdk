@@ -8,8 +8,15 @@ import { GetAllPromptsItemsPromptsPromptConfig } from "orq-poc-typescript-multi-
 let value: GetAllPromptsItemsPromptsPromptConfig = {
   messages: [
     {
-      role: "user",
-      content: "<value>",
+      role: "prompt",
+      content: [
+        {
+          type: "image_url",
+          imageUrl: {
+            url: "https://avaricious-electronics.biz",
+          },
+        },
+      ],
     },
   ],
 };

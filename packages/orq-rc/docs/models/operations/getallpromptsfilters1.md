@@ -8,7 +8,7 @@ import { GetAllPromptsFilters1 } from "orq-poc-typescript-multi-env-version/mode
 let value: GetAllPromptsFilters1 = {
   type: "id",
   id: "<id>",
-  path: "/selinux",
+  path: "/usr/bin",
 };
 ```
 

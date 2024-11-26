@@ -7,7 +7,7 @@ The type of the model
 ```typescript
 import { UpdatePromptResponseBodyPromptsModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: UpdatePromptResponseBodyPromptsModelType = "vision";
+let value: UpdatePromptResponseBodyPromptsModelType = "rerank";
 ```
 
 ## Values

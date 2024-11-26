@@ -22,7 +22,7 @@ const value:
     {
       type: "image_url",
       imageUrl: {
-        url: "https://pricey-suitcase.org",
+        url: "https://hefty-distinction.info/",
       },
     };
 ```

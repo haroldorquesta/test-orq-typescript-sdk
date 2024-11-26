@@ -8,13 +8,8 @@ import { GetAllPromptTemplatesItemsPromptTemplatesPromptConfig } from "orq-poc-t
 let value: GetAllPromptTemplatesItemsPromptTemplatesPromptConfig = {
   messages: [
     {
-      role: "system",
-      content: [
-        {
-          type: "text",
-          text: "<value>",
-        },
-      ],
+      role: "assistant",
+      content: "<value>",
     },
   ],
 };

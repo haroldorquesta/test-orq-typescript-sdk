@@ -8,8 +8,15 @@ import { UpdatePromptPromptConfig } from "orq-poc-typescript-multi-env-version/m
 let value: UpdatePromptPromptConfig = {
   messages: [
     {
-      role: "tool",
-      content: "<value>",
+      role: "assistant",
+      content: [
+        {
+          type: "image_url",
+          imageUrl: {
+            url: "https://frequent-gripper.biz",
+          },
+        },
+      ],
     },
   ],
 };

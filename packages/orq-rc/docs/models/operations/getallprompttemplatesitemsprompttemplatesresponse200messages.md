@@ -6,13 +6,11 @@
 import { GetAllPromptTemplatesItemsPromptTemplatesResponse200Messages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptTemplatesItemsPromptTemplatesResponse200Messages = {
-  role: "user",
+  role: "exception",
   content: [
     {
-      type: "image_url",
-      imageUrl: {
-        url: "https://impassioned-sand.com",
-      },
+      type: "text",
+      text: "<value>",
     },
   ],
 };

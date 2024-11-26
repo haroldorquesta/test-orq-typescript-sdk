@@ -7,8 +7,7 @@ The role of the prompt message
 ```typescript
 import { GetAllPromptTemplatesItemsPromptTemplatesResponseRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptTemplatesItemsPromptTemplatesResponseRole =
-  "expected_output";
+let value: GetAllPromptTemplatesItemsPromptTemplatesResponseRole = "assistant";
 ```
 
 ## Values

@@ -5,7 +5,7 @@
 ```typescript
 import { UpdatePromptResponseBodyPromptsResponseProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: UpdatePromptResponseBodyPromptsResponseProvider = "perplexity";
+let value: UpdatePromptResponseBodyPromptsResponseProvider = "huggingface";
 ```
 
 ## Values

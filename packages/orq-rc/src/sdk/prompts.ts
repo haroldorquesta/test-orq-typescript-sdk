@@ -3,7 +3,6 @@
  */
 
 import { promptsCreate } from "../funcs/promptsCreate.js";
-import { promptsCreateVersion } from "../funcs/promptsCreateVersion.js";
 import { promptsDelete } from "../funcs/promptsDelete.js";
 import { promptsDuplicate } from "../funcs/promptsDuplicate.js";
 import { promptsGetAll } from "../funcs/promptsGetAll.js";
@@ -22,20 +21,6 @@ export class Prompts extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.CreatePromptResponseBody> {
     return unwrapAsync(promptsCreate(
-      this,
-      request,
-      options,
-    ));
-  }
-
-  /**
-   * Create a new prompt version
-   */
-  async createVersion(
-    request: operations.CreatePromptVersionRequest,
-    options?: RequestOptions,
-  ): Promise<operations.CreatePromptVersionResponseBody> {
-    return unwrapAsync(promptsCreateVersion(
       this,
       request,
       options,

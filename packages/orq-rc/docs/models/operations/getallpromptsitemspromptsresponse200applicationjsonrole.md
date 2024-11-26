@@ -8,7 +8,7 @@ The role of the prompt message
 import { GetAllPromptsItemsPromptsResponse200ApplicationJSONRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONRole =
-  "expected_output";
+  "assistant";
 ```
 
 ## Values

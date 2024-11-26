@@ -6,12 +6,12 @@
 import { UpdatePromptMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: UpdatePromptMessages = {
-  role: "system",
+  role: "prompt",
   content: [
     {
       type: "image_url",
       imageUrl: {
-        url: "https://elegant-presume.com/",
+        url: "https://infatuated-bug.info",
       },
     },
   ],

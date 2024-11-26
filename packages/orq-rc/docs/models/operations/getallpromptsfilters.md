@@ -9,7 +9,7 @@
 const value: operations.GetAllPromptsFilters1 = {
   type: "id",
   id: "<id>",
-  path: "/selinux",
+  path: "/System",
 };
 ```
 
@@ -30,9 +30,9 @@ const value: operations.GetAllPromptsFilters2 = {
 ```typescript
 const value: operations.GetAllPromptsFilters3 = {
   type: "string",
-  operator: "contains",
+  operator: "equals",
   value: "<value>",
-  path: "/var/log",
+  path: "/lib",
 };
 ```
 
@@ -45,7 +45,7 @@ const value: operations.Filters4 = {
   values: [
     "<value>",
   ],
-  path: "/rescue",
+  path: "/proc",
 };
 ```
 

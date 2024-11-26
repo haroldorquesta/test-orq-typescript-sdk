@@ -8,13 +8,8 @@ import { ItemsPromptConfig } from "orq-poc-typescript-multi-env-version/models/o
 let value: ItemsPromptConfig = {
   messages: [
     {
-      role: "user",
-      content: [
-        {
-          type: "text",
-          text: "<value>",
-        },
-      ],
+      role: "system",
+      content: "<value>",
     },
   ],
 };
