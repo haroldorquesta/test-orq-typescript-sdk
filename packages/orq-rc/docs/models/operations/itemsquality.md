@@ -7,7 +7,7 @@ Only supported on `image` models.
 ```typescript
 import { ItemsQuality } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: ItemsQuality = "standard";
+let value: ItemsQuality = "hd";
 ```
 
 ## Values

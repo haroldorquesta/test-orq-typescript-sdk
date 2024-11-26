@@ -11,7 +11,7 @@ import {
 
 let value:
   FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONEncodingFormat =
-    "base64";
+    "float";
 ```
 
 ## Values

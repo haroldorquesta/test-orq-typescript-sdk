@@ -6,7 +6,7 @@
 import { GetAllPrompts2PromptsResponseImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPrompts2PromptsResponseImageUrl = {
-  url: "https://gracious-phrase.name",
+  url: "https://noted-stitcher.info/",
 };
 ```
 

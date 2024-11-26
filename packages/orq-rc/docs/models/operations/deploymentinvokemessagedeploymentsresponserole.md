@@ -7,7 +7,7 @@ The role of the prompt message
 ```typescript
 import { DeploymentInvokeMessageDeploymentsResponseRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: DeploymentInvokeMessageDeploymentsResponseRole = "assistant";
+let value: DeploymentInvokeMessageDeploymentsResponseRole = "expected_output";
 ```
 
 ## Values

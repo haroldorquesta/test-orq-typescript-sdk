@@ -6,7 +6,7 @@
 import { UpdatePrompt2PromptsImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: UpdatePrompt2PromptsImageUrl = {
-  url: "https://incomparable-blossom.biz/",
+  url: "https://tempting-pupil.com/",
 };
 ```
 

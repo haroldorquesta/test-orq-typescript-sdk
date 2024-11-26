@@ -6,7 +6,7 @@
 import { UpdatePromptResponseBodyPromptsResponse200Messages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: UpdatePromptResponseBodyPromptsResponse200Messages = {
-  role: "tool",
+  role: "exception",
   content: [
     {
       type: "text",

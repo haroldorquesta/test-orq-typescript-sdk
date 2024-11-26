@@ -6320,7 +6320,7 @@ export const FindOnePromptSnippetResponseBody3$inboundSchema: z.ZodType<
   created: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   updated: z.string().datetime({ offset: true }).default(
-    "2024-11-26T03:01:20.782Z",
+    "2024-11-26T03:17:57.484Z",
   ).transform(v => new Date(v)),
   versions: z.array(
     z.lazy(() =>
@@ -6384,7 +6384,7 @@ export const FindOnePromptSnippetResponseBody3$outboundSchema: z.ZodType<
     FindOnePromptSnippetResponseBodyPromptSnippetsResponseMetadata$outboundSchema
   ),
   created: z.date().transform(v => v.toISOString()).optional(),
-  updated: z.date().default(() => new Date("2024-11-26T03:01:20.782Z"))
+  updated: z.date().default(() => new Date("2024-11-26T03:17:57.484Z"))
     .transform(v => v.toISOString()),
   versions: z.array(
     z.lazy(() =>
@@ -9954,7 +9954,7 @@ export const FindOnePromptSnippetResponseBody2$inboundSchema: z.ZodType<
   created: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   updated: z.string().datetime({ offset: true }).default(
-    "2024-11-26T03:01:20.782Z",
+    "2024-11-26T03:17:57.484Z",
   ).transform(v => new Date(v)),
   versions: z.array(
     z.lazy(() =>
@@ -10018,7 +10018,7 @@ export const FindOnePromptSnippetResponseBody2$outboundSchema: z.ZodType<
     FindOnePromptSnippetResponseBodyPromptSnippetsMetadata$outboundSchema
   ),
   created: z.date().transform(v => v.toISOString()).optional(),
-  updated: z.date().default(() => new Date("2024-11-26T03:01:20.782Z"))
+  updated: z.date().default(() => new Date("2024-11-26T03:17:57.484Z"))
     .transform(v => v.toISOString()),
   versions: z.array(
     z.lazy(() =>
@@ -13450,7 +13450,7 @@ export const FindOnePromptSnippetResponseBody1$inboundSchema: z.ZodType<
   created: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   updated: z.string().datetime({ offset: true }).default(
-    "2024-11-26T03:01:20.782Z",
+    "2024-11-26T03:17:57.484Z",
   ).transform(v => new Date(v)),
   versions: z.array(
     z.lazy(() => FindOnePromptSnippetResponseBodyVersions$inboundSchema),
@@ -13504,7 +13504,7 @@ export const FindOnePromptSnippetResponseBody1$outboundSchema: z.ZodType<
     FindOnePromptSnippetResponseBodyMetadata$outboundSchema
   ),
   created: z.date().transform(v => v.toISOString()).optional(),
-  updated: z.date().default(() => new Date("2024-11-26T03:01:20.782Z"))
+  updated: z.date().default(() => new Date("2024-11-26T03:17:57.484Z"))
     .transform(v => v.toISOString()),
   versions: z.array(
     z.lazy(() => FindOnePromptSnippetResponseBodyVersions$outboundSchema),

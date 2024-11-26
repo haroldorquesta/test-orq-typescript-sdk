@@ -5,7 +5,7 @@
 ```typescript
 import { UpdatePromptResponseBodyPromptsResponse200Provider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: UpdatePromptResponseBodyPromptsResponse200Provider = "groq";
+let value: UpdatePromptResponseBodyPromptsResponse200Provider = "aws";
 ```
 
 ## Values

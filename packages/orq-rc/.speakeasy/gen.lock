@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 2e8e2787-9dc5-456e-b8ec-6b1fc6b2c02c
 management:
-  docChecksum: 635f2f58bb2f1ef9377cbc4457e71b82
+  docChecksum: c0b199e581ae2e830fbf57662173f608
   docVersion: "2.0"
   speakeasyVersion: 1.446.0
   generationVersion: 2.462.0
-  releaseVersion: 1.43.1-rc.6
-  configChecksum: 9ea13cfaa98f0bac86f1d5be2df6369b
+  releaseVersion: 1.43.1-rc.7
+  configChecksum: 1463e40491a17c95071a266aec50b8d2
   repoURL: https://github.com/haroldorquesta/test-orq-typescript-sdk.git
   repoSubDirectory: packages/orq-rc
   installationURL: https://gitpkg.now.sh/haroldorquesta/test-orq-typescript-sdk/packages/orq-rc
@@ -187,14 +187,7 @@ generatedFiles:
   - docs/models/operations/createpromptversiontoolcalls.md
   - docs/models/operations/createpromptversiontype.md
   - docs/models/operations/data.md
-  - docs/models/operations/data1.md
-  - docs/models/operations/data2.md
-  - docs/models/operations/datafunction.md
-  - docs/models/operations/datametadata.md
-  - docs/models/operations/dataoutputtype.md
-  - docs/models/operations/datatype.md
   - docs/models/operations/deletepromptrequest.md
-  - docs/models/operations/deletev2deploymentsinvalidatedeploymentidrequest.md
   - docs/models/operations/deploymentcreatemetric21.md
   - docs/models/operations/deploymentcreatemetric22.md
   - docs/models/operations/deploymentcreatemetric2deploymentsmetricstype.md
@@ -863,12 +856,9 @@ generatedFiles:
   - docs/models/operations/getallprompttemplatesresponseformatprompttemplatestype.md
   - docs/models/operations/getallprompttemplatesresponseformattype.md
   - docs/models/operations/getonepromptrequest.md
-  - docs/models/operations/getv2resourcesevaluatorstemplatesdata.md
-  - docs/models/operations/getv2resourcesevaluatorstemplatesdatatype.md
-  - docs/models/operations/getv2resourcesevaluatorstemplatesobject.md
-  - docs/models/operations/getv2resourcesevaluatorstemplatesresponsebody.md
   - docs/models/operations/imageurl.md
   - docs/models/operations/inputs.md
+  - docs/models/operations/invaliddeploymentrequest.md
   - docs/models/operations/invokeoptions.md
   - docs/models/operations/items.md
   - docs/models/operations/items1.md
@@ -908,7 +898,6 @@ generatedFiles:
   - docs/models/operations/objectt.md
   - docs/models/operations/one.md
   - docs/models/operations/operator.md
-  - docs/models/operations/outputtype.md
   - docs/models/operations/owner.md
   - docs/models/operations/owner2.md
   - docs/models/operations/parameterst.md
@@ -1148,7 +1137,6 @@ generatedFiles:
   - docs/models/operations/versions.md
   - docs/sdks/contacts/README.md
   - docs/sdks/deployments/README.md
-  - docs/sdks/evaluators/README.md
   - docs/sdks/feedback/README.md
   - docs/sdks/files/README.md
   - docs/sdks/metrics/README.md
@@ -1163,11 +1151,10 @@ generatedFiles:
   - src/core.ts
   - src/funcs/contactsCreate.ts
   - src/funcs/deploymentsAll.ts
-  - src/funcs/deploymentsDeleteV2DeploymentsInvalidateDeploymentId.ts
   - src/funcs/deploymentsGetConfig.ts
+  - src/funcs/deploymentsInvalidate.ts
   - src/funcs/deploymentsInvoke.ts
   - src/funcs/deploymentsMetricsCreate.ts
-  - src/funcs/evaluatorsGetV2ResourcesEvaluatorsTemplates.ts
   - src/funcs/feedbackCreate.ts
   - src/funcs/filesUpload.ts
   - src/funcs/promptSnippetsFindOne.ts
@@ -1215,7 +1202,6 @@ generatedFiles:
   - src/models/operations/createprompt.ts
   - src/models/operations/createpromptversion.ts
   - src/models/operations/deleteprompt.ts
-  - src/models/operations/deletev2deploymentsinvalidatedeploymentid.ts
   - src/models/operations/deploymentcreatemetric.ts
   - src/models/operations/deploymentgetconfig.ts
   - src/models/operations/deploymentinvoke.ts
@@ -1226,13 +1212,12 @@ generatedFiles:
   - src/models/operations/getallprompts.ts
   - src/models/operations/getallprompttemplates.ts
   - src/models/operations/getoneprompt.ts
-  - src/models/operations/getv2resourcesevaluatorstemplates.ts
   - src/models/operations/index.ts
+  - src/models/operations/invaliddeployment.ts
   - src/models/operations/remoteconfigsgetconfig.ts
   - src/models/operations/updateprompt.ts
   - src/sdk/contacts.ts
   - src/sdk/deployments.ts
-  - src/sdk/evaluators.ts
   - src/sdk/feedback.ts
   - src/sdk/files.ts
   - src/sdk/index.ts
@@ -1414,4 +1399,9 @@ examples:
       responses:
         "200":
           application/json: {"count": "4610.08", "page": "592.16", "limit": "5984.80", "totalPages": "6512.03", "items": []}
+  InvalidDeployment:
+    speakeasy-default-invalid-deployment:
+      parameters:
+        path:
+          deployment_id: "e1106c66-dcfb-4003-a0e1-3c49405187d4"
 generatedTests: {}

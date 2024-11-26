@@ -7,7 +7,7 @@ The type of the model
 ```typescript
 import { GetAllPromptTemplatesItemsModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptTemplatesItemsModelType = "stt";
+let value: GetAllPromptTemplatesItemsModelType = "embedding";
 ```
 
 ## Values

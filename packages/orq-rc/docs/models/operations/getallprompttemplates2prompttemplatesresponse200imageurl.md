@@ -6,7 +6,7 @@
 import { GetAllPromptTemplates2PromptTemplatesResponse200ImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptTemplates2PromptTemplatesResponse200ImageUrl = {
-  url: "https://productive-unibody.net",
+  url: "https://wide-scratch.net/",
 };
 ```
 

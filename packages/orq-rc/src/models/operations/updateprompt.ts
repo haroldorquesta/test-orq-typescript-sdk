@@ -7651,7 +7651,7 @@ export const ResponseBody3$inboundSchema: z.ZodType<
   created: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   updated: z.string().datetime({ offset: true }).default(
-    "2024-11-26T03:01:20.782Z",
+    "2024-11-26T03:17:57.484Z",
   ).transform(v => new Date(v)),
   versions: z.array(
     z.lazy(() => UpdatePromptResponseBodyVersions$inboundSchema),
@@ -7705,7 +7705,7 @@ export const ResponseBody3$outboundSchema: z.ZodType<
     UpdatePromptResponseBodyPromptsMetadata$outboundSchema
   ),
   created: z.date().transform(v => v.toISOString()).optional(),
-  updated: z.date().default(() => new Date("2024-11-26T03:01:20.782Z"))
+  updated: z.date().default(() => new Date("2024-11-26T03:17:57.484Z"))
     .transform(v => v.toISOString()),
   versions: z.array(
     z.lazy(() => UpdatePromptResponseBodyVersions$outboundSchema),
@@ -11007,7 +11007,7 @@ export const ResponseBody2$inboundSchema: z.ZodType<
   created: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   updated: z.string().datetime({ offset: true }).default(
-    "2024-11-26T03:01:20.782Z",
+    "2024-11-26T03:17:57.484Z",
   ).transform(v => new Date(v)),
   versions: z.array(z.lazy(() => ResponseBodyVersions$inboundSchema)),
   key: z.string(),
@@ -11059,7 +11059,7 @@ export const ResponseBody2$outboundSchema: z.ZodType<
   ),
   metadata: z.lazy(() => UpdatePromptResponseBodyMetadata$outboundSchema),
   created: z.date().transform(v => v.toISOString()).optional(),
-  updated: z.date().default(() => new Date("2024-11-26T03:01:20.782Z"))
+  updated: z.date().default(() => new Date("2024-11-26T03:17:57.484Z"))
     .transform(v => v.toISOString()),
   versions: z.array(z.lazy(() => ResponseBodyVersions$outboundSchema)),
   key: z.string(),
@@ -14249,7 +14249,7 @@ export const ResponseBody1$inboundSchema: z.ZodType<
   created: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   updated: z.string().datetime({ offset: true }).default(
-    "2024-11-26T03:01:20.782Z",
+    "2024-11-26T03:17:57.484Z",
   ).transform(v => new Date(v)),
   versions: z.array(z.lazy(() => Versions$inboundSchema)),
   type: ResponseBodyType$inboundSchema,
@@ -14297,7 +14297,7 @@ export const ResponseBody1$outboundSchema: z.ZodType<
   promptConfig: z.lazy(() => ResponseBodyPromptConfig$outboundSchema),
   metadata: z.lazy(() => ResponseBodyMetadata$outboundSchema),
   created: z.date().transform(v => v.toISOString()).optional(),
-  updated: z.date().default(() => new Date("2024-11-26T03:01:20.782Z"))
+  updated: z.date().default(() => new Date("2024-11-26T03:17:57.484Z"))
     .transform(v => v.toISOString()),
   versions: z.array(z.lazy(() => Versions$outboundSchema)),
   type: ResponseBodyType$outboundSchema,

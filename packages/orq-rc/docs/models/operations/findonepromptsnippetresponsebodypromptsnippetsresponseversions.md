@@ -9,19 +9,14 @@ import { FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions } from "
 
 let value: FindOnePromptSnippetResponseBodyPromptSnippetsResponseVersions = {
   id: "<id>",
-  createdById: "ef734c46-79f3-4545-915e-45fb8c171325",
-  displayName: "Ulises81",
-  updatedById: "47236b8e-d099-4f08-b309-cc06033354f5",
+  createdById: "bd72d9bb-f4b5-4635-9f43-947d3698fabf",
+  displayName: "Finn18",
+  updatedById: "8ad35b60-6e65-4fa5-a1cb-e31b325d807a",
   promptConfig: {
     messages: [
       {
-        role: "assistant",
-        content: [
-          {
-            type: "text",
-            text: "<value>",
-          },
-        ],
+        role: "tool",
+        content: "<value>",
       },
     ],
   },

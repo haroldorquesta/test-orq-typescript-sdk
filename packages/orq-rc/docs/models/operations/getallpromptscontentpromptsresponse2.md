@@ -18,7 +18,7 @@ const value: operations.GetAllPrompts2PromptsResponse1 = {
 const value: operations.GetAllPrompts2PromptsResponse2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://posh-draw.biz",
+    url: "https://zesty-pliers.name/",
   },
 };
 ```

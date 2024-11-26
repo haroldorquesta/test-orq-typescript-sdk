@@ -7,7 +7,7 @@ The type of the model
 ```typescript
 import { CreatePromptVersionPromptsModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: CreatePromptVersionPromptsModelType = "image";
+let value: CreatePromptVersionPromptsModelType = "rerank";
 ```
 
 ## Values

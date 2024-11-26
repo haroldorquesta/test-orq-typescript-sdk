@@ -6,13 +6,8 @@
 import { GetAllPromptsItemsPromptsResponse200Messages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsItemsPromptsResponse200Messages = {
-  role: "system",
-  content: [
-    {
-      type: "text",
-      text: "<value>",
-    },
-  ],
+  role: "exception",
+  content: "<value>",
 };
 ```
 

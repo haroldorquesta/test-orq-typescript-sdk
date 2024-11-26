@@ -7,14 +7,7 @@ import { CreatePromptVersionMessages } from "orq-poc-typescript-multi-env-versio
 
 let value: CreatePromptVersionMessages = {
   role: "prompt",
-  content: [
-    {
-      type: "image_url",
-      imageUrl: {
-        url: "https://infatuated-bug.info",
-      },
-    },
-  ],
+  content: "<value>",
 };
 ```
 

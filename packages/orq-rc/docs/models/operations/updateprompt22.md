@@ -10,7 +10,7 @@ import { UpdatePrompt22 } from "orq-poc-typescript-multi-env-version/models/oper
 let value: UpdatePrompt22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://numb-characterization.com/",
+    url: "https://minty-attraction.net",
   },
 };
 ```

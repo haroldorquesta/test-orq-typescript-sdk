@@ -18,7 +18,7 @@ const value: operations.GetAllPromptsContentPromptsResponse2[] = [
   {
     type: "image_url",
     imageUrl: {
-      url: "https://idolized-suv.net/",
+      url: "https://different-scratch.info",
     },
   },
 ];

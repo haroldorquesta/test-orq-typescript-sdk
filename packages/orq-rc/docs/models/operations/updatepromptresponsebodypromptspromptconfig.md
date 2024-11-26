@@ -13,7 +13,7 @@ let value: UpdatePromptResponseBodyPromptsPromptConfig = {
         {
           type: "image_url",
           imageUrl: {
-            url: "https://hot-hose.net/",
+            url: "https://courageous-jump.net/",
           },
         },
       ],

@@ -7,7 +7,7 @@ The role of the prompt message
 ```typescript
 import { UpdatePromptResponseBodyRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: UpdatePromptResponseBodyRole = "user";
+let value: UpdatePromptResponseBodyRole = "exception";
 ```
 
 ## Values

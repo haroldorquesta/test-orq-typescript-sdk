@@ -18,7 +18,7 @@ const value: operations.CreatePromptVersion21 = {
 const value: operations.CreatePromptVersion22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://aware-presume.name/",
+    url: "https://gentle-duster.biz/",
   },
 };
 ```

@@ -8,13 +8,11 @@ import { GetAllPromptsItemsPromptsResponsePromptConfig } from "orq-poc-typescrip
 let value: GetAllPromptsItemsPromptsResponsePromptConfig = {
   messages: [
     {
-      role: "assistant",
+      role: "prompt",
       content: [
         {
-          type: "image_url",
-          imageUrl: {
-            url: "https://troubled-bar.name/",
-          },
+          type: "text",
+          text: "<value>",
         },
       ],
     },

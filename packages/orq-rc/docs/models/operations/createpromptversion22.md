@@ -10,7 +10,7 @@ import { CreatePromptVersion22 } from "orq-poc-typescript-multi-env-version/mode
 let value: CreatePromptVersion22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://trim-fishery.info/",
+    url: "https://coordinated-chainstay.net",
   },
 };
 ```

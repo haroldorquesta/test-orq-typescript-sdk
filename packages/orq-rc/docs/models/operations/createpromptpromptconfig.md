@@ -8,7 +8,7 @@ import { CreatePromptPromptConfig } from "orq-poc-typescript-multi-env-version/m
 let value: CreatePromptPromptConfig = {
   messages: [
     {
-      role: "expected_output",
+      role: "system",
       content: "<value>",
     },
   ],

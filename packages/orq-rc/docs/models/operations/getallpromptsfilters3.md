@@ -7,9 +7,9 @@ import { GetAllPromptsFilters3 } from "orq-poc-typescript-multi-env-version/mode
 
 let value: GetAllPromptsFilters3 = {
   type: "string",
-  operator: "contains",
+  operator: "equals",
   value: "<value>",
-  path: "/boot/defaults",
+  path: "/usr/ports",
 };
 ```
 

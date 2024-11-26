@@ -8,7 +8,7 @@ import { UpdatePromptResponseBodyPromptConfig } from "orq-poc-typescript-multi-e
 let value: UpdatePromptResponseBodyPromptConfig = {
   messages: [
     {
-      role: "tool",
+      role: "expected_output",
       content: "<value>",
     },
   ],

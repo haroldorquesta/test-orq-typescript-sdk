@@ -20,7 +20,7 @@ const value:
       {
         type: "image_url",
         imageUrl: {
-          url: "https://complete-angle.org/",
+          url: "https://brisk-unit.org/",
         },
       },
     ];

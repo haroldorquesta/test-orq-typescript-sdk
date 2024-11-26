@@ -7,7 +7,7 @@ The role of the prompt message
 ```typescript
 import { UpdatePromptRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: UpdatePromptRole = "prompt";
+let value: UpdatePromptRole = "assistant";
 ```
 
 ## Values

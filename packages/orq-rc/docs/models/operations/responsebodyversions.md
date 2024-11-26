@@ -9,19 +9,17 @@ import { ResponseBodyVersions } from "orq-poc-typescript-multi-env-version/model
 
 let value: ResponseBodyVersions = {
   id: "<id>",
-  createdById: "5a565752-317d-41a6-8d5b-68cf2820bf91",
-  displayName: "Emelie46",
-  updatedById: "e8a54281-75c6-4e3e-a918-4ba16e6b1d8f",
+  createdById: "56de4492-5061-48af-933f-d9d3dd38eaa8",
+  displayName: "Wilford_Hahn",
+  updatedById: "431a8300-b340-42d3-af24-d64b0ed1cf79",
   promptConfig: {
     messages: [
       {
-        role: "correction",
+        role: "user",
         content: [
           {
-            type: "image_url",
-            imageUrl: {
-              url: "https://helpless-appliance.info",
-            },
+            type: "text",
+            text: "<value>",
           },
         ],
       },

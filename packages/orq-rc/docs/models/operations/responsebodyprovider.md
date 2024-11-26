@@ -5,7 +5,7 @@
 ```typescript
 import { ResponseBodyProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: ResponseBodyProvider = "google";
+let value: ResponseBodyProvider = "aws";
 ```
 
 ## Values

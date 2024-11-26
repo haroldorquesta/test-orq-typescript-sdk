@@ -9,13 +9,13 @@ import { UpdatePromptResponseBodyVersions } from "orq-poc-typescript-multi-env-v
 
 let value: UpdatePromptResponseBodyVersions = {
   id: "<id>",
-  createdById: "26581080-0606-4336-b156-de449250618a",
-  displayName: "Cleora61",
-  updatedById: "3dd38eaa-84f7-44b9-8543-1a8300b3402d",
+  createdById: "c905cbaa-9a98-4c57-a635-056133352b51",
+  displayName: "Chelsea.Cruickshank",
+  updatedById: "0c5a060d-2a42-4e9e-a4df-6e55ff3d5fde",
   promptConfig: {
     messages: [
       {
-        role: "expected_output",
+        role: "user",
         content: "<value>",
       },
     ],

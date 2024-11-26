@@ -10,10 +10,10 @@ import { ResponseBody2 } from "orq-poc-typescript-multi-env-version/models/opera
 let value: ResponseBody2 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "d3b0ea64-296b-4e4a-8609-5071a88eeb94",
-  createdById: "153986cb-b806-4770-aa40-8e009801d712",
-  displayName: "Erna.Nicolas11",
-  updatedById: "2c1272b7-e0d2-4e58-80b3-ea442c74fc9c",
+  domainId: "eced09ba-4601-4893-a770-29fa1d619365",
+  createdById: "6138c091-9d37-4c22-8ebb-d878b612f0bf",
+  displayName: "Misael_Ferry",
+  updatedById: "a2ce5ae0-d968-4db8-87e3-1ab944947583",
   promptConfig: {
     messages: [
       {
@@ -26,13 +26,13 @@ let value: ResponseBody2 = {
   versions: [
     {
       id: "<id>",
-      createdById: "bfc9b740-a27a-4e93-a7a3-bc8d38ebc395",
-      displayName: "Juana_Mosciski79",
-      updatedById: "f62ec693-66c6-4cc6-b780-3dc1a082d91a",
+      createdById: "3d61b499-f34e-4b7b-9662-84a6dc29b818",
+      displayName: "Eric.Hane73",
+      updatedById: "cf7c2cf8-42e5-4766-9cea-f39abc5e2479",
       promptConfig: {
         messages: [
           {
-            role: "prompt",
+            role: "expected_output",
             content: "<value>",
           },
         ],

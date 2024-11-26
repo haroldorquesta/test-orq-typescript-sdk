@@ -8,9 +8,11 @@ import { GetAllPromptTemplatesRequestBody } from "orq-poc-typescript-multi-env-v
 let value: GetAllPromptTemplatesRequestBody = {
   filters: [
     {
-      type: "id",
-      id: "<id>",
-      path: "/usr/share",
+      type: "search",
+      value: "<value>",
+      searchPaths: [
+        "<value>",
+      ],
     },
   ],
 };

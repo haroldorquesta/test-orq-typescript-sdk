@@ -7,7 +7,7 @@ Only supported on `image` models.
 ```typescript
 import { CreatePromptVersionFormat } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: CreatePromptVersionFormat = "url";
+let value: CreatePromptVersionFormat = "json_object";
 ```
 
 ## Values

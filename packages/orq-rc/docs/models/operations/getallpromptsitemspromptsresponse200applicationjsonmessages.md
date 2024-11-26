@@ -6,8 +6,13 @@
 import { GetAllPromptsItemsPromptsResponse200ApplicationJSONMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONMessages = {
-  role: "expected_output",
-  content: "<value>",
+  role: "exception",
+  content: [
+    {
+      type: "text",
+      text: "<value>",
+    },
+  ],
 };
 ```
 

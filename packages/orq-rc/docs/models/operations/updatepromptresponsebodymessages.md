@@ -6,13 +6,8 @@
 import { UpdatePromptResponseBodyMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: UpdatePromptResponseBodyMessages = {
-  role: "correction",
-  content: [
-    {
-      type: "text",
-      text: "<value>",
-    },
-  ],
+  role: "assistant",
+  content: "<value>",
 };
 ```
 

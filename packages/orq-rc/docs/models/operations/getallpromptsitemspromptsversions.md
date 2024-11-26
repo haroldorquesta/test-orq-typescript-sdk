@@ -9,19 +9,17 @@ import { GetAllPromptsItemsPromptsVersions } from "orq-poc-typescript-multi-env-
 
 let value: GetAllPromptsItemsPromptsVersions = {
   id: "<id>",
-  createdById: "906033f4-d6da-4010-813c-b36d191f7e2f",
-  displayName: "Andreanne.Sanford",
-  updatedById: "fadd29f1-7cf1-46c9-9e18-9dd790b0a8f2",
+  createdById: "0aba6d58-eb1c-4ed7-8d14-d06d717b5ef2",
+  displayName: "Elijah93",
+  updatedById: "9b02bbd9-86dd-4760-aca7-8ee2d814ae19",
   promptConfig: {
     messages: [
       {
-        role: "correction",
+        role: "user",
         content: [
           {
-            type: "image_url",
-            imageUrl: {
-              url: "https://rewarding-swine.com",
-            },
+            type: "text",
+            text: "<value>",
           },
         ],
       },

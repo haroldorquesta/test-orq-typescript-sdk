@@ -9,7 +9,7 @@ import { GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyModelTyp
 
 let value:
   GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyModelType =
-    "tts";
+    "embedding";
 ```
 
 ## Values

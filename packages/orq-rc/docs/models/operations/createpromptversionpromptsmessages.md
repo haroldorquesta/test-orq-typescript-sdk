@@ -6,8 +6,13 @@
 import { CreatePromptVersionPromptsMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: CreatePromptVersionPromptsMessages = {
-  role: "correction",
-  content: "<value>",
+  role: "tool",
+  content: [
+    {
+      type: "text",
+      text: "<value>",
+    },
+  ],
 };
 ```
 

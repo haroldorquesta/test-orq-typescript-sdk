@@ -5,7 +5,7 @@
 ```typescript
 import { CreatePromptVersionProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: CreatePromptVersionProvider = "nvidia";
+let value: CreatePromptVersionProvider = "openai";
 ```
 
 ## Values

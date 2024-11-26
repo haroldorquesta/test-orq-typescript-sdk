@@ -10,7 +10,7 @@ import { UpdatePrompt2Prompts2 } from "orq-poc-typescript-multi-env-version/mode
 let value: UpdatePrompt2Prompts2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://nifty-cook.biz/",
+    url: "https://ambitious-kinase.name",
   },
 };
 ```

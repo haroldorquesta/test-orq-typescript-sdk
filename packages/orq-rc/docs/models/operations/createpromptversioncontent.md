@@ -16,10 +16,8 @@ const value: string = "<value>";
 ```typescript
 const value: operations.CreatePromptVersionContent2[] = [
   {
-    type: "image_url",
-    imageUrl: {
-      url: "https://improbable-cornet.info/",
-    },
+    type: "text",
+    text: "<value>",
   },
 ];
 ```

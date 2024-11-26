@@ -9,13 +9,13 @@ import { ItemsVersions } from "orq-poc-typescript-multi-env-version/models/opera
 
 let value: ItemsVersions = {
   id: "<id>",
-  createdById: "7f4074d3-4cb8-4b60-a081-0fd20f42b14f",
-  displayName: "Jovan96",
-  updatedById: "90be851c-e1c0-4f98-94e4-dfc817736527",
+  createdById: "619391fe-6347-40a6-a6cb-f5ec594d1326",
+  displayName: "Julie.Abbott6",
+  updatedById: "e3dc291b-ac7e-404b-a621-d7eb658eb0be",
   promptConfig: {
     messages: [
       {
-        role: "tool",
+        role: "assistant",
         content: "<value>",
       },
     ],

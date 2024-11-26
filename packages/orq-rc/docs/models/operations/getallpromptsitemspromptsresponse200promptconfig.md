@@ -11,8 +11,10 @@ let value: GetAllPromptsItemsPromptsResponse200PromptConfig = {
       role: "assistant",
       content: [
         {
-          type: "text",
-          text: "<value>",
+          type: "image_url",
+          imageUrl: {
+            url: "https://accomplished-tomography.info",
+          },
         },
       ],
     },

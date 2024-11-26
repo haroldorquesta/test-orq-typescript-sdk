@@ -7,7 +7,7 @@ Only supported on `image` models.
 ```typescript
 import { Format } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: Format = "b64_json";
+let value: Format = "url";
 ```
 
 ## Values

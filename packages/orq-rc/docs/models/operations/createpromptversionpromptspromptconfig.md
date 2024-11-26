@@ -8,13 +8,8 @@ import { CreatePromptVersionPromptsPromptConfig } from "orq-poc-typescript-multi
 let value: CreatePromptVersionPromptsPromptConfig = {
   messages: [
     {
-      role: "user",
-      content: [
-        {
-          type: "text",
-          text: "<value>",
-        },
-      ],
+      role: "tool",
+      content: "<value>",
     },
   ],
 };

@@ -5,7 +5,7 @@
 ```typescript
 import { GetAllPromptsItemsPromptsResponse200Provider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsItemsPromptsResponse200Provider = "groq";
+let value: GetAllPromptsItemsPromptsResponse200Provider = "anyscale";
 ```
 
 ## Values

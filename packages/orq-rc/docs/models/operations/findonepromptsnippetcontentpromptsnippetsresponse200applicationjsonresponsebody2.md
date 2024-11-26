@@ -22,7 +22,7 @@ const value:
     {
       type: "image_url",
       imageUrl: {
-        url: "https://intent-cd.com/",
+        url: "https://inborn-legend.name",
       },
     };
 ```

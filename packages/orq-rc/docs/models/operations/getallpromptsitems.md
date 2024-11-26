@@ -8,16 +8,23 @@
 ```typescript
 const value: operations.GetAllPromptsItems1 = {
   id: "<id>",
-  owner: "vendor",
-  domainId: "cce0f63f-de8b-488f-ab96-214b321d336a",
-  createdById: "ea8bac9c-eb54-4aa0-ab30-2a8d1da3bb14",
-  displayName: "Geoffrey11",
-  updatedById: "78443533-f7a5-4979-9bac-21573cbeb1a6",
+  owner: "<value>",
+  domainId: "3e05b961-2b75-456a-b912-10cd6fdd5fb5",
+  createdById: "0981d467-d995-4474-857d-ed8b57f527a2",
+  displayName: "Ellie.Padberg",
+  updatedById: "8c03f714-09f9-4953-b8e0-969d736216a4",
   promptConfig: {
     messages: [
       {
-        role: "tool",
-        content: "<value>",
+        role: "prompt",
+        content: [
+          {
+            type: "image_url",
+            imageUrl: {
+              url: "https://stylish-tomography.com/",
+            },
+          },
+        ],
       },
     ],
   },
@@ -25,13 +32,13 @@ const value: operations.GetAllPromptsItems1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "89805c58-533b-4ae6-8a77-d7e911f69622",
-      displayName: "Lelia.Harber",
-      updatedById: "cb33aa81-40cc-4e1e-aefc-44baa5849cb6",
+      createdById: "9a3da3f3-a7b1-4f33-b857-03ce3c00622a",
+      displayName: "Orpha_Swift",
+      updatedById: "0218a9da-d22e-453e-afa6-b025d4063065",
       promptConfig: {
         messages: [
           {
-            role: "correction",
+            role: "system",
             content: "<value>",
           },
         ],
@@ -51,14 +58,14 @@ const value: operations.GetAllPromptsItems1 = {
 const value: operations.GetAllPromptsItems2 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "770969e5-134d-48f4-814f-be94f364a6ff",
-  createdById: "ecb5acdc-5284-4c06-8c1a-3240a5f1e71d",
-  displayName: "Luna_Kirlin91",
-  updatedById: "63528893-6004-47bc-86cb-a248d6fa586e",
+  domainId: "ae2d90c8-c6a3-4358-abad-6e12a42e1fdd",
+  createdById: "3c097c06-726e-4748-804c-a093fc2672bd",
+  displayName: "Brent.Wyman17",
+  updatedById: "ec98c5ab-92fc-479c-a7bc-739880c86d34",
   promptConfig: {
     messages: [
       {
-        role: "assistant",
+        role: "exception",
         content: "<value>",
       },
     ],
@@ -67,13 +74,13 @@ const value: operations.GetAllPromptsItems2 = {
   versions: [
     {
       id: "<id>",
-      createdById: "c3b8df22-a0d6-4695-a43b-c93b2e7739f9",
-      displayName: "Edwardo_Dietrich",
-      updatedById: "791e638e-b54a-4157-ac5c-c03a705af325",
+      createdById: "47ccce0f-63fd-4e8b-888f-b96214b321d3",
+      displayName: "Giovanni_McGlynn",
+      updatedById: "bac9ceb5-4aa0-4b30-a2a8-d1da3bb14a6c",
       promptConfig: {
         messages: [
           {
-            role: "prompt",
+            role: "correction",
             content: "<value>",
           },
         ],
@@ -93,20 +100,20 @@ const value: operations.GetAllPromptsItems2 = {
 ```typescript
 const value: operations.GetAllPromptsItems3 = {
   id: "<id>",
-  owner: "<value>",
-  domainId: "02135162-96ac-416f-9077-d4c075c61b05",
-  createdById: "b51d0d12-22cc-4219-9b80-cbb31f7b1881",
-  displayName: "Silas31",
-  updatedById: "198636db-7fc0-4cb0-9e73-7d4e1198a04b",
+  owner: "vendor",
+  domainId: "78443533-f7a5-4979-9bac-21573cbeb1a6",
+  createdById: "9489805c-5853-43ba-8e6a-77d7e911f696",
+  displayName: "Brain_Moen32",
+  updatedById: "56cb33aa-8140-4cce-a1ee-fc44baa5849c",
   promptConfig: {
     messages: [
       {
-        role: "user",
+        role: "exception",
         content: [
           {
             type: "image_url",
             imageUrl: {
-              url: "https://powerless-valley.com",
+              url: "https://elegant-jellyfish.info/",
             },
           },
         ],
@@ -117,19 +124,14 @@ const value: operations.GetAllPromptsItems3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "2744f00e-207e-44ed-b46e-103320b27156",
-      displayName: "Meda.Kuhn",
-      updatedById: "8e94f27e-b8b7-46ab-aedf-1f31aafc699c",
+      createdById: "0969e513-4d8f-4414-bfbe-94f364a6ff1e",
+      displayName: "Mertie83",
+      updatedById: "5284c06c-1a32-440a-85f1-e71d1a379e46",
       promptConfig: {
         messages: [
           {
-            role: "exception",
-            content: [
-              {
-                type: "text",
-                text: "<value>",
-              },
-            ],
+            role: "user",
+            content: "<value>",
           },
         ],
       },

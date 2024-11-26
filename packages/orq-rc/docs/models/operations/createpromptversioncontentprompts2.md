@@ -18,7 +18,7 @@ const value: operations.CreatePromptVersion2Prompts1 = {
 const value: operations.CreatePromptVersion2Prompts2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://naughty-reward.com",
+    url: "https://spherical-pasta.com/",
   },
 };
 ```

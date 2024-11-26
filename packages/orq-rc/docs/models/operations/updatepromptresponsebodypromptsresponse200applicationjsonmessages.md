@@ -7,14 +7,7 @@ import { UpdatePromptResponseBodyPromptsResponse200ApplicationJSONMessages } fro
 
 let value: UpdatePromptResponseBodyPromptsResponse200ApplicationJSONMessages = {
   role: "user",
-  content: [
-    {
-      type: "image_url",
-      imageUrl: {
-        url: "https://brown-unit.net",
-      },
-    },
-  ],
+  content: "<value>",
 };
 ```
 

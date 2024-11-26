@@ -8,13 +8,11 @@ import { GetAllPromptsItemsPromptConfig } from "orq-poc-typescript-multi-env-ver
 let value: GetAllPromptsItemsPromptConfig = {
   messages: [
     {
-      role: "user",
+      role: "assistant",
       content: [
         {
-          type: "image_url",
-          imageUrl: {
-            url: "https://caring-chapel.net/",
-          },
+          type: "text",
+          text: "<value>",
         },
       ],
     },

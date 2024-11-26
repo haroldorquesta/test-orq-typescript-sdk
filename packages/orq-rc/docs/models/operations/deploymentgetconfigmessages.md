@@ -6,7 +6,7 @@
 import { DeploymentGetConfigMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: DeploymentGetConfigMessages = {
-  role: "assistant",
+  role: "exception",
   content: "<value>",
 };
 ```

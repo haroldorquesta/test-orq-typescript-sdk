@@ -9,7 +9,7 @@ import { GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyPhotoRea
 
 let value:
   GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyPhotoRealVersion =
-    "v1";
+    "v2";
 ```
 
 ## Values

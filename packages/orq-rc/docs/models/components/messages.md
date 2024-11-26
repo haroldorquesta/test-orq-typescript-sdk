@@ -6,8 +6,15 @@
 import { Messages } from "orq-poc-typescript-multi-env-version/models/components";
 
 let value: Messages = {
-  role: "correction",
-  content: "<value>",
+  role: "user",
+  content: [
+    {
+      type: "image_url",
+      imageUrl: {
+        url: "https://jam-packed-traditionalism.com/",
+      },
+    },
+  ],
 };
 ```
 

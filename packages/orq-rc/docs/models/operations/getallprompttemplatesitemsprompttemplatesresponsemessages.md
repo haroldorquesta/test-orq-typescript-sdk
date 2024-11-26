@@ -6,13 +6,8 @@
 import { GetAllPromptTemplatesItemsPromptTemplatesResponseMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptTemplatesItemsPromptTemplatesResponseMessages = {
-  role: "assistant",
-  content: [
-    {
-      type: "text",
-      text: "<value>",
-    },
-  ],
+  role: "system",
+  content: "<value>",
 };
 ```
 

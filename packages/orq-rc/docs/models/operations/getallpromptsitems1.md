@@ -9,21 +9,16 @@ import { GetAllPromptsItems1 } from "orq-poc-typescript-multi-env-version/models
 
 let value: GetAllPromptsItems1 = {
   id: "<id>",
-  owner: "vendor",
-  domainId: "a3da3f3a-7b1f-4338-b570-3ce3c00622ad",
-  createdById: "5ed87021-8a9d-4ad2-92e5-3efa6b025d40",
-  displayName: "Dayne.Jacobi73",
-  updatedById: "65ae2d90-c8c6-4a33-b58b-ad6e12a42e1f",
+  owner: "<value>",
+  domainId: "cad71806-3d27-46d8-b793-851c540045b5",
+  createdById: "9520665c-1138-4be4-a284-f03c68da9a11",
+  displayName: "Fredy.Schuster-Walter62",
+  updatedById: "b0a3940a-7b08-402c-b312-2d9c4ae8d3f1",
   promptConfig: {
     messages: [
       {
-        role: "correction",
-        content: [
-          {
-            type: "text",
-            text: "<value>",
-          },
-        ],
+        role: "assistant",
+        content: "<value>",
       },
     ],
   },
@@ -31,14 +26,19 @@ let value: GetAllPromptsItems1 = {
   versions: [
     {
       id: "<id>",
-      createdById: "c097c067-26e7-4480-84ca-093fc2672bd0",
-      displayName: "Ebba90",
-      updatedById: "98c5ab92-fc79-4c7b-9c73-9880c86d34a6",
+      createdById: "8537fa4f-4b4c-4a97-939d-0be945b50146",
+      displayName: "Rachelle_Jenkins79",
+      updatedById: "52185899-f3e0-401a-a822-8f2419e37eb8",
       promptConfig: {
         messages: [
           {
-            role: "user",
-            content: "<value>",
+            role: "prompt",
+            content: [
+              {
+                type: "text",
+                text: "<value>",
+              },
+            ],
           },
         ],
       },

@@ -10,18 +10,20 @@ import { GetAllPromptsItems3 } from "orq-poc-typescript-multi-env-version/models
 let value: GetAllPromptsItems3 = {
   id: "<id>",
   owner: "<value>",
-  domainId: "ca78ee2d-814a-4e19-aa4c-130841e3949a",
-  createdById: "40dfe1c7-a98a-4992-adcf-c9ea429bd4e9",
-  displayName: "Raheem89",
-  updatedById: "67b0538c-2f7c-457f-9b03-4fca1c22d01e",
+  domainId: "4eeb0a34-2973-4e3c-b02d-8a6622e77a08",
+  createdById: "667d9bb0-fb90-4e7e-a69e-7266bd0742ad",
+  displayName: "Clementina_Lebsack",
+  updatedById: "54bf479f-3f8b-4c2f-afdd-5de42c9165a6",
   promptConfig: {
     messages: [
       {
         role: "correction",
         content: [
           {
-            type: "text",
-            text: "<value>",
+            type: "image_url",
+            imageUrl: {
+              url: "https://experienced-lady.net",
+            },
           },
         ],
       },
@@ -31,17 +33,19 @@ let value: GetAllPromptsItems3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "c3b68f44-459c-4e0a-899c-fb2fd41cf2a0",
-      displayName: "Ozella77",
-      updatedById: "4c37ba8a-0431-43de-b877-ff310563edb7",
+      createdById: "33ace7b2-5a2f-42c5-ab6b-e92f836bee2d",
+      displayName: "Halie_Schimmel65",
+      updatedById: "c067846c-4d02-4e70-a971-59ae71162e36",
       promptConfig: {
         messages: [
           {
-            role: "expected_output",
+            role: "user",
             content: [
               {
-                type: "text",
-                text: "<value>",
+                type: "image_url",
+                imageUrl: {
+                  url: "https://swift-newsletter.info",
+                },
               },
             ],
           },

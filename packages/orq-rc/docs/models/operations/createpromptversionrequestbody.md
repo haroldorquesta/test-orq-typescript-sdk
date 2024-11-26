@@ -7,17 +7,12 @@ import { CreatePromptVersionRequestBody } from "orq-poc-typescript-multi-env-ver
 
 let value: CreatePromptVersionRequestBody = {
   id: "<id>",
-  displayName: "Shad.Ryan55",
+  displayName: "Emanuel14",
   promptConfig: {
     messages: [
       {
-        role: "system",
-        content: [
-          {
-            type: "text",
-            text: "<value>",
-          },
-        ],
+        role: "expected_output",
+        content: "<value>",
       },
     ],
   },

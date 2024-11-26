@@ -6,11 +6,13 @@
 import { GetAllPromptsItemsPromptsResponseMessages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsItemsPromptsResponseMessages = {
-  role: "system",
+  role: "prompt",
   content: [
     {
-      type: "text",
-      text: "<value>",
+      type: "image_url",
+      imageUrl: {
+        url: "https://acceptable-representation.name/",
+      },
     },
   ],
 };

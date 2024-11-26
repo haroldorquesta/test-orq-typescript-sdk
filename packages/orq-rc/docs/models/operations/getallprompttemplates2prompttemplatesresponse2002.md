@@ -10,7 +10,7 @@ import { GetAllPromptTemplates2PromptTemplatesResponse2002 } from "orq-poc-types
 let value: GetAllPromptTemplates2PromptTemplatesResponse2002 = {
   type: "image_url",
   imageUrl: {
-    url: "https://lustrous-convection.org",
+    url: "https://edible-collectivization.org/",
   },
 };
 ```

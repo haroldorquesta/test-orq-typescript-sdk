@@ -6,7 +6,7 @@
 import { CreatePrompt2PromptsImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: CreatePrompt2PromptsImageUrl = {
-  url: "https://immediate-nougat.biz",
+  url: "https://right-heartbeat.org/",
 };
 ```
 

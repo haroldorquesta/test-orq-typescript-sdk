@@ -7,7 +7,7 @@ The type of the model
 ```typescript
 import { FindOnePromptSnippetResponseBodyModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: FindOnePromptSnippetResponseBodyModelType = "chat";
+let value: FindOnePromptSnippetResponseBodyModelType = "stt";
 ```
 
 ## Values

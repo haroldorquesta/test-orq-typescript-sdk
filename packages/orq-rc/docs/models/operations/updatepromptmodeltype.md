@@ -7,7 +7,7 @@ The type of the model
 ```typescript
 import { UpdatePromptModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: UpdatePromptModelType = "chat";
+let value: UpdatePromptModelType = "image";
 ```
 
 ## Values

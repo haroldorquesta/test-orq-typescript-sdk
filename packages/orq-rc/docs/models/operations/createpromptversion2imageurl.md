@@ -6,7 +6,7 @@
 import { CreatePromptVersion2ImageUrl } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: CreatePromptVersion2ImageUrl = {
-  url: "https://strange-petticoat.biz",
+  url: "https://pure-mechanic.biz",
 };
 ```
 

@@ -18,7 +18,7 @@ const value: operations.UpdatePrompt2PromptsResponse1 = {
 const value: operations.UpdatePrompt2PromptsResponse2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://nifty-monasticism.net/",
+    url: "https://self-reliant-brook.net/",
   },
 };
 ```

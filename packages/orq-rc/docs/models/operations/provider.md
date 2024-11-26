@@ -5,7 +5,7 @@
 ```typescript
 import { Provider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: Provider = "cohere";
+let value: Provider = "huggingface";
 ```
 
 ## Values

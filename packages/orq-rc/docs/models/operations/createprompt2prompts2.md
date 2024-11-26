@@ -10,7 +10,7 @@ import { CreatePrompt2Prompts2 } from "orq-poc-typescript-multi-env-version/mode
 let value: CreatePrompt2Prompts2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://straight-developmental.org",
+    url: "https://scientific-mentor.com/",
   },
 };
 ```

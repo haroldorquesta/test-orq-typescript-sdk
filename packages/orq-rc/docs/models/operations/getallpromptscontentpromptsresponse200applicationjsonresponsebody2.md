@@ -20,7 +20,7 @@ const value:
   operations.GetAllPrompts2PromptsResponse200ApplicationJSONResponseBody2 = {
     type: "image_url",
     imageUrl: {
-      url: "https://rapid-knitting.org",
+      url: "https://raw-icebreaker.biz",
     },
   };
 ```

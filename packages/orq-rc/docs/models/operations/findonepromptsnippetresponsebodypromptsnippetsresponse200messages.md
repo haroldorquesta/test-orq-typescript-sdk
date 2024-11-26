@@ -6,13 +6,11 @@
 import { FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: FindOnePromptSnippetResponseBodyPromptSnippetsResponse200Messages = {
-  role: "prompt",
+  role: "tool",
   content: [
     {
-      type: "image_url",
-      imageUrl: {
-        url: "https://pleasing-help.biz/",
-      },
+      type: "text",
+      text: "<value>",
     },
   ],
 };

@@ -18,7 +18,7 @@ const value: operations.GetAllPrompts21 = {
 const value: operations.GetAllPrompts22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://scaly-litter.name",
+    url: "https://lavish-alliance.name/",
   },
 };
 ```

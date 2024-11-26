@@ -5,7 +5,7 @@
 ```typescript
 import { UpdatePromptResponseBodyProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: UpdatePromptResponseBodyProvider = "openai";
+let value: UpdatePromptResponseBodyProvider = "replicate";
 ```
 
 ## Values

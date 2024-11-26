@@ -7,7 +7,7 @@ The provider used to generate the response
 ```typescript
 import { DeploymentInvokeDeploymentsProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: DeploymentInvokeDeploymentsProvider = "nvidia";
+let value: DeploymentInvokeDeploymentsProvider = "perplexity";
 ```
 
 ## Values

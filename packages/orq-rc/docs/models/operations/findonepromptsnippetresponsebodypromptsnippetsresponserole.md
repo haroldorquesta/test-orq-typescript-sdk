@@ -8,7 +8,7 @@ The role of the prompt message
 import { FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: FindOnePromptSnippetResponseBodyPromptSnippetsResponseRole =
-  "system";
+  "correction";
 ```
 
 ## Values

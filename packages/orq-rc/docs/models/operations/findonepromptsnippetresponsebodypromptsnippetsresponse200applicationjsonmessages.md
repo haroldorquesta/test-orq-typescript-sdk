@@ -8,15 +8,8 @@ import { FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSO
 let value:
   FindOnePromptSnippetResponseBodyPromptSnippetsResponse200ApplicationJSONMessages =
     {
-      role: "assistant",
-      content: [
-        {
-          type: "image_url",
-          imageUrl: {
-            url: "https://apprehensive-cellar.com",
-          },
-        },
-      ],
+      role: "user",
+      content: "<value>",
     };
 ```
 

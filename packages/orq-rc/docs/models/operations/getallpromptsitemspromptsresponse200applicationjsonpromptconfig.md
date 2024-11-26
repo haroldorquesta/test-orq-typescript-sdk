@@ -9,12 +9,7 @@ let value: GetAllPromptsItemsPromptsResponse200ApplicationJSONPromptConfig = {
   messages: [
     {
       role: "tool",
-      content: [
-        {
-          type: "text",
-          text: "<value>",
-        },
-      ],
+      content: "<value>",
     },
   ],
 };

@@ -9,12 +9,19 @@ import { CreatePromptVersionResponseBody } from "orq-poc-typescript-multi-env-ve
 
 let value: CreatePromptVersionResponseBody = {
   id: "<id>",
-  displayName: "Lindsey_Rutherford",
+  displayName: "Ethelyn_Buckridge",
   promptConfig: {
     messages: [
       {
-        role: "tool",
-        content: "<value>",
+        role: "user",
+        content: [
+          {
+            type: "image_url",
+            imageUrl: {
+              url: "https://leading-handle.net",
+            },
+          },
+        ],
       },
     ],
   },

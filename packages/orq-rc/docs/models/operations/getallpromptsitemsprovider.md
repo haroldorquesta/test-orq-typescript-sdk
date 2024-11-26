@@ -5,7 +5,7 @@
 ```typescript
 import { GetAllPromptsItemsProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: GetAllPromptsItemsProvider = "anthropic";
+let value: GetAllPromptsItemsProvider = "groq";
 ```
 
 ## Values

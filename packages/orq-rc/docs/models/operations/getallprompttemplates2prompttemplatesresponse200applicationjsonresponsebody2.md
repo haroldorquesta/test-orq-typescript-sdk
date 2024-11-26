@@ -12,7 +12,7 @@ let value:
     {
       type: "image_url",
       imageUrl: {
-        url: "https://smoggy-freight.name",
+        url: "https://tedious-descendant.name/",
       },
     };
 ```

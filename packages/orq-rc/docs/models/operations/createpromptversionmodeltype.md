@@ -7,7 +7,7 @@ The type of the model
 ```typescript
 import { CreatePromptVersionModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: CreatePromptVersionModelType = "stt";
+let value: CreatePromptVersionModelType = "completion";
 ```
 
 ## Values

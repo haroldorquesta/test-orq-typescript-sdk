@@ -8,12 +8,12 @@ import { CreatePromptVersionPromptConfig } from "orq-poc-typescript-multi-env-ve
 let value: CreatePromptVersionPromptConfig = {
   messages: [
     {
-      role: "assistant",
+      role: "user",
       content: [
         {
           type: "image_url",
           imageUrl: {
-            url: "https://frequent-gripper.biz",
+            url: "https://cautious-maintainer.name",
           },
         },
       ],

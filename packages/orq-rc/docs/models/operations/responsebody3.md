@@ -9,16 +9,23 @@ import { ResponseBody3 } from "orq-poc-typescript-multi-env-version/models/opera
 
 let value: ResponseBody3 = {
   id: "<id>",
-  owner: "<value>",
-  domainId: "d64b0ed1-cf79-4a4a-a76e-ced09ba46018",
-  createdById: "377029fa-1d61-4936-85a6-138c0919d37c",
-  displayName: "Candace_Powlowski",
-  updatedById: "78b612f0-bf2b-443d-ae5a-2ce5ae0d968d",
+  owner: "vendor",
+  domainId: "ab286384-83e5-491a-84f6-93dc3e0c7d71",
+  createdById: "f52c0140-fb8c-4a23-ad57-60b8a4636afa",
+  displayName: "Hayden58",
+  updatedById: "f462edc0-831c-4388-b370-0e6e764149c8",
   promptConfig: {
     messages: [
       {
-        role: "tool",
-        content: "<value>",
+        role: "assistant",
+        content: [
+          {
+            type: "image_url",
+            imageUrl: {
+              url: "https://enchanted-republican.net/",
+            },
+          },
+        ],
       },
     ],
   },
@@ -26,19 +33,17 @@ let value: ResponseBody3 = {
   versions: [
     {
       id: "<id>",
-      createdById: "e31ab944-9475-4833-9b63-d61b499f34eb",
-      displayName: "Murphy.Jast52",
-      updatedById: "a6dc29b8-1865-4953-9b3c-f7c2cf842e57",
+      createdById: "35a697cd-d997-4041-a7d9-a342d4821555",
+      displayName: "Emery.Borer",
+      updatedById: "174a2a74-b320-4d78-9115-8b7d60615fd3",
       promptConfig: {
         messages: [
           {
             role: "exception",
             content: [
               {
-                type: "image_url",
-                imageUrl: {
-                  url: "https://well-worn-cope.name",
-                },
+                type: "text",
+                text: "<value>",
               },
             ],
           },

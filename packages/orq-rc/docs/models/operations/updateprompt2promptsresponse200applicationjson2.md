@@ -10,7 +10,7 @@ import { UpdatePrompt2PromptsResponse200ApplicationJson2 } from "orq-poc-typescr
 let value: UpdatePrompt2PromptsResponse200ApplicationJson2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://sticky-thorn.org",
+    url: "https://blushing-anticodon.name",
   },
 };
 ```

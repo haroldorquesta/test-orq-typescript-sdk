@@ -8,15 +8,8 @@ import { UpdatePromptPromptConfig } from "orq-poc-typescript-multi-env-version/m
 let value: UpdatePromptPromptConfig = {
   messages: [
     {
-      role: "user",
-      content: [
-        {
-          type: "image_url",
-          imageUrl: {
-            url: "https://joyful-expense.name/",
-          },
-        },
-      ],
+      role: "tool",
+      content: "<value>",
     },
   ],
 };

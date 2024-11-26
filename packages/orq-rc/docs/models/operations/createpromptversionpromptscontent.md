@@ -16,10 +16,8 @@ const value: string = "<value>";
 ```typescript
 const value: operations.CreatePromptVersionContentPrompts2[] = [
   {
-    type: "image_url",
-    imageUrl: {
-      url: "https://educated-deduction.net",
-    },
+    type: "text",
+    text: "<value>",
   },
 ];
 ```

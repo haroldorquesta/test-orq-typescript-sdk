@@ -5,7 +5,6 @@
 import { ClientSDK } from "../lib/sdks.js";
 import { Contacts } from "./contacts.js";
 import { Deployments } from "./deployments.js";
-import { Evaluators } from "./evaluators.js";
 import { Feedback } from "./feedback.js";
 import { Files } from "./files.js";
 import { Prompt } from "./prompt.js";
@@ -31,11 +30,6 @@ export class Orq extends ClientSDK {
   private _files?: Files;
   get files(): Files {
     return (this._files ??= new Files(this._options));
-  }
-
-  private _evaluators?: Evaluators;
-  get evaluators(): Evaluators {
-    return (this._evaluators ??= new Evaluators(this._options));
   }
 
   private _prompt?: Prompt;

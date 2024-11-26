@@ -8,7 +8,7 @@ The type of the model
 import { FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: FindOnePromptSnippetResponseBodyPromptSnippetsResponseModelType =
-  "vision";
+  "image";
 ```
 
 ## Values

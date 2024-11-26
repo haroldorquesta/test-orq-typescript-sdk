@@ -7,7 +7,7 @@ The format to return the embeddings
 ```typescript
 import { UpdatePromptResponseBodyPromptsResponseEncodingFormat } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: UpdatePromptResponseBodyPromptsResponseEncodingFormat = "float";
+let value: UpdatePromptResponseBodyPromptsResponseEncodingFormat = "base64";
 ```
 
 ## Values

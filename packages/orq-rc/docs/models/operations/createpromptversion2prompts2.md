@@ -10,7 +10,7 @@ import { CreatePromptVersion2Prompts2 } from "orq-poc-typescript-multi-env-versi
 let value: CreatePromptVersion2Prompts2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://bossy-expense.name/",
+    url: "https://dapper-armchair.biz",
   },
 };
 ```

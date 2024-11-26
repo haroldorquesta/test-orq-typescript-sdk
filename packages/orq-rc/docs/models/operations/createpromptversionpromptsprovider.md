@@ -5,7 +5,7 @@
 ```typescript
 import { CreatePromptVersionPromptsProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: CreatePromptVersionPromptsProvider = "cohere";
+let value: CreatePromptVersionPromptsProvider = "openai";
 ```
 
 ## Values

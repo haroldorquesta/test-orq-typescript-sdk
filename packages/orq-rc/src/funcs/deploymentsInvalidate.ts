@@ -28,9 +28,9 @@ import { Result } from "../types/fp.js";
  * @remarks
  * Explicitly invalidate a cache of a deployment
  */
-export async function deploymentsDeleteV2DeploymentsInvalidateDeploymentId(
+export async function deploymentsInvalidate(
   client: OrqCore,
-  request: operations.DeleteV2DeploymentsInvalidateDeploymentIdRequest,
+  request: operations.InvalidDeploymentRequest,
   options?: RequestOptions,
 ): Promise<
   Result<
@@ -46,9 +46,7 @@ export async function deploymentsDeleteV2DeploymentsInvalidateDeploymentId(
 > {
   const parsed = safeParse(
     request,
-    (value) =>
-      operations.DeleteV2DeploymentsInvalidateDeploymentIdRequest$outboundSchema
-        .parse(value),
+    (value) => operations.InvalidDeploymentRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -77,7 +75,7 @@ export async function deploymentsDeleteV2DeploymentsInvalidateDeploymentId(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "delete_/v2/deployments/invalidate/{deployment_id}",
+    operationID: "InvalidDeployment",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,

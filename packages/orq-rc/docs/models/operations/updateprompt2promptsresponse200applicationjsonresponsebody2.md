@@ -10,7 +10,7 @@ import { UpdatePrompt2PromptsResponse200ApplicationJSONResponseBody2 } from "orq
 let value: UpdatePrompt2PromptsResponse200ApplicationJSONResponseBody2 = {
   type: "image_url",
   imageUrl: {
-    url: "https://tender-masterpiece.name/",
+    url: "https://hateful-heartache.info",
   },
 };
 ```

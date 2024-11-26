@@ -5,7 +5,7 @@
 ```typescript
 import { UpdatePromptProvider } from "orq-poc-typescript-multi-env-version/models/operations";
 
-let value: UpdatePromptProvider = "aws";
+let value: UpdatePromptProvider = "google";
 ```
 
 ## Values

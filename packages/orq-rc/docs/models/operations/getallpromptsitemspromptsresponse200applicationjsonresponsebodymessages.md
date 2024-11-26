@@ -7,7 +7,7 @@ import { GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyMessages
 
 let value:
   GetAllPromptsItemsPromptsResponse200ApplicationJSONResponseBodyMessages = {
-    role: "correction",
+    role: "user",
     content: "<value>",
   };
 ```

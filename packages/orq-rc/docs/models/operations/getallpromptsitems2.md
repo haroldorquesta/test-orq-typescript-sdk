@@ -9,16 +9,23 @@ import { GetAllPromptsItems2 } from "orq-poc-typescript-multi-env-version/models
 
 let value: GetAllPromptsItems2 = {
   id: "<id>",
-  owner: "vendor",
-  domainId: "2c95fd43-552e-4ed7-ac5d-e878316cad71",
-  createdById: "063d276d-8793-4851-9c54-0045b5c95206",
-  displayName: "Frank.Boyer",
-  updatedById: "be4284f0-3c68-4da9-aa11-95fde290b0a3",
+  owner: "<value>",
+  domainId: "0841e394-9ab4-40df-ae1c-7a98a992dcfc",
+  createdById: "ea429bd4-e9bc-4e46-9ed6-7b0538c2f7c5",
+  displayName: "Violette25",
+  updatedById: "ca1c22d0-1e4c-4a1c-a3b6-8f44459ce0a9",
   promptConfig: {
     messages: [
       {
-        role: "user",
-        content: "<value>",
+        role: "correction",
+        content: [
+          {
+            type: "image_url",
+            imageUrl: {
+              url: "https://well-made-subsidy.biz/",
+            },
+          },
+        ],
       },
     ],
   },
@@ -26,19 +33,17 @@ let value: GetAllPromptsItems2 = {
   versions: [
     {
       id: "<id>",
-      createdById: "a7b0802c-3122-4d9c-b4ae-8d3f1c318537",
-      displayName: "Loraine.Yost71",
-      updatedById: "ca9739d0-be94-45b5-9014-65c36dc35218",
+      createdById: "1cf2a00c-d57c-4d4c-937b-a8a04313de87",
+      displayName: "Veronica.Emmerich",
+      updatedById: "63edb7ef-e4d5-41bc-8f74-169725e78760",
       promptConfig: {
         messages: [
           {
-            role: "tool",
+            role: "exception",
             content: [
               {
-                type: "image_url",
-                imageUrl: {
-                  url: "https://essential-tectonics.com",
-                },
+                type: "text",
+                text: "<value>",
               },
             ],
           },

@@ -8,30 +8,23 @@ Prompts retrieved.
 import { GetAllPromptsResponseBody } from "orq-poc-typescript-multi-env-version/models/operations";
 
 let value: GetAllPromptsResponseBody = {
-  count: 3495.51,
-  page: 716.31,
-  limit: 8162.30,
-  totalPages: 709.99,
+  count: 5480.83,
+  page: 5592.32,
+  limit: 6233.73,
+  totalPages: 2303.52,
   items: [
     {
       id: "<id>",
-      owner: "vendor",
-      domainId: "83fe13a3-82a8-4f28-8493-e76ce7c24be1",
-      createdById: "f1083495-f3de-47f4-8190-7d634ea2798c",
-      displayName: "Earl17",
-      updatedById: "8ad95824-a00e-4fe3-bc71-ccbff2cabfd6",
+      owner: "<value>",
+      domainId: "047bc6cb-a248-4d6f-8a58-6e031c3b8df2",
+      createdById: "a0d66954-3bc9-43b2-ae77-39f9a4538297",
+      displayName: "Antone50",
+      updatedById: "b54a157c-5cc0-43a7-905a-f3258a530213",
       promptConfig: {
         messages: [
           {
-            role: "expected_output",
-            content: [
-              {
-                type: "image_url",
-                imageUrl: {
-                  url: "https://scornful-accelerator.name/",
-                },
-              },
-            ],
+            role: "system",
+            content: "<value>",
           },
         ],
       },
@@ -39,9 +32,9 @@ let value: GetAllPromptsResponseBody = {
       versions: [
         {
           id: "<id>",
-          createdById: "b6d748ea-f7aa-43b1-8923-f68a7b0a5e20",
-          displayName: "Joyce23",
-          updatedById: "0c1dc367-633b-4241-930b-667459379248",
+          createdById: "296ac16f-077d-44c0-875c-61b057b51d0d",
+          displayName: "Brain_Cormier81",
+          updatedById: "19b80cbb-31f7-4b18-b815-ebbe4c198636",
           promptConfig: {
             messages: [
               {
@@ -55,7 +48,8 @@ let value: GetAllPromptsResponseBody = {
           timestamp: "<value>",
         },
       ],
-      type: "prompt",
+      key: "<key>",
+      type: "snippet",
     },
   ],
 };

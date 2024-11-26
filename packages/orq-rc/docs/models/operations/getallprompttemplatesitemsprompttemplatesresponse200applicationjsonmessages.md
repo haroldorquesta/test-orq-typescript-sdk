@@ -9,12 +9,7 @@ let value:
   GetAllPromptTemplatesItemsPromptTemplatesResponse200ApplicationJSONMessages =
     {
       role: "system",
-      content: [
-        {
-          type: "text",
-          text: "<value>",
-        },
-      ],
+      content: "<value>",
     };
 ```
 
