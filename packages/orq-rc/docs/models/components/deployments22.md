@@ -10,7 +10,7 @@ import { Deployments22 } from "orq-poc-typescript-multi-env-version/models/compo
 let value: Deployments22 = {
   type: "image_url",
   imageUrl: {
-    url: "https://vengeful-bran.org/",
+    url: "https://unlined-grandson.org/",
   },
 };
 ```
